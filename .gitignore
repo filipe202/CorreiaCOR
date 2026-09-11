@@ -9,3 +9,4 @@ next-env.d.ts
 # Canvas de design gerado a partir dos .dc.html (2,5 MB de runtime embebido).
 # As fontes são os ficheiros design/*.dc.html + design/canvas.json.
 design/correiacor-novo-site.html
+shot-*.png
