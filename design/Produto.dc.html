@@ -75,11 +75,18 @@
 </div>
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 18px 56px; background: #fbf7ef; border-bottom: 1px solid #e3d8c6;">
   <div style="display: flex; align-items: center; gap: 12px;">
-    <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
-      <circle cx="60" cy="60" r="55" fill="none" stroke="#1d3f6e" stroke-width="3.2"/>
-      <circle cx="60" cy="60" r="40" fill="#1d3f6e"/>
-      <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="54" fill="#fbf7ef">C</text>
-    </svg>
+    <svg viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
+        <defs>
+          <clipPath id="cc10t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
+          <mask id="cc10m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
+        </defs>
+        <g clip-path="url(#cc10t)" mask="url(#cc10m)">
+          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/>
+          <rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
+          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/>
+          <rect x="48" y="0" width="16" height="64" fill="#221a14"/>
+        </g>
+      </svg>
     <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em;">Correia<span style="color:#c4573a;">Cor</span></span>
   </div>
   <div style="display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 500; color: #5a4a3e;">
@@ -110,9 +117,16 @@
           <path d="M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z" fill="{{ sel.hex }}" stroke="{{ sel.line }}" stroke-width="2" stroke-linejoin="round"/>
           <rect x="{{ sel.areaX }}" y="{{ sel.areaY }}" width="{{ sel.areaW }}" height="{{ sel.areaH }}" rx="1.5" fill="none" stroke="{{ sel.line }}" stroke-width="1.1" stroke-dasharray="3.5 3.5"/>
           <g transform="translate({{ sel.logoX }} {{ sel.logoY }}) scale({{ sel.logoS }})">
-            <circle cx="30" cy="30" r="28" fill="none" stroke="{{ sel.logoInk }}" stroke-width="2.6"/>
-            <circle cx="30" cy="30" r="20" fill="{{ sel.logoInk }}"/>
-            <text x="30" y="31" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="27" fill="{{ sel.hex }}">C</text>
+            <defs>
+              <clipPath id="pvtile"><rect x="0" y="0" width="60" height="60" rx="14"/></clipPath>
+              <mask id="pvletter"><rect x="0" y="0" width="60" height="60" fill="#fff"/><path d="M41.7 20.3a13.9 13.9 0 1 0 0 19.5" fill="none" stroke="#000" stroke-width="8.9" stroke-linecap="round"/></mask>
+            </defs>
+            <g clip-path="url(#pvtile)" mask="url(#pvletter)">
+              <rect x="0" y="0" width="15" height="60" fill="#00aeef"/>
+              <rect x="15" y="0" width="15" height="60" fill="#ec008c"/>
+              <rect x="30" y="0" width="15" height="60" fill="#ffd200"/>
+              <rect x="45" y="0" width="15" height="60" fill="{{ sel.logoInk }}"/>
+            </g>
           </g>
         </svg>
         <div style="text-align: center; font-size: 12.5px; color: {{ sel.stageMuted }};">Simulação. A prova digital real segue com o orçamento.</div>

@@ -10,67 +10,23 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Karla, "Helvetica Neue", Arial, sans-serif;
-      color: #5a4a3e;
-      background-color: #fbf7ef;
-    }
-    h1, h2, h3, h4 {
-      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      margin: 0;
-      color: #221a14;
-      letter-spacing: -0.015em;
-      line-height: 1.02;
-      text-wrap: balance;
-    }
+    body { margin: 0; font-family: Karla, "Helvetica Neue", Arial, sans-serif; color: #5a4a3e; background-color: #fbf7ef; }
+    h1, h2, h3 { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; color: #221a14; letter-spacing: -0.015em; line-height: 1.02; text-wrap: balance; }
     p { text-wrap: pretty; }
     em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
     a { color: #c4573a; text-decoration: none; }
-    a:hover { color: #9d422b; }
-    .cap {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: #8b7b6c;
-    }
-    /* Grão de papel: dá profundidade sem pesar nada. */
-    .grain::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.32;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-    }
-    .arch { border-radius: 280px 280px 14px 14px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      height: 54px;
-      padding: 0 28px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-    .opt { cursor: pointer; user-select: none; }
-    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .floaty { animation: floaty 9s ease-in-out infinite; }
-    .floaty-slow { animation: floaty 12s ease-in-out infinite; }
+    .cap { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: #8b7b6c; }
+    .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); }
   </style>
 </helmet>
+
 <div class="grain" style="position: relative; background: #fbf7ef; padding: 66px 72px 76px;">
 
   <div style="text-align: center; padding-bottom: 34px; border-bottom: 1px solid #e3d8c6;">
-    <div class="cap">CorreiaCOR &middot; Identidade &middot; terceira proposta</div>
-    <h1 style="font-size: 74px; margin-top: 18px;">Uma marca com <em style="color:#c4573a;">boas maneiras</em></h1>
-    <p style="max-width: 640px; margin: 20px auto 0; font-size: 17px; line-height: 1.7;">Das duas vezes anteriores errei por excesso: primeiro sem carácter nenhum, depois aos gritos. Estas três ideias procuram outra coisa &mdash; elegância, calor e o cuidado de uma casa que gosta do que faz.</p>
+    <div class="cap">CorreiaCOR &middot; Identidade</div>
+    <h1 style="font-size: 74px; margin-top: 18px;">A quadricromia, <em style="color:#ec008c;">bem-educada</em></h1>
+    <p style="max-width: 680px; margin: 20px auto 0; font-size: 17px; line-height: 1.7;">Voltamos ao CMYK, como pediu. A diferença em relação à primeira tentativa é o que está à volta: a marca fica em quadricromia viva, mas o site continua em papel creme, serifa e tintas quentes. A cor passa a ser a joia, em vez de ser o barulho todo.</p>
     <div style="display: flex; justify-content: center; margin-top: 26px;">
       <svg width="112" height="14" viewBox="0 0 112 14" fill="none" aria-hidden="true">
         <path d="M2 7h36M74 7h36" stroke="#d9a441" stroke-width="1"/>
@@ -82,144 +38,183 @@
 
   <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 26px; margin-top: 44px;">
 
-    <!-- 1 · O SELO DO IMPRESSOR -->
+    <!-- 1 · A QUADRICROMIA -->
     <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 34px; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
       <div style="display: flex; align-items: center; justify-content: space-between;">
-        <span class="cap" style="color: #c4573a;">Ideia 01</span>
-        <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #fffdf9; background: #35513f; border-radius: 999px; padding: 5px 12px;">A minha aposta</span>
+        <span class="cap" style="color: #ec008c;">Opção A</span>
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #fffdf9; background: #35513f; border-radius: 999px; padding: 5px 12px;">Aplicada no site</span>
       </div>
-      <h2 style="font-size: 38px; margin-top: 14px;">O selo do impressor</h2>
+      <h2 style="font-size: 38px; margin-top: 14px;">A quadricromia</h2>
 
       <div style="height: 216px; display: flex; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
-        <svg viewBox="0 0 120 120" width="168" height="168" aria-hidden="true">
-          <defs><path id="ring-path" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
-          <circle cx="60" cy="60" r="55" fill="none" stroke="#1d3f6e" stroke-width="1.6"/>
-          <circle cx="60" cy="60" r="50.5" fill="none" stroke="#1d3f6e" stroke-width="0.7"/>
-          <text font-family="Karla, sans-serif" font-size="7.6" font-weight="600" letter-spacing="2.9" fill="#1d3f6e">
-            <textPath href="#ring-path" startOffset="2%">IMPRESSORES · DESDE 2004 · PORTUGAL · </textPath>
-          </text>
-          <circle cx="60" cy="60" r="34" fill="#1d3f6e"/>
-          <text x="60" y="60" text-anchor="middle" dominant-baseline="central"
-                font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
-          <circle cx="60" cy="98" r="2.6" fill="#d9a441"/>
+        <svg viewBox="0 0 64 64" width="158" height="158" aria-hidden="true">
+          <defs>
+            <clipPath id="l1t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
+            <mask id="l1m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
+          </defs>
+          <g clip-path="url(#l1t)" mask="url(#l1m)">
+            <rect x="0" y="0" width="16" height="64" fill="#00aeef"/>
+            <rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
+            <rect x="32" y="0" width="16" height="64" fill="#ffd200"/>
+            <rect x="48" y="0" width="16" height="64" fill="#221a14"/>
+          </g>
         </svg>
       </div>
 
       <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
-        <svg viewBox="0 0 120 120" width="38" height="38" aria-hidden="true">
-          <circle cx="60" cy="60" r="55" fill="none" stroke="#1d3f6e" stroke-width="3.4"/>
-          <circle cx="60" cy="60" r="40" fill="#1d3f6e"/>
-          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="54" fill="#fbf7ef">C</text>
-        </svg>
-        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14; letter-spacing: -0.01em;">Correia<span style="color:#c4573a;">Cor</span></span>
-      </div>
-
-      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">Durante séculos, cada impressor assinava os seus livros com um selo próprio &mdash; o <em>colofão</em>. É a herança mais bonita desta profissão e ninguém no sector a usa hoje. Dá-lhe autoridade tranquila: uma casa antiga que sabe o que faz, sem precisar de o dizer alto.</p>
-      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> o texto à volta desaparece abaixo dos 32&nbsp;px, por isso precisa de uma versão reduzida só com o C.</p>
-    </div>
-
-    <!-- 2 · A ARCADA -->
-    <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 34px; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
-      <span class="cap" style="color: #c4573a;">Ideia 02</span>
-      <h2 style="font-size: 38px; margin-top: 14px;">A arcada</h2>
-
-      <div style="height: 216px; display: flex; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
-        <svg viewBox="0 0 120 120" width="156" height="156" aria-hidden="true">
-          <path d="M18 112V54a42 42 0 0 1 84 0v58a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4Z" fill="#c4573a"/>
-          <path d="M30 108V55a30 30 0 0 1 60 0v53Z" fill="#f3ebdd"/>
-          <text x="60" y="80" text-anchor="middle" dominant-baseline="central"
-                font-family="'Instrument Serif', Georgia, serif" font-size="62" fill="#221a14">C</text>
-          <circle cx="60" cy="40" r="4.4" fill="#d9a441"/>
-        </svg>
-      </div>
-
-      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
-        <svg viewBox="0 0 120 120" width="34" height="38" aria-hidden="true">
-          <path d="M18 112V54a42 42 0 0 1 84 0v58a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4Z" fill="#c4573a"/>
-          <path d="M32 110V55a28 28 0 0 1 56 0v55Z" fill="#f3ebdd"/>
-          <text x="60" y="82" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="58" fill="#221a14">C</text>
+        <svg viewBox="0 0 64 64" width="38" height="38" aria-hidden="true">
+          <defs>
+            <clipPath id="l1bt"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
+            <mask id="l1bm"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
+          </defs>
+          <g clip-path="url(#l1bt)" mask="url(#l1bm)">
+            <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
+            <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#221a14"/>
+          </g>
         </svg>
         <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">Correia<span style="color:#c4573a;">Cor</span></span>
       </div>
 
-      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">Uma porta aberta, com o C emoldurado como quem vê a montra de uma loja bonita. O arco é a forma mais acolhedora que existe &mdash; usam-na desde as portadas dos livros às fachadas das lojas antigas &mdash; e diz "entre" sem uma única palavra.</p>
-      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> o arco anda muito na moda em restauração e hotelaria. Daqui a cinco anos pode datar.</p>
+      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">As quatro tintas pela ordem em que saem da máquina, com o C recortado a deixar passar o papel. É a versão mais clara do conceito e a única das três que também serve de padrão para embalagem, fita e envelope.</p>
+      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> o quadrado com barras é uma construção comum. A distinção vem do recorte da letra, não da forma.</p>
     </div>
 
-    <!-- 3 · A LETRA -->
+    <!-- 2 · O SELO EM QUADRICROMIA -->
     <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 34px; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
-      <span class="cap" style="color: #c4573a;">Ideia 03</span>
-      <h2 style="font-size: 38px; margin-top: 14px;">A letra e a flor</h2>
+      <span class="cap" style="color: #ec008c;">Opção B</span>
+      <h2 style="font-size: 38px; margin-top: 14px;">O selo em quadricromia</h2>
 
-      <div style="height: 216px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
-        <div style="display: flex; align-items: baseline; font-family: 'Instrument Serif', Georgia, serif; font-size: 52px; color: #221a14; letter-spacing: -0.015em;">
-          <span>Correia&nbsp;C</span>
-          <svg width="40" height="40" viewBox="0 0 40 40" style="margin: 0 1px -4px;" aria-hidden="true">
-            <circle cx="20" cy="21" r="15" fill="none" stroke="#c4573a" stroke-width="4.6"/>
-            <circle cx="20" cy="21" r="7.6" fill="none" stroke="#d9a441" stroke-width="3"/>
-            <circle cx="20" cy="21" r="2.4" fill="#35513f"/>
-          </svg>
-          <span>r</span>
-        </div>
-        <div class="cap" style="margin-top: 20px; color: #8b7b6c;">Comunicação visual desde 2004</div>
+      <div style="height: 216px; display: flex; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
+        <svg viewBox="0 0 120 120" width="168" height="168" aria-hidden="true">
+          <g fill="none" stroke-width="10" stroke-linecap="butt" transform="rotate(-45 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="25 75" stroke-dashoffset="0"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="25 75" stroke-dashoffset="-25"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ffd200" stroke-dasharray="25 75" stroke-dashoffset="-50"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#221a14" stroke-dasharray="25 75" stroke-dashoffset="-75"/>
+          </g>
+          <circle cx="60" cy="60" r="36" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="48" fill="#fbf7ef">C</text>
+        </svg>
       </div>
 
-      <div style="display: flex; align-items: center; justify-content: center; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
-        <div style="display: flex; align-items: baseline; font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">
-          <span>Correia&nbsp;C</span>
-          <svg width="23" height="23" viewBox="0 0 40 40" style="margin: 0 1px -2px;" aria-hidden="true">
-            <circle cx="20" cy="21" r="15" fill="none" stroke="#c4573a" stroke-width="5.4"/>
-            <circle cx="20" cy="21" r="7" fill="none" stroke="#d9a441" stroke-width="3.4"/>
-            <circle cx="20" cy="21" r="2.2" fill="#35513f"/>
-          </svg>
-          <span>r</span>
-        </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
+        <svg viewBox="0 0 120 120" width="40" height="40" aria-hidden="true">
+          <g fill="none" stroke-width="13" stroke-linecap="butt" transform="rotate(-45 60 60)">
+            <circle cx="60" cy="60" r="51" pathLength="100" stroke="#00aeef" stroke-dasharray="25 75"/>
+            <circle cx="60" cy="60" r="51" pathLength="100" stroke="#ec008c" stroke-dasharray="25 75" stroke-dashoffset="-25"/>
+            <circle cx="60" cy="60" r="51" pathLength="100" stroke="#ffd200" stroke-dasharray="25 75" stroke-dashoffset="-50"/>
+            <circle cx="60" cy="60" r="51" pathLength="100" stroke="#221a14" stroke-dasharray="25 75" stroke-dashoffset="-75"/>
+          </g>
+          <circle cx="60" cy="60" r="36" fill="#221a14"/>
+          <text x="60" y="62" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="50" fill="#fbf7ef">C</text>
+        </svg>
+        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">Correia<span style="color:#c4573a;">Cor</span></span>
       </div>
 
-      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">Sem símbolo à parte: o "o" de Cor abre-se em anéis de tinta, como as camadas de uma impressão vistas de cima. A cor entra no nome em vez de ficar ao lado dele, e o conjunto lê-se de uma só vez.</p>
-      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> sem símbolo separado, fica pior em quadrado &mdash; no perfil do Instagram ou no favicon precisa de um "C" isolado a acompanhar.</p>
+      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">O anel de registo &mdash; a mira que os impressores usam para alinhar as chapas &mdash; partido nas quatro tintas, com o C em serifa ao centro. Casa a quadricromia com o resto do site melhor do que qualquer outra: é redondo, é sóbrio, e parece um carimbo de casa antiga.</p>
+      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> quatro cores num anel fino dão trabalho a bordar bem, e o amarelo desaparece quase sempre sobre fundo claro.</p>
+    </div>
+
+    <!-- 3 · A SOBREPOSIÇÃO -->
+    <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 34px; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
+      <span class="cap" style="color: #ec008c;">Opção C</span>
+      <h2 style="font-size: 38px; margin-top: 14px;">A sobreposição</h2>
+
+      <div style="height: 216px; display: flex; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
+        <svg viewBox="0 0 64 64" width="172" height="172" aria-hidden="true">
+          <g style="mix-blend-mode: multiply;">
+            <circle cx="32" cy="23" r="16" fill="#00aeef"/>
+            <circle cx="23" cy="39" r="16" fill="#ec008c"/>
+            <circle cx="41" cy="39" r="16" fill="#ffd200"/>
+          </g>
+        </svg>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
+        <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+          <g style="mix-blend-mode: multiply;">
+            <circle cx="32" cy="23" r="16" fill="#00aeef"/><circle cx="23" cy="39" r="16" fill="#ec008c"/><circle cx="41" cy="39" r="16" fill="#ffd200"/>
+          </g>
+        </svg>
+        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">Correia<span style="color:#c4573a;">Cor</span></span>
+      </div>
+
+      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">Três tintas a sobreporem-se e a criar cores novas nas zonas comuns &mdash; é literalmente o que acontece no papel. A mais calorosa das três e a que qualquer cliente percebe sem precisar que lhe expliquem.</p>
+      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> muitas gráficas usam este símbolo. Funciona bem, mas é difícil de reclamar como marca própria.</p>
     </div>
   </div>
 
-  <!-- PALETA E TIPOGRAFIA -->
+  <!-- COMO VIVE -->
   <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 26px; margin-top: 26px;">
 
     <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 36px;">
-      <span class="cap" style="color: #c4573a;">Paleta</span>
-      <h3 style="font-size: 34px; margin-top: 12px;">Tintas antigas, não néon</h3>
-      <p style="margin: 12px 0 28px; font-size: 15px; line-height: 1.7; max-width: 560px;">Cores com a profundidade dos tinteiros de gráfica &mdash; azul de tinta, terracota, verde de garrafa, ocre. Dizem "cor" com a mesma clareza, mas convidam em vez de empurrar.</p>
+      <span class="cap" style="color: #ec008c;">Como as duas paletas convivem</span>
+      <h3 style="font-size: 34px; margin-top: 12px;">A marca em quadricromia, a casa em tintas quentes</h3>
+      <p style="margin: 12px 0 28px; font-size: 15px; line-height: 1.7; max-width: 600px;">A marca fica nas quatro tintas vivas. O site mantém o papel creme e os tons de tinta antiga, e o "Cor" do logótipo acompanha-os em terracota. Assim a quadricromia aparece onde conta &mdash; no símbolo &mdash; sem transformar cada página num cartaz.</p>
       <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px;">
-        <div><div style="height: 96px; border-radius: 14px; background: #1d3f6e;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Azul de tinta</div><div style="font-size: 12px; color: #8b7b6c;">#1D3F6E</div></div>
-        <div><div style="height: 96px; border-radius: 14px; background: #c4573a;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Terracota</div><div style="font-size: 12px; color: #8b7b6c;">#C4573A</div></div>
-        <div><div style="height: 96px; border-radius: 14px; background: #35513f;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Verde de garrafa</div><div style="font-size: 12px; color: #8b7b6c;">#35513F</div></div>
-        <div><div style="height: 96px; border-radius: 14px; background: #d9a441;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Ocre</div><div style="font-size: 12px; color: #8b7b6c;">#D9A441</div></div>
+        <div><div style="height: 84px; border-radius: 14px; background: #00aeef;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Ciano</div><div style="font-size: 12px; color: #8b7b6c;">#00AEEF</div></div>
+        <div><div style="height: 84px; border-radius: 14px; background: #ec008c;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Magenta</div><div style="font-size: 12px; color: #8b7b6c;">#EC008C</div></div>
+        <div><div style="height: 84px; border-radius: 14px; background: #ffd200;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Amarelo</div><div style="font-size: 12px; color: #8b7b6c;">#FFD200</div></div>
+        <div><div style="height: 84px; border-radius: 14px; background: #221a14;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Preto</div><div style="font-size: 12px; color: #8b7b6c;">#221A14</div></div>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; margin-top: 18px;">
-        <div><div style="height: 52px; border-radius: 14px; background: #6b3552;"></div><div style="font-size: 12px; color: #8b7b6c; margin-top: 9px;">Ameixa #6B3552</div></div>
-        <div><div style="height: 52px; border-radius: 14px; background: #fbf7ef; border: 1px solid #e3d8c6;"></div><div style="font-size: 12px; color: #8b7b6c; margin-top: 9px;">Papel #FBF7EF</div></div>
-        <div><div style="height: 52px; border-radius: 14px; background: #f3ebdd;"></div><div style="font-size: 12px; color: #8b7b6c; margin-top: 9px;">Creme #F3EBDD</div></div>
-        <div><div style="height: 52px; border-radius: 14px; background: #221a14;"></div><div style="font-size: 12px; color: #8b7b6c; margin-top: 9px;">Tinta #221A14</div></div>
+      <div style="height: 1px; background: #ede4d3; margin: 26px 0;"></div>
+      <div class="cap" style="margin-bottom: 14px;">Tintas do site</div>
+      <div style="display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 12px;">
+        <div><div style="height: 48px; border-radius: 12px; background: #1d3f6e;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Azul de tinta</div></div>
+        <div><div style="height: 48px; border-radius: 12px; background: #c4573a;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Terracota</div></div>
+        <div><div style="height: 48px; border-radius: 12px; background: #35513f;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Verde garrafa</div></div>
+        <div><div style="height: 48px; border-radius: 12px; background: #d9a441;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Ocre</div></div>
+        <div><div style="height: 48px; border-radius: 12px; background: #6b3552;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Ameixa</div></div>
+        <div><div style="height: 48px; border-radius: 12px; background: #fbf7ef; border: 1px solid #e3d8c6;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Papel</div></div>
       </div>
     </div>
 
-    <div style="background: #1d3f6e; color: #f3ebdd; border-radius: 22px; padding: 36px;">
-      <span class="cap" style="color: #d9a441;">Tipografia</span>
-      <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 78px; line-height: 0.94; margin-top: 14px; color: #fbf7ef;">Aa <em>Bb</em></div>
-      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; margin-top: 16px; color: #d9a441;">INSTRUMENT SERIF &middot; TÍTULOS</div>
-      <p style="margin: 8px 0 0; font-size: 14.5px; line-height: 1.65; color: rgba(251,247,239,.78);">Alto contraste, terminações finas e um itálico com muito charme para destacar uma palavra aqui e ali.</p>
-      <div style="height: 1px; background: rgba(217,164,65,.4); margin: 26px 0;"></div>
-      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #d9a441;">KARLA &middot; TEXTO</div>
-      <p style="margin: 10px 0 0; font-size: 16px; line-height: 1.7; color: #fbf7ef;">Impressão, têxtil, brindes e comunicação visual. Há mais de vinte anos a pôr marcas portuguesas em papel, em tecido e na rua.</p>
-      <div style="display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap;">
-        <span class="btn" style="background: #d9a441; color: #221a14; height: 46px; font-size: 14px;">Pedir orçamento</span>
-        <span class="btn" style="border: 1px solid rgba(251,247,239,.45); color: #fbf7ef; height: 46px; font-size: 14px;">Ver catálogo</span>
+    <div style="background: #221a14; border-radius: 22px; padding: 36px;">
+      <span class="cap" style="color: #ffd200;">A marca em uso</span>
+      <h3 style="font-size: 30px; margin-top: 12px; color: #fbf7ef;">Sobre escuro, o preto passa a papel</h3>
+      <p style="margin: 12px 0 26px; font-size: 14.5px; line-height: 1.7; color: rgba(251,247,239,.72);">Em fundo escuro a quarta barra troca para creme, para o quadrado não se dissolver. O C recortado deixa passar o fundo em qualquer caso.</p>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 14px; padding: 26px 0; background: rgba(251,247,239,.06); border-radius: 16px;">
+        <svg viewBox="0 0 64 64" width="46" height="46" aria-hidden="true">
+          <defs>
+            <clipPath id="l4t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
+            <mask id="l4m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
+          </defs>
+          <g clip-path="url(#l4t)" mask="url(#l4m)">
+            <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
+            <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#fbf7ef"/>
+          </g>
+        </svg>
+        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: #fbf7ef;">Correia<span style="color:#ffd200;">Cor</span></span>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 14px; padding: 22px 0; background: rgba(251,247,239,.06); border-radius: 16px;">
+        <svg viewBox="0 0 64 64" width="26" height="26" aria-hidden="true">
+          <defs>
+            <clipPath id="l5t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
+            <mask id="l5m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
+          </defs>
+          <g clip-path="url(#l5t)" mask="url(#l5m)">
+            <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
+            <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#fbf7ef"/>
+          </g>
+        </svg>
+        <svg viewBox="0 0 64 64" width="18" height="18" aria-hidden="true">
+          <defs>
+            <clipPath id="l6t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
+            <mask id="l6m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
+          </defs>
+          <g clip-path="url(#l6t)" mask="url(#l6m)">
+            <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
+            <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#fbf7ef"/>
+          </g>
+        </svg>
+        <span style="font-size: 13px; color: rgba(251,247,239,.6);">a 26 px e a 18 px, ainda lê</span>
       </div>
     </div>
   </div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":1440,"height":1620}}'>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1680}}'>
 class Component extends DCLogic {}
 </script>
 </body>

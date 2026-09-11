@@ -75,11 +75,18 @@
 </div>
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 18px 56px; background: #fbf7ef; border-bottom: 1px solid #e3d8c6;">
   <div style="display: flex; align-items: center; gap: 12px;">
-    <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
-      <circle cx="60" cy="60" r="55" fill="none" stroke="#1d3f6e" stroke-width="3.2"/>
-      <circle cx="60" cy="60" r="40" fill="#1d3f6e"/>
-      <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="54" fill="#fbf7ef">C</text>
-    </svg>
+    <svg viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
+        <defs>
+          <clipPath id="cc1t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
+          <mask id="cc1m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
+        </defs>
+        <g clip-path="url(#cc1t)" mask="url(#cc1m)">
+          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/>
+          <rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
+          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/>
+          <rect x="48" y="0" width="16" height="64" fill="#221a14"/>
+        </g>
+      </svg>
     <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em;">Correia<span style="color:#c4573a;">Cor</span></span>
   </div>
   <div style="display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 500; color: #5a4a3e;">

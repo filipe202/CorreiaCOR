@@ -1,19 +1,106 @@
 {
   "pages": [
-    { "id": "page-1", "name": "Site" },
-    { "id": "page-2", "name": "Logo e identidade" }
+    {
+      "id": "page-1",
+      "name": "Site"
+    },
+    {
+      "id": "page-2",
+      "name": "Logo e identidade"
+    }
   ],
   "artboards": [
-    { "file": "Main.dc.html", "page": "page-1", "title": "Homepage", "x": 0, "y": 0, "w": 1440, "h": 4600 },
-    { "file": "Sobre.dc.html", "page": "page-1", "title": "Sobre nós", "x": 1560, "y": 0, "w": 1440, "h": 4150 },
-    { "file": "Servicos.dc.html", "page": "page-1", "title": "Serviços", "x": 3120, "y": 0, "w": 1440, "h": 4400 },
-    { "file": "Marketplace.dc.html", "page": "page-1", "title": "Marketplace", "x": 4680, "y": 0, "w": 1440, "h": 2320 },
-    { "file": "Produto.dc.html", "page": "page-1", "title": "Produto + configurador", "x": 6240, "y": 0, "w": 1440, "h": 1700, "is_interactive": true },
-    { "file": "Pedido.dc.html", "page": "page-1", "title": "Pedido de orçamento", "x": 7800, "y": 0, "w": 1440, "h": 1720 },
-    { "file": "Portfolio.dc.html", "page": "page-1", "title": "Portfolio", "x": 9360, "y": 0, "w": 1440, "h": 2700 },
-    { "file": "Contactos.dc.html", "page": "page-1", "title": "Contactos", "x": 10920, "y": 0, "w": 1440, "h": 1720 },
-    { "file": "Mobile.dc.html", "page": "page-1", "title": "Telemóvel", "x": 12480, "y": 0, "w": 390, "h": 2300 },
-    { "file": "Logotipos.dc.html", "page": "page-2", "title": "Três ideias de logo", "x": 0, "y": 0, "w": 1440, "h": 1620 }
+    {
+      "file": "Main.dc.html",
+      "page": "page-1",
+      "title": "Homepage",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 4600
+    },
+    {
+      "file": "Sobre.dc.html",
+      "page": "page-1",
+      "title": "Sobre nós",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 4150
+    },
+    {
+      "file": "Servicos.dc.html",
+      "page": "page-1",
+      "title": "Serviços",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 4400
+    },
+    {
+      "file": "Marketplace.dc.html",
+      "page": "page-1",
+      "title": "Marketplace",
+      "x": 4680,
+      "y": 0,
+      "w": 1440,
+      "h": 2320
+    },
+    {
+      "file": "Produto.dc.html",
+      "page": "page-1",
+      "title": "Produto + configurador",
+      "x": 6240,
+      "y": 0,
+      "w": 1440,
+      "h": 1700,
+      "is_interactive": true
+    },
+    {
+      "file": "Pedido.dc.html",
+      "page": "page-1",
+      "title": "Pedido de orçamento",
+      "x": 7800,
+      "y": 0,
+      "w": 1440,
+      "h": 1720
+    },
+    {
+      "file": "Portfolio.dc.html",
+      "page": "page-1",
+      "title": "Portfolio",
+      "x": 9360,
+      "y": 0,
+      "w": 1440,
+      "h": 2700
+    },
+    {
+      "file": "Contactos.dc.html",
+      "page": "page-1",
+      "title": "Contactos",
+      "x": 10920,
+      "y": 0,
+      "w": 1440,
+      "h": 1720
+    },
+    {
+      "file": "Mobile.dc.html",
+      "page": "page-1",
+      "title": "Telemóvel",
+      "x": 12480,
+      "y": 0,
+      "w": 390,
+      "h": 2300
+    },
+    {
+      "file": "Logotipos.dc.html",
+      "page": "page-2",
+      "title": "Três opções em quadricromia",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1680
+    }
   ],
   "annotations": [
     {
@@ -22,7 +109,7 @@
       "x": 0,
       "y": -250,
       "w": 700,
-      "text": "Terceira tentativa: charme em vez de volume.\nSerifa de alto contraste com itálicos, tons de tinta antiga (azul, terracota, verde de garrafa, ocre), arcos, filetes finos e pormenores de acabamento. O que se mexe fá-lo devagar.\nAs três ideias de logo estão na página «Logo e identidade», no menu de páginas em cima."
+      "text": "A marca voltou à quadricromia; o resto do site mantém-se como estava.\nSerifa de alto contraste com itálicos, papel creme, tintas antigas (azul, terracota, verde de garrafa, ocre), arcos e filetes finos. A cor viva fica no símbolo, não em cada página.\nAs opções de logo estão na página «Logo e identidade», no menu de páginas em cima."
     },
     {
       "id": "nota-sobre",
@@ -54,8 +141,11 @@
       "x": 0,
       "y": -220,
       "w": 700,
-      "text": "Três ideias com boas maneiras, longe da roseta de cores e das barras CMYK.\nA primeira é a que eu escolhia: o colofão, o selo com que os impressores assinavam os livros há séculos. Ninguém no sector o usa hoje.\nCada uma tem o contra escrito por baixo."
+      "text": "Quadricromia de volta, como pediste.\nA opção A é a que está aplicada no site — as quatro barras com o C recortado.\nA opção B é o anel de registo nas quatro tintas: é a que casa melhor com o resto das páginas, se quiseres algo mais discreto.\nCada uma tem o contra escrito por baixo."
     }
   ],
-  "launch": { "view": "canvas", "page": "page-1" }
+  "launch": {
+    "view": "canvas",
+    "page": "page-1"
+  }
 }
