@@ -1,48 +1,40 @@
 /**
- * Dados da empresa usados em todo o site.
+ * Dados da empresa, retirados de correiacor.pt.
  *
- * ⚠️ Os contactos abaixo estão por confirmar: o site antigo (correiacor.pt)
- * tinha ainda os valores de exemplo do template ("contato@exemplo.pt",
- * "+351 123 456 789"). Substituir pelos reais antes de publicar.
+ * A página de contacto vive em /contacto/, e as de empresa e serviços em
+ * /a-banda/ e /discografia/ — sobras dos nomes do template original.
  */
 export const company = {
   name: "CorreiaCOR",
   legalName: "CorreiaCOR — Comunicação Visual",
-  tagline: "Damos cor às suas ideias",
+  tagline: "A solução completa em comunicação visual",
   shortPitch:
-    "Impressão digital e offset, têxtil personalizado, brindes e comunicação visual. Da ideia ao produto acabado, feito em Portugal.",
+    "Impressão digital e offset, têxtil, brindes, publicidade e marketing. Especializados em grande e pequeno formatos.",
   ceo: "Amilcar Correia",
-  founded: 2004,
+  /** Anos de experiência de Amilcar Correia no setor gráfico. */
+  ceoYearsInTrade: 30,
+  /** Anos à frente da CorreiaCOR. */
+  yearsLeading: 20,
   url: "https://www.correiacor.pt",
 
-  // TODO(cliente): confirmar contactos reais
-  email: "geral@correiacor.pt",
-  quotesEmail: "orcamentos@correiacor.pt",
-  phone: "+351 000 000 000",
-  phoneHref: "+351000000000",
-  whatsapp: "+351000000000",
+  email: "correiacor@correiacor.pt",
+  phone: "+351 966 822 656",
+  phoneHref: "+351966822656",
+  phoneNote: "Chamada para rede móvel nacional",
   address: {
-    street: "Rua a confirmar, n.º 00",
-    postalCode: "0000-000",
-    city: "Localidade",
+    street: "Rua Sousa Loureiro, n.º 9 — loja 7",
+    postalCode: "1500-586",
+    city: "Lisboa",
     country: "Portugal",
   },
-  vat: "PT000000000",
   hours: [
-    { days: "Segunda a sexta", time: "09:00 – 18:00" },
-    { days: "Sábado", time: "Sob marcação" },
-    { days: "Domingo e feriados", time: "Encerrado" },
+    { days: "Segunda a sexta", time: "9h30 – 18h30" },
+    { days: "Sábado e domingo", time: "Encerrado" },
   ],
-  social: {
-    facebook: "https://www.facebook.com/",
-    instagram: "https://www.instagram.com/",
-    linkedin: "https://www.linkedin.com/",
-  },
 } as const;
 
 export const stats = [
-  { value: "20+", label: "anos a imprimir" },
-  { value: "3 500+", label: "projetos entregues" },
-  { value: "48h", label: "resposta a orçamentos" },
-  { value: "100%", label: "produção nacional" },
+  { value: "30+", label: "anos no setor gráfico" },
+  { value: "20+", label: "anos de CorreiaCOR" },
+  { value: "8", label: "famílias de produtos" },
 ];

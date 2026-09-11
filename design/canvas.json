@@ -1,151 +1,69 @@
 {
   "pages": [
-    {
-      "id": "page-1",
-      "name": "Site"
-    },
-    {
-      "id": "page-2",
-      "name": "Logo e identidade"
-    }
+    { "id": "page-1", "name": "Site" },
+    { "id": "page-2", "name": "Logo e identidade" }
   ],
   "artboards": [
-    {
-      "file": "Main.dc.html",
-      "page": "page-1",
-      "title": "Homepage",
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 4600
-    },
-    {
-      "file": "Sobre.dc.html",
-      "page": "page-1",
-      "title": "Sobre nós",
-      "x": 1560,
-      "y": 0,
-      "w": 1440,
-      "h": 4150
-    },
-    {
-      "file": "Servicos.dc.html",
-      "page": "page-1",
-      "title": "Serviços",
-      "x": 3120,
-      "y": 0,
-      "w": 1440,
-      "h": 4400
-    },
-    {
-      "file": "Marketplace.dc.html",
-      "page": "page-1",
-      "title": "Marketplace",
-      "x": 4680,
-      "y": 0,
-      "w": 1440,
-      "h": 2320
-    },
-    {
-      "file": "Produto.dc.html",
-      "page": "page-1",
-      "title": "Produto + configurador",
-      "x": 6240,
-      "y": 0,
-      "w": 1440,
-      "h": 1700,
-      "is_interactive": true
-    },
-    {
-      "file": "Pedido.dc.html",
-      "page": "page-1",
-      "title": "Pedido de orçamento",
-      "x": 7800,
-      "y": 0,
-      "w": 1440,
-      "h": 1720
-    },
-    {
-      "file": "Portfolio.dc.html",
-      "page": "page-1",
-      "title": "Portfolio",
-      "x": 9360,
-      "y": 0,
-      "w": 1440,
-      "h": 2700
-    },
-    {
-      "file": "Contactos.dc.html",
-      "page": "page-1",
-      "title": "Contactos",
-      "x": 10920,
-      "y": 0,
-      "w": 1440,
-      "h": 1720
-    },
-    {
-      "file": "Mobile.dc.html",
-      "page": "page-1",
-      "title": "Telemóvel",
-      "x": 12480,
-      "y": 0,
-      "w": 390,
-      "h": 2300
-    },
-    {
-      "file": "Logotipos.dc.html",
-      "page": "page-2",
-      "title": "Três opções em quadricromia",
-      "x": 0,
-      "y": 0,
-      "w": 1440,
-      "h": 1680
-    }
+    { "file": "Main.dc.html", "page": "page-1", "title": "Início", "x": 0, "y": 0, "w": 1440, "h": 4500 },
+    { "file": "Sobre.dc.html", "page": "page-1", "title": "Quem somos", "x": 1560, "y": 0, "w": 1440, "h": 3350 },
+    { "file": "Servicos.dc.html", "page": "page-1", "title": "Serviços", "x": 3120, "y": 0, "w": 1440, "h": 4700 },
+    { "file": "Marketplace.dc.html", "page": "page-1", "title": "Brindes", "x": 4680, "y": 0, "w": 1440, "h": 2400 },
+    { "file": "Produto.dc.html", "page": "page-1", "title": "Produto + configurador", "x": 6240, "y": 0, "w": 1440, "h": 2100, "is_interactive": true },
+    { "file": "Pedido.dc.html", "page": "page-1", "title": "Pedido de orçamento", "x": 7800, "y": 0, "w": 1440, "h": 2000 },
+    { "file": "Portfolio.dc.html", "page": "page-1", "title": "Portfolio", "x": 9360, "y": 0, "w": 1440, "h": 2450 },
+    { "file": "Contactos.dc.html", "page": "page-1", "title": "Contacto", "x": 10920, "y": 0, "w": 1440, "h": 1880 },
+    { "file": "Mobile.dc.html", "page": "page-1", "title": "Telemóvel", "x": 12480, "y": 0, "w": 390, "h": 2500 },
+    { "file": "Logotipos.dc.html", "page": "page-2", "title": "A marca", "x": 0, "y": 0, "w": 1440, "h": 1860 }
   ],
   "annotations": [
     {
-      "id": "nota-direcao",
-      "page": "page-1",
-      "x": 0,
-      "y": -250,
-      "w": 700,
-      "text": "A marca voltou à quadricromia; o resto do site mantém-se como estava.\nSerifa de alto contraste com itálicos, papel creme, tintas antigas (azul, terracota, verde de garrafa, ocre), arcos e filetes finos. A cor viva fica no símbolo, não em cada página.\nAs opções de logo estão na página «Logo e identidade», no menu de páginas em cima."
-    },
-    {
-      "id": "nota-sobre",
-      "page": "page-1",
-      "x": 1560,
-      "y": -250,
-      "w": 640,
-      "text": "A página Sobre: história, cronologia, princípios, quem atende e as máquinas.\nO texto da história está escrito como exemplo do tom. Os factos verdadeiros valem mais — pergunta ao teu pai o ano, a primeira máquina e o primeiro cliente."
-    },
-    {
-      "id": "nota-config",
-      "page": "page-1",
-      "x": 6240,
-      "y": -250,
-      "w": 640,
-      "text": "Funciona a sério: clica nas cores, técnicas, zonas e quantidades.\nRepara que o fundo muda com a peça — uma t-shirt branca ganha fundo azul, uma ocre ganha fundo escuro, para nenhuma desaparecer."
-    },
-    {
       "id": "nota-dados",
       "page": "page-1",
-      "x": 9360,
-      "y": -250,
-      "w": 640,
-      "text": "Tudo entre [parênteses retos] é informação real que ainda me falta: contactos, morada, nomes da equipa, datas.\nOs preços, os casos de portfolio e o testemunho na homepage são inventados para o mock funcionar."
+      "x": 0,
+      "y": -280,
+      "w": 720,
+      "text": "Textos e contactos agora vêm todos de correiacor.pt — nada é inventado.\nAs páginas «Quem Somos» e «Os nossos serviços» estavam escondidas em /a-banda/ e /discografia/, sobras do template antigo. É por isso que não as tinha encontrado à primeira.\nMorada, telefone, email e horário são os reais da loja em Lisboa."
     },
     {
-      "id": "nota-logos",
+      "id": "nota-quemsomos",
+      "page": "page-1",
+      "x": 1560,
+      "y": -280,
+      "w": 640,
+      "text": "Tudo aqui é texto do site atual: os 30 anos de experiência do Amilcar, os 20 à frente da CorreiaCOR, e os parágrafos sobre a trajetória.\nDeitei fora a cronologia, a equipa e a lista de máquinas que eu tinha inventado."
+    },
+    {
+      "id": "nota-servicos",
+      "page": "page-1",
+      "x": 3120,
+      "y": -280,
+      "w": 640,
+      "text": "Os oito serviços são exatamente os que estão listados no site, com as descrições originais: cartazes, mupis e outdoors, lonas e telas, expositores, brochuras e catálogos, estacionário, etiquetas e rótulos, brindes e têxtil."
+    },
+    {
+      "id": "nota-brindes",
+      "page": "page-1",
+      "x": 4680,
+      "y": -280,
+      "w": 640,
+      "text": "O marketplace é a parte nova, que ainda não existe em lado nenhum.\nOs produtos e preços estão marcados a amarelo como exemplos. Para o montar a sério preciso da lista de referências e da tabela de preços do fornecedor."
+    },
+    {
+      "id": "nota-portfolio",
+      "page": "page-1",
+      "x": 9360,
+      "y": -280,
+      "w": 640,
+      "text": "O portfolio está montado mas vazio, de propósito — o site atual não tem nenhum, e não vou inventar clientes.\nA página explica o que preciso por trabalho: uma ou duas fotografias, o nome do cliente com autorização, o ano e duas frases."
+    },
+    {
+      "id": "nota-marca",
       "page": "page-2",
       "x": 0,
-      "y": -220,
+      "y": -230,
       "w": 700,
-      "text": "Quadricromia de volta, como pediste.\nA opção A é a que está aplicada no site — as quatro barras com o C recortado.\nA opção B é o anel de registo nas quatro tintas: é a que casa melhor com o resto das páginas, se quiseres algo mais discreto.\nCada uma tem o contra escrito por baixo."
+      "text": "A construção da opção B com as doze cores do logótipo atual.\nAs cores são a minha leitura da imagem que me mandaste — se tiveres o ficheiro vetorial (AI ou EPS), tiro os valores exatos e substituo."
     }
   ],
-  "launch": {
-    "view": "canvas",
-    "page": "page-1"
-  }
+  "launch": { "view": "canvas", "page": "page-1" }
 }

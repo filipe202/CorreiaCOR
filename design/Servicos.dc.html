@@ -10,149 +10,104 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Karla, "Helvetica Neue", Arial, sans-serif;
-      color: #5a4a3e;
-      background-color: #fbf7ef;
-    }
-    h1, h2, h3, h4 {
-      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      margin: 0;
-      color: #221a14;
-      letter-spacing: -0.015em;
-      line-height: 1.02;
-      text-wrap: balance;
-    }
+    body { margin: 0; font-family: Karla, "Helvetica Neue", Arial, sans-serif; color: #5a4a3e; background-color: #fbf7ef; }
+    h1, h2, h3, h4 { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; color: #221a14; letter-spacing: -0.015em; line-height: 1.02; text-wrap: balance; }
     p { text-wrap: pretty; }
     em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
     a { color: #c4573a; text-decoration: none; }
     a:hover { color: #9d422b; }
-    .cap {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: #8b7b6c;
-    }
-    /* Grão de papel: dá profundidade sem pesar nada. */
-    .grain::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.32;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-    }
+    .cap { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: #8b7b6c; }
+    .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); }
     .arch { border-radius: 280px 280px 14px 14px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      height: 54px;
-      padding: 0 28px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; font-size: 15px; font-weight: 600; }
+    .wm { font-family: "Instrument Serif", Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em; }
     .opt { cursor: pointer; user-select: none; }
+    /* Aviso amarelo: marca o que ainda falta de informação real do cliente. */
+    .todo { background: #fdf3d8; border: 1px dashed #d9a441; border-radius: 14px; padding: 16px 20px; font-size: 14px; line-height: 1.65; color: #6b5526; }
     @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .floaty { animation: floaty 9s ease-in-out infinite; }
     .floaty-slow { animation: floaty 12s ease-in-out infinite; }
   </style>
 </helmet>
 <div style="background: #fbf7ef;">
-<div style="background: #35513f; color: #f3ebdd; display: flex; align-items: center; justify-content: center; gap: 28px; height: 40px; font-size: 12.5px; letter-spacing: 0.04em;">
-  <span>Orçamento em 48 horas úteis</span>
+<div style="background: #35513f; color: #f3ebdd; display: flex; align-items: center; justify-content: center; gap: 26px; height: 40px; font-size: 12.5px;">
+  <span>Rua Sousa Loureiro, n.º 9 &mdash; loja 7, Lisboa</span>
   <span style="color: rgba(243,235,221,.4);">&bull;</span>
-  <span>Prova digital sempre gratuita</span>
+  <span>+351 966 822 656</span>
   <span style="color: rgba(243,235,221,.4);">&bull;</span>
-  <span>Entregas em todo o país</span>
+  <span>2.ª a 6.ª, das 9h30 às 18h30</span>
 </div>
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 18px 56px; background: #fbf7ef; border-bottom: 1px solid #e3d8c6;">
   <div style="display: flex; align-items: center; gap: 12px;">
-    <svg viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
-        <defs>
-          <clipPath id="cc11t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-          <mask id="cc11m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-        </defs>
-        <g clip-path="url(#cc11t)" mask="url(#cc11m)">
-          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/>
-          <rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/>
-          <rect x="48" y="0" width="16" height="64" fill="#221a14"/>
-        </g>
-      </svg>
-    <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em;">Correia<span style="color:#c4573a;">Cor</span></span>
+    <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg>
+    <span class="wm">Correia<span style="letter-spacing:0.01em;">COR</span></span>
   </div>
   <div style="display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 500; color: #5a4a3e;">
-    <span >Brindes</span>
-    <span style="color: #221a14; border-bottom: 1.5px solid #c4573a; padding-bottom: 3px;">Serviços</span><span>Portfolio</span><span>Sobre nós</span><span>Contactos</span>
+    <span>Início</span><span>Quem somos</span><span style="color: #221a14; border-bottom: 1.5px solid #c4573a; padding-bottom: 3px;">Serviços</span><span>Brindes</span><span>Portfolio</span><span>Contacto</span>
   </div>
   <div style="display: flex; align-items: center; gap: 12px;">
     <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 500; color: #5a4a3e;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5a4a3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
       Pedido <span style="background:#c4573a; color:#fffdf9; border-radius:999px; min-width:19px; height:19px; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:600;">3</span>
     </span>
-    <span class="btn" style="background: #221a14; color: #fbf7ef; height: 48px; font-size: 14.5px;">Pedir orçamento</span>
+    <span class="btn" style="background: #221a14; color: #fbf7ef; height: 48px; font-size: 14.5px;">Peça agora</span>
   </div>
 </div>
 
   <div class="grain" style="position: relative; padding: 76px 56px 56px; text-align: center;">
-    <span class="cap" style="color: #c4573a;">Serviços</span>
-    <h1 style="font-size: 92px; margin-top: 20px;">Tudo <em style="color:#c4573a;">dentro de portas</em></h1>
-    <p style="margin: 26px auto 0; font-size: 19px; line-height: 1.75; max-width: 620px;">Sete serviços, uma oficina. Quando o mesmo sítio faz o ficheiro, a impressão e o acabamento, ninguém pode apontar o dedo ao do lado quando algo corre mal.</p>
+    <span class="cap" style="color: #c4573a;">Os nossos serviços</span>
+    <h1 style="font-size: 88px; margin-top: 20px;">Uma ampla gama de<br>produtos de <em style="color:#c4573a;">alta qualidade</em></h1>
+    <p style="margin: 26px auto 0; font-size: 18.5px; line-height: 1.75; max-width: 720px;">Na CorreiaCOR temos orgulho em oferecer uma ampla gama de produtos, utilizando tecnologia avançada e alinhados às necessidades específicas dos nossos clientes. O nosso compromisso é fornecer soluções que combinem eficiência, durabilidade e inovação.</p>
   </div>
 
   <div style="padding: 0 56px 40px;">
-    <sc-for list="{{ services }}" as="s" hint-placeholder-count="7">
+    <sc-for list="{{ services }}" as="s" hint-placeholder-count="8">
       <div style="{{ s.row }}">
         <div style="{{ s.visualWrap }}">
           <div class="arch" style="{{ s.visual }}">
-            <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg width="66" height="66" viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="{{ s.icon }}"/>
             </svg>
           </div>
         </div>
         <div style="{{ s.textWrap }}">
           <div style="display: flex; align-items: baseline; gap: 16px;">
-            <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 34px; color: {{ s.tone }};">{{ s.n }}</span>
-            <h2 style="font-size: 50px;">{{ s.name }}</h2>
+            <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: {{ s.tone }};">{{ s.n }}</span>
+            <h2 style="font-size: 46px;">{{ s.name }}</h2>
           </div>
-          <div class="cap" style="margin-top: 12px; color: {{ s.tone }};">{{ s.tag }}</div>
-          <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.8; max-width: 560px;">{{ s.desc }}</p>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px 26px; margin-top: 26px; max-width: 620px;">
-            <sc-for list="{{ s.bullets }}" as="b" hint-placeholder-count="4">
-              <div style="display: flex; align-items: flex-start; gap: 11px; font-size: 15.5px; line-height: 1.6;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#d9a441" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 16px; margin-top:4px;"><path d="M20 6 9 17l-5-5"/></svg>
-                <span>{{ b.text }}</span>
-              </div>
-            </sc-for>
-          </div>
+          <p style="margin: 18px 0 0; font-size: 17.5px; line-height: 1.8; max-width: 620px;">{{ s.desc }}</p>
         </div>
       </div>
     </sc-for>
   </div>
 
-  <div style="background: #f3ebdd; padding: 84px 56px;">
-    <div style="text-align: center; max-width: 620px; margin: 0 auto 52px;">
-      <span class="cap" style="color: #c4573a;">Como trabalhamos</span>
-      <h2 style="font-size: 56px; margin-top: 16px;">Quatro passos, <em>sem surpresas</em></h2>
-    </div>
-    <div style="position: relative;">
-      <div style="position: absolute; left: 10%; right: 10%; top: 34px; height: 1px; background: #ddd0b9;"></div>
-      <div style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 30px;">
-        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
-          <div style="text-align: center;">
-            <div style="{{ st.dot }}">{{ st.n }}</div>
-            <h3 style="font-size: 26px; margin-top: 22px;">{{ st.title }}</h3>
-            <p style="margin: 12px auto 0; font-size: 15px; line-height: 1.7; max-width: 260px;">{{ st.text }}</p>
-          </div>
-        </sc-for>
+  <div style="background: #f3ebdd; padding: 80px 56px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; max-width: 1200px; margin: 0 auto;">
+      <div>
+        <span class="cap" style="color: #c4573a;">Para além da impressão</span>
+        <h2 style="font-size: 50px; margin-top: 16px;">Produção de materiais gráficos <em>e promocionais</em></h2>
+      </div>
+      <div style="font-size: 17px; line-height: 1.8;">
+        <p style="margin: 0;">A CorreiaCOR oferece serviços especializados de produção de materiais gráficos e promocionais, garantindo a qualidade e o prazo de entrega. A nossa equipa está pronta para auxiliar na escolha do produto ideal para cada necessidade, oferecendo consultoria especializada e soluções sob medida.</p>
+        <p style="margin: 18px 0 0;">Estamos à disposição para esclarecer dúvidas, fornecer informações detalhadas e ajudar a transformar as suas ideias em realidade.</p>
       </div>
     </div>
   </div>
@@ -160,49 +115,100 @@
   <div style="padding: 84px 56px;">
     <div class="grain" style="position: relative; background: #1d3f6e; border-radius: 28px; padding: 64px; text-align: center; overflow: hidden;">
       <div style="position: relative;">
-        <h2 style="font-size: 54px; color: #fffdf9;">Não sabe bem <em style="color:#f7d9a0;">o que precisa?</em></h2>
-        <p style="margin: 20px auto 0; font-size: 18px; line-height: 1.75; max-width: 560px; color: rgba(255,253,249,.9);">Também servimos para isso. Diga-nos o problema e o orçamento, e propomos o caminho &mdash; mesmo que seja mais barato do que estava à espera.</p>
+        <h2 style="font-size: 54px; color: #fffdf9;">Não sabe qual é <em style="color:#f7d9a0;">o produto ideal?</em></h2>
+        <p style="margin: 20px auto 0; font-size: 18px; line-height: 1.75; max-width: 580px; color: rgba(255,253,249,.9);">A nossa equipa está pronta para auxiliar na escolha, com consultoria especializada e soluções sob medida.</p>
         <div style="display: flex; gap: 12px; justify-content: center; margin-top: 32px; flex-wrap: wrap;">
-          <span class="btn" style="background: #d9a441; color: #221a14;">Falar connosco</span>
-          <span class="btn" style="border: 1px solid rgba(255,253,249,.6); color: #fffdf9;">Ver o portfolio</span>
+          <span class="btn" style="background: #d9a441; color: #221a14;">Peça agora</span>
+          <span class="btn" style="border: 1px solid rgba(255,253,249,.6); color: #fffdf9;">+351 966 822 656</span>
         </div>
       </div>
     </div>
   </div>
+<div style="background: #221a14; color: #b2a494; padding: 62px 56px 30px;">
+  <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.1fr; gap: 46px; padding-bottom: 40px; border-bottom: 1px solid #3a2f26;">
+    <div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#fbf7ef"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#221a14">C</text>
+        </svg>
+        <span class="wm" style="color: #fbf7ef;">Correia<span style="letter-spacing:0.01em;">COR</span></span>
+      </div>
+      <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.75; max-width: 330px;">A solução completa em comunicação visual. Impressão digital e offset, têxtil, brindes, publicidade e marketing.</p>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">Serviços</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;"><span>Cartazes</span><span>Mupis e outdoors</span><span>Lonas e telas</span><span>Expositores</span><span>Brochuras e catálogos</span><span>Etiquetas e rótulos</span></div>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">A casa</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;"><span>Quem somos</span><span>Brindes</span><span>Portfolio</span><span>Contacto</span><span>Livro de reclamações</span></div>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">Onde estamos</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;">
+        <span>Rua Sousa Loureiro, n.º 9 &mdash; loja 7<br>1500-586 Lisboa</span>
+        <span>+351 966 822 656<br><span style="font-size: 12.5px; color: #8a7c6d;">chamada para rede móvel nacional</span></span>
+        <span>correiacor@correiacor.pt</span>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; font-size: 13px;">
+    <span>&copy; 2026 CorreiaCOR</span>
+    <div style="display: flex; gap: 6px; align-items: center;">
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #ed1c24;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #f7941e;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #fff200;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #00a651;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #00aeef;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #2e3192;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #ec008c;"></span>
+    </div>
+  </div>
+</div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":1440,"height":4400}}'>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":4500}}'>
 class Component extends DCLogic {
   renderVals() {
+    // Lista e descrições tal como estão em correiacor.pt/discografia/ ("Os nossos serviços").
     const S = [
-      ['I','Impressão digital','Grande e pequeno formato','Do cartão de visita ao painel de seis metros. A impressão digital permite tiragens curtas sem custo de arranque e prazos que a offset não consegue acompanhar.',['Até 3,20 m de largura','Lonas, vinis, rígidos e têxtil','Tiragens a partir de 1 exemplar','Dados variáveis e numeração'],'#1d3f6e','M6 9V3h12v6M3 11a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6h-4v4H7v-4H3Z'],
-      ['II','Impressão offset','Volume com custo unitário baixo','Quando a quantidade justifica, a offset dá a melhor relação entre qualidade de cor e preço por unidade. Catálogos, revistas, embalagem e campanhas de grande tiragem.',['Quadricromia e Pantone directos','Verniz UV, laminação e relevo','Provas de cor calibradas','Gestão de papel e logística'],'#c4573a','M8 4a5 5 0 1 0 0 10A5 5 0 0 0 8 4Zm8 6a5 5 0 1 0 0 10 5 5 0 0 0 0-10Z'],
-      ['III','Têxtil personalizado','Fardamento, equipas e merchandising','Vestimos empresas, clubes e eventos. Escolhemos consigo a peça, a técnica e o acabamento certos para o uso que lhe vai dar — e para o orçamento que tem.',['Serigrafia, bordado, DTF e vinil','Tamanhos recolhidos por colaborador','Etiquetas de marca própria','Reposições a partir do mesmo ficheiro'],'#35513f','M9 3 4 6l2 4 2-1v12h8V9l2 1 2-4-5-3a3 3 0 0 1-6 0Z'],
-      ['IV','Brindes personalizados','Mais de mil referências','Escolha no catálogo online, configure cor, quantidade e técnica, e receba o orçamento com prova digital antes de produzirmos seja o que for.',['Catálogo com pedido direto','Prova digital sempre gratuita','Opções eco certificadas','Fabrico à medida quando é preciso'],'#6b3552','M3 8h18v13H3ZM12 8v13M3 13h18M12 8S9 3 7 3a2.5 2.5 0 0 0 0 5M12 8s3-5 5-5a2.5 2.5 0 0 1 0 5'],
-      ['V','Comunicação visual','O seu espaço a comunicar por si','Montras, fachadas, sinalética interior e stands de feira. Projetamos, produzimos e instalamos, com o licenciamento tratado quando é necessário.',['Letras 3D e painéis luminosos','Decoração de montras em vinil','Sinalética interior e de segurança','Stands de feira chave-na-mão'],'#1d3f6e','M4 21V8l8-5 8 5v13M4 12h16M10 21v-5h4v5'],
-      ['VI','Decoração de viaturas','A frota como meio publicitário','Do lettering discreto ao envolvimento total. Vinis de fundição com garantia do fabricante e aplicação certificada, removíveis sem danificar a pintura.',['Wrapping total ou parcial','Garantia de 5 a 7 anos','Simulação sobre o seu modelo','Aplicação em frota ou no local'],'#c4573a','M3 14h18l-2-6H5ZM5 14v4M19 14v4'],
-      ['VII','Design gráfico','Antes de imprimir, desenha-se','Se ainda não tem arte final, fazemos nós. Logótipo, manual de normas, layout de campanha, ou simples adaptação de ficheiros para produção.',['Criação e redesenho de logótipo','Manual de identidade e normas','Vetorização de logótipos antigos','Preparação de ficheiros para produção'],'#35513f','M12 19l7-7 3 3-7 7-3-3ZM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5ZM2 2l7.586 7.586M11 11a2 2 0 1 0 0-.01'],
+      ['I', 'Cartazes', 'Impressão de cartazes de diversos tamanhos e formatos, ideais para divulgação de eventos, promoções e campanhas publicitárias.', '#ed1c24', 'M5 3h14a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1ZM8 8h8M8 12h8M8 16h4'],
+      ['II', 'Mupis e outdoors', 'Soluções visuais de alta resistência, perfeitas para grande alcance em espaços públicos e privados.', '#f26522', 'M3 4h18v11H3ZM9 15v6M15 15v6M7 21h10'],
+      ['III', 'Lonas e telas', 'Impressão em materiais duráveis para publicidade em ambientes internos e externos.', '#f7941e', 'M3 5h18v12H3ZM3 5v14M21 5v14M3 17c4 2 6-2 9 0s5 2 9 0'],
+      ['IV', 'Expositores, PVC e alveolar', 'Estruturas de exibição robustas e versáteis, ideais para feiras, eventos e pontos de venda.', '#fdb913', 'M4 3h16v14H4ZM12 17v4M8 21h8M8 7h8M8 11h5'],
+      ['V', 'Brochuras, catálogos, folhetos e livros', 'Impressão de materiais de alta qualidade, que valorizam a sua comunicação institucional e comercial.', '#00a651', 'M4 4h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4ZM20 4h-7a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h7Z'],
+      ['VI', 'Estacionário de empresa e de eventos', 'Cartões de visita, papel timbrado, crachás e outros materiais personalizados para a sua identidade visual.', '#00aeef', 'M3 6h18v12H3ZM7 10h5M7 14h3M16 10h2M16 14h2'],
+      ['VII', 'Etiquetas e rótulos', 'Soluções para embalagens, produtos e marcas, com acabamento profissional.', '#662d91', 'M3 12 12 3h8v8l-9 9-8-8ZM16 8h.01'],
+      ['VIII', 'Brindes publicitários e têxtil', 'Uma variedade de itens personalizáveis para ações promocionais e fortalecimento da sua marca.', '#ec008c', 'M3 8h18v13H3ZM12 8v13M3 13h18M12 8S9 3 7 3a2.5 2.5 0 0 0 0 5M12 8s3-5 5-5a2.5 2.5 0 0 1 0 5'],
     ];
     return {
       services: S.map((s, i) => {
         const flip = i % 2 === 1;
         return {
-          n: s[0], name: s[1], tag: s[2], desc: s[3], tone: s[5], icon: s[6],
+          n: s[0], name: s[1], desc: s[2], tone: s[3], icon: s[4],
           row: 'display:grid;grid-template-columns:' + (flip ? '1.35fr 0.65fr' : '0.65fr 1.35fr') +
-            ';gap:52px;align-items:center;padding:44px 0;border-bottom:1px solid #e3d8c6;',
+            ';gap:52px;align-items:center;padding:40px 0;border-bottom:1px solid #e3d8c6;',
           visualWrap: flip ? 'order:2;' : 'order:1;',
           textWrap: flip ? 'order:1;' : 'order:2;',
-          visual: 'height:300px;display:flex;align-items:center;justify-content:center;background:' + s[5] + ';',
-          bullets: s[4].map((b) => ({ text: b })),
+          visual: 'height:270px;display:flex;align-items:center;justify-content:center;background:' + s[3] + ';',
         };
       }),
-      steps: [
-        { n: 'I', title: 'Briefing', text: 'Diga-nos o que precisa, nem que seja só uma ideia vaga e uma data no calendário.', dot: 'width:68px;height:68px;margin:0 auto;border-radius:999px;background:#1d3f6e;color:#fbf7ef;display:flex;align-items:center;justify-content:center;font-family:\'Instrument Serif\', Georgia, serif;font-size:26px;box-shadow:0 0 0 8px #f3ebdd;' },
-        { n: 'II', title: 'Orçamento e prova', text: 'Enviamos preço por escalões e uma prova digital com o seu logótipo já aplicado.', dot: 'width:68px;height:68px;margin:0 auto;border-radius:999px;background:#c4573a;color:#fbf7ef;display:flex;align-items:center;justify-content:center;font-family:\'Instrument Serif\', Georgia, serif;font-size:26px;box-shadow:0 0 0 8px #f3ebdd;' },
-        { n: 'III', title: 'Produção', text: 'Só começa depois da sua aprovação escrita. Acompanhamos cada lote na oficina.', dot: 'width:68px;height:68px;margin:0 auto;border-radius:999px;background:#35513f;color:#fbf7ef;display:flex;align-items:center;justify-content:center;font-family:\'Instrument Serif\', Georgia, serif;font-size:26px;box-shadow:0 0 0 8px #f3ebdd;' },
-        { n: 'IV', title: 'Entrega', text: 'Em todo o país, separada por loja, delegação ou colaborador, se precisar.', dot: 'width:68px;height:68px;margin:0 auto;border-radius:999px;background:#d9a441;color:#221a14;display:flex;align-items:center;justify-content:center;font-family:\'Instrument Serif\', Georgia, serif;font-size:26px;box-shadow:0 0 0 8px #f3ebdd;' },
-      ],
     };
   }
 }

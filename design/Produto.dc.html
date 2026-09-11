@@ -10,100 +10,71 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Karla, "Helvetica Neue", Arial, sans-serif;
-      color: #5a4a3e;
-      background-color: #fbf7ef;
-    }
-    h1, h2, h3, h4 {
-      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      margin: 0;
-      color: #221a14;
-      letter-spacing: -0.015em;
-      line-height: 1.02;
-      text-wrap: balance;
-    }
+    body { margin: 0; font-family: Karla, "Helvetica Neue", Arial, sans-serif; color: #5a4a3e; background-color: #fbf7ef; }
+    h1, h2, h3, h4 { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; color: #221a14; letter-spacing: -0.015em; line-height: 1.02; text-wrap: balance; }
     p { text-wrap: pretty; }
     em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
     a { color: #c4573a; text-decoration: none; }
     a:hover { color: #9d422b; }
-    .cap {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: #8b7b6c;
-    }
-    /* Grão de papel: dá profundidade sem pesar nada. */
-    .grain::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.32;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-    }
+    .cap { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: #8b7b6c; }
+    .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); }
     .arch { border-radius: 280px 280px 14px 14px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      height: 54px;
-      padding: 0 28px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; font-size: 15px; font-weight: 600; }
+    .wm { font-family: "Instrument Serif", Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em; }
     .opt { cursor: pointer; user-select: none; }
+    /* Aviso amarelo: marca o que ainda falta de informação real do cliente. */
+    .todo { background: #fdf3d8; border: 1px dashed #d9a441; border-radius: 14px; padding: 16px 20px; font-size: 14px; line-height: 1.65; color: #6b5526; }
     @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .floaty { animation: floaty 9s ease-in-out infinite; }
     .floaty-slow { animation: floaty 12s ease-in-out infinite; }
   </style>
 </helmet>
 <div style="background: #fbf7ef;">
-<div style="background: #35513f; color: #f3ebdd; display: flex; align-items: center; justify-content: center; gap: 28px; height: 40px; font-size: 12.5px; letter-spacing: 0.04em;">
-  <span>Orçamento em 48 horas úteis</span>
+<div style="background: #35513f; color: #f3ebdd; display: flex; align-items: center; justify-content: center; gap: 26px; height: 40px; font-size: 12.5px;">
+  <span>Rua Sousa Loureiro, n.º 9 &mdash; loja 7, Lisboa</span>
   <span style="color: rgba(243,235,221,.4);">&bull;</span>
-  <span>Prova digital sempre gratuita</span>
+  <span>+351 966 822 656</span>
   <span style="color: rgba(243,235,221,.4);">&bull;</span>
-  <span>Entregas em todo o país</span>
+  <span>2.ª a 6.ª, das 9h30 às 18h30</span>
 </div>
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 18px 56px; background: #fbf7ef; border-bottom: 1px solid #e3d8c6;">
   <div style="display: flex; align-items: center; gap: 12px;">
-    <svg viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
-        <defs>
-          <clipPath id="cc10t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-          <mask id="cc10m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-        </defs>
-        <g clip-path="url(#cc10t)" mask="url(#cc10m)">
-          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/>
-          <rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/>
-          <rect x="48" y="0" width="16" height="64" fill="#221a14"/>
-        </g>
-      </svg>
-    <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em;">Correia<span style="color:#c4573a;">Cor</span></span>
+    <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg>
+    <span class="wm">Correia<span style="letter-spacing:0.01em;">COR</span></span>
   </div>
   <div style="display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 500; color: #5a4a3e;">
-    <span style="color: #221a14; border-bottom: 1.5px solid #c4573a; padding-bottom: 3px;">Brindes</span>
-    <span>Serviços</span><span>Portfolio</span><span>Sobre nós</span><span>Contactos</span>
+    <span>Início</span><span>Quem somos</span><span>Serviços</span><span style="color: #221a14; border-bottom: 1.5px solid #c4573a; padding-bottom: 3px;">Brindes</span><span>Portfolio</span><span>Contacto</span>
   </div>
   <div style="display: flex; align-items: center; gap: 12px;">
     <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 500; color: #5a4a3e;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5a4a3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
       Pedido <span style="background:#c4573a; color:#fffdf9; border-radius:999px; min-width:19px; height:19px; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:600;">3</span>
     </span>
-    <span class="btn" style="background: #221a14; color: #fbf7ef; height: 48px; font-size: 14.5px;">Pedir orçamento</span>
+    <span class="btn" style="background: #221a14; color: #fbf7ef; height: 48px; font-size: 14.5px;">Peça agora</span>
   </div>
 </div>
 
   <div style="padding: 24px 56px 0; font-size: 13.5px; color: #8b7b6c;">Brindes <span style="color:#d3c6b0;">/</span> Têxtil <span style="color:#d3c6b0;">/</span> <span style="color:#221a14;">T-shirt algodão 180 g</span></div>
 
+  <div style="padding: 18px 56px 0;"><div class="todo"><strong style="color:#5a4a3e;">Página de demonstração.</strong> O produto, as técnicas e os preços são exemplos, para mostrar como o configurador funciona. Os dados reais vêm do catálogo e da tabela de preços da CorreiaCOR.</div></div>
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 52px; padding: 26px 56px 76px; align-items: start;">
 
     <!-- PREVIEW -->
@@ -117,16 +88,22 @@
           <path d="M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z" fill="{{ sel.hex }}" stroke="{{ sel.line }}" stroke-width="2" stroke-linejoin="round"/>
           <rect x="{{ sel.areaX }}" y="{{ sel.areaY }}" width="{{ sel.areaW }}" height="{{ sel.areaH }}" rx="1.5" fill="none" stroke="{{ sel.line }}" stroke-width="1.1" stroke-dasharray="3.5 3.5"/>
           <g transform="translate({{ sel.logoX }} {{ sel.logoY }}) scale({{ sel.logoS }})">
-            <defs>
-              <clipPath id="pvtile"><rect x="0" y="0" width="60" height="60" rx="14"/></clipPath>
-              <mask id="pvletter"><rect x="0" y="0" width="60" height="60" fill="#fff"/><path d="M41.7 20.3a13.9 13.9 0 1 0 0 19.5" fill="none" stroke="#000" stroke-width="8.9" stroke-linecap="round"/></mask>
-            </defs>
-            <g clip-path="url(#pvtile)" mask="url(#pvletter)">
-              <rect x="0" y="0" width="15" height="60" fill="#00aeef"/>
-              <rect x="15" y="0" width="15" height="60" fill="#ec008c"/>
-              <rect x="30" y="0" width="15" height="60" fill="#ffd200"/>
-              <rect x="45" y="0" width="15" height="60" fill="{{ sel.logoInk }}"/>
+            <g fill="none" stroke-width="5.5" stroke-linecap="butt" transform="rotate(-90 30 30)">
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+              <circle cx="30" cy="30" r="26" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
             </g>
+            <circle cx="30" cy="30" r="17.5" fill="{{ sel.logoInk }}"/>
+            <text x="30" y="31" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="23" fill="{{ sel.hex }}">C</text>
           </g>
         </svg>
         <div style="text-align: center; font-size: 12.5px; color: {{ sel.stageMuted }};">Simulação. A prova digital real segue com o orçamento.</div>
@@ -143,7 +120,7 @@
     <!-- CONFIGURADOR -->
     <div>
       <div style="display: flex; gap: 8px; margin-bottom: 16px;">
-        <span style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: #35513f; color: #fffdf9; border-radius: 999px; padding: 5px 13px;">Mais pedido</span>
+        <span style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; background: #35513f; color: #fffdf9; border-radius: 999px; padding: 5px 13px;">Têxtil</span>
         <span style="font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid #d3c6b0; color: #5a4a3e; border-radius: 999px; padding: 4px 13px;">XS – 3XL</span>
       </div>
       <h1 style="font-size: 62px;">T-shirt em algodão <em style="color:#c4573a;">180 g</em></h1>
@@ -192,7 +169,7 @@
             </span>
           </sc-for>
         </div>
-        <p style="margin: 12px 0 0; font-size: 14px; color: #8b7b6c;">Quantidade mínima de 10 unidades. Precisa de mais de 500? Pedimos um escalão à medida.</p>
+        <p style="margin: 12px 0 0; font-size: 14px; color: #8b7b6c;">Escalões de exemplo. Os reais vêm da tabela do fornecedor da CorreiaCOR.</p>
       </div>
 
       <div style="margin-top: 38px; background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 24px; padding: 32px; box-shadow: 0 20px 44px -34px rgba(34,26,20,.5);">
@@ -208,11 +185,11 @@
         </div>
         <div style="display: flex; flex-direction: column; gap: 11px; padding: 20px 0; font-size: 15px;">
           <div style="display: flex; justify-content: space-between;"><span>Personalização</span><span style="color:#221a14; font-weight:600;">{{ sel.technique }} &middot; {{ sel.area }}</span></div>
-          <div style="display: flex; justify-content: space-between;"><span>Prazo estimado</span><span style="color:#221a14; font-weight:600;">5 a 8 dias úteis</span></div>
-          <div style="display: flex; justify-content: space-between;"><span>Prova digital</span><span style="color:#35513f; font-weight:600;">Gratuita</span></div>
+          <div style="display: flex; justify-content: space-between;"><span>Prazo</span><span style="color:#221a14; font-weight:600;">confirmado no orçamento</span></div>
+          <div style="display: flex; justify-content: space-between;"><span>Aplicação da marca</span><span style="color:#35513f; font-weight:600;">sobre o seu ficheiro</span></div>
         </div>
         <div style="background: #f3ebdd; border-radius: 14px; padding: 15px 18px; font-size: 13.5px; line-height: 1.65;">
-          Valor indicativo, sem IVA e sem portes. O orçamento final confirma-se em 48 horas úteis, depois de vermos o seu ficheiro.
+          Valor de exemplo, sem IVA e sem portes. Quem fecha o preço é a CorreiaCOR, depois de ver o ficheiro e a quantidade.
         </div>
         <div style="display: flex; gap: 12px; margin-top: 22px;">
           <span class="btn" style="flex: 1.5; background: #c4573a; color: #fffdf9; height: 58px; font-size: 15.5px;">Juntar ao pedido</span>
@@ -228,6 +205,62 @@
       </div>
     </div>
   </div>
+<div style="background: #221a14; color: #b2a494; padding: 62px 56px 30px;">
+  <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.1fr; gap: 46px; padding-bottom: 40px; border-bottom: 1px solid #3a2f26;">
+    <div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#fbf7ef"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#221a14">C</text>
+        </svg>
+        <span class="wm" style="color: #fbf7ef;">Correia<span style="letter-spacing:0.01em;">COR</span></span>
+      </div>
+      <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.75; max-width: 330px;">A solução completa em comunicação visual. Impressão digital e offset, têxtil, brindes, publicidade e marketing.</p>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">Serviços</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;"><span>Cartazes</span><span>Mupis e outdoors</span><span>Lonas e telas</span><span>Expositores</span><span>Brochuras e catálogos</span><span>Etiquetas e rótulos</span></div>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">A casa</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;"><span>Quem somos</span><span>Brindes</span><span>Portfolio</span><span>Contacto</span><span>Livro de reclamações</span></div>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">Onde estamos</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;">
+        <span>Rua Sousa Loureiro, n.º 9 &mdash; loja 7<br>1500-586 Lisboa</span>
+        <span>+351 966 822 656<br><span style="font-size: 12.5px; color: #8a7c6d;">chamada para rede móvel nacional</span></span>
+        <span>correiacor@correiacor.pt</span>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; font-size: 13px;">
+    <span>&copy; 2026 CorreiaCOR</span>
+    <div style="display: flex; gap: 6px; align-items: center;">
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #ed1c24;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #f7941e;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #fff200;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #00a651;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #00aeef;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #2e3192;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #ec008c;"></span>
+    </div>
+  </div>
+</div>
 </div>
 </x-dc>
 

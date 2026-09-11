@@ -11,211 +11,289 @@
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; font-family: Karla, "Helvetica Neue", Arial, sans-serif; color: #5a4a3e; background-color: #fbf7ef; }
-    h1, h2, h3 { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; color: #221a14; letter-spacing: -0.015em; line-height: 1.02; text-wrap: balance; }
+    h1, h2, h3, h4 { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; color: #221a14; letter-spacing: -0.015em; line-height: 1.02; text-wrap: balance; }
     p { text-wrap: pretty; }
     em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
     a { color: #c4573a; text-decoration: none; }
+    a:hover { color: #9d422b; }
     .cap { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: #8b7b6c; }
     .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.32;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); }
+    .arch { border-radius: 280px 280px 14px 14px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; font-size: 15px; font-weight: 600; }
+    .wm { font-family: "Instrument Serif", Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em; }
+    .opt { cursor: pointer; user-select: none; }
+    /* Aviso amarelo: marca o que ainda falta de informação real do cliente. */
+    .todo { background: #fdf3d8; border: 1px dashed #d9a441; border-radius: 14px; padding: 16px 20px; font-size: 14px; line-height: 1.65; color: #6b5526; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    .floaty { animation: floaty 9s ease-in-out infinite; }
+    .floaty-slow { animation: floaty 12s ease-in-out infinite; }
   </style>
 </helmet>
-
 <div class="grain" style="position: relative; background: #fbf7ef; padding: 66px 72px 76px;">
 
   <div style="text-align: center; padding-bottom: 34px; border-bottom: 1px solid #e3d8c6;">
     <div class="cap">CorreiaCOR &middot; Identidade</div>
-    <h1 style="font-size: 74px; margin-top: 18px;">A quadricromia, <em style="color:#ec008c;">bem-educada</em></h1>
-    <p style="max-width: 680px; margin: 20px auto 0; font-size: 17px; line-height: 1.7;">Voltamos ao CMYK, como pediu. A diferença em relação à primeira tentativa é o que está à volta: a marca fica em quadricromia viva, mas o site continua em papel creme, serifa e tintas quentes. A cor passa a ser a joia, em vez de ser o barulho todo.</p>
-    <div style="display: flex; justify-content: center; margin-top: 26px;">
-      <svg width="112" height="14" viewBox="0 0 112 14" fill="none" aria-hidden="true">
-        <path d="M2 7h36M74 7h36" stroke="#d9a441" stroke-width="1"/>
-        <path d="M56 1.5 60.5 7 56 12.5 51.5 7Z" fill="#c4573a"/>
-        <circle cx="44" cy="7" r="2" fill="#d9a441"/><circle cx="68" cy="7" r="2" fill="#d9a441"/>
-      </svg>
+    <h1 style="font-size: 72px; margin-top: 18px;">O anel de registo, com as <em style="color:#c4573a;">cores do original</em></h1>
+    <p style="max-width: 700px; margin: 20px auto 0; font-size: 17px; line-height: 1.7;">A construção da opção B &mdash; o anel que os impressores usam para alinhar as chapas, com o C ao centro &mdash; mas pintado com as doze cores do logótipo atual em vez das quatro da quadricromia. A roda de cores que já era vossa passa a ter uma forma que se lê e se reduz.</p>
+  </div>
+
+  <!-- A MARCA -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 44px;">
+    <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 44px; text-align: center; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
+      <span class="cap" style="color: #c4573a;">A marca</span>
+      <div style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+        <svg viewBox="0 0 120 120" width="250" height="250" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 38px; padding-top: 30px; border-top: 1px solid #ede4d3;">
+        <svg viewBox="0 0 120 120" width="54" height="54" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg>
+        <span class="wm" style="font-size: 40px;">Correia<span style="letter-spacing:0.01em;">COR</span></span>
+      </div>
+      <p style="margin: 20px auto 0; font-size: 14.5px; line-height: 1.7; max-width: 400px;">O texto fica a preto, como no logótipo atual. Toda a cor está no anel, o que evita que a marca compita consigo própria.</p>
+    </div>
+
+    <div style="background: #221a14; border-radius: 22px; padding: 44px; text-align: center;">
+      <span class="cap" style="color: #d9a441;">Sobre fundo escuro</span>
+      <div style="display: flex; align-items: center; justify-content: center; margin-top: 30px;">
+        <svg viewBox="0 0 120 120" width="250" height="250" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#fbf7ef"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#221a14">C</text>
+        </svg>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 38px; padding-top: 30px; border-top: 1px solid #3a2f26;">
+        <svg viewBox="0 0 120 120" width="54" height="54" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#fbf7ef"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#221a14">C</text>
+        </svg>
+        <span class="wm" style="font-size: 40px; color: #fbf7ef;">Correia<span style="letter-spacing:0.01em;">COR</span></span>
+      </div>
+      <p style="margin: 20px auto 0; font-size: 14.5px; line-height: 1.7; max-width: 400px; color: rgba(251,247,239,.72);">O disco central troca para cor de papel e o C para preto. O anel mantém-se igual &mdash; é ele que identifica a casa.</p>
     </div>
   </div>
 
-  <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 26px; margin-top: 44px;">
-
-    <!-- 1 · A QUADRICROMIA -->
-    <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 34px; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
-      <div style="display: flex; align-items: center; justify-content: space-between;">
-        <span class="cap" style="color: #ec008c;">Opção A</span>
-        <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #fffdf9; background: #35513f; border-radius: 999px; padding: 5px 12px;">Aplicada no site</span>
+  <!-- REDUCOES -->
+  <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 40px; margin-top: 26px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 30px;">
+      <div>
+        <span class="cap" style="color: #c4573a;">Reduções</span>
+        <h3 style="font-size: 32px; margin-top: 12px;">Doze cores num anel pequeno</h3>
+        <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.7; max-width: 520px;">Abaixo dos 40&nbsp;px o anel engrossa automaticamente, senão as fatias desaparecem. Aos 18&nbsp;px já não se contam as doze cores, mas continua a ler-se como um círculo colorido com um C &mdash; que é o que um favicon precisa de fazer.</p>
       </div>
-      <h2 style="font-size: 38px; margin-top: 14px;">A quadricromia</h2>
-
-      <div style="height: 216px; display: flex; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
-        <svg viewBox="0 0 64 64" width="158" height="158" aria-hidden="true">
-          <defs>
-            <clipPath id="l1t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-            <mask id="l1m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-          </defs>
-          <g clip-path="url(#l1t)" mask="url(#l1m)">
-            <rect x="0" y="0" width="16" height="64" fill="#00aeef"/>
-            <rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-            <rect x="32" y="0" width="16" height="64" fill="#ffd200"/>
-            <rect x="48" y="0" width="16" height="64" fill="#221a14"/>
-          </g>
-        </svg>
-      </div>
-
-      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
-        <svg viewBox="0 0 64 64" width="38" height="38" aria-hidden="true">
-          <defs>
-            <clipPath id="l1bt"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-            <mask id="l1bm"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-          </defs>
-          <g clip-path="url(#l1bt)" mask="url(#l1bm)">
-            <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-            <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#221a14"/>
-          </g>
-        </svg>
-        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">Correia<span style="color:#c4573a;">Cor</span></span>
-      </div>
-
-      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">As quatro tintas pela ordem em que saem da máquina, com o C recortado a deixar passar o papel. É a versão mais clara do conceito e a única das três que também serve de padrão para embalagem, fita e envelope.</p>
-      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> o quadrado com barras é uma construção comum. A distinção vem do recorte da letra, não da forma.</p>
     </div>
-
-    <!-- 2 · O SELO EM QUADRICROMIA -->
-    <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 34px; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
-      <span class="cap" style="color: #ec008c;">Opção B</span>
-      <h2 style="font-size: 38px; margin-top: 14px;">O selo em quadricromia</h2>
-
-      <div style="height: 216px; display: flex; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
-        <svg viewBox="0 0 120 120" width="168" height="168" aria-hidden="true">
-          <g fill="none" stroke-width="10" stroke-linecap="butt" transform="rotate(-45 60 60)">
-            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="25 75" stroke-dashoffset="0"/>
-            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="25 75" stroke-dashoffset="-25"/>
-            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ffd200" stroke-dasharray="25 75" stroke-dashoffset="-50"/>
-            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#221a14" stroke-dasharray="25 75" stroke-dashoffset="-75"/>
+    <div style="display: flex; align-items: flex-end; justify-content: center; gap: 52px; margin-top: 40px; padding: 34px; background: #f3ebdd; border-radius: 18px;">
+      <div style="text-align: center;"><svg viewBox="0 0 120 120" width="96" height="96" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
           </g>
-          <circle cx="60" cy="60" r="36" fill="#221a14"/>
-          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="48" fill="#fbf7ef">C</text>
-        </svg>
-      </div>
-
-      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
-        <svg viewBox="0 0 120 120" width="40" height="40" aria-hidden="true">
-          <g fill="none" stroke-width="13" stroke-linecap="butt" transform="rotate(-45 60 60)">
-            <circle cx="60" cy="60" r="51" pathLength="100" stroke="#00aeef" stroke-dasharray="25 75"/>
-            <circle cx="60" cy="60" r="51" pathLength="100" stroke="#ec008c" stroke-dasharray="25 75" stroke-dashoffset="-25"/>
-            <circle cx="60" cy="60" r="51" pathLength="100" stroke="#ffd200" stroke-dasharray="25 75" stroke-dashoffset="-50"/>
-            <circle cx="60" cy="60" r="51" pathLength="100" stroke="#221a14" stroke-dasharray="25 75" stroke-dashoffset="-75"/>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg><div class="cap" style="margin-top: 14px;">96 px</div></div>
+      <div style="text-align: center;"><svg viewBox="0 0 120 120" width="54" height="54" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
           </g>
-          <circle cx="60" cy="60" r="36" fill="#221a14"/>
-          <text x="60" y="62" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="50" fill="#fbf7ef">C</text>
-        </svg>
-        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">Correia<span style="color:#c4573a;">Cor</span></span>
-      </div>
-
-      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">O anel de registo &mdash; a mira que os impressores usam para alinhar as chapas &mdash; partido nas quatro tintas, com o C em serifa ao centro. Casa a quadricromia com o resto do site melhor do que qualquer outra: é redondo, é sóbrio, e parece um carimbo de casa antiga.</p>
-      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> quatro cores num anel fino dão trabalho a bordar bem, e o amarelo desaparece quase sempre sobre fundo claro.</p>
-    </div>
-
-    <!-- 3 · A SOBREPOSIÇÃO -->
-    <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 34px; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
-      <span class="cap" style="color: #ec008c;">Opção C</span>
-      <h2 style="font-size: 38px; margin-top: 14px;">A sobreposição</h2>
-
-      <div style="height: 216px; display: flex; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
-        <svg viewBox="0 0 64 64" width="172" height="172" aria-hidden="true">
-          <g style="mix-blend-mode: multiply;">
-            <circle cx="32" cy="23" r="16" fill="#00aeef"/>
-            <circle cx="23" cy="39" r="16" fill="#ec008c"/>
-            <circle cx="41" cy="39" r="16" fill="#ffd200"/>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg><div class="cap" style="margin-top: 14px;">54 px</div></div>
+      <div style="text-align: center;"><svg viewBox="0 0 120 120" width="38" height="38" aria-hidden="true">
+          <g fill="none" stroke-width="13" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
           </g>
-        </svg>
-      </div>
-
-      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
-        <svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
-          <g style="mix-blend-mode: multiply;">
-            <circle cx="32" cy="23" r="16" fill="#00aeef"/><circle cx="23" cy="39" r="16" fill="#ec008c"/><circle cx="41" cy="39" r="16" fill="#ffd200"/>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg><div class="cap" style="margin-top: 14px;">38 px</div></div>
+      <div style="text-align: center;"><svg viewBox="0 0 120 120" width="26" height="26" aria-hidden="true">
+          <g fill="none" stroke-width="13" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
           </g>
-        </svg>
-        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">Correia<span style="color:#c4573a;">Cor</span></span>
-      </div>
-
-      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">Três tintas a sobreporem-se e a criar cores novas nas zonas comuns &mdash; é literalmente o que acontece no papel. A mais calorosa das três e a que qualquer cliente percebe sem precisar que lhe expliquem.</p>
-      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> muitas gráficas usam este símbolo. Funciona bem, mas é difícil de reclamar como marca própria.</p>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg><div class="cap" style="margin-top: 14px;">26 px</div></div>
+      <div style="text-align: center;"><svg viewBox="0 0 120 120" width="18" height="18" aria-hidden="true">
+          <g fill="none" stroke-width="13" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg><div class="cap" style="margin-top: 14px;">18 px</div></div>
     </div>
   </div>
 
-  <!-- COMO VIVE -->
+  <!-- CORES E TIPO -->
   <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 26px; margin-top: 26px;">
-
     <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 36px;">
-      <span class="cap" style="color: #ec008c;">Como as duas paletas convivem</span>
-      <h3 style="font-size: 34px; margin-top: 12px;">A marca em quadricromia, a casa em tintas quentes</h3>
-      <p style="margin: 12px 0 28px; font-size: 15px; line-height: 1.7; max-width: 600px;">A marca fica nas quatro tintas vivas. O site mantém o papel creme e os tons de tinta antiga, e o "Cor" do logótipo acompanha-os em terracota. Assim a quadricromia aparece onde conta &mdash; no símbolo &mdash; sem transformar cada página num cartaz.</p>
-      <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px;">
-        <div><div style="height: 84px; border-radius: 14px; background: #00aeef;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Ciano</div><div style="font-size: 12px; color: #8b7b6c;">#00AEEF</div></div>
-        <div><div style="height: 84px; border-radius: 14px; background: #ec008c;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Magenta</div><div style="font-size: 12px; color: #8b7b6c;">#EC008C</div></div>
-        <div><div style="height: 84px; border-radius: 14px; background: #ffd200;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Amarelo</div><div style="font-size: 12px; color: #8b7b6c;">#FFD200</div></div>
-        <div><div style="height: 84px; border-radius: 14px; background: #221a14;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Preto</div><div style="font-size: 12px; color: #8b7b6c;">#221A14</div></div>
+      <span class="cap" style="color: #c4573a;">As doze cores</span>
+      <h3 style="font-size: 32px; margin-top: 12px;">Vindas do logótipo atual</h3>
+      <p style="margin: 12px 0 26px; font-size: 15px; line-height: 1.7; max-width: 580px;">A mesma roda que já existia, agora em sequência à volta do anel, a começar no vermelho em cima. Se tiver o ficheiro vetorial do logótipo antigo, retiro os valores exatos e substituo estes.</p>
+      <div style="display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 12px;">
+        <sc-for list="{{ wheel }}" as="c" hint-placeholder-count="12">
+          <div>
+            <div style="{{ c.swatch }}"></div>
+            <div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">{{ c.hex }}</div>
+          </div>
+        </sc-for>
       </div>
-      <div style="height: 1px; background: #ede4d3; margin: 26px 0;"></div>
+      <div style="height: 1px; background: #ede4d3; margin: 28px 0;"></div>
       <div class="cap" style="margin-bottom: 14px;">Tintas do site</div>
+      <p style="margin: 0 0 16px; font-size: 14.5px; line-height: 1.7;">As páginas continuam em papel creme e tons de tinta antiga. A roda de cores aparece na marca e em pequenos acentos &mdash; assim há cor sem cada página virar um arco-íris.</p>
       <div style="display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 12px;">
         <div><div style="height: 48px; border-radius: 12px; background: #1d3f6e;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Azul de tinta</div></div>
         <div><div style="height: 48px; border-radius: 12px; background: #c4573a;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Terracota</div></div>
         <div><div style="height: 48px; border-radius: 12px; background: #35513f;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Verde garrafa</div></div>
         <div><div style="height: 48px; border-radius: 12px; background: #d9a441;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Ocre</div></div>
-        <div><div style="height: 48px; border-radius: 12px; background: #6b3552;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Ameixa</div></div>
+        <div><div style="height: 48px; border-radius: 12px; background: #f3ebdd;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Creme</div></div>
         <div><div style="height: 48px; border-radius: 12px; background: #fbf7ef; border: 1px solid #e3d8c6;"></div><div style="font-size: 11.5px; color: #8b7b6c; margin-top: 8px;">Papel</div></div>
       </div>
     </div>
 
-    <div style="background: #221a14; border-radius: 22px; padding: 36px;">
-      <span class="cap" style="color: #ffd200;">A marca em uso</span>
-      <h3 style="font-size: 30px; margin-top: 12px; color: #fbf7ef;">Sobre escuro, o preto passa a papel</h3>
-      <p style="margin: 12px 0 26px; font-size: 14.5px; line-height: 1.7; color: rgba(251,247,239,.72);">Em fundo escuro a quarta barra troca para creme, para o quadrado não se dissolver. O C recortado deixa passar o fundo em qualquer caso.</p>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 14px; padding: 26px 0; background: rgba(251,247,239,.06); border-radius: 16px;">
-        <svg viewBox="0 0 64 64" width="46" height="46" aria-hidden="true">
-          <defs>
-            <clipPath id="l4t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-            <mask id="l4m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-          </defs>
-          <g clip-path="url(#l4t)" mask="url(#l4m)">
-            <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-            <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#fbf7ef"/>
-          </g>
-        </svg>
-        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: #fbf7ef;">Correia<span style="color:#ffd200;">Cor</span></span>
+    <div style="background: #1d3f6e; color: #f3ebdd; border-radius: 22px; padding: 36px;">
+      <span class="cap" style="color: #d9a441;">Tipografia</span>
+      <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 76px; line-height: 0.96; margin-top: 14px; color: #fbf7ef;">Aa <em>Bb</em></div>
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; margin-top: 16px; color: #d9a441;">INSTRUMENT SERIF &middot; TÍTULOS</div>
+      <p style="margin: 8px 0 0; font-size: 14.5px; line-height: 1.65; color: rgba(251,247,239,.78);">Alto contraste e um itálico com charme, para destacar uma palavra aqui e ali.</p>
+      <div style="height: 1px; background: rgba(217,164,65,.4); margin: 26px 0;"></div>
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #d9a441;">KARLA &middot; TEXTO</div>
+      <p style="margin: 10px 0 0; font-size: 16px; line-height: 1.7; color: #fbf7ef;">A solução completa em comunicação visual. Impressão digital e offset, têxtil, brindes, publicidade e marketing.</p>
+      <div style="display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap;">
+        <span class="btn" style="background: #d9a441; color: #221a14; height: 46px; font-size: 14px;">Peça agora</span>
+        <span class="btn" style="border: 1px solid rgba(251,247,239,.45); color: #fbf7ef; height: 46px; font-size: 14px;">Ver catálogo</span>
       </div>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 14px; padding: 22px 0; background: rgba(251,247,239,.06); border-radius: 16px;">
-        <svg viewBox="0 0 64 64" width="26" height="26" aria-hidden="true">
-          <defs>
-            <clipPath id="l5t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-            <mask id="l5m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-          </defs>
-          <g clip-path="url(#l5t)" mask="url(#l5m)">
-            <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-            <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#fbf7ef"/>
-          </g>
-        </svg>
-        <svg viewBox="0 0 64 64" width="18" height="18" aria-hidden="true">
-          <defs>
-            <clipPath id="l6t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-            <mask id="l6m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-          </defs>
-          <g clip-path="url(#l6t)" mask="url(#l6m)">
-            <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-            <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#fbf7ef"/>
-          </g>
-        </svg>
-        <span style="font-size: 13px; color: rgba(251,247,239,.6);">a 26 px e a 18 px, ainda lê</span>
-      </div>
+      <div class="todo" style="margin-top: 26px; background: rgba(217,164,65,.14); border-color: rgba(217,164,65,.5); color: #f0e0b8;">Se tiver o ficheiro vetorial do logótipo antigo (AI ou EPS), mando-lhe esta marca em vetor com as cores exatas.</div>
     </div>
   </div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":1440,"height":1680}}'>
-class Component extends DCLogic {}
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1780}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const WHEEL = ['#ED1C24','#F26522','#F7941E','#FDB913','#FFF200','#8DC63F',
+                   '#00A651','#00A99D','#00AEEF','#2E3192','#662D91','#EC008C'];
+    return {
+      wheel: WHEEL.map((h) => ({
+        hex: h,
+        swatch: 'height:58px;border-radius:12px;background:' + h + ';',
+      })),
+    };
+  }
+}
 </script>
 </body>
 </html>

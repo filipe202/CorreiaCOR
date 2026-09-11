@@ -10,189 +10,233 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Karla, "Helvetica Neue", Arial, sans-serif;
-      color: #5a4a3e;
-      background-color: #fbf7ef;
-    }
-    h1, h2, h3, h4 {
-      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      margin: 0;
-      color: #221a14;
-      letter-spacing: -0.015em;
-      line-height: 1.02;
-      text-wrap: balance;
-    }
+    body { margin: 0; font-family: Karla, "Helvetica Neue", Arial, sans-serif; color: #5a4a3e; background-color: #fbf7ef; }
+    h1, h2, h3, h4 { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; color: #221a14; letter-spacing: -0.015em; line-height: 1.02; text-wrap: balance; }
     p { text-wrap: pretty; }
     em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
     a { color: #c4573a; text-decoration: none; }
     a:hover { color: #9d422b; }
-    .cap {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: #8b7b6c;
-    }
-    /* Grão de papel: dá profundidade sem pesar nada. */
-    .grain::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.32;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-    }
+    .cap { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: #8b7b6c; }
+    .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); }
     .arch { border-radius: 280px 280px 14px 14px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      height: 54px;
-      padding: 0 28px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; font-size: 15px; font-weight: 600; }
+    .wm { font-family: "Instrument Serif", Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em; }
     .opt { cursor: pointer; user-select: none; }
+    /* Aviso amarelo: marca o que ainda falta de informação real do cliente. */
+    .todo { background: #fdf3d8; border: 1px dashed #d9a441; border-radius: 14px; padding: 16px 20px; font-size: 14px; line-height: 1.65; color: #6b5526; }
     @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .floaty { animation: floaty 9s ease-in-out infinite; }
     .floaty-slow { animation: floaty 12s ease-in-out infinite; }
   </style>
 </helmet>
 <div style="background: #fbf7ef;">
-<div style="background: #35513f; color: #f3ebdd; display: flex; align-items: center; justify-content: center; gap: 28px; height: 40px; font-size: 12.5px; letter-spacing: 0.04em;">
-  <span>Orçamento em 48 horas úteis</span>
+<div style="background: #35513f; color: #f3ebdd; display: flex; align-items: center; justify-content: center; gap: 26px; height: 40px; font-size: 12.5px;">
+  <span>Rua Sousa Loureiro, n.º 9 &mdash; loja 7, Lisboa</span>
   <span style="color: rgba(243,235,221,.4);">&bull;</span>
-  <span>Prova digital sempre gratuita</span>
+  <span>+351 966 822 656</span>
   <span style="color: rgba(243,235,221,.4);">&bull;</span>
-  <span>Entregas em todo o país</span>
+  <span>2.ª a 6.ª, das 9h30 às 18h30</span>
 </div>
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 18px 56px; background: #fbf7ef; border-bottom: 1px solid #e3d8c6;">
   <div style="display: flex; align-items: center; gap: 12px;">
-    <svg viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
-        <defs>
-          <clipPath id="cc9t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-          <mask id="cc9m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-        </defs>
-        <g clip-path="url(#cc9t)" mask="url(#cc9m)">
-          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/>
-          <rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/>
-          <rect x="48" y="0" width="16" height="64" fill="#221a14"/>
-        </g>
-      </svg>
-    <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em;">Correia<span style="color:#c4573a;">Cor</span></span>
+    <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg>
+    <span class="wm">Correia<span style="letter-spacing:0.01em;">COR</span></span>
   </div>
   <div style="display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 500; color: #5a4a3e;">
-    <span >Brindes</span>
-    <span>Serviços</span><span style="color: #221a14; border-bottom: 1.5px solid #c4573a; padding-bottom: 3px;">Portfolio</span><span>Sobre nós</span><span>Contactos</span>
+    <span>Início</span><span>Quem somos</span><span>Serviços</span><span>Brindes</span><span style="color: #221a14; border-bottom: 1.5px solid #c4573a; padding-bottom: 3px;">Portfolio</span><span>Contacto</span>
   </div>
   <div style="display: flex; align-items: center; gap: 12px;">
     <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 500; color: #5a4a3e;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5a4a3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
       Pedido <span style="background:#c4573a; color:#fffdf9; border-radius:999px; min-width:19px; height:19px; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:600;">3</span>
     </span>
-    <span class="btn" style="background: #221a14; color: #fbf7ef; height: 48px; font-size: 14.5px;">Pedir orçamento</span>
+    <span class="btn" style="background: #221a14; color: #fbf7ef; height: 48px; font-size: 14.5px;">Peça agora</span>
   </div>
 </div>
 
-  <div class="grain" style="position: relative; padding: 76px 56px 52px; text-align: center;">
+  <div class="grain" style="position: relative; padding: 76px 56px 46px; text-align: center;">
     <span class="cap" style="color: #c4573a;">Portfolio</span>
-    <h1 style="font-size: 92px; margin-top: 20px;">O que já <em style="color:#c4573a;">saiu daqui</em></h1>
-    <p style="margin: 24px auto 0; font-size: 18px; line-height: 1.75; max-width: 620px;">Seis trabalhos do princípio ao fim &mdash; do rótulo à frota, do crachá à montra. [Casos de demonstração: substituir por projetos reais, com autorização dos clientes.]</p>
-    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; flex-wrap: wrap;">
-      <span style="font-size: 14.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; background: #221a14; color: #fbf7ef;">Todos</span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; background: #fffdf9; border: 1px solid #e3d8c6; color: #5a4a3e;">Impressão</span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; background: #fffdf9; border: 1px solid #e3d8c6; color: #5a4a3e;">Têxtil</span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; background: #fffdf9; border: 1px solid #e3d8c6; color: #5a4a3e;">Sinalética</span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; background: #fffdf9; border: 1px solid #e3d8c6; color: #5a4a3e;">Viaturas</span>
-    </div>
+    <h1 style="font-size: 90px; margin-top: 20px;">O que já <em style="color:#c4573a;">saiu daqui</em></h1>
+    <p style="margin: 24px auto 0; font-size: 18px; line-height: 1.75; max-width: 620px;">Trabalhos organizados pelas famílias de produtos que a CorreiaCOR produz. Cada moldura espera a fotografia de um trabalho real.</p>
   </div>
 
-  <!-- DESTAQUE -->
   <div style="padding: 0 56px 34px;">
-    <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 28px; padding: 30px; box-shadow: 0 24px 50px -38px rgba(34,26,20,.5);">
-      <div class="arch" style="height: 470px; background: #1d3f6e; position: relative; overflow: hidden;">
-        <div style="position: absolute; left: 50%; top: 46%; transform: translate(-50%,-50%); display: flex; gap: 16px; align-items: flex-end;">
-          <div style="width: 104px; height: 150px; border-radius: 6px; background: #c4573a;"></div>
-          <div style="width: 116px; height: 190px; border-radius: 6px; background: #f3ebdd;"></div>
-          <div style="width: 104px; height: 150px; border-radius: 6px; background: #d9a441;"></div>
-        </div>
-        <div style="position: absolute; left: 0; right: 0; bottom: 28px; text-align: center;">
-          <span style="display: inline-block; background: rgba(251,247,239,.94); color: #221a14; border-radius: 999px; padding: 9px 18px; font-size: 13px; font-weight: 600;">540 peças &middot; 9 delegações</span>
-        </div>
-      </div>
-      <div style="padding-right: 16px;">
-        <span class="cap" style="color: #c4573a;">Em destaque &middot; Grupo Atlântico &middot; 2025</span>
-        <h2 style="font-size: 46px; margin-top: 16px;">Fardamento para 180 pessoas em <em>nove delegações</em></h2>
-        <p style="margin: 20px 0 0; font-size: 16.5px; line-height: 1.8;">Nove delegações, três funções e tamanhos individuais &mdash; tudo a ter de chegar pronto a vestir no mesmo dia. Recolhemos os tamanhos num formulário, produzimos com bordado no peito e refletor nas costas, e enviámos caixas rotuladas por delegação com sacos individuais nominais.</p>
-        <div style="display: flex; gap: 28px; margin-top: 28px; padding-top: 22px; border-top: 1px solid #ede4d3;">
-          <div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: #221a14;">1</div><div class="cap" style="margin-top: 3px;">entrega única</div></div>
-          <div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: #221a14;">0</div><div class="cap" style="margin-top: 3px;">trocas na 1.ª semana</div></div>
-          <div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: #221a14;">540</div><div class="cap" style="margin-top: 3px;">peças</div></div>
-        </div>
-        <span class="btn" style="background: #221a14; color: #fbf7ef; margin-top: 26px;">Ver o caso completo</span>
-      </div>
+    <div class="todo" style="max-width: 1000px; margin: 0 auto; font-size: 15.5px; line-height: 1.8; padding: 26px 30px;">
+      <strong style="color:#5a4a3e;">Esta página está montada mas vazia, de propósito.</strong> Não inventei clientes nem casos &mdash; correiacor.pt não tem portfolio nenhum publicado. Para a encher preciso, de cada trabalho: uma ou duas fotografias, o nome do cliente (com autorização para o usar), o ano, e uma linha sobre o que foi feito. Seis a oito trabalhos chegam para a página ficar completa.
     </div>
   </div>
 
-  <div style="padding: 24px 56px 80px;">
-    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 26px;">
-      <sc-for list="{{ cases }}" as="c" hint-placeholder-count="6">
+  <div style="display: flex; justify-content: center; gap: 10px; padding: 0 56px 34px; flex-wrap: wrap;">
+    <sc-for list="{{ filters }}" as="f" hint-placeholder-count="6">
+      <span style="{{ f.style }}">{{ f.name }}</span>
+    </sc-for>
+  </div>
+
+  <div style="padding: 0 56px 80px;">
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 22px;">
+      <sc-for list="{{ slots }}" as="s" hint-placeholder-count="8">
         <div>
-          <div class="arch" style="{{ c.cover }}">
-            <div style="{{ c.shapeA }}"></div>
-            <div style="{{ c.shapeB }}"></div>
+          <div class="arch" style="{{ s.frame }}">
+            <div style="text-align: center; padding: 0 20px;">
+              <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="{{ s.iconStroke }}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m4 18 5-5 4 4 3-3 4 4"/>
+              </svg>
+              <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; margin-top: 14px; color: {{ s.iconStroke }};">Fotografia<br>por enviar</div>
+            </div>
           </div>
-          <div style="padding: 22px 4px 0;">
-            <div class="cap">{{ c.client }} &middot; {{ c.year }}</div>
-            <h3 style="font-size: 27px; margin-top: 10px;">{{ c.title }}</h3>
-            <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.75;">{{ c.summary }}</p>
-            <div style="margin-top: 14px; font-size: 14px; font-weight: 600; color: #c4573a;">Ver caso &rarr;</div>
+          <div style="padding: 20px 4px 0;">
+            <div class="cap" style="color: {{ s.tone }};">{{ s.family }}</div>
+            <h3 style="font-size: 25px; margin-top: 10px; color: #a3958a;">[Nome do trabalho]</h3>
+            <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.7; color: #a3958a;">[Cliente, ano e uma linha sobre o que foi feito.]</p>
           </div>
         </div>
       </sc-for>
     </div>
   </div>
 
-  <div style="padding: 0 56px 84px;">
-    <div class="grain" style="position: relative; background: #6b3552; border-radius: 28px; padding: 68px; text-align: center; overflow: hidden;">
+  <div style="background: #f3ebdd; padding: 76px 56px;">
+    <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center;">
+      <div>
+        <span class="cap" style="color: #c4573a;">Como montamos um caso</span>
+        <h2 style="font-size: 48px; margin-top: 16px;">Quatro coisas por trabalho</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <sc-for list="{{ needs }}" as="n" hint-placeholder-count="4">
+          <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 18px; padding: 22px 26px; display: flex; gap: 20px; align-items: center;">
+            <span style="{{ n.num }}">{{ n.i }}</span>
+            <div>
+              <div style="font-size: 17px; font-weight: 600; color: #221a14;">{{ n.title }}</div>
+              <div style="font-size: 14.5px; line-height: 1.65; margin-top: 4px;">{{ n.text }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 84px 56px;">
+    <div class="grain" style="position: relative; background: #c4573a; border-radius: 28px; padding: 64px; text-align: center; overflow: hidden;">
       <div style="position: relative;">
-        <h2 style="font-size: 58px; color: #fffdf9;">O próximo caso <em style="color:#f7d9a0;">pode ser o seu</em></h2>
-        <p style="margin: 20px auto 0; font-size: 18px; line-height: 1.75; max-width: 560px; color: rgba(255,253,249,.9);">Conte-nos o que tem em mãos. Respondemos em 48 horas úteis com preço, prazo e uma prova digital.</p>
+        <h2 style="font-size: 56px; color: #fffdf9;">Fale connosco, <em style="color:#f7d9a0;">consulte-nos!</em></h2>
+        <p style="margin: 20px auto 0; font-size: 18px; line-height: 1.75; max-width: 560px; color: rgba(255,253,249,.92);">Preencha os seus dados e entraremos em contacto consigo com a maior brevidade possível.</p>
         <div style="display: flex; gap: 12px; justify-content: center; margin-top: 32px; flex-wrap: wrap;">
-          <span class="btn" style="background: #d9a441; color: #221a14;">Começar um projeto</span>
-          <span class="btn" style="border: 1px solid rgba(255,253,249,.6); color: #fffdf9;">[Telefone a confirmar]</span>
+          <span class="btn" style="background: #fffdf9; color: #221a14;">Peça agora</span>
+          <span class="btn" style="border: 1px solid rgba(255,253,249,.6); color: #fffdf9;">+351 966 822 656</span>
         </div>
       </div>
     </div>
   </div>
+<div style="background: #221a14; color: #b2a494; padding: 62px 56px 30px;">
+  <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.1fr; gap: 46px; padding-bottom: 40px; border-bottom: 1px solid #3a2f26;">
+    <div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#fbf7ef"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#221a14">C</text>
+        </svg>
+        <span class="wm" style="color: #fbf7ef;">Correia<span style="letter-spacing:0.01em;">COR</span></span>
+      </div>
+      <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.75; max-width: 330px;">A solução completa em comunicação visual. Impressão digital e offset, têxtil, brindes, publicidade e marketing.</p>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">Serviços</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;"><span>Cartazes</span><span>Mupis e outdoors</span><span>Lonas e telas</span><span>Expositores</span><span>Brochuras e catálogos</span><span>Etiquetas e rótulos</span></div>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">A casa</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;"><span>Quem somos</span><span>Brindes</span><span>Portfolio</span><span>Contacto</span><span>Livro de reclamações</span></div>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">Onde estamos</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;">
+        <span>Rua Sousa Loureiro, n.º 9 &mdash; loja 7<br>1500-586 Lisboa</span>
+        <span>+351 966 822 656<br><span style="font-size: 12.5px; color: #8a7c6d;">chamada para rede móvel nacional</span></span>
+        <span>correiacor@correiacor.pt</span>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; font-size: 13px;">
+    <span>&copy; 2026 CorreiaCOR</span>
+    <div style="display: flex; gap: 6px; align-items: center;">
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #ed1c24;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #f7941e;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #fff200;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #00a651;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #00aeef;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #2e3192;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #ec008c;"></span>
+    </div>
+  </div>
+</div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":1440,"height":2700}}'>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":2350}}'>
 class Component extends DCLogic {
   renderVals() {
-    const RAW = [
-      ['Adega Vale Fundo', 2025, 'Uma gama de vinhos do rótulo à caixa', 'Seis referências impressas na mesma folha, com relevo a seco e dourado a quente nas reservas.', '#6b3552', '#d9a441', '#f3ebdd'],
-      ['TechSummit', 2024, '1 200 crachás únicos em onze dias', 'Dados variáveis com nome, empresa e código QR por participante, mais a sinalética do recinto.', '#1d3f6e', '#c4573a', '#f3ebdd'],
-      ['Padaria Forno Velho', 2024, 'Rebranding de uma padaria com 60 anos', 'A letra da tabuleta original redesenhada para digital, e daí saíram montra, sacos e caixas.', '#c4573a', '#d9a441', '#fffdf9'],
-      ['Clínica Norte', 2024, 'Sinalética de uma clínica em quatro pisos', 'Código de cor por piso e placas de gabinete que a clínica troca sozinha em minutos.', '#35513f', '#d9a441', '#fffdf9'],
-      ['LogiTrans', 2023, 'Decoração de uma frota de 24 viaturas', 'Wrapping parcial em dois modelos, duas viaturas por dia, sem parar a operação.', '#1d3f6e', '#35513f', '#f3ebdd'],
-      ['Mercado da Ribeira', 2023, 'Trinta bancas com a mesma linguagem', 'Tabuletas e preçários que cada comerciante preenche à mão sem estragar o conjunto.', '#d9a441', '#c4573a', '#fffdf9'],
+    // As famílias são as reais do site; os trabalhos ficam por preencher.
+    const FAM = [
+      ['Cartazes', '#ed1c24'],
+      ['Mupis e outdoors', '#f26522'],
+      ['Lonas e telas', '#f7941e'],
+      ['Expositores e PVC', '#fdb913'],
+      ['Brochuras e catálogos', '#00a651'],
+      ['Estacionário', '#00aeef'],
+      ['Etiquetas e rótulos', '#662d91'],
+      ['Brindes e têxtil', '#ec008c'],
+    ];
+    const FILTERS = ['Todos', 'Grande formato', 'Impressos', 'Estacionário', 'Etiquetas', 'Brindes e têxtil'];
+    const NEEDS = [
+      ['1', 'Uma ou duas fotografias', 'Do trabalho acabado, de preferência no sítio onde foi usado.'],
+      ['2', 'O nome do cliente', 'Só se ele autorizar. Se não autorizar, fica "uma adega do Douro".'],
+      ['3', 'O ano', 'Ajuda quem visita a perceber que a casa continua a trabalhar.'],
+      ['4', 'Uma linha sobre o trabalho', 'O que era preciso e o que foi feito. Duas frases chegam.'],
     ];
     return {
-      cases: RAW.map((r) => ({
-        client: r[0], year: r[1], title: r[2], summary: r[3],
-        cover: 'position:relative;height:330px;overflow:hidden;background:' + r[4] + ';',
-        shapeA: 'position:absolute;left:50%;top:46%;transform:translate(-50%,-50%) rotate(-4deg);width:112px;height:154px;border-radius:6px;background:' + r[6] + ';box-shadow:0 20px 40px -18px rgba(0,0,0,.45);',
-        shapeB: 'position:absolute;right:-40px;bottom:-40px;width:150px;height:150px;border-radius:999px;background:' + r[5] + ';opacity:.9;',
+      filters: FILTERS.map((f, i) => ({
+        name: f,
+        style: 'font-size:14.5px;font-weight:600;padding:11px 20px;border-radius:999px;' +
+          (i === 0 ? 'background:#221a14;color:#fbf7ef;' : 'background:#fffdf9;border:1px solid #e3d8c6;color:#5a4a3e;'),
+      })),
+      slots: FAM.map((f) => ({
+        family: f[0], tone: f[1], iconStroke: '#bcae9c',
+        frame: 'height:300px;background:#f3ebdd;border:1.5px dashed #d8cbb4;display:flex;align-items:center;justify-content:center;',
+      })),
+      needs: NEEDS.map((n) => ({
+        i: n[0], title: n[1], text: n[2],
+        num: 'flex:0 0 40px;width:40px;height:40px;border-radius:999px;background:#f3ebdd;color:#c4573a;display:flex;align-items:center;justify-content:center;font-family:\'Instrument Serif\', Georgia, serif;font-size:20px;',
       })),
     };
   }

@@ -1,139 +1,99 @@
+/**
+ * Produtos e serviços, tal como estão descritos em correiacor.pt
+ * (página "Os nossos serviços", servida em /discografia/ por herança do
+ * template original). Não acrescentar serviços sem confirmar com o cliente.
+ */
 export type Service = {
   slug: string;
   name: string;
-  tagline: string;
   description: string;
-  bullets: string[];
-  icon:
-    | "printer"
-    | "offset"
-    | "shirt"
-    | "gift"
-    | "signage"
-    | "vehicle"
-    | "design";
+  /** Cor da roda do logótipo usada como acento desta família. */
+  accent: string;
 };
 
 export const services: Service[] = [
   {
-    slug: "impressao-digital",
-    name: "Impressão digital",
-    tagline: "Grande e pequeno formato",
+    slug: "cartazes",
+    name: "Cartazes",
     description:
-      "Do cartão de visita ao painel de seis metros. A impressão digital permite tiragens curtas sem custo de arranque e entregas em prazos que a offset não consegue acompanhar.",
-    bullets: [
-      "Grande formato até 3,20 m de largura",
-      "Lonas, vinis, rígidos, papel de parede e têxtil",
-      "Tiragens a partir de 1 exemplar",
-      "Dados variáveis e numeração automática",
-    ],
-    icon: "printer",
+      "Impressão de cartazes de diversos tamanhos e formatos, ideais para divulgação de eventos, promoções e campanhas publicitárias.",
+    accent: "#ed1c24",
   },
   {
-    slug: "impressao-offset",
-    name: "Impressão offset",
-    tagline: "Tiragens grandes, custo por unidade baixo",
+    slug: "mupis-outdoors",
+    name: "Mupis e outdoors",
     description:
-      "Quando o volume justifica, a offset entrega a melhor relação entre qualidade de cor e preço unitário. Catálogos, revistas, embalagens e campanhas de grande tiragem.",
-    bullets: [
-      "Quadricromia e cores Pantone diretas",
-      "Acabamentos: verniz UV, laminação, relevo, corte especial",
-      "Provas de cor calibradas antes da tiragem",
-      "Gestão integral de papel e logística",
-    ],
-    icon: "offset",
+      "Soluções visuais de alta resistência, perfeitas para grande alcance em espaços públicos e privados.",
+    accent: "#f26522",
   },
   {
-    slug: "textil-personalizado",
-    name: "Têxtil personalizado",
-    tagline: "Fardamento, equipas e merchandising",
+    slug: "lonas-telas",
+    name: "Lonas e telas",
     description:
-      "Vestimos empresas, clubes e eventos. Escolhemos consigo a peça, a técnica e o acabamento certos para o uso que lhe vai dar — e para o orçamento que tem.",
-    bullets: [
-      "Serigrafia, bordado, DTF e vinil térmico",
-      "Fardamento completo com tamanhos por colaborador",
-      "Etiquetas de marca própria cosidas na peça",
-      "Reposições rápidas a partir do mesmo ficheiro",
-    ],
-    icon: "shirt",
+      "Impressão em materiais duráveis para publicidade em ambientes internos e externos.",
+    accent: "#f7941e",
   },
   {
-    slug: "brindes-personalizados",
-    name: "Brindes personalizados",
-    tagline: "Mais de mil referências disponíveis",
+    slug: "expositores",
+    name: "Expositores, PVC e alveolar",
     description:
-      "Escolha no nosso marketplace, configure cor, quantidade e técnica de personalização, e receba o orçamento com prova digital antes de produzir.",
-    bullets: [
-      "Catálogo online com configuração e pedido direto",
-      "Prova digital gratuita antes da produção",
-      "Brindes com foco em sustentabilidade",
-      "Fabrico à medida quando o catálogo não chega",
-    ],
-    icon: "gift",
+      "Estruturas de exibição robustas e versáteis, ideais para feiras, eventos e pontos de venda.",
+    accent: "#fdb913",
   },
   {
-    slug: "comunicacao-visual",
-    name: "Comunicação visual & sinalética",
-    tagline: "O seu espaço a comunicar por si",
+    slug: "brochuras-catalogos",
+    name: "Brochuras, catálogos, folhetos e livros",
     description:
-      "Montras, fachadas, sinalética interior e stands de feira. Projetamos, produzimos e instalamos — com licenciamento tratado quando é preciso.",
-    bullets: [
-      "Letras 3D, painéis luminosos e toldos",
-      "Decoração de montras e vidros em vinil",
-      "Sinalética interior e de segurança",
-      "Stands de feira chave-na-mão",
-    ],
-    icon: "signage",
+      "Impressão de materiais de alta qualidade, que valorizam a sua comunicação institucional e comercial.",
+    accent: "#00a651",
   },
   {
-    slug: "decoracao-viaturas",
-    name: "Decoração de viaturas",
-    tagline: "A frota como meio publicitário",
+    slug: "estacionario",
+    name: "Estacionário de empresa e de eventos",
     description:
-      "Do lettering discreto ao envolvimento total da viatura. Usamos vinis de fundição com garantia do fabricante e aplicação certificada, removíveis sem danificar a pintura.",
-    bullets: [
-      "Wrapping total ou parcial",
-      "Vinis de fundição com 5 a 7 anos de garantia",
-      "Simulação prévia sobre o modelo da viatura",
-      "Aplicação em frota, no local ou nas nossas instalações",
-    ],
-    icon: "vehicle",
+      "Cartões de visita, papel timbrado, crachás e outros materiais personalizados para a sua identidade visual.",
+    accent: "#00aeef",
   },
   {
-    slug: "design-grafico",
-    name: "Design gráfico",
-    tagline: "Antes de imprimir, é preciso desenhar",
+    slug: "etiquetas-rotulos",
+    name: "Etiquetas e rótulos",
     description:
-      "Se ainda não tem arte final, fazemos nós. Logótipo, manual de normas, layout de campanha ou simples adaptação de ficheiros para produção.",
-    bullets: [
-      "Criação e redesenho de logótipo",
-      "Manual de identidade e normas de aplicação",
-      "Vetorização de logótipos antigos",
-      "Preparação de ficheiros para produção",
-    ],
-    icon: "design",
+      "Soluções para embalagens, produtos e marcas, com acabamento profissional.",
+    accent: "#662d91",
+  },
+  {
+    slug: "brindes-textil",
+    name: "Brindes publicitários e têxtil",
+    description:
+      "Uma variedade de itens personalizáveis para ações promocionais e fortalecimento da sua marca.",
+    accent: "#ec008c",
   },
 ];
 
-export const processSteps = [
+/**
+ * Compromissos que o site atual assume, no texto institucional da página
+ * inicial. São afirmações da empresa, não promessas nossas — por isso não
+ * acrescentar prazos ou garantias que o cliente não tenha escrito.
+ */
+export const commitments = [
   {
-    number: "01",
-    title: "Briefing",
-    text: "Diz-nos o que precisa — nem que seja só uma ideia vaga e uma data. Respondemos em 48 horas úteis.",
+    title: "Cada projeto, uma obra única",
+    text: "Cada trabalho é tratado como uma obra única e exclusiva, e não como mais uma encomenda a sair da máquina.",
+    accent: "#ed1c24",
   },
   {
-    number: "02",
-    title: "Orçamento e prova",
-    text: "Enviamos preço por escalões de quantidade e uma prova digital com o seu logótipo aplicado no produto.",
+    title: "Prazos que se cumprem",
+    text: "Rapidez na execução sem abrir mão da perfeição, assegurando entregas dentro dos prazos estabelecidos.",
+    accent: "#f7941e",
   },
   {
-    number: "03",
-    title: "Produção",
-    text: "Só produzimos depois da sua aprovação escrita da prova. Acompanhamos cada lote em fábrica.",
+    title: "Aconselhamento especializado",
+    text: "O acompanhamento personalizado segue o cliente desde o início até à conclusão de cada trabalho.",
+    accent: "#00a651",
   },
   {
-    number: "04",
-    title: "Entrega",
-    text: "Entregamos em todo o país. Se precisar, separamos por lojas, delegações ou por colaborador.",
+    title: "Materiais selecionados",
+    text: "Rigorosos controlos de qualidade e materiais escolhidos para garantir desempenho superior e durabilidade.",
+    accent: "#2e3192",
   },
 ];

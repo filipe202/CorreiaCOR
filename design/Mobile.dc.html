@@ -10,79 +10,50 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Karla, "Helvetica Neue", Arial, sans-serif;
-      color: #5a4a3e;
-      background-color: #fbf7ef;
-    }
-    h1, h2, h3, h4 {
-      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      margin: 0;
-      color: #221a14;
-      letter-spacing: -0.015em;
-      line-height: 1.02;
-      text-wrap: balance;
-    }
+    body { margin: 0; font-family: Karla, "Helvetica Neue", Arial, sans-serif; color: #5a4a3e; background-color: #fbf7ef; }
+    h1, h2, h3, h4 { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; color: #221a14; letter-spacing: -0.015em; line-height: 1.02; text-wrap: balance; }
     p { text-wrap: pretty; }
     em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
     a { color: #c4573a; text-decoration: none; }
     a:hover { color: #9d422b; }
-    .cap {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: #8b7b6c;
-    }
-    /* Grão de papel: dá profundidade sem pesar nada. */
-    .grain::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.32;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-    }
+    .cap { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: #8b7b6c; }
+    .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); }
     .arch { border-radius: 280px 280px 14px 14px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      height: 54px;
-      padding: 0 28px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; font-size: 15px; font-weight: 600; }
+    .wm { font-family: "Instrument Serif", Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em; }
     .opt { cursor: pointer; user-select: none; }
+    /* Aviso amarelo: marca o que ainda falta de informação real do cliente. */
+    .todo { background: #fdf3d8; border: 1px dashed #d9a441; border-radius: 14px; padding: 16px 20px; font-size: 14px; line-height: 1.65; color: #6b5526; }
     @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .floaty { animation: floaty 9s ease-in-out infinite; }
     .floaty-slow { animation: floaty 12s ease-in-out infinite; }
   </style>
 </helmet>
 <div style="background: #fbf7ef; width: 390px; overflow: hidden;">
-  <div style="background: #35513f; color: #f3ebdd; text-align: center; padding: 10px 16px; font-size: 12px; letter-spacing: 0.03em;">Orçamento em 48 horas úteis &middot; prova grátis</div>
+  <div style="background: #35513f; color: #f3ebdd; text-align: center; padding: 10px 16px; font-size: 12px; line-height: 1.5;">Rua Sousa Loureiro, n.º 9 &mdash; loja 7, Lisboa &middot; +351 966 822 656</div>
 
   <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid #e3d8c6;">
     <div style="display: flex; align-items: center; gap: 10px;">
-      <svg viewBox="0 0 64 64" width="38" height="38" aria-hidden="true">
-        <defs>
-          <clipPath id="cc6t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-          <mask id="cc6m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-        </defs>
-        <g clip-path="url(#cc6t)" mask="url(#cc6m)">
-          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/>
-          <rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/>
-          <rect x="48" y="0" width="16" height="64" fill="#221a14"/>
-        </g>
-      </svg>
-      <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 25px; color: #221a14;">Correia<span style="color:#c4573a;">Cor</span></span>
+      <svg viewBox="0 0 120 120" width="38" height="38" aria-hidden="true">
+          <g fill="none" stroke-width="13" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg>
+      <span class="wm" style="font-size: 25px;">Correia<span style="letter-spacing:0.01em;">COR</span></span>
     </div>
     <div style="display: flex; gap: 8px;">
       <span style="width: 46px; height: 46px; border-radius: 999px; border: 1px solid #e3d8c6; display: inline-flex; align-items: center; justify-content: center; position: relative;">
@@ -95,49 +66,59 @@
     </div>
   </div>
 
-  <div class="grain" style="position: relative; padding: 30px 20px 34px;">
-    <span class="cap" style="color: #c4573a;">Desde 2004</span>
-    <h1 style="font-size: 52px; margin-top: 14px;">Damos cor às ideias que merecem <em style="color:#c4573a;">ficar bem</em></h1>
-    <p style="margin: 18px 0 0; font-size: 16.5px; line-height: 1.75;">Uma oficina portuguesa onde o ficheiro, a impressão e o acabamento acontecem debaixo do mesmo teto.</p>
-    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 26px;">
+  <div class="grain" style="position: relative; padding: 30px 20px 32px;">
+    <span class="cap" style="color: #c4573a;">Impressão &middot; Têxtil &middot; Brindes</span>
+    <h1 style="font-size: 48px; margin-top: 14px;">A solução completa em <em style="color:#c4573a;">comunicação visual</em></h1>
+    <p style="margin: 18px 0 0; font-size: 16.5px; line-height: 1.75;">Especializados em grande e pequeno formatos, trabalhamos com diversos materiais, além da personalização em vestuário e brindes.</p>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 24px;">
       <span class="btn" style="background: #c4573a; color: #fffdf9; width: 100%;">Ver o catálogo de brindes</span>
-      <span class="btn" style="border: 1px solid #d3c6b0; color: #221a14; width: 100%;">Falar connosco</span>
+      <span class="btn" style="border: 1px solid #d3c6b0; color: #221a14; width: 100%;">Fale connosco</span>
     </div>
   </div>
 
-  <div style="padding: 0 20px 30px;">
-    <div class="arch" style="height: 330px; background: #1d3f6e; position: relative; overflow: hidden;">
-      <div style="position: absolute; left: 50%; top: 52%; transform: translate(-50%,-50%);">
-        <svg viewBox="0 0 200 200" width="200" height="200" aria-hidden="true">
-          <path d="M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z" fill="#f3ebdd"/>
-          <circle cx="112" cy="90" r="12" fill="none" stroke="#c4573a" stroke-width="4"/>
-          <circle cx="112" cy="90" r="5" fill="#d9a441"/>
-        </svg>
-      </div>
-      <div style="position: absolute; left: 0; right: 0; bottom: 20px; text-align: center; font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(243,235,221,.66);">Serigrafia à mão</div>
+  <div style="padding: 0 20px 28px;">
+    <div class="arch" style="height: 320px; background: #1d3f6e; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+      <svg viewBox="0 0 200 200" width="200" height="200" aria-hidden="true">
+        <path d="M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z" fill="#f3ebdd"/>
+      </svg>
+      <div style="position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(243,235,221,.55);">[Fotografia real entra aqui]</div>
     </div>
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px; padding-top: 20px; border-top: 1px solid #e3d8c6;">
-      <div style="text-align: center;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">3 500<span style="color:#d9a441;">+</span></div><div class="cap" style="margin-top: 3px;">projetos</div></div>
+    <div style="display: flex; align-items: center; justify-content: space-around; margin-top: 22px; padding-top: 20px; border-top: 1px solid #e3d8c6;">
+      <div style="text-align: center;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: #221a14;">30<span style="color:#ec008c;">+</span></div><div class="cap" style="margin-top: 3px;">anos no setor</div></div>
       <div style="width: 1px; height: 38px; background: #e3d8c6;"></div>
-      <div style="text-align: center;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">1 000<span style="color:#c4573a;">+</span></div><div class="cap" style="margin-top: 3px;">brindes</div></div>
-      <div style="width: 1px; height: 38px; background: #e3d8c6;"></div>
-      <div style="text-align: center;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">20<span style="color:#35513f;">+</span></div><div class="cap" style="margin-top: 3px;">anos</div></div>
+      <div style="text-align: center;"><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: #221a14;">20<span style="color:#00aeef;">+</span></div><div class="cap" style="margin-top: 3px;">de CorreiaCOR</div></div>
     </div>
   </div>
 
-  <div style="background: #f3ebdd; padding: 36px 20px;">
-    <div style="text-align: center;">
+  <div style="background: #f3ebdd; padding: 34px 20px;">
+    <div style="text-align: center; margin-bottom: 22px;">
+      <span class="cap" style="color: #c4573a;">Produtos e serviços</span>
+      <h2 style="font-size: 40px; margin-top: 12px;">Uma ampla gama, <em>com tecnologia avançada</em></h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+        <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 20px; padding: 22px;">
+          <div style="{{ s.dot }}"></div>
+          <h3 style="font-size: 21px; margin-top: 14px;">{{ s.name }}</h3>
+          <p style="margin: 7px 0 0; font-size: 14.5px; line-height: 1.65;">{{ s.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding: 34px 20px;">
+    <div style="text-align: center; margin-bottom: 20px;">
       <span class="cap" style="color: #c4573a;">Encomenda direta</span>
-      <h2 style="font-size: 42px; margin-top: 12px;">Escolha, configure<br>e deixe o resto <em>connosco</em></h2>
+      <h2 style="font-size: 40px; margin-top: 12px;">Brindes e <em>têxtil personalizado</em></h2>
     </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
       <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 18px; padding: 12px;">
         <div style="background: #f0e7d6; border-radius: 140px 140px 8px 8px; padding: 16px 10px 8px;">
           <svg viewBox="0 0 200 200" width="100%" height="96" aria-hidden="true"><path d="M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z" fill="#1d3f6e"/></svg>
         </div>
         <div style="padding: 12px 4px 2px;">
-          <h3 style="font-size: 18px;">T-shirt algodão</h3>
-          <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 21px; color: #c4573a; margin-top: 6px;">4,90 €</div>
+          <h3 style="font-size: 18px;">T-shirt</h3>
+          <div style="font-size: 13px; color: #8b7b6c; margin-top: 5px;">Sob consulta</div>
         </div>
       </div>
       <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 18px; padding: 12px;">
@@ -145,86 +126,85 @@
           <svg viewBox="0 0 200 200" width="100%" height="96" aria-hidden="true"><path d="M56 62h58a4 4 0 0 1 4 4v72a10 10 0 0 1-10 10H62a10 10 0 0 1-10-10V66a4 4 0 0 1 4-4Z" fill="#fffdf9" stroke="rgba(34,26,20,.22)" stroke-width="2.4"/></svg>
         </div>
         <div style="padding: 12px 4px 2px;">
-          <h3 style="font-size: 18px;">Caneca cerâmica</h3>
-          <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 21px; color: #c4573a; margin-top: 6px;">3,40 €</div>
+          <h3 style="font-size: 18px;">Caneca</h3>
+          <div style="font-size: 13px; color: #8b7b6c; margin-top: 5px;">Sob consulta</div>
         </div>
       </div>
     </div>
-    <span class="btn" style="border: 1px solid #221a14; color: #221a14; width: 100%; margin-top: 16px;">Abrir o catálogo</span>
+    <span class="btn" style="border: 1px solid #221a14; color: #221a14; width: 100%; margin-top: 14px;">Abrir o catálogo</span>
   </div>
 
-  <div style="padding: 36px 20px;">
-    <div style="text-align: center; margin-bottom: 24px;">
-      <span class="cap" style="color: #c4573a;">O que fazemos</span>
-      <h2 style="font-size: 42px; margin-top: 12px;">Uma casa só, do ficheiro <em>à parede</em></h2>
-    </div>
-    <div style="display: flex; flex-direction: column; gap: 12px;">
-      <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
-        <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 20px; padding: 22px; display: flex; gap: 16px; align-items: flex-start;">
-          <div style="{{ s.chip }}">
-            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fffdf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="{{ s.icon }}"/></svg>
-          </div>
-          <div>
-            <h3 style="font-size: 21px;">{{ s.name }}</h3>
-            <p style="margin: 7px 0 0; font-size: 14.5px; line-height: 1.65;">{{ s.desc }}</p>
-          </div>
-        </div>
-      </sc-for>
-    </div>
+  <div style="background: #1d3f6e; color: #f3ebdd; padding: 34px 20px;">
+    <svg width="38" height="28" viewBox="0 0 46 34" fill="none" aria-hidden="true" style="opacity:.55;">
+      <path d="M0 34V18C0 8 6 1 17 0l2 6c-6 1-9 4-9 9h8v19H0Zm27 0V18C27 8 33 1 44 0l2 6c-6 1-9 4-9 9h8v19H27Z" fill="#d9a441"/>
+    </svg>
+    <blockquote style="margin: 18px 0 0; font-family: 'Instrument Serif', Georgia, serif; font-size: 27px; line-height: 1.35; color: #fbf7ef;">Cada projeto é tratado como uma obra única e exclusiva. Não somos apenas uma gráfica; somos o <em style="color:#d9a441;">seu parceiro</em>.</blockquote>
+    <div style="margin-top: 20px; font-size: 14px; color: rgba(243,235,221,.72);">Amilcar Correia &middot; fundador e CEO</div>
   </div>
 
-  <div style="padding: 0 20px 34px;">
-    <div class="grain" style="position: relative; background: #c4573a; border-radius: 24px; padding: 34px 26px; text-align: center; overflow: hidden;">
+  <div style="padding: 20px;">
+    <div class="grain" style="position: relative; background: #c4573a; border-radius: 24px; padding: 32px 24px; text-align: center; overflow: hidden;">
       <div style="position: relative;">
-        <h2 style="font-size: 40px; color: #fffdf9;">Tem um projeto <em style="color:#f7d9a0;">em mãos?</em></h2>
-        <p style="margin: 14px 0 0; font-size: 15.5px; line-height: 1.7; color: rgba(255,253,249,.92);">Respondemos em 48 horas úteis com preço, prazo e uma prova digital.</p>
-        <span class="btn" style="background: #fffdf9; color: #221a14; width: 100%; margin-top: 22px;">Pedir orçamento</span>
+        <h2 style="font-size: 38px; color: #fffdf9;">Fale connosco, <em style="color:#f7d9a0;">consulte-nos!</em></h2>
+        <p style="margin: 14px 0 0; font-size: 15.5px; line-height: 1.7; color: rgba(255,253,249,.92);">Preencha os seus dados e entraremos em contacto consigo com a maior brevidade possível.</p>
+        <span class="btn" style="background: #fffdf9; color: #221a14; width: 100%; margin-top: 20px;">Peça agora</span>
       </div>
     </div>
   </div>
 
-  <div style="background: #221a14; color: #b2a494; padding: 34px 20px 26px;">
+  <div style="background: #221a14; color: #b2a494; padding: 32px 20px 26px;">
     <div style="display: flex; align-items: center; gap: 11px;">
-      <svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
-        <defs>
-          <clipPath id="cc7t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-          <mask id="cc7m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-        </defs>
-        <g clip-path="url(#cc7t)" mask="url(#cc7m)">
-          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/>
-          <rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/>
-          <rect x="48" y="0" width="16" height="64" fill="#fbf7ef"/>
-        </g>
-      </svg>
-      <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 25px; color: #fbf7ef;">Correia<span style="color:#d9a441;">Cor</span></span>
+      <svg viewBox="0 0 120 120" width="36" height="36" aria-hidden="true">
+          <g fill="none" stroke-width="13" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#fbf7ef"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#221a14">C</text>
+        </svg>
+      <span class="wm" style="font-size: 25px; color: #fbf7ef;">Correia<span style="letter-spacing:0.01em;">COR</span></span>
     </div>
-    <div style="font-size: 14.5px; line-height: 2; margin-top: 18px;">[Morada a confirmar]<br>[Telefone a confirmar]<br>[Email a confirmar]</div>
-    <div style="display: flex; gap: 8px; align-items: center; margin-top: 22px;">
-      <span style="width: 11px; height: 11px; border-radius: 999px; background: #1d3f6e;"></span>
-      <span style="width: 11px; height: 11px; border-radius: 999px; background: #c4573a;"></span>
-      <span style="width: 11px; height: 11px; border-radius: 999px; background: #35513f;"></span>
-      <span style="width: 11px; height: 11px; border-radius: 999px; background: #d9a441;"></span>
-      <span style="width: 11px; height: 11px; border-radius: 999px; background: #6b3552;"></span>
+    <div style="font-size: 14.5px; line-height: 1.9; margin-top: 18px;">
+      Rua Sousa Loureiro, n.º 9 &mdash; loja 7<br>1500-586 Lisboa<br>+351 966 822 656<br>correiacor@correiacor.pt<br>2.ª a 6.ª, das 9h30 às 18h30
     </div>
-    <div style="font-size: 12.5px; margin-top: 18px;">&copy; 2026 CorreiaCor</div>
+    <div style="display: flex; gap: 6px; align-items: center; margin-top: 20px;">
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #ed1c24;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #f7941e;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #fff200;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #00a651;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #00aeef;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #2e3192;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #ec008c;"></span>
+    </div>
+    <div style="font-size: 12.5px; margin-top: 18px;">&copy; 2026 CorreiaCOR</div>
   </div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":390,"height":2300}}'>
+<script data-dc-script data-props='{"$preview":{"width":390,"height":2400}}'>
 class Component extends DCLogic {
   renderVals() {
     const S = [
-      ['Impressão digital e offset', 'Do cartão de visita ao painel de seis metros.', '#1d3f6e', 'M6 9V3h12v6M3 11a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6h-4v4H7v-4H3Z'],
-      ['Têxtil personalizado', 'Serigrafia, bordado, DTF e vinil, com tamanhos por colaborador.', '#c4573a', 'M9 3 4 6l2 4 2-1v12h8V9l2 1 2-4-5-3a3 3 0 0 1-6 0Z'],
-      ['Brindes personalizados', 'Mais de mil referências, com pedido direto no site.', '#6b3552', 'M3 8h18v13H3ZM12 8v13M3 13h18M12 8S9 3 7 3a2.5 2.5 0 0 0 0 5M12 8s3-5 5-5a2.5 2.5 0 0 1 0 5'],
-      ['Comunicação visual', 'Montras, fachadas, sinalética e stands de feira.', '#35513f', 'M4 21V8l8-5 8 5v13M4 12h16M10 21v-5h4v5'],
+      ['Cartazes, mupis e outdoors', 'Soluções visuais de alta resistência, para grande alcance em espaços públicos e privados.', '#ed1c24'],
+      ['Lonas, telas e expositores', 'Materiais duráveis para publicidade interior e exterior, e estruturas para feiras e pontos de venda.', '#f7941e'],
+      ['Brochuras, catálogos e livros', 'Impressos de alta qualidade, que valorizam a sua comunicação institucional e comercial.', '#00a651'],
+      ['Estacionário e etiquetas', 'Cartões de visita, papel timbrado, crachás, etiquetas e rótulos com acabamento profissional.', '#00aeef'],
+      ['Brindes publicitários e têxtil', 'Uma variedade de itens personalizáveis para ações promocionais e fortalecimento da sua marca.', '#ec008c'],
     ];
     return {
       services: S.map((s) => ({
-        name: s[0], desc: s[1], icon: s[3],
-        chip: 'width:42px;height:42px;flex:0 0 42px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:' + s[2] + ';',
+        name: s[0], desc: s[1],
+        dot: 'width:32px;height:7px;border-radius:999px;background:' + s[2] + ';',
       })),
     };
   }

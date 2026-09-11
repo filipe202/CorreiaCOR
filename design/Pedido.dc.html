@@ -10,85 +10,63 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Karla, "Helvetica Neue", Arial, sans-serif;
-      color: #5a4a3e;
-      background-color: #fbf7ef;
-    }
-    h1, h2, h3, h4 {
-      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      margin: 0;
-      color: #221a14;
-      letter-spacing: -0.015em;
-      line-height: 1.02;
-      text-wrap: balance;
-    }
+    body { margin: 0; font-family: Karla, "Helvetica Neue", Arial, sans-serif; color: #5a4a3e; background-color: #fbf7ef; }
+    h1, h2, h3, h4 { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; margin: 0; color: #221a14; letter-spacing: -0.015em; line-height: 1.02; text-wrap: balance; }
     p { text-wrap: pretty; }
     em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
     a { color: #c4573a; text-decoration: none; }
     a:hover { color: #9d422b; }
-    .cap {
-      font-size: 11px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: #8b7b6c;
-    }
-    /* Grão de papel: dá profundidade sem pesar nada. */
-    .grain::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.32;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-    }
+    .cap { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; color: #8b7b6c; }
+    .grain::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E"); }
     .arch { border-radius: 280px 280px 14px 14px; }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      height: 54px;
-      padding: 0 28px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; font-size: 15px; font-weight: 600; }
+    .wm { font-family: "Instrument Serif", Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em; }
     .opt { cursor: pointer; user-select: none; }
+    /* Aviso amarelo: marca o que ainda falta de informação real do cliente. */
+    .todo { background: #fdf3d8; border: 1px dashed #d9a441; border-radius: 14px; padding: 16px 20px; font-size: 14px; line-height: 1.65; color: #6b5526; }
     @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
-    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .floaty { animation: floaty 9s ease-in-out infinite; }
     .floaty-slow { animation: floaty 12s ease-in-out infinite; }
   </style>
 </helmet>
 <div style="background: #fbf7ef;">
+<div style="background: #35513f; color: #f3ebdd; display: flex; align-items: center; justify-content: center; gap: 26px; height: 40px; font-size: 12.5px;">
+  <span>Rua Sousa Loureiro, n.º 9 &mdash; loja 7, Lisboa</span>
+  <span style="color: rgba(243,235,221,.4);">&bull;</span>
+  <span>+351 966 822 656</span>
+  <span style="color: rgba(243,235,221,.4);">&bull;</span>
+  <span>2.ª a 6.ª, das 9h30 às 18h30</span>
+</div>
   <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 56px; border-bottom: 1px solid #e3d8c6;">
     <div style="display: flex; align-items: center; gap: 12px;">
-      <svg viewBox="0 0 64 64" width="42" height="42" aria-hidden="true">
-        <defs>
-          <clipPath id="cc8t"><rect x="0" y="0" width="64" height="64" rx="15"/></clipPath>
-          <mask id="cc8m"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-        </defs>
-        <g clip-path="url(#cc8t)" mask="url(#cc8m)">
-          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/>
-          <rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/>
-          <rect x="48" y="0" width="16" height="64" fill="#221a14"/>
-        </g>
-      </svg>
-      <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 29px; color: #221a14;">Correia<span style="color:#c4573a;">Cor</span></span>
+      <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#221a14"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+        </svg>
+      <span class="wm">Correia<span style="letter-spacing:0.01em;">COR</span></span>
     </div>
-    <span style="font-size: 14.5px;">Precisa de ajuda? <strong style="color:#221a14;">[Telefone a confirmar]</strong></span>
+    <span style="font-size: 14.5px;">Precisa de ajuda? <strong style="color:#221a14;">+351 966 822 656</strong></span>
   </div>
 
-  <div class="grain" style="position: relative; padding: 60px 56px 34px; text-align: center;">
-    <h1 style="font-size: 74px;">O seu pedido <em style="color:#c4573a;">de orçamento</em></h1>
-    <p style="margin: 20px auto 0; font-size: 17.5px; line-height: 1.75; max-width: 620px;">Nada é cobrado aqui. Enviamos o orçamento fechado e a prova digital em 48 horas úteis, e só produzimos depois de aprovar.</p>
-    <div style="display: flex; justify-content: center; align-items: center; gap: 18px; margin-top: 34px;">
+  <div class="grain" style="position: relative; padding: 56px 56px 30px; text-align: center;">
+    <h1 style="font-size: 72px;">O seu pedido <em style="color:#c4573a;">de orçamento</em></h1>
+    <p style="margin: 20px auto 0; font-size: 17.5px; line-height: 1.75; max-width: 620px;">Nada é cobrado aqui. O pedido chega à CorreiaCOR com tudo o que escolheu, e a resposta com o orçamento vem por email ou telefone.</p>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 18px; margin-top: 32px;">
       <span style="display:inline-flex;align-items:center;gap:11px;font-size:14.5px;font-weight:600;color:#221a14;"><span style="width:32px;height:32px;border-radius:999px;background:#c4573a;color:#fffdf9;display:inline-flex;align-items:center;justify-content:center;font-family:'Instrument Serif', Georgia, serif;font-size:16px;">1</span> Produtos</span>
       <span style="width: 44px; height: 1px; background: #ddd0b9;"></span>
       <span style="display:inline-flex;align-items:center;gap:11px;font-size:14.5px;color:#8b7b6c;"><span style="width:32px;height:32px;border-radius:999px;border:1px solid #d3c6b0;display:inline-flex;align-items:center;justify-content:center;font-family:'Instrument Serif', Georgia, serif;font-size:16px;">2</span> Os seus dados</span>
@@ -97,7 +75,11 @@
     </div>
   </div>
 
-  <div style="display: grid; grid-template-columns: 1fr 410px; gap: 32px; padding: 20px 56px 80px; align-items: start;">
+  <div style="padding: 14px 56px 0;">
+    <div class="todo" style="max-width: 1100px; margin: 0 auto;"><strong style="color:#5a4a3e;">Valores de exemplo.</strong> Os preços abaixo servem só para mostrar como o resumo se comporta. Até haver tabela real, o pedido pode seguir sem qualquer valor &mdash; só com produtos, quantidades e ficheiros.</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 410px; gap: 32px; padding: 24px 56px 80px; align-items: start;">
     <div style="display: flex; flex-direction: column; gap: 16px;">
       <sc-for list="{{ lines }}" as="l" hint-placeholder-count="3">
         <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 22px; display: grid; grid-template-columns: 112px 1fr auto; gap: 24px; align-items: center; box-shadow: 0 16px 36px -34px rgba(34,26,20,.5);">
@@ -131,8 +113,8 @@
       </sc-for>
 
       <div style="background: #f3ebdd; border-radius: 22px; padding: 28px;">
-        <h3 style="font-size: 27px;">Não está no catálogo?</h3>
-        <p style="margin: 10px 0 0; font-size: 15.5px; line-height: 1.75;">Descreva o que procura. Temos acesso a mais de mil referências e fazemos fabrico à medida quando nenhuma serve.</p>
+        <h3 style="font-size: 27px;">Precisa de algo que não está aqui?</h3>
+        <p style="margin: 10px 0 0; font-size: 15.5px; line-height: 1.75;">Descreva o que procura. A CorreiaCOR faz também cartazes, mupis, lonas, expositores, brochuras, estacionário, etiquetas e rótulos.</p>
         <div style="margin-top: 18px; background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 14px; padding: 15px 18px; font-size: 15px; color: #a3958a;">Ex.: 200 sacos de papel kraft com asa torcida, impressos a duas cores…</div>
       </div>
 
@@ -140,13 +122,13 @@
         <h3 style="font-size: 27px; margin-bottom: 20px;">Os seus dados</h3>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
           <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Nome*</div>
-          <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Empresa</div>
-          <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Email*</div>
+          <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">E-mail*</div>
           <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Telefone*</div>
+          <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Empresa</div>
           <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">NIF, para faturação</div>
           <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Data em que precisa</div>
         </div>
-        <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a; margin-top: 12px; padding-bottom: 56px;">Observações — morada de entrega, separação por lojas, cores Pantone…</div>
+        <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a; margin-top: 12px; padding-bottom: 56px;">Mensagem — morada de entrega, separação por lojas, cores…</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; font-size: 14px; line-height: 1.6;">
           <span style="width: 19px; height: 19px; border-radius: 5px; border: 1.5px solid #d3c6b0; flex: 0 0 19px; margin-top: 1px;"></span>
           Autorizo o tratamento dos meus dados para resposta a este pedido, nos termos da <a href="#">política de privacidade</a>.
@@ -159,27 +141,83 @@
       <div style="display: flex; flex-direction: column; gap: 13px; font-size: 15px; padding-bottom: 20px; border-bottom: 1px solid rgba(217,164,65,.35);">
         <div style="display: flex; justify-content: space-between;"><span style="color: rgba(243,235,221,.82);">3 produtos &middot; 235 unidades</span><span style="color: #fbf7ef; font-weight: 600;">1 002,50 €</span></div>
         <div style="display: flex; justify-content: space-between;"><span style="color: rgba(243,235,221,.82);">Personalização</span><span style="color: #fbf7ef; font-weight: 600;">incluída</span></div>
-        <div style="display: flex; justify-content: space-between;"><span style="color: rgba(243,235,221,.82);">Prova digital</span><span style="color: #d9a441; font-weight: 600;">gratuita</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: rgba(243,235,221,.82);">Ficheiros</span><span style="color: #d9a441; font-weight: 600;">3 enviados</span></div>
         <div style="display: flex; justify-content: space-between;"><span style="color: rgba(243,235,221,.82);">Portes</span><span style="color: rgba(243,235,221,.7);">a confirmar</span></div>
       </div>
       <div style="padding: 22px 0;">
-        <div style="font-size: 13px; color: rgba(243,235,221,.7);">Estimativa, sem IVA</div>
+        <div style="font-size: 13px; color: rgba(243,235,221,.7);">Valor de exemplo, sem IVA</div>
         <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 50px; color: #fbf7ef; margin-top: 6px; line-height: 1;">1 002,50 €</div>
       </div>
       <div style="background: rgba(251,247,239,.09); border-radius: 14px; padding: 15px 18px; font-size: 13.5px; line-height: 1.65; color: rgba(243,235,221,.85);">
-        Uma estimativa a partir dos escalões do catálogo, não uma fatura. O preço final pode descer com o volume total.
+        Isto não é uma fatura nem um orçamento. Quem fecha o preço é a CorreiaCOR, depois de ver os ficheiros e as quantidades.
       </div>
-      <span class="btn" style="display: flex; background: #d9a441; color: #221a14; margin-top: 22px; height: 60px; font-size: 15.5px;">Enviar pedido de orçamento</span>
+      <span class="btn" style="display: flex; background: #d9a441; color: #221a14; margin-top: 22px; height: 60px; font-size: 15.5px;">Peça agora</span>
       <div style="display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 16px; font-size: 13px; color: rgba(243,235,221,.72);">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(243,235,221,.72)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
         Sem pagamento nem compromisso
       </div>
     </div>
   </div>
+<div style="background: #221a14; color: #b2a494; padding: 62px 56px 30px;">
+  <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.1fr; gap: 46px; padding-bottom: 40px; border-bottom: 1px solid #3a2f26;">
+    <div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+          <g fill="none" stroke-width="11" stroke-linecap="butt" transform="rotate(-90 60 60)">
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ed1c24" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="0.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f26522" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-8.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#f7941e" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-16.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fdb913" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-25.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#fff200" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-33.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#8dc63f" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-41.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a651" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-50.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00a99d" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-58.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#00aeef" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-66.6667"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#2e3192" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-75.0000"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#662d91" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-83.3333"/>
+            <circle cx="60" cy="60" r="52" pathLength="100" stroke="#ec008c" stroke-dasharray="8.3333 91.6667" stroke-dashoffset="-91.6667"/>
+          </g>
+          <circle cx="60" cy="60" r="35" fill="#fbf7ef"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#221a14">C</text>
+        </svg>
+        <span class="wm" style="color: #fbf7ef;">Correia<span style="letter-spacing:0.01em;">COR</span></span>
+      </div>
+      <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.75; max-width: 330px;">A solução completa em comunicação visual. Impressão digital e offset, têxtil, brindes, publicidade e marketing.</p>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">Serviços</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;"><span>Cartazes</span><span>Mupis e outdoors</span><span>Lonas e telas</span><span>Expositores</span><span>Brochuras e catálogos</span><span>Etiquetas e rótulos</span></div>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">A casa</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;"><span>Quem somos</span><span>Brindes</span><span>Portfolio</span><span>Contacto</span><span>Livro de reclamações</span></div>
+    </div>
+    <div>
+      <div class="cap" style="color: #d9a441; margin-bottom: 16px;">Onde estamos</div>
+      <div style="display: flex; flex-direction: column; gap: 11px; font-size: 15px;">
+        <span>Rua Sousa Loureiro, n.º 9 &mdash; loja 7<br>1500-586 Lisboa</span>
+        <span>+351 966 822 656<br><span style="font-size: 12.5px; color: #8a7c6d;">chamada para rede móvel nacional</span></span>
+        <span>correiacor@correiacor.pt</span>
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; font-size: 13px;">
+    <span>&copy; 2026 CorreiaCOR</span>
+    <div style="display: flex; gap: 6px; align-items: center;">
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #ed1c24;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #f7941e;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #fff200;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #00a651;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #00aeef;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #2e3192;"></span>
+      <span style="width: 10px; height: 10px; border-radius: 999px; background: #ec008c;"></span>
+    </div>
+  </div>
+</div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":1440,"height":1720}}'>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1900}}'>
 class Component extends DCLogic {
   renderVals() {
     const S = {
@@ -188,9 +226,9 @@ class Component extends DCLogic {
       tote: 'M58 64h84a4 4 0 0 1 4 4l6 84a6 6 0 0 1-6 6H54a6 6 0 0 1-6-6l6-84a4 4 0 0 1 4-4Z',
     };
     const RAW = [
-      ['T-shirt algodão 180 g', S.tshirt, '#1d3f6e', '#f0e7d6', 'Azul de tinta', 'Serigrafia', 'Peito esquerdo', 'logo-vetorial.ai', 100, 3.5],
-      ['Caneca cerâmica 330 ml', S.mug, '#fffdf9', '#e8dfd0', 'Branco cru', 'Sublimação', 'Volta completa', 'logo-vetorial.ai', 50, 3.1],
-      ['Saco de algodão cru', S.tote, '#e0d4bd', '#e6ecdf', 'Cru', 'Serigrafia', 'Frente', 'logo-vetorial.ai', 85, 1.9],
+      ['T-shirt algodão', S.tshirt, '#1d3f6e', '#f0e7d6', 'Azul', 'Serigrafia', 'Peito esquerdo', 'logotipo.ai', 100, 3.5],
+      ['Caneca cerâmica', S.mug, '#fffdf9', '#e8dfd0', 'Branco', 'Sublimação', 'Volta completa', 'logotipo.ai', 50, 3.1],
+      ['Saco de algodão', S.tote, '#e0d4bd', '#e6ecdf', 'Cru', 'Serigrafia', 'Frente', 'logotipo.ai', 85, 1.9],
     ];
     const fmt = (n) => n.toFixed(2).replace('.', ',');
     return {
