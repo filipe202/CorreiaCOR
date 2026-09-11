@@ -1,23 +1,26 @@
 <title>CorreiaCOR</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap">
 <style>
+  /* Paleta tirada das tintas do logótipo: o vermelho e o azul da roda são as
+     cores de trabalho do site, para a marca e as páginas falarem a mesma língua. */
   :root {
-    --paper: #fbf7ef;
-    --cream: #f3ebdd;
-    --card: #fffdf9;
-    --ink: #221a14;
-    --body: #5a4a3e;
-    --muted: #8b7b6c;
-    --line: #e3d8c6;
-    --line-soft: #ede4d3;
-    --blue: #1d3f6e;
-    --terra: #c4573a;
-    --terra-dark: #9d422b;
-    --green: #35513f;
-    --ochre: #d9a441;
-    --plum: #6b3552;
+    --paper: #f6f3ec;
+    --paper-2: #ece7db;
+    --card: #ffffff;
+    --ink: #14120f;
+    --body: #4a463e;
+    --muted: #857f74;
+    --line: #d9d3c6;
+    --line-soft: #e8e2d6;
+    --red: #ed1c24;
+    --red-dark: #c2141b;
+    --blue: #2e3192;
+    --cyan: #00aeef;
+    --green: #00a651;
+    --amber: #fdb913;
+    --magenta: #ec008c;
     --gutter: clamp(16px, 4vw, 56px);
     color-scheme: light;
   }
@@ -28,7 +31,7 @@
     margin: 0;
     background: var(--paper);
     color: var(--body);
-    font-family: Karla, "Helvetica Neue", Arial, sans-serif;
+    font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -36,195 +39,224 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-    font-weight: 400;
     margin: 0;
     color: var(--ink);
-    letter-spacing: -0.015em;
-    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
     text-wrap: balance;
   }
   p { margin: 0; text-wrap: pretty; }
-  em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
   img { max-width: 100%; }
-  a { color: var(--terra); text-decoration: none; }
-  a:hover { color: var(--terra-dark); }
+  a { color: var(--red); text-decoration: none; }
+  a:hover { color: var(--red-dark); }
   button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-  :focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; border-radius: 4px; }
+  :focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
 
   .wrap { padding-inline: var(--gutter); }
+
+  /* Etiquetas técnicas: monoespaçada, como as anotações numa ficha de obra. */
   .cap {
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    font-weight: 600; color: var(--muted);
+    font-family: "Space Mono", ui-monospace, monospace;
+    font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 700; color: var(--muted);
   }
-  .arch { border-radius: 280px 280px 14px 14px; }
-  .grain { position: relative; }
-  .grain::after {
-    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .3;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  .mono { font-family: "Space Mono", ui-monospace, monospace; }
+
+  /* Barra de controlo de cor — a tira que sai na margem de cada folha impressa. */
+  .colorbar { display: flex; height: 7px; width: 100%; }
+  .colorbar span { flex: 1; }
+  .colorbar.thin { height: 4px; }
+
+  /* Marcas de corte nos cantos, como numa prova de impressão. */
+  .crop { position: relative; }
+  .crop::before, .crop::after {
+    content: ""; position: absolute; width: 13px; height: 13px; pointer-events: none;
+    border-color: var(--line); border-style: solid;
+  }
+  .crop::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+  .crop::after { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+
+  /* Trama de meio-tom, em vez de textura de papel. */
+  .halftone { position: relative; }
+  .halftone::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .42;
+    background-image: radial-gradient(var(--line) 1px, transparent 1px);
+    background-size: 9px 9px;
   }
 
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    min-height: 52px; padding: 12px 26px; border-radius: 999px;
-    font-size: 15px; font-weight: 600; text-align: center;
-    transition: background-color .16s ease, color .16s ease, border-color .16s ease;
+    min-height: 52px; padding: 12px 26px; border-radius: 3px;
+    font-size: 14.5px; font-weight: 700; letter-spacing: 0.01em; text-align: center;
+    transition: background-color .14s ease, color .14s ease, border-color .14s ease;
   }
-  .btn-primary { background: var(--terra); color: #fffdf9; }
-  .btn-primary:hover { background: var(--terra-dark); color: #fffdf9; }
+  .btn-primary { background: var(--red); color: #fff; }
+  .btn-primary:hover { background: var(--red-dark); color: #fff; }
   .btn-ink { background: var(--ink); color: var(--paper); }
-  .btn-ink:hover { background: #3b2e24; color: var(--paper); }
-  .btn-ghost { border: 1px solid #d3c6b0; color: var(--ink); }
-  .btn-ghost:hover { border-color: var(--ink); color: var(--ink); }
-  .btn-ochre { background: var(--ochre); color: var(--ink); }
-  .btn-ochre:hover { background: #c8942f; color: var(--ink); }
+  .btn-ink:hover { background: #302b23; color: var(--paper); }
+  .btn-ghost { border: 1.5px solid var(--ink); color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+  .btn-ochre { background: var(--amber); color: var(--ink); }
+  .btn-ochre:hover { background: #e5a40c; color: var(--ink); }
   .btn[disabled] { opacity: .45; cursor: not-allowed; }
 
-  .card {
-    background: var(--card); border: 1px solid var(--line); border-radius: 22px;
-    box-shadow: 0 18px 40px -32px rgba(34,26,20,.5);
-  }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 3px; }
   .note {
-    background: #fdf3d8; border: 1px dashed var(--ochre); border-radius: 14px;
-    padding: 16px 20px; font-size: 14px; line-height: 1.65; color: #6b5526;
+    background: #fff6d9; border-left: 4px solid var(--amber); border-radius: 2px;
+    padding: 15px 20px; font-size: 14px; line-height: 1.65; color: #5c4a14;
   }
-  .note strong { color: #4d3d18; }
+  .note strong { color: #3d3008; }
 
-  /* ---------- barra de contactos + cabecalho ---------- */
-  .topbar {
-    background: var(--green); color: var(--cream);
-    display: flex; align-items: center; justify-content: center;
-    gap: 22px; flex-wrap: wrap; padding: 9px var(--gutter);
-    font-size: 12.5px; text-align: center;
+  /* Ficha de trabalho: linhas rotuladas, como uma ordem de serviço. */
+  .ticket { border: 1px solid var(--ink); border-radius: 3px; overflow: hidden; }
+  .ticket-head {
+    background: var(--ink); color: var(--paper); padding: 11px 16px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    font-family: "Space Mono", monospace; font-size: 11.5px;
+    letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700;
   }
-  .topbar a { color: var(--cream); }
-  .topbar .sep { opacity: .45; }
+  .ticket-row {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+    padding: 12px 16px; border-bottom: 1px dashed var(--line); font-size: 15px;
+  }
+  .ticket-row:last-child { border-bottom: 0; }
+  .ticket-row dt {
+    font-family: "Space Mono", monospace; font-size: 11.5px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted); margin: 0; white-space: nowrap;
+  }
+  .ticket-row dd { margin: 0; font-weight: 600; color: var(--ink); text-align: right; }
+
+  .topbar {
+    background: var(--ink); color: #cfc9bc;
+    display: flex; align-items: center; justify-content: center;
+    gap: 20px; flex-wrap: wrap; padding: 9px var(--gutter);
+    font-family: "Space Mono", monospace; font-size: 11.5px;
+    letter-spacing: 0.04em; text-align: center;
+  }
+  .topbar a { color: #cfc9bc; }
+  .topbar a:hover { color: #fff; }
+  .topbar .sep { opacity: .4; }
 
   header.site {
     position: sticky; top: 0; z-index: 40;
-    background: rgba(251,247,239,.94);
+    background: rgba(246,243,236,.96);
     backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1.5px solid var(--ink);
   }
-  .navrow {
-    display: flex; align-items: center; justify-content: space-between; gap: 20px;
-    padding-block: 12px;
-  }
+  .navrow { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 12px; }
   .brand { display: inline-flex; align-items: center; gap: 11px; }
   .wm {
-    font-family: "Instrument Serif", Georgia, serif;
-    font-size: 27px; color: var(--ink); letter-spacing: -0.01em; white-space: nowrap;
+    font-family: Archivo, sans-serif; font-weight: 800; font-size: 25px;
+    color: var(--ink); letter-spacing: -0.04em; white-space: nowrap;
   }
-  nav.main { display: flex; align-items: center; gap: 26px; }
-  nav.main a { color: var(--body); font-size: 15px; font-weight: 500; padding-block: 4px; }
+  nav.main { display: flex; align-items: center; gap: 24px; }
+  nav.main a {
+    color: var(--body); font-size: 13.5px; font-weight: 600;
+    letter-spacing: 0.02em; text-transform: uppercase; padding-block: 4px;
+  }
   nav.main a:hover { color: var(--ink); }
-  nav.main a.on { color: var(--ink); box-shadow: inset 0 -1.5px 0 var(--terra); }
+  nav.main a.on { color: var(--ink); box-shadow: inset 0 -3px 0 var(--red); }
   .navactions { display: flex; align-items: center; gap: 10px; }
   .cartbtn {
-    display: inline-flex; align-items: center; gap: 9px;
-    min-height: 44px; padding: 8px 14px; border-radius: 999px;
-    font-size: 14px; font-weight: 500; color: var(--body);
+    display: inline-flex; align-items: center; gap: 9px; min-height: 44px;
+    padding: 8px 12px; font-size: 13.5px; font-weight: 600; color: var(--body);
+    text-transform: uppercase; letter-spacing: 0.02em;
   }
   .cartbtn:hover { color: var(--ink); }
   .badge {
-    background: var(--terra); color: #fffdf9; border-radius: 999px;
-    min-width: 20px; height: 20px; display: inline-flex; align-items: center;
-    justify-content: center; font-size: 11px; font-weight: 700; padding-inline: 5px;
+    background: var(--red); color: #fff; border-radius: 2px; min-width: 20px; height: 20px;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: "Space Mono", monospace; font-size: 11px; font-weight: 700; padding-inline: 5px;
   }
-  .burger { display: none; width: 46px; height: 46px; border-radius: 999px; border: 1px solid var(--line); align-items: center; justify-content: center; }
+  .burger { display: none; width: 46px; height: 46px; border: 1.5px solid var(--ink); align-items: center; justify-content: center; }
 
-  /* ---------- rodape ---------- */
-  footer.site { background: var(--ink); color: #b2a494; padding-block: 56px 26px; }
-  footer.site h4 { color: var(--ochre); font-family: Karla, sans-serif; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; }
-  footer.site a { color: #b2a494; }
+  footer.site { background: var(--ink); color: #a9a396; padding-block: 52px 24px; }
+  footer.site h4 {
+    color: var(--amber); font-family: "Space Mono", monospace; font-size: 11.5px;
+    letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px;
+  }
+  footer.site a { color: #a9a396; }
   footer.site a:hover { color: var(--paper); }
-  .footgrid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 34px; border-bottom: 1px solid #3a2f26; }
+  .footgrid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid #2f2a22; }
   .footlist { display: flex; flex-direction: column; gap: 10px; font-size: 15px; }
-  .footbottom { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding-top: 22px; font-size: 13px; }
-  .dots { display: flex; gap: 6px; }
-  .dots span { width: 10px; height: 10px; border-radius: 999px; }
+  .footbottom { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding-top: 20px; font-family: "Space Mono", monospace; font-size: 11.5px; }
 
-  /* ---------- blocos ---------- */
-  .section { padding-block: clamp(48px, 7vw, 84px); }
-  .lede { max-width: 700px; margin-inline: auto; text-align: center; }
-  .grid { display: grid; gap: 22px; }
+  .section { padding-block: clamp(44px, 6.5vw, 78px); }
+  .grid { display: grid; gap: 20px; }
   .g2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .g3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
   .g4 { grid-template-columns: repeat(4, minmax(0,1fr)); }
-  .ornament { display: flex; justify-content: center; }
 
-  .stat { font-family: "Instrument Serif", Georgia, serif; font-size: 38px; color: var(--ink); line-height: 1; }
+  /* Cabeçalho de secção com índice, como um separador de dossiê. */
+  .sechead { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-bottom: 34px; border-bottom: 2px solid var(--ink); padding-bottom: 18px; }
+  .sechead .idx { font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700; color: var(--red); letter-spacing: 0.1em; }
 
-  .prodstage { border-radius: 200px 200px 12px 12px; padding: 22px 14px 12px; position: relative; }
+  .stat { font-family: Archivo, sans-serif; font-weight: 900; font-size: 42px; color: var(--ink); line-height: 1; letter-spacing: -0.04em; }
+
+  .prodstage { padding: 20px 14px 12px; position: relative; border-bottom: 1px solid var(--line); }
   .prodtag {
-    position: absolute; left: 14px; top: 14px; font-size: 11px; font-weight: 600;
-    letter-spacing: .08em; text-transform: uppercase; background: var(--card);
-    color: var(--body); border-radius: 999px; padding: 4px 11px;
+    position: absolute; left: 12px; top: 12px; font-family: "Space Mono", monospace;
+    font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+    background: var(--ink); color: var(--paper); padding: 4px 9px;
   }
-  .prodcard { display: block; padding: 18px; text-align: left; width: 100%; }
-  .prodcard:hover { border-color: #cfc1a8; }
-  .prodcard h3 { font-size: 23px; }
+  .prodcard { display: block; text-align: left; width: 100%; padding: 0; overflow: hidden; }
+  .prodcard:hover { border-color: var(--ink); }
+  .prodcard h3 { font-size: 20px; }
 
   .field {
-    width: 100%; border: 1px solid var(--line); border-radius: 12px;
-    padding: 14px 16px; font-size: 15px; background: var(--card); color: var(--ink);
+    width: 100%; border: 1.5px solid var(--line); border-radius: 2px;
+    padding: 13px 15px; font-size: 15px; background: var(--card); color: var(--ink);
     font-family: inherit;
   }
-  .field::placeholder { color: #a3958a; }
-  .field:focus { outline: 2px solid var(--terra); outline-offset: 1px; }
-  .field.bad { border-color: #c0392b; background: #fdf1ef; }
-  .err { color: #a93226; font-size: 13px; margin-top: 6px; }
+  .field::placeholder { color: #a8a296; }
+  .field:focus { outline: 2px solid var(--red); outline-offset: 1px; border-color: var(--ink); }
+  .field.bad { border-color: var(--red); background: #fdf1f0; }
+  .err { color: var(--red-dark); font-size: 13px; margin-top: 6px; font-weight: 600; }
 
   .chip {
     display: inline-flex; align-items: center; justify-content: center;
-    min-height: 44px; padding: 10px 18px; border-radius: 999px;
-    font-size: 14.5px; font-weight: 600; background: var(--card);
-    border: 1px solid var(--line); color: var(--body);
+    min-height: 44px; padding: 10px 16px; border-radius: 2px;
+    font-size: 13.5px; font-weight: 700; letter-spacing: 0.02em;
+    background: var(--card); border: 1.5px solid var(--line); color: var(--body);
   }
-  .chip:hover { border-color: #cfc1a8; }
+  .chip:hover { border-color: var(--ink); color: var(--ink); }
   .chip.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
   .chip.blue.on { background: var(--blue); border-color: var(--blue); }
 
-  .swatch {
-    width: 44px; height: 44px; border-radius: 999px; padding: 0;
-    box-shadow: inset 0 0 0 1px rgba(34,26,20,.18);
-  }
-  .swatch.on { box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--terra); }
+  /* Amostras de cor com ar de pastilha Pantone. */
+  .swatch { width: 46px; height: 54px; border-radius: 2px; padding: 0; box-shadow: inset 0 0 0 1px rgba(20,18,15,.2); }
+  .swatch.on { box-shadow: inset 0 0 0 1px rgba(20,18,15,.2), 0 0 0 2px var(--paper), 0 0 0 4px var(--red); }
 
-  .techbtn {
-    display: block; text-align: left; width: 100%; padding: 18px 20px;
-    border-radius: 18px; background: var(--card); border: 1px solid var(--line);
-  }
+  .techbtn { display: block; text-align: left; width: 100%; padding: 16px 18px; border-radius: 2px; background: var(--card); border: 1.5px solid var(--line); }
+  .techbtn:hover { border-color: var(--ink); }
   .techbtn.on { background: var(--blue); border-color: var(--blue); }
-  .techbtn.on .t-name, .techbtn.on .t-note { color: #fffdf9; }
-  .techbtn.on .t-note { opacity: .78; }
-  .t-name { font-family: "Instrument Serif", Georgia, serif; font-size: 22px; color: var(--ink); display: block; }
-  .t-note { font-size: 13.5px; color: var(--muted); display: block; margin-top: 5px; line-height: 1.45; }
+  .techbtn.on .t-name, .techbtn.on .t-note { color: #fff; }
+  .techbtn.on .t-note { opacity: .8; }
+  .t-name { font-size: 17px; font-weight: 800; color: var(--ink); display: block; letter-spacing: -0.02em; }
+  .t-note { font-size: 13.5px; color: var(--muted); display: block; margin-top: 4px; line-height: 1.45; }
 
-  .tier { display: block; text-align: center; padding: 12px 4px; border-radius: 16px; background: var(--card); border: 1px solid var(--line); }
-  .tier.on { background: var(--terra); border-color: var(--terra); }
-  .tier.on .q, .tier.on .u { color: #fffdf9; }
-  .tier .q { display: block; font-family: "Instrument Serif", Georgia, serif; font-size: 22px; color: var(--ink); }
-  .tier .u { display: block; font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .tier { display: block; text-align: center; padding: 11px 4px; border-radius: 2px; background: var(--card); border: 1.5px solid var(--line); }
+  .tier:hover { border-color: var(--ink); }
+  .tier.on { background: var(--red); border-color: var(--red); }
+  .tier.on .q, .tier.on .u { color: #fff; }
+  .tier .q { display: block; font-family: "Space Mono", monospace; font-size: 19px; font-weight: 700; color: var(--ink); }
+  .tier .u { display: block; font-family: "Space Mono", monospace; font-size: 11.5px; color: var(--muted); margin-top: 2px; }
 
   .toast {
     position: fixed; left: 50%; bottom: 24px;
     transform: translateX(-50%) translateY(calc(100% + 40px));
     opacity: 0; pointer-events: none;
-    background: var(--ink); color: var(--paper); border-radius: 999px;
-    padding: 14px 26px; font-size: 15px; font-weight: 600; z-index: 90;
-    box-shadow: 0 18px 40px -14px rgba(34,26,20,.6);
+    background: var(--ink); color: var(--paper); border-radius: 3px;
+    padding: 14px 24px; font-size: 14.5px; font-weight: 700; z-index: 90;
+    box-shadow: 0 18px 40px -14px rgba(20,18,15,.6);
     transition: transform .28s cubic-bezier(.2,.8,.3,1), opacity .2s ease;
   }
   .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 
-  .skel { display: none; }
-
-  @media (max-width: 980px) {
-    .g4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .footgrid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 860px) {
+  @media (max-width: 1080px) { nav.main { gap: 16px; } nav.main a { font-size: 12.5px; } }
+  @media (max-width: 980px) { .g4 { grid-template-columns: repeat(2, minmax(0,1fr)); } .footgrid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 900px) {
     nav.main { display: none; }
     .burger { display: inline-flex; }
     .navactions .btn { display: none; }
@@ -234,9 +266,10 @@
   }
   @media (max-width: 560px) {
     .g4 { grid-template-columns: 1fr; }
-    .footgrid { grid-template-columns: 1fr; gap: 28px; }
-    .topbar { font-size: 12px; gap: 8px; }
+    .footgrid { grid-template-columns: 1fr; gap: 26px; }
+    .topbar { font-size: 11px; gap: 8px; }
     .topbar .sep { display: none; }
+    .sechead { margin-bottom: 26px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -244,17 +277,18 @@
     html { scroll-behavior: auto; }
   }
 
-  /* menu movel */
   .drawer {
     position: fixed; inset: 0; z-index: 60; background: var(--paper);
-    display: flex; flex-direction: column; padding: 20px var(--gutter) 40px;
-    overflow-y: auto;
+    display: flex; flex-direction: column; padding: 20px var(--gutter) 40px; overflow-y: auto;
   }
   /* `display:flex` ganha ao [hidden] por omissão, e a gaveta ficava a tapar a
      página inteira a intercetar cliques. Esta regra fecha-a de facto. */
   .drawer[hidden] { display: none; }
-  .drawer nav { display: flex; flex-direction: column; gap: 4px; margin-top: 30px; }
-  .drawer nav a { font-family: "Instrument Serif", Georgia, serif; font-size: 36px; color: var(--ink); padding-block: 10px; border-bottom: 1px solid var(--line); }
+  .drawer nav { display: flex; flex-direction: column; gap: 0; margin-top: 26px; }
+  .drawer nav a {
+    font-size: 30px; font-weight: 800; letter-spacing: -0.035em; color: var(--ink);
+    padding-block: 14px; border-bottom: 1px solid var(--line);
+  }
 </style>
 
 <div id="app"></div>
@@ -510,15 +544,27 @@ function logo(size, tone) {
   return '<svg viewBox="0 0 120 120" width="' + size + '" height="' + size + '" aria-hidden="true">' +
     '<g fill="none" stroke-width="' + sw + '" stroke-linecap="butt" transform="rotate(-90 60 60)">' + arcs + '</g>' +
     '<circle cx="60" cy="60" r="35" fill="' + disc + '"/>' +
-    '<text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="\'Instrument Serif\', Georgia, serif" font-size="46" fill="' + letter + '">C</text>' +
+    '<text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="Archivo, Helvetica, sans-serif" font-weight="800" font-size="46" fill="' + letter + '">C</text>' +
     '</svg>';
 }
 
+/* Mira de registo entre duas barras de controlo — o que se vê na margem de
+   qualquer folha que sai da máquina. */
 const ORNAMENT =
-  '<svg width="112" height="14" viewBox="0 0 112 14" fill="none" aria-hidden="true">' +
-  '<path d="M2 7h36M74 7h36" stroke="#d9a441" stroke-width="1"/>' +
-  '<path d="M56 1.5 60.5 7 56 12.5 51.5 7Z" fill="#c4573a"/>' +
-  '<circle cx="44" cy="7" r="2" fill="#d9a441"/><circle cx="68" cy="7" r="2" fill="#d9a441"/></svg>';
+  '<div style="display:flex;align-items:center;gap:16px;width:100%;max-width:620px;">' +
+  '<span style="flex:1;height:6px;background:linear-gradient(90deg,' + WHEEL.slice(0,6).join(',') + ');"></span>' +
+  '<svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">' +
+  '<circle cx="13" cy="13" r="7.5" stroke="#14120f" stroke-width="1.3"/>' +
+  '<path d="M13 0v8M13 18v8M0 13h8M18 13h8" stroke="#14120f" stroke-width="1.3"/>' +
+  '<circle cx="13" cy="13" r="2.2" fill="#ed1c24"/></svg>' +
+  '<span style="flex:1;height:6px;background:linear-gradient(90deg,' + WHEEL.slice(6).join(',') + ');"></span>' +
+  '</div>';
+
+/* Barra de controlo de cor, com as doze tintas da marca. */
+function colorBar(thin) {
+  return '<div class="colorbar' + (thin ? ' thin' : '') + '" aria-hidden="true">' +
+    WHEEL.map(function (c) { return '<span style="background:' + c + '"></span>'; }).join("") + '</div>';
+}
 
 /* Desenho do produto: a peça pintada com a cor escolhida, a zona de
    impressão tracejada por cima, e a marca do cliente dentro dela. */
@@ -552,7 +598,7 @@ function productArt(prod, colorKey, areaIdx, artwork, height, showArea) {
     overlay = '<g transform="translate(' + (a[1] + a[3]/2 - 30*s).toFixed(2) + ' ' + (a[2] + a[4]/2 - 30*s).toFixed(2) +
       ') scale(' + s.toFixed(3) + ')"><g fill="none" stroke-width="5.5" transform="rotate(-90 30 30)">' + arcs + '</g>' +
       '<circle cx="30" cy="30" r="17.5" fill="' + ink + '"/>' +
-      '<text x="30" y="31" text-anchor="middle" dominant-baseline="central" font-family="\'Instrument Serif\', Georgia, serif" font-size="23" fill="' + col.hex + '">C</text></g>';
+      '<text x="30" y="31" text-anchor="middle" dominant-baseline="central" font-family="Archivo, Helvetica, sans-serif" font-weight="800" font-size="23" fill="' + col.hex + '">C</text></g>';
   }
 
   const areaBox = showArea
@@ -631,7 +677,7 @@ function header(route) {
     return '<a href="' + n[0] + '"' + (on ? ' class="on" aria-current="page"' : "") + ">" + n[1] + "</a>";
   }).join("");
   const count = cartCount();
-  return noticeBar() +
+  return colorBar() + noticeBar() +
     '<div class="topbar">' +
       "<span>" + esc(CO.street) + ", " + esc(CO.postal) + "</span>" +
       '<span class="sep">&bull;</span>' +
@@ -673,7 +719,7 @@ function footer() {
   const serv = SERVICES.slice(0, 6).map(function (s) {
     return '<a href="#/servicos">' + esc(s.name.split(",")[0]) + "</a>";
   }).join("");
-  return '<footer class="site"><div class="wrap">' +
+  return '<footer class="site">' + colorBar() + '<div class="wrap">' +
     '<div class="footgrid">' +
       "<div>" +
         '<span class="brand">' + logo(40, "dark") + '<span class="wm" style="color:#fbf7ef;">Correia<span style="letter-spacing:.01em;">COR</span></span></span>' +
@@ -701,11 +747,38 @@ function footer() {
 
 /* ---------- blocos reutilizáveis ---------- */
 
+let secIdx = 0;
 function sectionHead(kick, title, lede) {
-  return '<div class="lede" style="margin-bottom:44px;">' +
-    '<span class="cap" style="color:var(--terra);">' + esc(kick) + "</span>" +
-    '<h2 style="font-size:clamp(34px,5vw,56px);margin-top:14px;">' + title + "</h2>" +
-    (lede ? '<p style="margin-top:16px;font-size:17px;line-height:1.7;">' + lede + "</p>" : "") +
+  secIdx++;
+  const n = String(secIdx).padStart(2, "0");
+  return '<div class="sechead">' +
+      '<div style="max-width:720px;">' +
+        '<span class="idx">' + n + " &mdash; " + esc(kick).toUpperCase() + "</span>" +
+        '<h2 style="font-size:clamp(30px,4.4vw,50px);margin-top:12px;">' + title + "</h2>" +
+      "</div>" +
+      (lede ? '<p style="max-width:420px;font-size:16px;line-height:1.7;">' + lede + "</p>" : "") +
+    "</div>";
+}
+
+/* Folha de prova: o produto sobre papel branco, com miras de registo nos
+   cantos e a barra de controlo de cor no pé, como sai da máquina. */
+function regMark(pos) {
+  return '<svg width="18" height="18" viewBox="0 0 26 26" fill="none" aria-hidden="true" style="position:absolute;' + pos + ';opacity:.75;">' +
+    '<circle cx="13" cy="13" r="7" stroke="#8a8478" stroke-width="1.1"/>' +
+    '<path d="M13 1v8M13 17v8M1 13h8M17 13h8" stroke="#8a8478" stroke-width="1.1"/></svg>';
+}
+
+function pressSheet() {
+  return '<div style="background:var(--blue);padding:clamp(20px,3vw,34px);display:flex;align-items:center;justify-content:center;min-height:400px;">' +
+    '<div style="position:relative;background:#fff;width:100%;max-width:430px;padding:34px 26px 0;">' +
+      regMark("top:8px;left:8px") + regMark("top:8px;right:8px") +
+      regMark("bottom:30px;left:8px") + regMark("bottom:30px;right:8px") +
+      '<div style="width:min(280px,78%);margin:0 auto;">' +
+        productArt(bySlug["t-shirt-algodao"], "azul", 1, null, 280, false) +
+      "</div>" +
+      '<div class="mono" style="text-align:center;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8a8478;padding-block:12px 14px;">Prova de cor &middot; a sua marca aplicada</div>' +
+      colorBar(true) +
+    "</div>" +
   "</div>";
 }
 
@@ -722,8 +795,8 @@ function productCard(p) {
       "<h3>" + esc(p.name) + "</h3>" +
       '<p style="font-size:13.5px;color:var(--muted);margin-top:6px;">' + esc(p.blurb) + "</p>" +
       '<div style="display:flex;align-items:baseline;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);">' +
-        '<span style="font-family:\'Instrument Serif\',Georgia,serif;font-size:24px;color:var(--ink);">desde ' + eur(p.tiers[p.tiers.length-1].unit) + "</span>" +
-        '<span style="font-size:13px;font-weight:600;color:var(--terra);">Configurar &rarr;</span>' +
+        '<span style="font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:24px;color:var(--ink);">desde ' + eur(p.tiers[p.tiers.length-1].unit) + "</span>" +
+        '<span style="font-size:13px;font-weight:600;color:var(--red);">Configurar &rarr;</span>' +
       "</div>" +
     "</div></a>";
 }
@@ -735,38 +808,44 @@ function productCard(p) {
 /* ---------- páginas ---------- */
 
 function pageHome() {
+  const especialidades = SERVICES.map(function (x) { return x.name.split(",")[0]; }).join(" · ");
   const hero =
-    '<div class="grain wrap" style="padding-block:clamp(40px,6vw,72px);">' +
-      '<div class="grid split" style="grid-template-columns:1.02fr .98fr;gap:clamp(32px,5vw,56px);align-items:center;">' +
+    '<div class="halftone wrap" style="padding-block:clamp(36px,5vw,64px);">' +
+      '<div class="grid split" style="grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,52px);align-items:center;">' +
         "<div>" +
-          '<span class="cap" style="color:var(--terra);">Impressão digital e offset &middot; Têxtil &middot; Brindes &middot; Publicidade e marketing</span>' +
-          '<h1 style="font-size:clamp(44px,7vw,84px);margin-top:20px;">A solução completa em <em style="color:var(--terra);">comunicação visual</em></h1>' +
-          '<p style="margin-top:24px;font-size:clamp(17px,2vw,19px);line-height:1.7;max-width:520px;">Transforme as suas ideias em realidade com a nossa impressão digital de alta qualidade. Especializados em grande e pequeno formatos, trabalhamos com diversos materiais, além da personalização em peças de vestuário e numa vasta variedade de brindes.</p>' +
-          '<div style="display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;">' +
+          '<span class="cap" style="color:var(--red);">Artes gráficas em Lisboa desde 2004</span>' +
+          '<h1 style="font-size:clamp(42px,6.6vw,80px);margin-top:16px;">A solução completa em comunicação visual</h1>' +
+          '<div class="mono" style="margin-top:18px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-block:1px solid var(--line);padding-block:11px;">' +
+            esc(especialidades) + "</div>" +
+          '<p style="margin-top:20px;font-size:clamp(16px,1.9vw,18px);line-height:1.7;max-width:540px;">Transforme as suas ideias em realidade com a nossa impressão digital de alta qualidade. Especializados em grande e pequeno formatos, trabalhamos com diversos materiais, além da personalização em peças de vestuário e numa vasta variedade de brindes.</p>' +
+          '<div style="display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;">' +
             '<a class="btn btn-primary" href="#/brindes">Ver o catálogo de brindes' +
-              '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>' +
+              '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>' +
             '<a class="btn btn-ghost" href="#/contacto">Fale connosco</a>' +
           "</div>" +
-          '<div style="display:flex;align-items:center;gap:clamp(18px,3vw,30px);margin-top:40px;padding-top:26px;border-top:1px solid var(--line);flex-wrap:wrap;">' +
-            '<div><div class="stat">30<span style="color:#ec008c;">+</span></div><div class="cap" style="margin-top:4px;">anos no setor gráfico</div></div>' +
-            '<div style="width:1px;height:42px;background:var(--line);"></div>' +
-            '<div><div class="stat">20<span style="color:#00aeef;">+</span></div><div class="cap" style="margin-top:4px;">anos de CorreiaCOR</div></div>' +
-            '<div style="width:1px;height:42px;background:var(--line);"></div>' +
-            '<div><div class="stat">Lisboa</div><div class="cap" style="margin-top:4px;">Rua Sousa Loureiro</div></div>' +
+          '<div style="display:flex;align-items:flex-end;gap:clamp(16px,3vw,28px);margin-top:34px;padding-top:22px;border-top:2px solid var(--ink);flex-wrap:wrap;">' +
+            '<div><div class="stat">30<span style="color:var(--magenta);">+</span></div><div class="cap" style="margin-top:4px;">anos no setor gráfico</div></div>' +
+            '<div style="width:1px;height:40px;background:var(--line);"></div>' +
+            '<div><div class="stat">20<span style="color:var(--cyan);">+</span></div><div class="cap" style="margin-top:4px;">anos de CorreiaCOR</div></div>' +
+            '<div style="width:1px;height:40px;background:var(--line);"></div>' +
+            '<div><div class="stat">08</div><div class="cap" style="margin-top:4px;">famílias de produtos</div></div>' +
           "</div>" +
         "</div>" +
-        '<div class="arch" style="background:var(--blue);min-height:420px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;">' +
-          '<div style="width:min(300px,70%);">' + productArt(bySlug["t-shirt-algodao"], "branco", 1, null, 300, false) + "</div>" +
-          '<div style="position:absolute;left:0;right:0;bottom:20px;text-align:center;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(243,235,221,.6);">A sua marca, aplicada</div>' +
-        "</div>" +
+        pressSheet() +
       "</div>" +
     "</div>";
 
   const quote =
-    '<div class="section wrap"><div class="lede" style="max-width:920px;">' +
-      '<svg width="44" height="32" viewBox="0 0 46 34" fill="none" aria-hidden="true" style="opacity:.5;"><path d="M0 34V18C0 8 6 1 17 0l2 6c-6 1-9 4-9 9h8v19H0Zm27 0V18C27 8 33 1 44 0l2 6c-6 1-9 4-9 9h8v19H27Z" fill="#d9a441"/></svg>' +
-      '<blockquote style="margin:22px 0 0;font-family:\'Instrument Serif\',Georgia,serif;font-size:clamp(26px,4vw,40px);line-height:1.32;color:var(--ink);">Bem-vindo à CorreiaCOR, onde a paixão pela inovação e dedicação à qualidade se unem para transformar as suas ideias em <em style="color:var(--terra);">impressões vibrantes e de alta precisão.</em></blockquote>' +
-      '<div style="margin-top:24px;font-size:15px;color:var(--muted);">' + esc(CO.ceo) + " &middot; fundador e CEO da CorreiaCOR</div>" +
+    '<div class="section" style="background:var(--ink);color:#cfc9bc;"><div class="wrap">' +
+      '<div style="display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,44px);align-items:start;" class="split">' +
+        '<div style="flex:0 0 auto;">' + logo(92, "dark") + "</div>" +
+        "<div>" +
+          '<span class="cap" style="color:var(--amber);">Palavra de quem assina</span>' +
+          '<p style="margin-top:14px;font-size:clamp(20px,2.8vw,30px);line-height:1.42;font-weight:600;color:#fff;letter-spacing:-0.02em;max-width:900px;">Bem-vindo à CorreiaCOR, onde a paixão pela inovação e dedicação à qualidade se unem para transformar as suas ideias em <span style="color:var(--amber);">impressões vibrantes e de alta precisão</span>.</p>' +
+          '<div class="mono" style="margin-top:22px;padding-top:16px;border-top:1px solid #2f2a22;font-size:12px;letter-spacing:.08em;text-transform:uppercase;">' +
+            esc(CO.ceo) + " &middot; fundador e CEO &middot; 30+ anos no setor gráfico</div>" +
+        "</div>" +
+      "</div>" +
     "</div></div>";
 
   const servs = SERVICES.map(function (s) {
@@ -789,7 +868,7 @@ function pageHome() {
   return hero +
     '<div class="ornament">' + ORNAMENT + "</div>" +
     quote +
-    '<div class="section" style="background:var(--cream);"><div class="wrap">' +
+    '<div class="section" style="background:var(--paper-2);"><div class="wrap">' +
       sectionHead("Principais produtos e serviços", "Uma ampla gama, <em>com tecnologia avançada</em>",
         "Todos os nossos produtos passam por rigorosos controlos de qualidade e são fabricados com materiais selecionados, para garantir desempenho superior e maior durabilidade.") +
       '<div class="grid g4">' + servs + "</div>" +
@@ -800,11 +879,11 @@ function pageHome() {
       '<div class="grid g4">' + feat + "</div>" +
       '<div style="display:flex;justify-content:center;margin-top:36px;"><a class="btn btn-ghost" href="#/brindes">Ver o catálogo completo</a></div>' +
     "</div>" +
-    '<div class="section" style="background:var(--blue);color:var(--cream);"><div class="wrap">' +
+    '<div class="section" style="background:var(--blue);color:var(--paper-2);"><div class="wrap">' +
       '<div class="grid split" style="grid-template-columns:.95fr 1.05fr;gap:clamp(32px,5vw,56px);align-items:center;">' +
         "<div>" +
-          '<span class="cap" style="color:var(--ochre);">O nosso compromisso</span>' +
-          '<h2 style="font-size:clamp(32px,4.5vw,52px);margin-top:14px;color:#fbf7ef;">Cada projeto é uma <em style="color:var(--ochre);">obra única e exclusiva</em></h2>' +
+          '<span class="cap" style="color:var(--amber);">O nosso compromisso</span>' +
+          '<h2 style="font-size:clamp(32px,4.5vw,52px);margin-top:14px;color:#fbf7ef;">Cada projeto é uma <em style="color:var(--amber);">obra única e exclusiva</em></h2>' +
           '<p style="margin-top:20px;font-size:17px;line-height:1.8;color:rgba(243,235,221,.86);">O nosso compromisso com clientes e parceiros vai além da simples entrega: oferecemos profissionalismo, dedicação e uma vasta experiência que garantem resultados de alta qualidade. Não somos apenas uma gráfica &mdash; somos o seu parceiro na realização de projetos que se destacam.</p>' +
         "</div>" +
         '<div class="grid g2" style="gap:16px;">' + commits + "</div>" +
@@ -814,7 +893,7 @@ function pageHome() {
 }
 
 function ctaBlock(bg) {
-  return '<div class="section wrap"><div class="grain" style="background:' + (bg || "var(--terra)") + ';border-radius:28px;padding:clamp(36px,6vw,66px);text-align:center;overflow:hidden;">' +
+  return '<div class="section wrap"><div class="halftone" style="background:' + (bg || "var(--red)") + ';border-radius:28px;padding:clamp(36px,6vw,66px);text-align:center;overflow:hidden;">' +
     '<div style="position:relative;">' +
       '<h2 style="font-size:clamp(32px,5vw,58px);color:#fffdf9;">Fale connosco, <em style="color:#f7d9a0;">consulte-nos!</em></h2>' +
       '<p style="margin:18px auto 0;font-size:17px;line-height:1.7;max-width:560px;color:rgba(255,253,249,.92);">Preencha os seus dados e entraremos em contacto consigo com a maior brevidade possível.</p>' +
@@ -833,17 +912,17 @@ function pageQuemSomos() {
       '<p style="margin-top:12px;font-size:16px;line-height:1.75;">' + esc(c.text) + "</p></div>";
   }).join("");
 
-  return '<div class="grain wrap" style="padding-block:clamp(44px,6vw,72px);text-align:center;">' +
-      '<span class="cap" style="color:var(--terra);">Quem somos</span>' +
-      '<h1 style="font-size:clamp(40px,7vw,84px);margin-top:18px;">Mais de trinta anos<br><em style="color:var(--terra);">no setor gráfico</em></h1>' +
+  return '<div class="halftone wrap" style="padding-block:clamp(44px,6vw,72px);text-align:center;">' +
+      '<span class="cap" style="color:var(--red);">Quem somos</span>' +
+      '<h1 style="font-size:clamp(40px,7vw,84px);margin-top:18px;">Mais de trinta anos<br><em style="color:var(--red);">no setor gráfico</em></h1>' +
       '<div class="ornament" style="margin-top:26px;">' + ORNAMENT + "</div>" +
     "</div>" +
     '<div class="wrap" style="padding-bottom:clamp(44px,6vw,76px);">' +
       '<div class="grid split" style="grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,56px);align-items:start;">' +
         "<div>" +
-          '<div class="arch" style="background:var(--blue);min-height:420px;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;">' +
+          '<div class="crop" style="background:var(--blue);min-height:420px;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;">' +
             "<div>" + logo(120, "dark") +
-              '<div style="font-family:\'Instrument Serif\',Georgia,serif;font-size:28px;color:#fbf7ef;margin-top:20px;">' + esc(CO.ceo) + "</div>" +
+              '<div style="font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:28px;color:#fbf7ef;margin-top:20px;">' + esc(CO.ceo) + "</div>" +
               '<div class="cap" style="color:rgba(243,235,221,.6);margin-top:6px;">Fundador e CEO</div>' +
             "</div>" +
           "</div>" +
@@ -853,19 +932,19 @@ function pageQuemSomos() {
           "</div>" +
         "</div>" +
         "<div>" +
-          '<span class="cap" style="color:var(--terra);">A nossa trajetória</span>' +
+          '<span class="cap" style="color:var(--red);">A nossa trajetória</span>' +
           '<h2 style="font-size:clamp(30px,4.5vw,50px);margin-top:14px;">Dedicação, criatividade e <em>respeito pelos clientes</em></h2>' +
           '<div style="display:flex;flex-direction:column;gap:20px;margin-top:24px;font-size:17px;line-height:1.85;">' +
             "<p>Amilcar Correia, fundador e CEO da CorreiaCOR, possui mais de 30 anos de experiência no setor gráfico. Ao longo de mais de 20 anos à frente da CorreiaCOR, tem dedicado o seu conhecimento e a sua experiência à construção de uma trajetória pautada pela dedicação, criatividade e respeito pelos nossos clientes.</p>" +
             "<p>O nosso compromisso é transformar as suas ideias em soluções visuais impactantes, sempre com profissionalismo e excelência em cada impressão.</p>" +
-            '<p style="padding:22px 26px;background:var(--cream);border-radius:18px;border-left:3px solid var(--ochre);">Valorizamos cada projeto como uma oportunidade única de expressar a identidade de quem nos procura, com autenticidade e qualidade. A nossa paixão pelo setor gráfico motiva-nos a inovar continuamente, procurando superar expectativas e estabelecer conexões duradouras.</p>' +
+            '<p style="padding:22px 26px;background:var(--paper-2);border-radius:18px;border-left:3px solid var(--amber);">Valorizamos cada projeto como uma oportunidade única de expressar a identidade de quem nos procura, com autenticidade e qualidade. A nossa paixão pelo setor gráfico motiva-nos a inovar continuamente, procurando superar expectativas e estabelecer conexões duradouras.</p>' +
             "<p>Toda a nossa equipa é composta por excelentes profissionais, sempre atentos às necessidades dos nossos clientes, garantindo um atendimento dedicado e uma execução impecável em cada trabalho.</p>" +
           "</div>" +
-          '<p style="margin-top:30px;padding-top:26px;border-top:1px solid var(--line);font-family:\'Instrument Serif\',Georgia,serif;font-size:clamp(22px,3vw,29px);line-height:1.4;color:var(--ink);">Venha fazer parte da nossa história e descubra como podemos transformar as suas ideias em realidade, com criatividade, inovação e um <em style="color:var(--terra);">compromisso inabalável</em> com a sua satisfação.</p>' +
+          '<p style="margin-top:30px;padding-top:26px;border-top:1px solid var(--line);font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:clamp(22px,3vw,29px);line-height:1.4;color:var(--ink);">Venha fazer parte da nossa história e descubra como podemos transformar as suas ideias em realidade, com criatividade, inovação e um <em style="color:var(--red);">compromisso inabalável</em> com a sua satisfação.</p>' +
         "</div>" +
       "</div>" +
     "</div>" +
-    '<div class="section" style="background:var(--cream);"><div class="wrap">' +
+    '<div class="section" style="background:var(--paper-2);"><div class="wrap">' +
       sectionHead("O que nos compromete", "Não somos apenas uma gráfica",
         "Somos o seu parceiro na realização de projetos que se destacam, refletindo criatividade, confiabilidade e excelência em cada detalhe.") +
       '<div class="grid g2">' + commits + "</div>" +
@@ -876,11 +955,11 @@ function pageQuemSomos() {
 function pageServicos() {
   const rows = SERVICES.map(function (s, i) {
     const flip = i % 2 === 1;
-    const visual = '<div class="arch" style="background:' + s.accent + ';min-height:260px;display:flex;align-items:center;justify-content:center;order:' + (flip ? 2 : 1) + ';">' +
+    const visual = '<div class="crop" style="background:' + s.accent + ';min-height:260px;display:flex;align-items:center;justify-content:center;order:' + (flip ? 2 : 1) + ';">' +
       '<svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="' + s.icon + '"/></svg></div>';
     const text = '<div style="order:' + (flip ? 1 : 2) + ';">' +
       '<div style="display:flex;align-items:baseline;gap:14px;">' +
-        '<span style="font-family:\'Instrument Serif\',Georgia,serif;font-size:30px;color:' + s.accent + ';">' + (i+1) + "</span>" +
+        '<span style="font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:30px;color:' + s.accent + ';">' + (i+1) + "</span>" +
         '<h2 style="font-size:clamp(28px,4vw,44px);">' + esc(s.name) + "</h2>" +
       "</div>" +
       '<p style="margin-top:16px;font-size:17px;line-height:1.8;max-width:620px;">' + esc(s.desc) + "</p>" +
@@ -891,15 +970,15 @@ function pageServicos() {
       visual + text + "</div>";
   }).join("");
 
-  return '<div class="grain wrap" style="padding-block:clamp(44px,6vw,72px);text-align:center;">' +
-      '<span class="cap" style="color:var(--terra);">Os nossos serviços</span>' +
-      '<h1 style="font-size:clamp(38px,6.5vw,80px);margin-top:18px;">Uma ampla gama de<br>produtos de <em style="color:var(--terra);">alta qualidade</em></h1>' +
+  return '<div class="halftone wrap" style="padding-block:clamp(44px,6vw,72px);text-align:center;">' +
+      '<span class="cap" style="color:var(--red);">Os nossos serviços</span>' +
+      '<h1 style="font-size:clamp(38px,6.5vw,80px);margin-top:18px;">Uma ampla gama de<br>produtos de <em style="color:var(--red);">alta qualidade</em></h1>' +
       '<p style="margin:22px auto 0;font-size:18px;line-height:1.75;max-width:720px;">Na CorreiaCOR temos orgulho em oferecer uma ampla gama de produtos, utilizando tecnologia avançada e alinhados às necessidades específicas dos nossos clientes. O nosso compromisso é fornecer soluções que combinem eficiência, durabilidade e inovação.</p>' +
     "</div>" +
     '<div class="wrap">' + rows + "</div>" +
-    '<div class="section" style="background:var(--cream);"><div class="wrap">' +
+    '<div class="section" style="background:var(--paper-2);"><div class="wrap">' +
       '<div class="grid split" style="grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,44px);align-items:center;">' +
-        "<div><span class=\"cap\" style=\"color:var(--terra);\">Para além da impressão</span>" +
+        "<div><span class=\"cap\" style=\"color:var(--red);\">Para além da impressão</span>" +
         '<h2 style="font-size:clamp(28px,4vw,48px);margin-top:14px;">Produção de materiais gráficos <em>e promocionais</em></h2></div>' +
         '<div style="font-size:17px;line-height:1.8;"><p>A CorreiaCOR oferece serviços especializados de produção de materiais gráficos e promocionais, garantindo a qualidade e o prazo de entrega. A nossa equipa está pronta para auxiliar na escolha do produto ideal para cada necessidade, oferecendo consultoria especializada e soluções sob medida.</p>' +
         '<p style="margin-top:16px;">Estamos à disposição para esclarecer dúvidas, fornecer informações detalhadas e ajudar a transformar as suas ideias em realidade.</p></div>' +
@@ -911,7 +990,7 @@ function pageServicos() {
 function pagePortfolio() {
   const slots = SERVICES.map(function (s) {
     return "<div>" +
-      '<div class="arch" style="height:280px;background:var(--cream);border:1.5px dashed #d8cbb4;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;">' +
+      '<div class="crop" style="height:280px;background:var(--paper-2);border:1.5px dashed #d8cbb4;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;">' +
         '<div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#bcae9c" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>' +
         '<div class="cap" style="margin-top:12px;color:#bcae9c;">Fotografia por enviar</div></div>' +
       "</div>" +
@@ -929,23 +1008,23 @@ function pagePortfolio() {
     ["4","Uma linha sobre o trabalho","O que era preciso e o que foi feito. Duas frases chegam."],
   ].map(function (n) {
     return '<div class="card" style="padding:20px 24px;display:flex;gap:18px;align-items:center;">' +
-      '<span style="flex:0 0 40px;width:40px;height:40px;border-radius:999px;background:var(--cream);color:var(--terra);display:flex;align-items:center;justify-content:center;font-family:\'Instrument Serif\',Georgia,serif;font-size:20px;">' + n[0] + "</span>" +
+      '<span style="flex:0 0 40px;width:40px;height:40px;border-radius:999px;background:var(--paper-2);color:var(--red);display:flex;align-items:center;justify-content:center;font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:20px;">' + n[0] + "</span>" +
       '<div><div style="font-size:17px;font-weight:600;color:var(--ink);">' + esc(n[1]) + "</div>" +
       '<div style="font-size:14.5px;line-height:1.65;margin-top:3px;">' + esc(n[2]) + "</div></div></div>";
   }).join("");
 
-  return '<div class="grain wrap" style="padding-block:clamp(44px,6vw,72px);text-align:center;">' +
-      '<span class="cap" style="color:var(--terra);">Portfolio</span>' +
-      '<h1 style="font-size:clamp(40px,7vw,84px);margin-top:18px;">O que já <em style="color:var(--terra);">saiu daqui</em></h1>' +
+  return '<div class="halftone wrap" style="padding-block:clamp(44px,6vw,72px);text-align:center;">' +
+      '<span class="cap" style="color:var(--red);">Portfolio</span>' +
+      '<h1 style="font-size:clamp(40px,7vw,84px);margin-top:18px;">O que já <em style="color:var(--red);">saiu daqui</em></h1>' +
       '<p style="margin:20px auto 0;font-size:18px;line-height:1.75;max-width:620px;">Trabalhos organizados pelas famílias de produtos que a CorreiaCOR produz.</p>' +
     "</div>" +
     '<div class="wrap" style="padding-bottom:30px;"><div class="note" style="max-width:980px;margin-inline:auto;">' +
       "<strong>Esta página está montada mas ainda vazia.</strong> Não há trabalhos publicados no site atual, e não vale a pena inventar clientes. Abaixo fica o que é preciso para encher cada moldura." +
     "</div></div>" +
     '<div class="wrap" style="padding-bottom:clamp(40px,6vw,72px);"><div class="grid g4">' + slots + "</div></div>" +
-    '<div class="section" style="background:var(--cream);"><div class="wrap">' +
+    '<div class="section" style="background:var(--paper-2);"><div class="wrap">' +
       '<div class="grid split" style="grid-template-columns:.9fr 1.1fr;gap:clamp(28px,4vw,48px);align-items:center;">' +
-        '<div><span class="cap" style="color:var(--terra);">Como montamos um caso</span>' +
+        '<div><span class="cap" style="color:var(--red);">Como montamos um caso</span>' +
         '<h2 style="font-size:clamp(28px,4vw,46px);margin-top:14px;">Quatro coisas por trabalho</h2></div>' +
         '<div style="display:flex;flex-direction:column;gap:14px;">' + needs + "</div>" +
       "</div>" +
@@ -989,7 +1068,7 @@ function renderGrid() {
     grid.innerHTML = list.map(productCard).join("");
   }
   if (count) {
-    count.innerHTML = '<strong style="font-family:\'Instrument Serif\',Georgia,serif;font-size:22px;color:var(--ink);">' +
+    count.innerHTML = '<strong style="font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:22px;color:var(--ink);">' +
       list.length + "</strong> " + (list.length === 1 ? "produto" : "produtos");
   }
   document.querySelectorAll("[data-cat]").forEach(function (b) {
@@ -1009,9 +1088,9 @@ function pageBrindes() {
       esc(TECHNIQUES[k].name) + "</button>";
   }).join("");
 
-  return '<div class="grain wrap" style="padding-block:clamp(40px,5vw,62px);text-align:center;">' +
-      '<span class="cap" style="color:var(--terra);">Brindes publicitários e têxtil</span>' +
-      '<h1 style="font-size:clamp(38px,6vw,78px);margin-top:18px;">Itens personalizáveis para<br><em style="color:var(--terra);">ações promocionais</em></h1>' +
+  return '<div class="halftone wrap" style="padding-block:clamp(40px,5vw,62px);text-align:center;">' +
+      '<span class="cap" style="color:var(--red);">Brindes publicitários e têxtil</span>' +
+      '<h1 style="font-size:clamp(38px,6vw,78px);margin-top:18px;">Itens personalizáveis para<br><em style="color:var(--red);">ações promocionais</em></h1>' +
       '<p style="margin:20px auto 0;font-size:18px;line-height:1.75;max-width:660px;">Escolha o produto, a cor, a quantidade e a técnica, carregue o logótipo e junte ao pedido. Sem pagamento no site: a CorreiaCOR responde com o orçamento.</p>' +
       '<div style="display:flex;justify-content:center;margin-top:26px;">' +
         '<input id="search" class="field" type="search" placeholder="Procurar por produto, material ou técnica…" aria-label="Procurar no catálogo" style="max-width:520px;border-radius:999px;padding:15px 22px;">' +
@@ -1089,20 +1168,23 @@ function renderCfg() {
   const sum = el("cfgsum");
   if (sum) {
     sum.innerHTML =
-      '<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line-soft);flex-wrap:wrap;">' +
-        '<div><div class="cap">Estimativa &middot; ' + qty + " unidades</div>" +
-        '<div style="font-family:\'Instrument Serif\',Georgia,serif;font-size:clamp(38px,6vw,54px);color:var(--ink);line-height:1;margin-top:6px;">' + eur(unit * qty) + "</div></div>" +
-        '<div style="text-align:right;"><div style="font-size:13px;color:var(--muted);">por unidade</div>' +
-        '<div style="font-family:\'Instrument Serif\',Georgia,serif;font-size:26px;color:var(--ink);margin-top:4px;">' + eur(unit) + "</div></div>" +
-      "</div>" +
-      '<div style="display:flex;flex-direction:column;gap:10px;padding:18px 0;font-size:15px;">' +
-        '<div style="display:flex;justify-content:space-between;gap:12px;"><span>Personalização</span><span style="color:var(--ink);font-weight:600;text-align:right;">' +
-          esc(TECHNIQUES[cfg.tech].name) + " &middot; " + esc(areas[cfg.area][0]) + "</span></div>" +
-        '<div style="display:flex;justify-content:space-between;gap:12px;"><span>Ficheiro</span><span style="color:' +
-          (cfg.art ? "var(--green)" : "var(--muted)") + ';font-weight:600;">' +
-          (cfg.art ? esc(cfg.artName) : "por enviar") + "</span></div>" +
-      "</div>" +
-      '<div style="background:var(--cream);border-radius:14px;padding:14px 18px;font-size:13.5px;line-height:1.65;">Valor de exemplo, sem IVA e sem portes. Quem fecha o preço é a CorreiaCOR, depois de ver o ficheiro e a quantidade.</div>';
+      '<div class="ticket-head"><span>Estimativa</span><span>' + qty + ' un. &middot; ' +
+        esc(TECHNIQUES[cfg.tech].name) + "</span></div>" +
+      '<div style="padding:20px 18px;">' +
+        '<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--line);">' +
+          '<div><div class="cap">Total</div>' +
+          '<div class="stat" style="font-size:clamp(34px,5vw,46px);margin-top:6px;">' + eur(unit * qty) + "</div></div>" +
+          '<div style="text-align:right;"><div class="cap">Por unidade</div>' +
+          '<div class="mono" style="font-size:22px;font-weight:700;color:var(--ink);margin-top:6px;">' + eur(unit) + "</div></div>" +
+        "</div>" +
+        '<dl style="margin:0;">' +
+          '<div class="ticket-row" style="padding-inline:0;"><dt>Zona</dt><dd>' + esc(areas[cfg.area][0]) + "</dd></div>" +
+          '<div class="ticket-row" style="padding-inline:0;"><dt>Ficheiro</dt><dd style="color:' +
+            (cfg.art ? "var(--green)" : "var(--muted)") + ';">' +
+            (cfg.art ? esc(cfg.artName) : "por enviar") + "</dd></div>" +
+        "</dl>" +
+        '<div class="note" style="margin-top:14px;">Valor de exemplo, sem IVA e sem portes. Quem fecha o preço é a CorreiaCOR, depois de ver o ficheiro e a quantidade.</div>' +
+      "</div>";
   }
 }
 
@@ -1126,11 +1208,16 @@ function pageProduto(slug) {
   const tierBtns = p.tiers.map(function (t, i) {
     return '<button class="tier" data-tier="' + i + '"><span class="q">' + t.qty + '</span><span class="u"></span></button>';
   }).join("");
-  const specs = p.specs.map(function (s) {
-    return '<div style="border:1px solid var(--line);border-radius:16px;padding:18px 20px;">' +
-      '<div class="cap">' + esc(s[0]) + "</div>" +
-      '<div style="font-size:16px;font-weight:600;color:var(--ink);margin-top:6px;">' + esc(s[1]) + "</div></div>";
-  }).join("");
+  const ref = "CC-" + p.slug.slice(0, 3).toUpperCase() + "-" + String(PRODUCTS.indexOf(p) + 1).padStart(3, "0");
+  const specs = '<div class="ticket">' +
+    '<div class="ticket-head"><span>Ficha técnica</span><span>Ref. ' + ref + "</span></div>" +
+    "<dl style=\"margin:0;\">" +
+    p.specs.map(function (s) {
+      return '<div class="ticket-row"><dt>' + esc(s[0]) + "</dt><dd>" + esc(s[1]) + "</dd></div>";
+    }).join("") +
+    '<div class="ticket-row"><dt>Técnicas</dt><dd>' +
+      p.techs.map(function (k) { return esc(TECHNIQUES[k].name); }).join(" &middot; ") + "</dd></div>" +
+    "</dl></div>";
 
   return '<div class="wrap" style="padding-top:20px;font-size:13.5px;color:var(--muted);">' +
       '<a href="#/brindes" style="color:var(--muted);">Brindes</a> <span style="color:#d3c6b0;">/</span> <span style="color:var(--ink);">' + esc(p.name) + "</span>" +
@@ -1161,12 +1248,12 @@ function pageProduto(slug) {
             '<div style="display:flex;gap:10px;flex-wrap:wrap;">' + areaChips + "</div></div>" +
           '<div style="margin-top:30px;"><div class="cap" style="margin-bottom:12px;">Quatro &middot; quantidade</div>' +
             '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(78px,1fr));gap:10px;">' + tierBtns + "</div></div>" +
-          '<div class="card" id="cfgsum" style="margin-top:32px;padding:clamp(22px,3vw,30px);"></div>' +
+          '<div class="ticket" id="cfgsum" style="margin-top:30px;"></div>' +
           '<div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">' +
             '<button class="btn btn-primary" data-act="add" style="flex:1.4;min-width:200px;">Juntar ao pedido</button>' +
             '<a class="btn btn-ghost" href="#/brindes" style="flex:1;min-width:150px;">Continuar a ver</a>' +
           "</div>" +
-          '<div class="grid g2" style="margin-top:20px;gap:12px;">' + specs + "</div>" +
+          '<div style="margin-top:20px;">' + specs + "</div>" +
         "</div>" +
       "</div>" +
     "</div>";
@@ -1195,7 +1282,7 @@ function lineRow(l, i) {
     "<div><h3 style=\"font-size:23px;\">" + esc(p.name) + "</h3>" +
       '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">' +
         ["<span>" + esc(col.n) + "</span>", "<span>" + esc(TECHNIQUES[l.tech].name) + "</span>", "<span>" + esc(l.areaName) + "</span>"]
-          .map(function (s) { return s.replace("<span>", '<span style="font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--cream);color:var(--body);">'); }).join("") +
+          .map(function (s) { return s.replace("<span>", '<span style="font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--paper-2);color:var(--body);">'); }).join("") +
       "</div>" +
       '<div style="display:flex;align-items:center;gap:8px;margin-top:11px;font-size:13.5px;font-weight:600;color:' + (l.art ? "var(--green)" : "var(--muted)") + ';">' +
         (l.art ? '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>' + esc(l.artName) : "Sem ficheiro — pode enviá-lo depois") +
@@ -1208,7 +1295,7 @@ function lineRow(l, i) {
         '<span style="font-size:16px;font-weight:600;color:var(--ink);min-width:44px;">' + l.qty + "</span>" +
         '<button data-inc="' + i + '" aria-label="Mais" style="width:32px;height:32px;font-size:18px;color:var(--muted);">+</button>' +
       "</div>" +
-      '<div style="font-family:\'Instrument Serif\',Georgia,serif;font-size:28px;color:var(--ink);margin-top:10px;">' + eur(l.unit * l.qty) + "</div>" +
+      '<div style="font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:28px;color:var(--ink);margin-top:10px;">' + eur(l.unit * l.qty) + "</div>" +
       '<div style="font-size:12.5px;color:var(--muted);margin-top:2px;">' + eur(l.unit) + " / un.</div>" +
     "</div></div>";
 }
@@ -1225,8 +1312,8 @@ function pagePedido() {
   }
 
   const rows = cart.map(lineRow).join("");
-  return '<div class="grain wrap" style="padding-block:clamp(36px,5vw,56px);text-align:center;">' +
-      '<h1 style="font-size:clamp(34px,5.5vw,66px);">O seu pedido <em style="color:var(--terra);">de orçamento</em></h1>' +
+  return '<div class="halftone wrap" style="padding-block:clamp(36px,5vw,56px);text-align:center;">' +
+      '<h1 style="font-size:clamp(34px,5.5vw,66px);">O seu pedido <em style="color:var(--red);">de orçamento</em></h1>' +
       '<p style="margin:18px auto 0;font-size:17.5px;line-height:1.75;max-width:620px;">Nada é cobrado aqui. O pedido chega à CorreiaCOR com tudo o que escolheu, e a resposta com o orçamento vem por email ou telefone.</p>' +
     "</div>" +
     '<div class="wrap" style="padding-bottom:clamp(40px,6vw,72px);">' +
@@ -1235,8 +1322,8 @@ function pagePedido() {
           '<div class="note">Os valores são de exemplo. O pedido pode seguir mesmo assim: o que a CorreiaCOR precisa é dos produtos, das quantidades e dos ficheiros.</div>' +
           formBlock("pedido") +
         "</div>" +
-        '<div class="sticky" style="position:sticky;top:100px;background:var(--blue);color:var(--cream);border-radius:24px;padding:30px;">' +
-          '<div class="cap" style="color:var(--ochre);margin-bottom:18px;">Resumo</div>' +
+        '<div class="sticky" style="position:sticky;top:100px;background:var(--blue);color:var(--paper-2);border-radius:24px;padding:30px;">' +
+          '<div class="cap" style="color:var(--amber);margin-bottom:18px;">Resumo</div>' +
           '<div style="display:flex;flex-direction:column;gap:12px;font-size:15px;padding-bottom:18px;border-bottom:1px solid rgba(217,164,65,.35);">' +
             '<div style="display:flex;justify-content:space-between;gap:12px;"><span style="color:rgba(243,235,221,.82);">' +
               cart.length + (cart.length === 1 ? " produto" : " produtos") + " &middot; " + cartUnits() + ' unidades</span><span style="color:#fbf7ef;font-weight:600;">' + eur(cartTotal()) + "</span></div>" +
@@ -1244,7 +1331,7 @@ function pagePedido() {
             '<div style="display:flex;justify-content:space-between;gap:12px;"><span style="color:rgba(243,235,221,.82);">Portes</span><span style="color:rgba(243,235,221,.7);">a confirmar</span></div>' +
           "</div>" +
           '<div style="padding:20px 0;"><div style="font-size:13px;color:rgba(243,235,221,.7);">Valor de exemplo, sem IVA</div>' +
-            '<div style="font-family:\'Instrument Serif\',Georgia,serif;font-size:clamp(34px,5vw,46px);color:#fbf7ef;margin-top:4px;line-height:1;">' + eur(cartTotal()) + "</div></div>" +
+            '<div style="font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:clamp(34px,5vw,46px);color:#fbf7ef;margin-top:4px;line-height:1;">' + eur(cartTotal()) + "</div></div>" +
           '<div style="background:rgba(251,247,239,.09);border-radius:14px;padding:14px 18px;font-size:13.5px;line-height:1.65;color:rgba(243,235,221,.85);">Isto não é uma fatura nem um orçamento. Quem fecha o preço é a CorreiaCOR, depois de ver os ficheiros e as quantidades.</div>' +
           '<button class="btn btn-ochre" data-act="submit-pedido" style="width:100%;margin-top:20px;">Enviar pedido</button>' +
           '<div style="display:flex;align-items:center;justify-content:center;gap:9px;margin-top:14px;font-size:13px;color:rgba(243,235,221,.72);">' +
@@ -1302,7 +1389,7 @@ function confirmationHtml(data, lines) {
         '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fbf7ef" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>' +
       '<h1 style="font-size:clamp(30px,4.5vw,46px);margin-top:24px;">Pedido registado, ' + esc(data.nome.split(" ")[0]) + "</h1>" +
       '<p style="margin-top:16px;font-size:17px;line-height:1.75;">A CorreiaCOR entra em contacto consigo pelo ' + esc(data.email) + " ou pelo " + esc(data.telefone) + ".</p>" +
-      '<div style="text-align:left;margin-top:28px;padding:24px;background:var(--cream);border-radius:18px;">' +
+      '<div style="text-align:left;margin-top:28px;padding:24px;background:var(--paper-2);border-radius:18px;">' +
         '<div class="cap" style="margin-bottom:12px;">Os seus dados</div>' +
         '<div style="font-size:15px;line-height:1.9;">' + esc(data.nome) +
           (data.empresa ? " &middot; " + esc(data.empresa) : "") + "<br>" + esc(data.email) + "<br>" + esc(data.telefone) +
@@ -1320,9 +1407,9 @@ function confirmationHtml(data, lines) {
 }
 
 function pageContacto() {
-  return '<div class="grain wrap" style="padding-block:clamp(40px,5vw,64px);text-align:center;">' +
-      '<span class="cap" style="color:var(--terra);">Contacto</span>' +
-      '<h1 style="font-size:clamp(36px,6vw,74px);margin-top:18px;">Consulte os <em style="color:var(--terra);">nossos serviços</em></h1>' +
+  return '<div class="halftone wrap" style="padding-block:clamp(40px,5vw,64px);text-align:center;">' +
+      '<span class="cap" style="color:var(--red);">Contacto</span>' +
+      '<h1 style="font-size:clamp(36px,6vw,74px);margin-top:18px;">Consulte os <em style="color:var(--red);">nossos serviços</em></h1>' +
       '<p style="margin:20px auto 0;font-size:18px;line-height:1.75;max-width:600px;">Preencha os seus dados e entraremos em contacto consigo com a maior brevidade possível.</p>' +
     "</div>" +
     '<div class="wrap" style="padding-bottom:clamp(40px,6vw,72px);">' +
@@ -1335,7 +1422,7 @@ function pageContacto() {
           contactCard("Onde estamos", CO.street, CO.postal, "", false,
             "M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z") +
           '<div class="card" style="padding:26px;">' +
-            '<div class="cap" style="color:var(--terra);">Horário de atendimento</div>' +
+            '<div class="cap" style="color:var(--red);">Horário de atendimento</div>' +
             '<div style="display:flex;flex-direction:column;gap:12px;margin-top:14px;font-size:15.5px;">' +
               '<div style="display:flex;justify-content:space-between;gap:12px;"><span>2.ª a 6.ª feira</span><span style="color:var(--ink);font-weight:600;">9h30 – 18h30</span></div>' +
               '<div style="display:flex;justify-content:space-between;gap:12px;padding-top:12px;border-top:1px solid var(--line-soft);"><span>Sábado e domingo</span><span style="color:var(--muted);">Encerrado</span></div>' +
@@ -1350,12 +1437,12 @@ function contactCard(label, value, note, href, solid, icon) {
   const inner =
     '<div style="display:flex;align-items:flex-start;gap:16px;">' +
       '<div style="width:46px;height:46px;flex:0 0 46px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:' +
-        (solid ? "rgba(251,247,239,.16)" : "var(--cream)") + ';">' +
-        '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="' + (solid ? "#d9a441" : "var(--terra)") +
+        (solid ? "rgba(251,247,239,.16)" : "var(--paper-2)") + ';">' +
+        '<svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="' + (solid ? "#d9a441" : "var(--red)") +
         '" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="' + icon + '"/></svg></div>' +
       "<div>" +
         '<div class="cap" style="color:' + (solid ? "#d9a441" : "var(--muted)") + ';">' + esc(label) + "</div>" +
-        '<div style="font-family:\'Instrument Serif\',Georgia,serif;font-size:clamp(22px,3vw,28px);color:' +
+        '<div style="font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-0.03em;font-size:clamp(22px,3vw,28px);color:' +
           (solid ? "#fbf7ef" : "var(--ink)") + ';margin-top:6px;line-height:1.2;word-break:break-word;">' + esc(value) + "</div>" +
         (note ? '<div style="font-size:13.5px;color:' + (solid ? "rgba(243,235,221,.7)" : "var(--muted)") + ';margin-top:6px;">' + esc(note) + "</div>" : "") +
       "</div></div>";
