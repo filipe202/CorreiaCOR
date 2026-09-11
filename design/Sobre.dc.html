@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;800&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
+    h1,h2,h3 { font-family: Unbounded, Manrope, sans-serif; margin: 0; letter-spacing: -0.06em; line-height: 0.86; }
+    p { text-wrap: pretty; }
+    a { color: #1b2cf0; text-decoration: none; }
+    .kick { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; }
+    @keyframes slide2 { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marq2 { display: flex; width: max-content; animation: slide2 30s linear infinite; }
+  </style>
+</helmet>
+
+<div style="background: #f4efe6; color: #0b0b0c; overflow: hidden;">
+
+  <div style="background: #0b0b0c; display: flex; align-items: center; justify-content: space-between; padding: 0 26px 0 30px; height: 74px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+        <defs><linearGradient id="sg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1b2cf0"/><stop offset="52%" stop-color="#6b2cf5"/><stop offset="100%" stop-color="#ff3b2f"/></linearGradient></defs>
+        <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="url(#sg)"/>
+        <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="#ccff33"/>
+      </svg>
+      <span style="font-family: Unbounded, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.06em; color: #f4efe6;">correiacor</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 26px; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; color: #b5b0a6;">
+      <span>BRINDES</span><span>SERVIÇOS</span><span>PORTFOLIO</span><span style="color: #ccff33;">SOBRE</span><span>CONTACTOS</span>
+    </div>
+    <span style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; background: #ccff33; color: #0b0b0c; font-size: 12px; font-weight: 800; letter-spacing: 0.1em;">PEDIR ORÇAMENTO</span>
+  </div>
+
+  <!-- HERO -->
+  <div style="background: #1b2cf0; color: #f4efe6; padding: 76px 30px 80px; position: relative; overflow: hidden;">
+    <div style="position: absolute; right: -70px; bottom: -110px; width: 420px; height: 420px; border-radius: 999px; background: #ccff33; mix-blend-mode: multiply;"></div>
+    <div style="position: relative;">
+      <div class="kick" style="color: #ccff33;">Sobre nós</div>
+      <h1 style="font-size: 150px; font-weight: 900; margin-top: 22px; color: #f4efe6;">UMA<br>OFICINA,<br>NÃO UM<br>CATÁLOGO.</h1>
+      <p style="margin: 34px 0 0; font-size: 21px; line-height: 1.5; font-weight: 600; max-width: 640px; color: rgba(244,239,230,.9);">Há empresas de brindes que são intermediários com um site. Nós temos máquinas, tinta nas mãos e alguém que atende o telefone e sabe do que está a falar.</p>
+    </div>
+  </div>
+
+  <!-- HISTORIA -->
+  <div style="padding: 88px 30px;">
+    <div style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: start;">
+      <div>
+        <h2 style="font-size: 76px; font-weight: 900;">COMEÇOU<br>COM UMA<br>MÁQUINA.</h2>
+        <div style="display: flex; gap: 4px; margin-top: 30px;">
+          <span style="width: 60px; height: 10px; background: #1b2cf0;"></span>
+          <span style="width: 60px; height: 10px; background: #ff3b2f;"></span>
+          <span style="width: 60px; height: 10px; background: #ccff33;"></span>
+        </div>
+      </div>
+      <div style="font-size: 19px; line-height: 1.65; font-weight: 500; color: #46433d; display: flex; flex-direction: column; gap: 22px;">
+        <p style="margin: 0;"><strong style="color:#0b0b0c;">[A HISTÓRIA REAL ENTRA AQUI.]</strong> Escrevi o texto abaixo como exemplo do tom, a partir do que o site antigo dizia. O seu pai vai contar isto muito melhor do que eu &mdash; peça-lhe os factos: em que ano começou, com que máquina, o primeiro cliente, o pior susto.</p>
+        <p style="margin: 0;">A CorreiaCOR abriu em 2004 com uma máquina de pequeno formato e a teimosia de não recusar trabalho difícil. Quando um cliente pedia algo que não fazíamos, aprendíamos a fazer. Foi assim que entrou a serigrafia, depois o bordado, depois o grande formato.</p>
+        <p style="margin: 0;">Vinte anos depois, a oficina faz quase tudo dentro de portas. Não é orgulho de coleção de máquinas &mdash; é o que nos permite olhar um cliente nos olhos e dizer "quinta-feira" sabendo que é quinta-feira.</p>
+        <p style="margin: 0;">Continuamos a ser uma casa pequena o suficiente para o Amilcar atender o telefone, e grande o suficiente para vestir 180 pessoas em nove delegações no mesmo dia.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRONOLOGIA -->
+  <div style="background: #0b0b0c; color: #f4efe6; padding: 80px 30px;">
+    <h2 style="font-size: 76px; font-weight: 900; color: #f4efe6; margin-bottom: 50px;">O CAMINHO</h2>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 4px;">
+      <div style="background: #1b2cf0; padding: 30px; min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 42px; font-weight: 900; letter-spacing: -0.05em;">2004</div>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: rgba(244,239,230,.85);">Abre a oficina com uma máquina de pequeno formato e dois clientes.</p>
+      </div>
+      <div style="background: #6b2cf5; padding: 30px; min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 42px; font-weight: 900; letter-spacing: -0.05em;">2009</div>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: rgba(244,239,230,.85);">Entra a serigrafia têxtil. O primeiro fardamento sai para uma equipa de futebol local.</p>
+      </div>
+      <div style="background: #ff3b2f; color: #0b0b0c; padding: 30px; min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 42px; font-weight: 900; letter-spacing: -0.05em;">2014</div>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: #2a0f0c;">Grande formato e decoração de viaturas. A oficina muda para instalações maiores.</p>
+      </div>
+      <div style="background: #ff7a00; color: #0b0b0c; padding: 30px; min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 42px; font-weight: 900; letter-spacing: -0.05em;">2019</div>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: #3d1d00;">Bordado próprio e gravação a laser. Deixamos de subcontratar o essencial.</p>
+      </div>
+      <div style="background: #ccff33; color: #0b0b0c; padding: 30px; min-height: 250px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 42px; font-weight: 900; letter-spacing: -0.05em;">2026</div>
+        <p style="margin: 0; font-size: 14.5px; line-height: 1.5; color: #3d4a0a;">Catálogo de brindes online, com configuração e pedido direto.</p>
+      </div>
+    </div>
+    <p style="margin: 22px 0 0; font-size: 13px; color: #86827a;">↑ Datas e marcos inventados para o mock. Trocar pelos reais.</p>
+  </div>
+
+  <!-- COMO TRABALHAMOS -->
+  <div style="padding: 88px 30px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 46px;">
+      <h2 style="font-size: 92px; font-weight: 900;">NO QUE<br>ACREDITAMOS</h2>
+      <p style="max-width: 400px; margin: 0 0 16px; font-size: 17px; line-height: 1.55; font-weight: 500; color: #46433d;">Quatro regras que não negociamos, mesmo quando dava jeito.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 4px;">
+      <div style="border: 3px solid #0b0b0c; padding: 38px; min-height: 220px;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 15px; font-weight: 800; color: #ff3b2f;">01</div>
+        <h3 style="font-size: 36px; font-weight: 900; margin-top: 14px;">Nada sai sem prova.</h3>
+        <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.55; font-weight: 500; color: #46433d;">Não produzimos uma única peça antes de ter a sua aprovação escrita da prova digital. Já perdemos encomendas por insistir nisto. Continuamos a insistir.</p>
+      </div>
+      <div style="border: 3px solid #0b0b0c; padding: 38px; min-height: 220px;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 15px; font-weight: 800; color: #1b2cf0;">02</div>
+        <h3 style="font-size: 36px; font-weight: 900; margin-top: 14px;">O preço é o preço.</h3>
+        <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.55; font-weight: 500; color: #46433d;">O orçamento inclui o que é preciso para o trabalho ficar feito. Sem extras que aparecem na fatura por "acabamento" ou "preparação de ficheiro".</p>
+      </div>
+      <div style="border: 3px solid #0b0b0c; padding: 38px; min-height: 220px;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 15px; font-weight: 800; color: #6b2cf5;">03</div>
+        <h3 style="font-size: 36px; font-weight: 900; margin-top: 14px;">Se corre mal, dizemos.</h3>
+        <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.55; font-weight: 500; color: #46433d;">Uma máquina avaria, um fornecedor falha. Quando acontece, ligamos no próprio dia com uma alternativa &mdash; não na véspera da entrega com uma desculpa.</p>
+      </div>
+      <div style="border: 3px solid #0b0b0c; padding: 38px; min-height: 220px;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 15px; font-weight: 800; color: #ff7a00;">04</div>
+        <h3 style="font-size: 36px; font-weight: 900; margin-top: 14px;">Aconselhamos contra.</h3>
+        <p style="margin: 14px 0 0; font-size: 16px; line-height: 1.55; font-weight: 500; color: #46433d;">Se o que pediu vai ficar mal, ou se há forma mais barata de chegar ao mesmo sítio, dizemos &mdash; mesmo quando a nossa margem prefere o contrário.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EQUIPA -->
+  <div style="background: #ccff33; color: #0b0b0c; padding: 84px 30px;">
+    <h2 style="font-size: 92px; font-weight: 900;">QUEM<br>ATENDE</h2>
+    <p style="margin: 26px 0 46px; font-size: 18px; line-height: 1.55; font-weight: 600; max-width: 620px; color: #3d4a0a;">Não há call center. Fala sempre com a mesma pessoa, do orçamento à entrega. [Fotografias reais e nomes da equipa entram aqui.]</p>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 4px;">
+      <sc-for list="{{ team }}" as="m" hint-placeholder-count="4">
+        <div style="background: #f4efe6;">
+          <div style="{{ m.avatar }}">
+            <span style="font-family: Unbounded, sans-serif; font-size: 66px; font-weight: 900; color: {{ m.ini }};">{{ m.initials }}</span>
+          </div>
+          <div style="padding: 24px;">
+            <h3 style="font-size: 26px; font-weight: 900;">{{ m.name }}</h3>
+            <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; margin-top: 8px; color: #86827a;">{{ m.role }}</div>
+            <p style="margin: 12px 0 0; font-size: 14.5px; line-height: 1.55; color: #46433d;">{{ m.note }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- OFICINA -->
+  <div style="background: #0b0b0c; color: #f4efe6; padding: 84px 30px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 44px;">
+      <h2 style="font-size: 92px; font-weight: 900; color: #f4efe6;">A OFICINA</h2>
+      <p style="max-width: 400px; margin: 0 0 16px; font-size: 17px; line-height: 1.55; font-weight: 500; color: #b5b0a6;">O que temos cá dentro. [Substituir por fotografias reais das máquinas &mdash; é o que convence um cliente indeciso.]</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 4px;">
+      <sc-for list="{{ gear }}" as="g" hint-placeholder-count="6">
+        <div style="{{ g.box }}">
+          <div style="font-family: Unbounded, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: 0.1em;">{{ g.tag }}</div>
+          <h3 style="font-size: 30px; font-weight: 900; margin-top: 10px; color: {{ g.fg }};">{{ g.name }}</h3>
+          <p style="margin: 12px 0 0; font-size: 14.5px; line-height: 1.55; color: {{ g.muted }};">{{ g.note }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div style="background: #ff3b2f; border-top: 4px solid #0b0b0c; border-bottom: 4px solid #0b0b0c; overflow: hidden; padding: 16px 0;">
+    <div class="marq2">
+      <span style="font-family: Unbounded, sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.04em; white-space: nowrap; padding-right: 28px; color: #0b0b0c;">FEITO EM PORTUGAL ✱ NADA SAI SEM PROVA ✱ O PREÇO É O PREÇO ✱ SE CORRE MAL, DIZEMOS ✱&nbsp;</span>
+      <span style="font-family: Unbounded, sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.04em; white-space: nowrap; padding-right: 28px; color: #0b0b0c;">FEITO EM PORTUGAL ✱ NADA SAI SEM PROVA ✱ O PREÇO É O PREÇO ✱ SE CORRE MAL, DIZEMOS ✱&nbsp;</span>
+    </div>
+  </div>
+
+  <div style="background: #6b2cf5; color: #f4efe6; padding: 80px 30px;">
+    <h2 style="font-size: 96px; font-weight: 900; color: #f4efe6;">VENHA VER<br>A OFICINA.</h2>
+    <p style="margin: 26px 0 0; font-size: 19px; line-height: 1.5; font-weight: 600; max-width: 560px; color: rgba(244,239,230,.88);">Marque uma visita. Mostramos as máquinas, as amostras e explicamos porque é que uma t-shirt a 4&nbsp;€ e outra a 9&nbsp;€ não são a mesma t-shirt.</p>
+    <div style="display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap;">
+      <span style="display: inline-flex; align-items: center; height: 66px; padding: 0 32px; background: #ccff33; color: #0b0b0c; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">MARCAR VISITA</span>
+      <span style="display: inline-flex; align-items: center; height: 66px; padding: 0 32px; border: 2.5px solid #f4efe6; color: #f4efe6; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">[TELEFONE A CONFIRMAR]</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":3450}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const TEAM = [
+      ['Amilcar Correia', 'AC', 'FUNDADOR E CEO', 'Atende o telefone, orça e ainda vai à máquina quando é preciso.', '#1b2cf0', '#f4efe6'],
+      ['[NOME]', '??', 'PRODUÇÃO', 'Quem garante que o que saiu da prova é o que sai da máquina.', '#ff3b2f', '#0b0b0c'],
+      ['[NOME]', '??', 'DESIGN', 'Transforma um logótipo de 2008 em ficheiro pronto a imprimir.', '#6b2cf5', '#f4efe6'],
+      ['[NOME]', '??', 'ATENDIMENTO', 'Acompanha o seu projeto do briefing até à caixa entregue.', '#ff7a00', '#0b0b0c'],
+    ];
+    const GEAR = [
+      ['IMPRESSÃO', 'Grande formato 3,20 m', 'Lonas, vinis, rígidos e papel de parede, com tinta de exterior.', '#1b2cf0', 0],
+      ['TÊXTIL', 'Carrossel de serigrafia', 'Seis cores por passagem, com tintas à base de água.', '#ff3b2f', 1],
+      ['TÊXTIL', 'Bordadora multicabeças', 'Bordado próprio, sem depender de terceiros para prazos.', '#ccff33', 1],
+      ['BRINDES', 'Laser de gravação', 'Marca permanente em metal, madeira, couro e acrílico.', '#ff7a00', 1],
+      ['ACABAMENTO', 'Corte e vinco', 'Formatos à medida, caixas e expositores montados cá.', '#6b2cf5', 0],
+      ['ACABAMENTO', 'Plotter de corte', 'Vinil de recorte para montras, viaturas e sinalética.', '#f4efe6', 1],
+    ];
+    return {
+      team: TEAM.map((t) => ({
+        name: t[0], initials: t[1], role: t[2], note: t[3],
+        avatar: 'height:200px;display:flex;align-items:center;justify-content:center;background:' + t[4] + ';',
+        ini: t[5],
+      })),
+      gear: GEAR.map((g) => {
+        const dark = g[4] === 1;
+        return {
+          tag: g[0], name: g[1], note: g[2],
+          box: 'background:' + g[3] + ';padding:32px;min-height:230px;color:' + (dark ? '#0b0b0c' : '#f4efe6') + ';',
+          fg: dark ? '#0b0b0c' : '#f4efe6',
+          muted: dark ? 'rgba(11,11,12,.72)' : 'rgba(244,239,230,.82)',
+        };
+      }),
+    };
+  }
+}
+</script>
+</body>
+</html>

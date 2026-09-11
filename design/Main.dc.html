@@ -7,409 +7,329 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Archivo:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;800&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Archivo, "Helvetica Neue", Arial, sans-serif; }
-    h1,h2,h3,h4 { font-family: "Bricolage Grotesque", Archivo, sans-serif; margin: 0; letter-spacing: -0.035em; text-wrap: balance; }
+    body { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
+    h1,h2,h3 { font-family: Unbounded, Manrope, sans-serif; margin: 0; letter-spacing: -0.06em; line-height: 0.86; }
     p { text-wrap: pretty; }
-    a { color: #ec008c; text-decoration: none; } a:hover { color: #c80076; }
+    a { color: #1b2cf0; text-decoration: none; } a:hover { color: #0b0b0c; }
+    .kick { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; }
+    @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes drift { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(22px,-26px) rotate(9deg); } }
+    @keyframes drift2 { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-26px,20px) rotate(-11deg); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .marq { display: flex; width: max-content; animation: slide 26s linear infinite; }
+    .blob1 { animation: drift 13s ease-in-out infinite; }
+    .blob2 { animation: drift2 17s ease-in-out infinite; }
+    .seal { animation: spin 22s linear infinite; }
   </style>
 </helmet>
 
-<div style="background: #f8f7f4; color: #14161a;">
-
-  <!-- BARRA CMYK -->
-  <div style="height: 5px; background: linear-gradient(90deg,#00aeef 0 25%,#ec008c 25% 50%,#ffd200 50% 75%,#14161a 75% 100%);"></div>
+<div style="background: #f4efe6; color: #0b0b0c; overflow: hidden;">
 
   <!-- HEADER -->
-  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 72px; background: #f8f7f4; border-bottom: 1px solid #e2dfd8;">
-    <div style="display: flex; align-items: center; gap: 11px;">
-      <svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
-        <defs>
-          <clipPath id="h-tile"><rect x="0" y="0" width="64" height="64" rx="16"/></clipPath>
-          <mask id="h-letter"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-        </defs>
-        <g clip-path="url(#h-tile)" mask="url(#h-letter)">
-          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#14161a"/>
-        </g>
-      </svg>
-      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 23px; font-weight: 700; letter-spacing: -0.035em;">correia<span style="background: linear-gradient(92deg,#00aeef,#ec008c 55%,#ffd200); -webkit-background-clip: text; background-clip: text; color: transparent;">COR</span></span>
-    </div>
-    <div style="display: flex; align-items: center; gap: 30px; font-size: 14.5px; font-weight: 500;">
-      <span style="color: #14161a;">Brindes</span>
-      <span style="color: #5a6068;">Serviços</span>
-      <span style="color: #5a6068;">Portfolio</span>
-      <span style="color: #5a6068;">Quem somos</span>
-      <span style="color: #5a6068;">Contactos</span>
-    </div>
+  <div style="background: #0b0b0c; display: flex; align-items: center; justify-content: space-between; padding: 0 26px 0 30px; height: 74px;">
     <div style="display: flex; align-items: center; gap: 12px;">
-      <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; padding: 10px 16px; border: 1px solid #d5d1c8; border-radius: 999px;">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#14161a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-        Pedido <span style="background:#ec008c; color:#fff; border-radius:999px; min-width:19px; height:19px; display:inline-flex; align-items:center; justify-content:center; font-size:11px;">3</span>
+      <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+        <defs><linearGradient id="hg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1b2cf0"/><stop offset="52%" stop-color="#6b2cf5"/><stop offset="100%" stop-color="#ff3b2f"/></linearGradient></defs>
+        <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="url(#hg)"/>
+        <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="#ccff33"/>
+      </svg>
+      <span style="font-family: Unbounded, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.06em; color: #f4efe6;">correiacor</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 26px; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; color: #b5b0a6;">
+      <span style="color: #ccff33;">BRINDES</span><span>SERVIÇOS</span><span>PORTFOLIO</span><span>SOBRE</span><span>CONTACTOS</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; border: 1.5px solid #3a3a3d; color: #f4efe6; font-size: 12px; font-weight: 800; letter-spacing: 0.1em;">
+        PEDIDO <span style="background:#ff3b2f; color:#fff; width:20px; height:20px; display:inline-flex; align-items:center; justify-content:center; font-size:11px;">3</span>
       </span>
-      <span style="font-size: 14px; font-weight: 600; padding: 10px 18px; background: #14161a; color: #fff; border-radius: 999px;">Pedir orçamento</span>
+      <span style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; background: #ccff33; color: #0b0b0c; font-size: 12px; font-weight: 800; letter-spacing: 0.1em;">PEDIR ORÇAMENTO</span>
     </div>
   </div>
 
   <!-- HERO -->
-  <div style="display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; padding: 78px 72px 84px;">
-    <div>
-      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em; padding: 7px 14px; border-radius: 999px; background: #fff; border: 1px solid #e2dfd8; color: #5a6068;">
-        <span style="width: 7px; height: 7px; border-radius: 999px; background: #2f9e5f;"></span> Orçamento em 48 horas úteis
-      </span>
-      <h1 style="font-size: 78px; font-weight: 800; line-height: 0.98; margin: 26px 0 0;">Damos cor<br>às suas <span style="background: linear-gradient(95deg,#00aeef,#ec008c 52%,#ffd200); -webkit-background-clip: text; background-clip: text; color: transparent;">ideias</span></h1>
-      <p style="font-size: 19px; line-height: 1.6; color: #5a6068; margin: 26px 0 0; max-width: 520px;">Impressão digital e offset, têxtil personalizado, brindes e comunicação visual. Há mais de vinte anos a pôr marcas portuguesas em papel, em tecido e na rua.</p>
-      <div style="display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap;">
-        <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 15.5px; font-weight: 600; padding: 15px 26px; background: #ec008c; color: #fff; border-radius: 999px;">
-          Ver catálogo de brindes
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-        </span>
-        <span style="font-size: 15.5px; font-weight: 600; padding: 15px 26px; border: 1px solid #d5d1c8; border-radius: 999px; color: #14161a;">Falar connosco</span>
-      </div>
-      <div style="display: flex; gap: 42px; margin-top: 50px; padding-top: 30px; border-top: 1px solid #e2dfd8;">
-        <div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -0.04em;">20<span style="color:#ec008c;">+</span></div><div style="font-size: 13px; color: #8b8f96; margin-top: 2px;">anos a imprimir</div></div>
-        <div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -0.04em;">3 500<span style="color:#00aeef;">+</span></div><div style="font-size: 13px; color: #8b8f96; margin-top: 2px;">projetos entregues</div></div>
-        <div><div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 700; letter-spacing: -0.04em;">1 000<span style="color:#ffd200;">+</span></div><div style="font-size: 13px; color: #8b8f96; margin-top: 2px;">brindes em catálogo</div></div>
-      </div>
-    </div>
+  <div style="position: relative; padding: 66px 30px 0; min-height: 760px;">
+    <div class="blob1" style="position: absolute; right: 60px; top: 40px; width: 340px; height: 340px; border-radius: 999px; background: #1b2cf0;"></div>
+    <div class="blob2" style="position: absolute; right: 300px; top: 260px; width: 270px; height: 270px; border-radius: 999px; background: #ff7a00; mix-blend-mode: multiply;"></div>
+    <div class="blob1" style="position: absolute; right: 120px; top: 400px; width: 220px; height: 220px; border-radius: 999px; background: #ccff33; mix-blend-mode: multiply;"></div>
 
-    <!-- COMPOSICAO VISUAL -->
-    <div style="position: relative; height: 520px;">
-      <div style="position: absolute; inset: 0; border-radius: 26px; background: #14161a; overflow: hidden;">
-        <div style="position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(255,255,255,.055) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.055) 1px, transparent 1px); background-size: 44px 44px;"></div>
-        <div style="position: absolute; left: -70px; top: -70px; width: 260px; height: 260px; border-radius: 999px; background: #00aeef; filter: blur(2px); opacity: .92; mix-blend-mode: screen;"></div>
-        <div style="position: absolute; right: -60px; bottom: 40px; width: 230px; height: 230px; border-radius: 999px; background: #ec008c; opacity: .9; mix-blend-mode: screen;"></div>
-        <div style="position: absolute; left: 120px; bottom: -80px; width: 220px; height: 220px; border-radius: 999px; background: #ffd200; opacity: .85; mix-blend-mode: screen;"></div>
+    <div style="position: relative;">
+      <div class="kick" style="color: #ff3b2f;">Impressão &middot; Têxtil &middot; Brindes &middot; Sinalética &middot; desde 2004</div>
+      <h1 style="font-size: 188px; font-weight: 900; margin-top: 20px; line-height: 0.8;">DAMOS</h1>
+      <div style="display: flex; align-items: flex-end; gap: 28px; margin-top: 4px;">
+        <h1 style="font-size: 188px; font-weight: 900; line-height: 0.8; color: #ff3b2f;">COR</h1>
+        <div style="padding-bottom: 26px; max-width: 400px;">
+          <p style="margin: 0; font-size: 19px; line-height: 1.5; font-weight: 600; color: #46433d;">a empresas que não se contentam com um autocolante mal cortado. Impressão, têxtil, brindes e comunicação visual, feitos na nossa oficina.</p>
+        </div>
       </div>
-      <!-- cartao t-shirt -->
-      <div style="position: absolute; left: 34px; top: 52px; width: 216px; background: #fff; border-radius: 18px; padding: 16px; box-shadow: 0 24px 48px rgba(0,0,0,.28);">
-        <div style="background: #f8f7f4; border-radius: 12px; padding: 8px;">
-          <svg viewBox="0 0 200 200" width="100%" height="128" aria-hidden="true">
-            <path d="M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z" fill="#14161a" stroke="rgba(255,255,255,.3)" stroke-width="2.5" stroke-linejoin="round"/>
-            <rect x="82" y="78" width="36" height="30" rx="2" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-dasharray="4 4"/>
+      <div style="display: flex; gap: 12px; margin-top: 44px; flex-wrap: wrap; align-items: center;">
+        <span style="display: inline-flex; align-items: center; gap: 12px; height: 66px; padding: 0 30px; background: #0b0b0c; color: #f4efe6; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">
+          VER OS 1 000+ BRINDES
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ccff33" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+        </span>
+        <span style="display: inline-flex; align-items: center; height: 66px; padding: 0 30px; border: 2.5px solid #0b0b0c; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">FALAR CONNOSCO</span>
+        <div class="seal" style="width: 92px; height: 92px; margin-left: 10px;">
+          <svg viewBox="0 0 100 100" width="92" height="92" aria-hidden="true">
+            <defs><path id="circ" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs>
+            <circle cx="50" cy="50" r="46" fill="#6b2cf5"/>
+            <text font-family="Manrope, sans-serif" font-size="10.5" font-weight="800" letter-spacing="2.4" fill="#f4efe6">
+              <textPath href="#circ">ORÇAMENTO EM 48H &middot; PROVA GRÁTIS &middot; </textPath>
+            </text>
+            <circle cx="50" cy="50" r="13" fill="#ccff33"/>
           </svg>
         </div>
-        <div style="font-size: 14px; font-weight: 600; margin-top: 11px;">T-shirt algodão 180 g</div>
-        <div style="font-size: 12.5px; color: #8b8f96; margin-top: 2px;">Serigrafia &middot; DTF &middot; Bordado</div>
-        <div style="font-size: 14px; font-weight: 700; margin-top: 8px; color:#ec008c;">desde 4,90 €</div>
-      </div>
-      <!-- cartao garrafa -->
-      <div style="position: absolute; right: 30px; top: 168px; width: 204px; background: #fff; border-radius: 18px; padding: 16px; box-shadow: 0 24px 48px rgba(0,0,0,.28);">
-        <div style="background: #f8f7f4; border-radius: 12px; padding: 8px;">
-          <svg viewBox="0 0 200 200" width="100%" height="128" aria-hidden="true">
-            <rect x="86" y="30" width="28" height="16" rx="4" fill="#9aa1ab"/>
-            <path d="M84 46h32c0 10 10 14 10 30v66a12 12 0 0 1-12 12H86a12 12 0 0 1-12-12V76c0-16 10-20 10-30Z" fill="#123f33" stroke="rgba(255,255,255,.3)" stroke-width="2.5" stroke-linejoin="round"/>
-            <rect x="82" y="82" width="36" height="42" rx="2" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.6" stroke-dasharray="4 4"/>
-          </svg>
-        </div>
-        <div style="font-size: 14px; font-weight: 600; margin-top: 11px;">Garrafa inox 500 ml</div>
-        <div style="font-size: 12.5px; color: #8b8f96; margin-top: 2px;">Gravação laser</div>
-        <div style="font-size: 14px; font-weight: 700; margin-top: 8px; color:#ec008c;">desde 14,90 €</div>
-      </div>
-      <!-- etiqueta flutuante -->
-      <div style="position: absolute; left: 58px; bottom: 42px; display: inline-flex; align-items: center; gap: 9px; background: #ffd200; color: #14161a; border-radius: 999px; padding: 11px 18px; font-size: 13.5px; font-weight: 700; box-shadow: 0 14px 30px rgba(0,0,0,.3);">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14161a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-        Prova digital antes de produzir
       </div>
     </div>
   </div>
 
-  <!-- SERVICOS -->
-  <div style="background: #ffffff; padding: 82px 72px; border-top: 1px solid #e2dfd8;">
-    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 44px;">
-      <div>
-        <div style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: #8b8f96; margin-bottom: 12px;">O que fazemos</div>
-        <h2 style="font-size: 46px; font-weight: 800; line-height: 1.05;">Uma casa só, do ficheiro à parede</h2>
-      </div>
-      <p style="max-width: 400px; margin: 0; font-size: 15.5px; line-height: 1.65; color: #5a6068;">Não subcontratamos o essencial. Isso é o que nos deixa prometer prazos e corrigir um problema no mesmo dia.</p>
+  <!-- TICKER -->
+  <div style="background: #ccff33; border-top: 4px solid #0b0b0c; border-bottom: 4px solid #0b0b0c; overflow: hidden; padding: 16px 0;">
+    <div class="marq">
+      <span style="font-family: Unbounded, sans-serif; font-size: 30px; font-weight: 800; letter-spacing: -0.04em; white-space: nowrap; padding-right: 28px;">SERIGRAFIA ✱ BORDADO ✱ OFFSET ✱ GRANDE FORMATO ✱ DTF ✱ GRAVAÇÃO LASER ✱ SUBLIMAÇÃO ✱ WRAPPING ✱ LETRAS 3D ✱ TAMPOGRAFIA ✱&nbsp;</span>
+      <span style="font-family: Unbounded, sans-serif; font-size: 30px; font-weight: 800; letter-spacing: -0.04em; white-space: nowrap; padding-right: 28px;">SERIGRAFIA ✱ BORDADO ✱ OFFSET ✱ GRANDE FORMATO ✱ DTF ✱ GRAVAÇÃO LASER ✱ SUBLIMAÇÃO ✱ WRAPPING ✱ LETRAS 3D ✱ TAMPOGRAFIA ✱&nbsp;</span>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;">
-      <div style="border: 1px solid #e2dfd8; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00aeef" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></svg>
-        <h3 style="font-size: 20px; font-weight: 700;">Impressão digital</h3>
-        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: #5a6068;">Do cartão de visita ao painel de seis metros. Tiragens a partir de 1 exemplar, em lona, vinil, rígidos e papel de parede.</p>
+  </div>
+
+  <!-- SERVICOS -->
+  <div style="background: #0b0b0c; color: #f4efe6; padding: 88px 30px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 48px;">
+      <h2 style="font-size: 110px; font-weight: 900; color: #f4efe6;">O QUE<br>FAZEMOS</h2>
+      <p style="max-width: 420px; margin: 0 0 18px; font-size: 17px; line-height: 1.55; font-weight: 500; color: #b5b0a6;">Não subcontratamos o essencial. É por isso que conseguimos prometer prazos &mdash; e resolver um problema no mesmo dia em que aparece.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 4px;">
+      <div style="background: #1b2cf0; padding: 34px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 15px; font-weight: 800;">01</div>
+        <div>
+          <h3 style="font-size: 34px; font-weight: 900; color: #f4efe6;">IMPRESSÃO<br>DIGITAL</h3>
+          <p style="margin: 14px 0 0; font-size: 14.5px; line-height: 1.55; color: rgba(244,239,230,.82);">Do cartão de visita ao painel de seis metros. Tiragens a partir de 1 exemplar, em lona, vinil, rígidos e papel de parede.</p>
+        </div>
       </div>
-      <div style="border: 1px solid #e2dfd8; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ec008c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="5"/><circle cx="16" cy="15" r="5"/></svg>
-        <h3 style="font-size: 20px; font-weight: 700;">Impressão offset</h3>
-        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: #5a6068;">Grandes tiragens com Pantone diretos, verniz UV, laminação e relevo. Prova de cor calibrada antes de rodar a máquina.</p>
+      <div style="background: #ff3b2f; padding: 34px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 15px; font-weight: 800; color: #0b0b0c;">02</div>
+        <div>
+          <h3 style="font-size: 34px; font-weight: 900; color: #0b0b0c;">IMPRESSÃO<br>OFFSET</h3>
+          <p style="margin: 14px 0 0; font-size: 14.5px; line-height: 1.55; color: #2a0f0c;">Grandes tiragens com Pantone directos, verniz UV, laminação e relevo. Prova de cor calibrada antes de rodar a máquina.</p>
+        </div>
       </div>
-      <div style="border: 1px solid #e2dfd8; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffb800" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 4 6l2 4 2-1v12h8V9l2 1 2-4-5-3a3 3 0 0 1-6 0Z"/></svg>
-        <h3 style="font-size: 20px; font-weight: 700;">Têxtil personalizado</h3>
-        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: #5a6068;">Serigrafia, bordado, DTF e vinil. Fardamento completo com tamanhos por colaborador e reposições a partir do mesmo ficheiro.</p>
+      <div style="background: #ccff33; padding: 34px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 15px; font-weight: 800; color: #0b0b0c;">03</div>
+        <div>
+          <h3 style="font-size: 34px; font-weight: 900; color: #0b0b0c;">TÊXTIL<br>PERSONALIZADO</h3>
+          <p style="margin: 14px 0 0; font-size: 14.5px; line-height: 1.55; color: #3d4a0a;">Serigrafia, bordado, DTF e vinil. Fardamento completo com tamanhos por colaborador e reposições a partir do mesmo ficheiro.</p>
+        </div>
       </div>
-      <div style="border: 1px solid #e2dfd8; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#14161a" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M2 12h20"/><path d="M12 8S9 3 7 3a2.5 2.5 0 0 0 0 5M12 8s3-5 5-5a2.5 2.5 0 0 1 0 5"/></svg>
-        <h3 style="font-size: 20px; font-weight: 700;">Brindes personalizados</h3>
-        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: #5a6068;">Mais de mil referências, configuráveis e com pedido direto no site. Prova digital gratuita antes da produção.</p>
+      <div style="background: #ff7a00; padding: 34px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 15px; font-weight: 800; color: #0b0b0c;">04</div>
+        <div>
+          <h3 style="font-size: 34px; font-weight: 900; color: #0b0b0c;">BRINDES<br>PERSONALIZADOS</h3>
+          <p style="margin: 14px 0 0; font-size: 14.5px; line-height: 1.55; color: #3d1d00;">Mais de mil referências configuráveis, com pedido direto no site e prova digital gratuita antes de produzir.</p>
+        </div>
       </div>
-      <div style="border: 1px solid #e2dfd8; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#00aeef" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V8l8-5 8 5v13"/><path d="M4 12h16"/><path d="M10 21v-5h4v5"/></svg>
-        <h3 style="font-size: 20px; font-weight: 700;">Comunicação visual</h3>
-        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: #5a6068;">Montras, fachadas, letras 3D, sinalética e stands de feira. Projetamos, produzimos e instalamos.</p>
+      <div style="background: #6b2cf5; padding: 34px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 15px; font-weight: 800;">05</div>
+        <div>
+          <h3 style="font-size: 34px; font-weight: 900; color: #f4efe6;">COMUNICAÇÃO<br>VISUAL</h3>
+          <p style="margin: 14px 0 0; font-size: 14.5px; line-height: 1.55; color: rgba(244,239,230,.82);">Montras, fachadas, letras 3D, sinalética e stands de feira. Projetamos, produzimos e instalamos.</p>
+        </div>
       </div>
-      <div style="border: 1px solid #e2dfd8; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 12px;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ec008c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h18l-2-6H5l-2 6Z"/><path d="M5 14v4M19 14v4"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="16.5" cy="18" r="1.6"/></svg>
-        <h3 style="font-size: 20px; font-weight: 700;">Decoração de viaturas</h3>
-        <p style="margin: 0; font-size: 14.5px; line-height: 1.6; color: #5a6068;">Wrapping total ou parcial com vinis de fundição, simulação prévia por modelo e remoção sem danos na pintura.</p>
+      <div style="background: #f4efe6; padding: 34px; min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 15px; font-weight: 800; color: #0b0b0c;">06</div>
+        <div>
+          <h3 style="font-size: 34px; font-weight: 900; color: #0b0b0c;">DECORAÇÃO<br>DE VIATURAS</h3>
+          <p style="margin: 14px 0 0; font-size: 14.5px; line-height: 1.55; color: #46433d;">Wrapping total ou parcial com vinis de fundição, simulação prévia por modelo e remoção sem danos na pintura.</p>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- MARKETPLACE -->
-  <div style="padding: 82px 72px; background: #f8f7f4;">
-    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 40px;">
+  <div style="background: #f4efe6; padding: 88px 30px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 44px;">
       <div>
-        <div style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: #ec008c; margin-bottom: 12px;">Novo &middot; Encomenda direta</div>
-        <h2 style="font-size: 46px; font-weight: 800; line-height: 1.05;">Escolha, configure,<br>peça sem telefonemas</h2>
-        <p style="margin: 18px 0 0; font-size: 16px; line-height: 1.6; color: #5a6068; max-width: 500px;">Escolha a cor, a quantidade e a técnica, carregue o logótipo e veja-o aplicado no produto. Recebe o orçamento fechado em 48 horas.</p>
+        <div class="kick" style="color: #ff3b2f;">Novo &middot; encomenda direta</div>
+        <h2 style="font-size: 110px; font-weight: 900; margin-top: 18px;">ESCOLHA.<br>CONFIGURE.<br><span style="color: #1b2cf0;">PRONTO.</span></h2>
       </div>
-      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; padding: 14px 24px; border: 1px solid #14161a; border-radius: 999px; white-space: nowrap;">
-        Ver os 1 000+ brindes
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#14161a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
-      </span>
+      <div style="max-width: 380px; margin-bottom: 20px;">
+        <p style="margin: 0; font-size: 17px; line-height: 1.55; font-weight: 500; color: #46433d;">Escolha a cor, a quantidade e a técnica, carregue o logótipo e veja-o aplicado no produto. Nós respondemos com o preço fechado em 48 horas.</p>
+        <span style="display: inline-flex; align-items: center; height: 58px; padding: 0 26px; margin-top: 22px; background: #0b0b0c; color: #f4efe6; font-size: 14px; font-weight: 800; letter-spacing: 0.08em;">ABRIR O CATÁLOGO</span>
+      </div>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 20px;">
-
-      <div style="background: #fff; border: 1px solid #e2dfd8; border-radius: 18px; overflow: hidden;">
-        <div style="background: #f1efe9; padding: 20px; position: relative;">
-          <span style="position: absolute; left: 14px; top: 14px; font-size: 11px; font-weight: 700; background: #14161a; color: #fff; border-radius: 999px; padding: 4px 10px;">Mais vendido</span>
-          <svg viewBox="0 0 200 200" width="100%" height="156" aria-hidden="true">
-            <path d="M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z" fill="#1f3a68" stroke="rgba(255,255,255,.3)" stroke-width="2.5" stroke-linejoin="round"/>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 4px;">
+      <sc-for list="{{ products }}" as="p" hint-placeholder-count="4">
+        <div style="{{ p.cardStyle }}">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span style="{{ p.tagStyle }}">{{ p.tag }}</span>
+            <span style="font-family: Unbounded, sans-serif; font-size: 13px; font-weight: 800; color: {{ p.fg }};">{{ p.min }}</span>
+          </div>
+          <svg viewBox="0 0 200 200" width="100%" height="200" aria-hidden="true" style="display:block; margin: 14px 0;">
+            <path d="{{ p.d }}" fill="{{ p.hex }}" stroke="{{ p.line }}" stroke-width="3" stroke-linejoin="round"/>
           </svg>
-        </div>
-        <div style="padding: 18px;">
-          <div style="font-size: 16px; font-weight: 700;">T-shirt algodão 180 g</div>
-          <div style="font-size: 13px; color: #8b8f96; margin-top: 4px;">Mín. 10 un. &middot; 5–8 dias</div>
-          <div style="display: flex; gap: 5px; margin-top: 12px;">
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #f4f5f7; border: 1px solid #d5d1c8;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #12161d;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #1f3a68;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #c2263c;"></span>
-            <span style="font-size: 11.5px; color: #8b8f96; align-self: center;">+2</span>
-          </div>
-          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 14px;">
-            <span style="font-size: 17px; font-weight: 700;">4,90 €</span>
-            <span style="font-size: 12px; color: #8b8f96;">desde / un.</span>
+          <div>
+            <h3 style="font-size: 22px; font-weight: 900; color: {{ p.fg }};">{{ p.name }}</h3>
+            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 14px; padding-top: 14px; border-top: 2px solid {{ p.rule }};">
+              <span style="font-family: Unbounded, sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -0.05em; color: {{ p.fg }};">{{ p.price }}€</span>
+              <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: {{ p.fg }};">CONFIGURAR →</span>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div style="background: #fff; border: 1px solid #e2dfd8; border-radius: 18px; overflow: hidden;">
-        <div style="background: #f1efe9; padding: 20px;">
-          <svg viewBox="0 0 200 200" width="100%" height="156" aria-hidden="true">
-            <path d="M56 62h58a4 4 0 0 1 4 4v72a10 10 0 0 1-10 10H62a10 10 0 0 1-10-10V66a4 4 0 0 1 4-4Z" fill="#f4f5f7" stroke="rgba(13,17,23,.28)" stroke-width="2.5"/>
-            <path d="M118 80h14a16 16 0 0 1 0 32h-14" fill="none" stroke="rgba(13,17,23,.28)" stroke-width="2.5"/>
-            <ellipse cx="85" cy="64" rx="33" ry="7" fill="rgba(13,17,23,.10)"/>
-            <circle cx="85" cy="100" r="15" fill="#ec008c" opacity=".9"/>
-          </svg>
-        </div>
-        <div style="padding: 18px;">
-          <div style="font-size: 16px; font-weight: 700;">Caneca cerâmica 330 ml</div>
-          <div style="font-size: 13px; color: #8b8f96; margin-top: 4px;">Mín. 25 un. &middot; 5–8 dias</div>
-          <div style="display: flex; gap: 5px; margin-top: 12px;">
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #f4f5f7; border: 1px solid #d5d1c8;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #12161d;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #c2263c;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #2b58c4;"></span>
-          </div>
-          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 14px;">
-            <span style="font-size: 17px; font-weight: 700;">3,40 €</span>
-            <span style="font-size: 12px; color: #8b8f96;">desde / un.</span>
-          </div>
-        </div>
-      </div>
-
-      <div style="background: #fff; border: 1px solid #e2dfd8; border-radius: 18px; overflow: hidden;">
-        <div style="background: #f1efe9; padding: 20px; position: relative;">
-          <span style="position: absolute; left: 14px; top: 14px; font-size: 11px; font-weight: 700; background: #2f9e5f; color: #fff; border-radius: 999px; padding: 4px 10px;">Eco</span>
-          <svg viewBox="0 0 200 200" width="100%" height="156" aria-hidden="true">
-            <path d="M76 66c0-16 10-26 24-26s24 10 24 26" fill="none" stroke="rgba(13,17,23,.28)" stroke-width="4"/>
-            <path d="M58 64h84a4 4 0 0 1 4 4l6 84a6 6 0 0 1-6 6H54a6 6 0 0 1-6-6l6-84a4 4 0 0 1 4-4Z" fill="#e4dcc9" stroke="rgba(13,17,23,.28)" stroke-width="2.5" stroke-linejoin="round"/>
-            <rect x="74" y="86" width="52" height="44" rx="2" fill="none" stroke="rgba(13,17,23,.3)" stroke-width="1.6" stroke-dasharray="4 4"/>
-          </svg>
-        </div>
-        <div style="padding: 18px;">
-          <div style="font-size: 16px; font-weight: 700;">Saco de algodão cru</div>
-          <div style="font-size: 13px; color: #8b8f96; margin-top: 4px;">Mín. 50 un. &middot; 7–10 dias</div>
-          <div style="display: flex; gap: 5px; margin-top: 12px;">
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #e4dcc9; border: 1px solid #d5d1c8;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #12161d;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #1f3a68;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #c2263c;"></span>
-          </div>
-          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 14px;">
-            <span style="font-size: 17px; font-weight: 700;">1,90 €</span>
-            <span style="font-size: 12px; color: #8b8f96;">desde / un.</span>
-          </div>
-        </div>
-      </div>
-
-      <div style="background: #fff; border: 1px solid #e2dfd8; border-radius: 18px; overflow: hidden;">
-        <div style="background: #f1efe9; padding: 20px;">
-          <svg viewBox="0 0 200 200" width="100%" height="156" aria-hidden="true">
-            <rect x="86" y="30" width="28" height="16" rx="4" fill="#9aa1ab"/>
-            <path d="M84 46h32c0 10 10 14 10 30v66a12 12 0 0 1-12 12H86a12 12 0 0 1-12-12V76c0-16 10-20 10-30Z" fill="#c9ced6" stroke="rgba(13,17,23,.28)" stroke-width="2.5" stroke-linejoin="round"/>
-            <rect x="82" y="82" width="36" height="42" rx="2" fill="none" stroke="rgba(13,17,23,.3)" stroke-width="1.6" stroke-dasharray="4 4"/>
-          </svg>
-        </div>
-        <div style="padding: 18px;">
-          <div style="font-size: 16px; font-weight: 700;">Garrafa inox 500 ml</div>
-          <div style="font-size: 13px; color: #8b8f96; margin-top: 4px;">Mín. 25 un. &middot; 10–15 dias</div>
-          <div style="display: flex; gap: 5px; margin-top: 12px;">
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #1b1e24;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #c9ced6;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #123f33;"></span>
-            <span style="width: 15px; height: 15px; border-radius: 999px; background: #1f3a68;"></span>
-            <span style="font-size: 11.5px; color: #8b8f96; align-self: center;">+1</span>
-          </div>
-          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 14px;">
-            <span style="font-size: 17px; font-weight: 700;">14,90 €</span>
-            <span style="font-size: 12px; color: #8b8f96;">desde / un.</span>
-          </div>
-        </div>
-      </div>
+      </sc-for>
     </div>
   </div>
 
-  <!-- PROCESSO -->
-  <div style="background: #14161a; color: #f8f7f4; padding: 82px 72px;">
-    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 48px;">
-      <h2 style="font-size: 46px; font-weight: 800; line-height: 1.05; color: #f8f7f4;">Como trabalhamos</h2>
-      <p style="max-width: 420px; margin: 0; font-size: 15.5px; line-height: 1.65; color: #a4aab3;">Sem surpresas no preço e sem produzir nada antes de o cliente aprovar a prova por escrito.</p>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 24px;">
-      <div style="border-top: 3px solid #00aeef; padding-top: 22px;">
-        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; color: #00aeef; letter-spacing: 0.04em;">01</div>
-        <h3 style="font-size: 22px; font-weight: 700; margin-top: 10px; color: #f8f7f4;">Briefing</h3>
-        <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.6; color: #a4aab3;">Diga-nos o que precisa &mdash; nem que seja só uma ideia vaga e uma data.</p>
+  <!-- NUMEROS -->
+  <div style="background: #6b2cf5; color: #f4efe6; padding: 88px 30px;">
+    <h2 style="font-size: 92px; font-weight: 900; color: #f4efe6;">VINTE ANOS<br>DE OFICINA</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 30px; margin-top: 56px;">
+      <div style="border-top: 4px solid #ccff33; padding-top: 22px;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 76px; font-weight: 900; letter-spacing: -0.06em; line-height: 0.9;">3 500</div>
+        <div style="font-size: 14px; font-weight: 800; letter-spacing: 0.1em; margin-top: 12px; color: rgba(244,239,230,.75);">PROJETOS ENTREGUES</div>
       </div>
-      <div style="border-top: 3px solid #ec008c; padding-top: 22px;">
-        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; color: #ec008c; letter-spacing: 0.04em;">02</div>
-        <h3 style="font-size: 22px; font-weight: 700; margin-top: 10px; color: #f8f7f4;">Orçamento e prova</h3>
-        <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.6; color: #a4aab3;">Preço por escalões de quantidade e uma prova digital com o seu logótipo aplicado.</p>
+      <div style="border-top: 4px solid #ccff33; padding-top: 22px;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 76px; font-weight: 900; letter-spacing: -0.06em; line-height: 0.9;">48h</div>
+        <div style="font-size: 14px; font-weight: 800; letter-spacing: 0.1em; margin-top: 12px; color: rgba(244,239,230,.75);">RESPOSTA A ORÇAMENTOS</div>
       </div>
-      <div style="border-top: 3px solid #ffd200; padding-top: 22px;">
-        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; color: #ffd200; letter-spacing: 0.04em;">03</div>
-        <h3 style="font-size: 22px; font-weight: 700; margin-top: 10px; color: #f8f7f4;">Produção</h3>
-        <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.6; color: #a4aab3;">Só depois da sua aprovação. Acompanhamos cada lote na oficina.</p>
+      <div style="border-top: 4px solid #ccff33; padding-top: 22px;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 76px; font-weight: 900; letter-spacing: -0.06em; line-height: 0.9;">1 000</div>
+        <div style="font-size: 14px; font-weight: 800; letter-spacing: 0.1em; margin-top: 12px; color: rgba(244,239,230,.75);">BRINDES EM CATÁLOGO</div>
       </div>
-      <div style="border-top: 3px solid #f8f7f4; padding-top: 22px;">
-        <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; font-weight: 700; color: #f8f7f4; letter-spacing: 0.04em;">04</div>
-        <h3 style="font-size: 22px; font-weight: 700; margin-top: 10px; color: #f8f7f4;">Entrega</h3>
-        <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.6; color: #a4aab3;">Em todo o país. Se precisar, separado por loja, delegação ou por colaborador.</p>
+      <div style="border-top: 4px solid #ccff33; padding-top: 22px;">
+        <div style="font-family: Unbounded, sans-serif; font-size: 76px; font-weight: 900; letter-spacing: -0.06em; line-height: 0.9;">100%</div>
+        <div style="font-size: 14px; font-weight: 800; letter-spacing: 0.1em; margin-top: 12px; color: rgba(244,239,230,.75);">PRODUÇÃO NACIONAL</div>
       </div>
     </div>
   </div>
 
   <!-- PORTFOLIO -->
-  <div style="background: #ffffff; padding: 82px 72px;">
-    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 40px;">
-      <div>
-        <div style="font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: #8b8f96; margin-bottom: 12px;">Portfolio</div>
-        <h2 style="font-size: 46px; font-weight: 800; line-height: 1.05;">Trabalho recente</h2>
-      </div>
-      <span style="font-size: 15px; font-weight: 600; color: #ec008c;">Ver todos os casos &rarr;</span>
+  <div style="background: #0b0b0c; color: #f4efe6; padding: 88px 30px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-bottom: 44px;">
+      <h2 style="font-size: 110px; font-weight: 900; color: #f4efe6;">TRABALHO<br>RECENTE</h2>
+      <span style="font-size: 14px; font-weight: 800; letter-spacing: 0.1em; color: #ccff33; margin-bottom: 18px;">VER TODOS OS CASOS →</span>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;">
-      <div style="border-radius: 18px; overflow: hidden; border: 1px solid #e2dfd8;">
-        <div style="height: 210px; background: #6d1f2c; position: relative; overflow: hidden;">
-          <div style="position: absolute; right: -40px; top: -40px; width: 190px; height: 190px; border-radius: 999px; background: #c8a145; opacity: .85;"></div>
-          <div style="position: absolute; left: 26px; bottom: 26px; width: 78px; height: 118px; border-radius: 6px 6px 30px 30px; background: #1e1a17; border: 2px solid rgba(255,255,255,.2);"></div>
-          <div style="position: absolute; left: 40px; bottom: 60px; width: 50px; height: 40px; background: #f8f7f4; border-radius: 3px;"></div>
+    <div style="display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 4px;">
+      <div>
+        <div style="height: 400px; background: #ff3b2f; position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: repeating-linear-gradient(115deg, transparent 0 38px, rgba(11,11,12,.5) 38px 54px);"></div>
+          <div style="position: absolute; left: 46px; bottom: 46px; width: 150px; height: 210px; background: #f4efe6;"></div>
+          <div style="position: absolute; left: 216px; bottom: 78px; width: 128px; height: 170px; background: #0b0b0c;"></div>
         </div>
-        <div style="padding: 22px;">
-          <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: #8b8f96;">Adega Vale Fundo &middot; 2025</div>
-          <h3 style="font-size: 21px; font-weight: 700; margin-top: 8px;">Uma gama de vinhos do rótulo à caixa</h3>
-          <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.6; color: #5a6068;">Seis referências impressas na mesma folha, com relevo a seco e dourado a quente nas reservas.</p>
-        </div>
-      </div>
-      <div style="border-radius: 18px; overflow: hidden; border: 1px solid #e2dfd8;">
-        <div style="height: 210px; background: #1f3a68; position: relative; overflow: hidden;">
-          <div style="position: absolute; inset: 0; background: repeating-linear-gradient(135deg, transparent 0 26px, rgba(244,123,32,.55) 26px 40px);"></div>
-          <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 96px; height: 112px; background: #f47b20; border-radius: 8px;"></div>
-        </div>
-        <div style="padding: 22px;">
-          <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: #8b8f96;">Grupo Atlântico &middot; 2025</div>
-          <h3 style="font-size: 21px; font-weight: 700; margin-top: 8px;">Fardamento para 180 pessoas em 9 delegações</h3>
-          <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.6; color: #5a6068;">Bordado, coletes certificados e caixas separadas por delegação com sacos nominais.</p>
+        <div style="padding: 22px 4px;">
+          <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; color: #ccff33;">GRUPO ATLÂNTICO · 2025</div>
+          <h3 style="font-size: 30px; font-weight: 900; margin-top: 10px; color: #f4efe6;">FARDAMENTO PARA 180 PESSOAS EM 9 DELEGAÇÕES</h3>
         </div>
       </div>
-      <div style="border-radius: 18px; overflow: hidden; border: 1px solid #e2dfd8;">
-        <div style="height: 210px; background: #0d1117; position: relative; overflow: hidden;">
-          <div style="position: absolute; left: -30px; bottom: -30px; width: 200px; height: 200px; border-radius: 999px; background: #00aeef; opacity: .9; mix-blend-mode: screen;"></div>
-          <div style="position: absolute; right: -20px; top: -20px; width: 150px; height: 150px; border-radius: 999px; background: #7c5cff; opacity: .9; mix-blend-mode: screen;"></div>
-          <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 84px; height: 118px; background: #f8f7f4; border-radius: 6px;"></div>
+      <div>
+        <div style="height: 400px; background: #1b2cf0; position: relative; overflow: hidden;">
+          <div style="position: absolute; left: -50px; top: -50px; width: 230px; height: 230px; border-radius: 999px; background: #ccff33;"></div>
+          <div style="position: absolute; left: 50%; top: 55%; transform: translate(-50%,-50%); width: 110px; height: 156px; background: #f4efe6;"></div>
         </div>
-        <div style="padding: 22px;">
-          <div style="font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: #8b8f96;">TechSummit &middot; 2024</div>
-          <h3 style="font-size: 21px; font-weight: 700; margin-top: 8px;">1 200 crachás únicos em onze dias</h3>
-          <p style="margin: 10px 0 0; font-size: 14.5px; line-height: 1.6; color: #5a6068;">Dados variáveis com nome, empresa e QR por participante, mais sinalética de recinto.</p>
+        <div style="padding: 22px 4px;">
+          <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; color: #ccff33;">TECHSUMMIT · 2024</div>
+          <h3 style="font-size: 30px; font-weight: 900; margin-top: 10px; color: #f4efe6;">1 200 CRACHÁS ÚNICOS EM ONZE DIAS</h3>
+        </div>
+      </div>
+      <div>
+        <div style="height: 400px; background: #ff7a00; position: relative; overflow: hidden;">
+          <div style="position: absolute; right: -40px; bottom: -40px; width: 210px; height: 210px; border-radius: 999px; background: #6b2cf5;"></div>
+          <div style="position: absolute; left: 40px; top: 50px; width: 96px; height: 140px; background: #0b0b0c; border-radius: 4px 4px 34px 34px;"></div>
+        </div>
+        <div style="padding: 22px 4px;">
+          <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; color: #ccff33;">ADEGA VALE FUNDO · 2025</div>
+          <h3 style="font-size: 30px; font-weight: 900; margin-top: 10px; color: #f4efe6;">UMA GAMA DE VINHOS DO RÓTULO À CAIXA</h3>
         </div>
       </div>
     </div>
   </div>
 
   <!-- CTA -->
-  <div style="padding: 72px; background: #f8f7f4;">
-    <div style="background: #ec008c; border-radius: 28px; padding: 60px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center;">
-      <div>
-        <h2 style="font-size: 44px; font-weight: 800; line-height: 1.05; color: #fff;">Tem um projeto<br>em cima da mesa?</h2>
-        <p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: rgba(255,255,255,.9); max-width: 460px;">Envie-nos o que tem &mdash; um ficheiro, um esboço no guardanapo ou só uma data. Respondemos em 48 horas úteis com preço e prazo.</p>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        <span style="text-align: center; font-size: 16px; font-weight: 700; padding: 17px 26px; background: #14161a; color: #fff; border-radius: 999px;">Pedir orçamento</span>
-        <span style="text-align: center; font-size: 16px; font-weight: 600; padding: 17px 26px; background: rgba(255,255,255,.15); color: #fff; border: 1px solid rgba(255,255,255,.45); border-radius: 999px;">[TELEFONE A CONFIRMAR]</span>
+  <div style="background: #ff3b2f; color: #0b0b0c; padding: 96px 30px; position: relative; overflow: hidden;">
+    <div class="blob2" style="position: absolute; right: -60px; top: -60px; width: 320px; height: 320px; border-radius: 999px; background: #ff7a00;"></div>
+    <div style="position: relative;">
+      <h2 style="font-size: 132px; font-weight: 900; color: #0b0b0c;">TEM UM<br>PROJETO?</h2>
+      <p style="margin: 30px 0 0; font-size: 21px; line-height: 1.5; font-weight: 600; max-width: 620px; color: #2a0f0c;">Mande-nos o que tem &mdash; um ficheiro, um esboço no guardanapo, ou só uma data. Respondemos em 48 horas úteis com preço, prazo e uma prova digital.</p>
+      <div style="display: flex; gap: 12px; margin-top: 40px; flex-wrap: wrap;">
+        <span style="display: inline-flex; align-items: center; height: 68px; padding: 0 34px; background: #0b0b0c; color: #f4efe6; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">PEDIR ORÇAMENTO</span>
+        <span style="display: inline-flex; align-items: center; height: 68px; padding: 0 34px; border: 2.5px solid #0b0b0c; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">[TELEFONE A CONFIRMAR]</span>
       </div>
     </div>
   </div>
 
   <!-- FOOTER -->
-  <div style="background: #14161a; color: #a4aab3; padding: 56px 72px 34px;">
-    <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 34px; border-bottom: 1px solid #262a31;">
+  <div style="background: #0b0b0c; color: #b5b0a6; padding: 62px 30px 30px;">
+    <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 44px; padding-bottom: 40px; border-bottom: 1px solid #26262a;">
       <div>
-        <div style="display: flex; align-items: center; gap: 11px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
           <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-            <defs>
-              <clipPath id="f-tile"><rect x="0" y="0" width="64" height="64" rx="16"/></clipPath>
-              <mask id="f-letter"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-            </defs>
-            <g clip-path="url(#f-tile)" mask="url(#f-letter)">
-              <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-              <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#f8f7f4"/>
-            </g>
+            <defs><linearGradient id="fg2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1b2cf0"/><stop offset="52%" stop-color="#6b2cf5"/><stop offset="100%" stop-color="#ff3b2f"/></linearGradient></defs>
+            <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="url(#fg2)"/>
+            <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="#ccff33"/>
           </svg>
-          <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; color: #f8f7f4; letter-spacing: -0.035em;">correia<span style="background: linear-gradient(92deg,#00aeef,#ec008c 55%,#ffd200); -webkit-background-clip: text; background-clip: text; color: transparent;">COR</span></span>
+          <span style="font-family: Unbounded, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.06em; color: #f4efe6;">correiacor</span>
         </div>
-        <p style="margin: 18px 0 0; font-size: 14.5px; line-height: 1.65; max-width: 320px;">A solução completa em comunicação visual. Impressão, têxtil, brindes e sinalética, feitos em Portugal.</p>
+        <p style="margin: 20px 0 0; font-size: 15px; line-height: 1.6; max-width: 330px;">Impressão, têxtil, brindes e comunicação visual. Uma oficina em Portugal, desde 2004.</p>
       </div>
       <div>
-        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: #f8f7f4; margin-bottom: 14px;">Serviços</div>
-        <div style="display: flex; flex-direction: column; gap: 9px; font-size: 14.5px;"><span>Impressão digital</span><span>Impressão offset</span><span>Têxtil</span><span>Brindes</span><span>Sinalética</span></div>
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; color: #ccff33; margin-bottom: 16px;">SERVIÇOS</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;"><span>Impressão digital</span><span>Impressão offset</span><span>Têxtil</span><span>Brindes</span><span>Sinalética</span><span>Viaturas</span></div>
       </div>
       <div>
-        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: #f8f7f4; margin-bottom: 14px;">Empresa</div>
-        <div style="display: flex; flex-direction: column; gap: 9px; font-size: 14.5px;"><span>Quem somos</span><span>Portfolio</span><span>Contactos</span><span>Livro de reclamações</span></div>
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; color: #ccff33; margin-bottom: 16px;">EMPRESA</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;"><span>Sobre nós</span><span>Portfolio</span><span>Contactos</span><span>Livro de reclamações</span><span>Privacidade</span></div>
       </div>
       <div>
-        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: #f8f7f4; margin-bottom: 14px;">Contactos</div>
-        <div style="display: flex; flex-direction: column; gap: 9px; font-size: 14.5px;">
-          <span>[MORADA A CONFIRMAR]</span>
-          <span>[TELEFONE A CONFIRMAR]</span>
-          <span>[EMAIL A CONFIRMAR]</span>
-        </div>
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; color: #ccff33; margin-bottom: 16px;">ONDE ESTAMOS</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px;"><span>[MORADA A CONFIRMAR]</span><span>[TELEFONE A CONFIRMAR]</span><span>[EMAIL A CONFIRMAR]</span></div>
       </div>
     </div>
-    <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 22px; font-size: 13px;">
-      <span>&copy; 2026 CorreiaCOR. Todos os direitos reservados.</span>
-      <div style="height: 6px; width: 180px; border-radius: 999px; background: linear-gradient(90deg,#00aeef 0 25%,#ec008c 25% 50%,#ffd200 50% 75%,#f8f7f4 75% 100%);"></div>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; font-size: 13px;">
+      <span>© 2026 CorreiaCOR</span>
+      <div style="display: flex; gap: 4px;">
+        <span style="width: 46px; height: 8px; background: #1b2cf0;"></span>
+        <span style="width: 46px; height: 8px; background: #6b2cf5;"></span>
+        <span style="width: 46px; height: 8px; background: #ff3b2f;"></span>
+        <span style="width: 46px; height: 8px; background: #ff7a00;"></span>
+        <span style="width: 46px; height: 8px; background: #ccff33;"></span>
+      </div>
     </div>
   </div>
-
 </div>
 </x-dc>
+
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":4700}}'>
+const SH = {
+  tshirt: 'M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z',
+  mug: 'M56 62h58a4 4 0 0 1 4 4v72a10 10 0 0 1-10 10H62a10 10 0 0 1-10-10V66a4 4 0 0 1 4-4Z',
+  tote: 'M58 64h84a4 4 0 0 1 4 4l6 84a6 6 0 0 1-6 6H54a6 6 0 0 1-6-6l6-84a4 4 0 0 1 4-4Z',
+  bottle: 'M84 46h32c0 10 10 14 10 30v66a12 12 0 0 1-12 12H86a12 12 0 0 1-12-12V76c0-16 10-20 10-30Z',
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    const RAW = [
+      ['T-SHIRT 180 G', SH.tshirt, '#0b0b0c', '#ccff33', '#0b0b0c', 'MAIS VENDIDO', 'MÍN. 10', '4,90'],
+      ['CANECA 330 ML', SH.mug, '#f4efe6', '#1b2cf0', '#f4efe6', 'CLÁSSICO', 'MÍN. 25', '3,40'],
+      ['SACO DE ALGODÃO', SH.tote, '#0b0b0c', '#ff7a00', '#0b0b0c', 'ECO', 'MÍN. 50', '1,90'],
+      ['GARRAFA INOX', SH.bottle, '#ccff33', '#0b0b0c', '#f4efe6', 'TOPO DE GAMA', 'MÍN. 25', '14,90'],
+    ];
+    return {
+      products: RAW.map((r) => {
+        const bg = r[3], fg = r[4];
+        const onDark = fg === '#f4efe6';
+        return {
+          name: r[0], d: r[1], hex: r[2],
+          line: r[2] === '#0b0b0c' ? 'rgba(244,239,230,.35)' : 'rgba(11,11,12,.4)',
+          fg: fg,
+          rule: onDark ? 'rgba(244,239,230,.3)' : 'rgba(11,11,12,.25)',
+          tag: r[5], min: r[6], price: r[7],
+          cardStyle: 'background:' + bg + ';padding:24px;display:flex;flex-direction:column;justify-content:space-between;min-height:420px;',
+          tagStyle: 'font-size:10.5px;font-weight:800;letter-spacing:0.12em;padding:5px 10px;background:' +
+            (onDark ? 'rgba(244,239,230,.16)' : 'rgba(11,11,12,.12)') + ';color:' + fg + ';',
+        };
+      }),
+    };
+  }
+}
+</script>
 </body>
 </html>

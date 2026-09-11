@@ -7,199 +7,182 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Archivo:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;800&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Archivo, "Helvetica Neue", Arial, sans-serif; }
-    h1,h2,h3 { font-family: "Bricolage Grotesque", Archivo, sans-serif; margin: 0; letter-spacing: -0.035em; }
-    a { color: #ec008c; text-decoration: none; } a:hover { color: #c80076; }
+    body { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
+    h1,h2,h3 { font-family: Unbounded, Manrope, sans-serif; margin: 0; letter-spacing: -0.06em; line-height: 0.86; }
+    p { text-wrap: pretty; }
+    a { color: #1b2cf0; text-decoration: none; }
+    .kick { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; }
     .opt { cursor: pointer; user-select: none; }
   </style>
 </helmet>
-
-<div style="background: #f8f7f4; color: #14161a; min-height: 1500px;">
-  <div style="height: 5px; background: linear-gradient(90deg,#00aeef 0 25%,#ec008c 25% 50%,#ffd200 50% 75%,#14161a 75% 100%);"></div>
-
-  <!-- HEADER -->
-  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 72px; border-bottom: 1px solid #e2dfd8;">
-    <div style="display: flex; align-items: center; gap: 11px;">
-      <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-        <defs>
-          <clipPath id="p-tile"><rect x="0" y="0" width="64" height="64" rx="16"/></clipPath>
-          <mask id="p-letter"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-        </defs>
-        <g clip-path="url(#p-tile)" mask="url(#p-letter)">
-          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#14161a"/>
-        </g>
-      </svg>
-      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.035em;">correia<span style="background: linear-gradient(92deg,#00aeef,#ec008c 55%,#ffd200); -webkit-background-clip: text; background-clip: text; color: transparent;">COR</span></span>
-    </div>
-    <div style="display: flex; align-items: center; gap: 30px; font-size: 14.5px; font-weight: 500;">
-      <span style="color: #14161a;">Brindes</span><span style="color: #5a6068;">Serviços</span><span style="color: #5a6068;">Portfolio</span><span style="color: #5a6068;">Quem somos</span><span style="color: #5a6068;">Contactos</span>
-    </div>
-    <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; padding: 10px 16px; border: 1px solid #d5d1c8; border-radius: 999px;">
-      Pedido <span style="background:#ec008c; color:#fff; border-radius:999px; min-width:19px; height:19px; display:inline-flex; align-items:center; justify-content:center; font-size:11px;">3</span>
-    </span>
+<div style="background: #f4efe6; color: #0b0b0c; overflow: hidden;">
+<div style="background: #0b0b0c; display: flex; align-items: center; justify-content: space-between; padding: 0 26px 0 30px; height: 74px;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+      <defs><linearGradient id="pdg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1b2cf0"/><stop offset="52%" stop-color="#6b2cf5"/><stop offset="100%" stop-color="#ff3b2f"/></linearGradient></defs>
+      <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="url(#pdg)"/>
+      <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="#ccff33"/>
+    </svg>
+    <span style="font-family: Unbounded, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.06em; color: #f4efe6;">correiacor</span>
   </div>
+  <div style="display: flex; align-items: center; gap: 26px; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; color: #b5b0a6;">
+    <span style="color: #ccff33;">BRINDES</span><span>SERVIÇOS</span><span>PORTFOLIO</span><span>SOBRE</span><span>CONTACTOS</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <span style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; border: 1.5px solid #3a3a3d; color: #f4efe6; font-size: 12px; font-weight: 800; letter-spacing: 0.1em;">PEDIDO <span style="background:#ff3b2f; color:#fff; width:20px; height:20px; display:inline-flex; align-items:center; justify-content:center; font-size:11px;">3</span></span>
+    <span style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; background: #ccff33; color: #0b0b0c; font-size: 12px; font-weight: 800; letter-spacing: 0.1em;">PEDIR ORÇAMENTO</span>
+  </div>
+</div>
+  <div style="padding: 22px 30px 0; font-size: 12px; font-weight: 800; letter-spacing: 0.12em; color: #86827a;">BRINDES / TÊXTIL / <span style="color: #0b0b0c;">T-SHIRT 180 G</span></div>
 
-  <div style="padding: 26px 72px 0; font-size: 13.5px; color: #8b8f96;">Brindes <span style="color:#d5d1c8;">/</span> Têxtil &amp; Vestuário <span style="color:#d5d1c8;">/</span> <span style="color:#14161a;">T-shirt algodão 180 g</span></div>
-
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; padding: 28px 72px 72px; align-items: start;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 22px 30px 60px; align-items: start;">
 
     <!-- PREVIEW -->
-    <div style="position: sticky; top: 24px; display: flex; flex-direction: column; gap: 16px;">
-      <div style="background: #fff; border: 1px solid #e2dfd8; border-radius: 22px; padding: 32px; position: relative;">
-        <span style="position: absolute; left: 24px; top: 24px; font-size: 11.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #8b8f96;">Pré-visualização</span>
-        <span style="position: absolute; right: 24px; top: 24px; font-size: 12px; font-weight: 600; background: #f1efe9; border-radius: 999px; padding: 6px 12px; color: #5a6068;">{{ sel.colorName }}</span>
-        <svg viewBox="0 0 200 200" width="100%" height="420" aria-hidden="true" style="display: block;">
-          <path d="M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z" fill="{{ sel.hex }}" stroke="{{ sel.line }}" stroke-width="2.5" stroke-linejoin="round"/>
-          <rect x="{{ sel.areaX }}" y="{{ sel.areaY }}" width="{{ sel.areaW }}" height="{{ sel.areaH }}" rx="2" fill="none" stroke="{{ sel.line }}" stroke-width="1.4" stroke-dasharray="4 4"/>
+    <div style="position: sticky; top: 20px;">
+      <div style="{{ sel.stage }}">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <span class="kick" style="color: {{ sel.stageFg }};">Pré-visualização</span>
+          <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em; padding: 7px 13px; background: {{ sel.chipBg }}; color: {{ sel.stageFg }};">{{ sel.colorName }}</span>
+        </div>
+        <svg viewBox="0 0 200 200" width="100%" height="430" aria-hidden="true" style="display: block; margin-top: 10px;">
+          <path d="M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z" fill="{{ sel.hex }}" stroke="{{ sel.line }}" stroke-width="2.6" stroke-linejoin="round"/>
+          <rect x="{{ sel.areaX }}" y="{{ sel.areaY }}" width="{{ sel.areaW }}" height="{{ sel.areaH }}" rx="1" fill="none" stroke="{{ sel.line }}" stroke-width="1.4" stroke-dasharray="4 4"/>
           <g transform="translate({{ sel.logoX }} {{ sel.logoY }}) scale({{ sel.logoS }})">
-            <rect x="0" y="0" width="36" height="36" rx="9" fill="{{ sel.logoInk }}"/>
-            <path d="M25 12a9 9 0 1 0 0 12" fill="none" stroke="{{ sel.hex }}" stroke-width="5" stroke-linecap="round"/>
+            <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="{{ sel.logoInk }}"/>
+            <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="{{ sel.logoInk }}" opacity="0.55"/>
           </g>
         </svg>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px; font-size: 12.5px; color: #8b8f96;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b8f96" stroke-width="2" stroke-linecap="round"><path d="M12 16v-4M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
-          Simulação. A prova digital real segue com o orçamento.
-        </div>
+        <div style="font-size: 12.5px; font-weight: 600; text-align: center; color: {{ sel.stageMuted }};">Simulação. A prova digital real segue com o orçamento.</div>
       </div>
-      <div style="display: flex; gap: 12px;">
-        <span class="opt" onClick="{{ upload }}" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-size: 14.5px; font-weight: 600; padding: 15px; background: #fff; border: 1.5px dashed #c9c4b8; border-radius: 14px; color: #14161a;">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#14161a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 9 5-5 5 5"/><path d="M12 4v12"/></svg>
+      <div style="display: flex; gap: 4px; margin-top: 4px;">
+        <span class="opt" onClick="{{ upload }}" style="flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 64px; border: 3px dashed #0b0b0c; font-size: 14px; font-weight: 800; letter-spacing: 0.04em;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b0b0c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 9 5-5 5 5"/><path d="M12 4v12"/></svg>
           {{ sel.uploadLabel }}
         </span>
-        <span style="flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-size: 14.5px; font-weight: 600; padding: 15px; background: #fff; border: 1px solid #e2dfd8; border-radius: 14px; color: #5a6068;">
-          Não tenho ficheiro vetorial
-        </span>
+        <span style="flex: 0 0 auto; display: inline-flex; align-items: center; padding: 0 22px; height: 64px; background: #0b0b0c; color: #f4efe6; font-size: 13px; font-weight: 800; letter-spacing: 0.04em;">NÃO TENHO VETORIAL</span>
       </div>
     </div>
 
     <!-- CONFIGURADOR -->
     <div>
-      <div style="display: flex; gap: 8px; margin-bottom: 16px;">
-        <span style="font-size: 11.5px; font-weight: 700; background: #14161a; color: #fff; border-radius: 999px; padding: 5px 12px;">Mais vendido</span>
-        <span style="font-size: 11.5px; font-weight: 600; background: #fff; border: 1px solid #e2dfd8; color: #5a6068; border-radius: 999px; padding: 5px 12px;">XS – 3XL</span>
+      <div style="display: flex; gap: 4px; margin-bottom: 16px;">
+        <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; background: #ff3b2f; color: #0b0b0c; padding: 7px 13px;">MAIS VENDIDO</span>
+        <span style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; border: 2px solid #0b0b0c; padding: 5px 13px;">XS – 3XL</span>
       </div>
-      <h1 style="font-size: 44px; font-weight: 800; line-height: 1.05;">T-shirt algodão 180 g</h1>
-      <p style="margin: 16px 0 0; font-size: 16.5px; line-height: 1.65; color: #5a6068;">100% algodão penteado com gola em costura dupla e ombro a ombro reforçado. Corte unissexo, com modelação feminina disponível. É a base que usamos em campanhas, eventos e fardamento de verão.</p>
+      <h1 style="font-size: 78px; font-weight: 900;">T-SHIRT<br>180 G</h1>
+      <p style="margin: 20px 0 0; font-size: 17px; line-height: 1.55; font-weight: 500; color: #46433d;">100% algodão penteado, gola em costura dupla e ombro a ombro reforçado. Corte unissexo, com modelação feminina disponível. É a base que usamos em campanhas, eventos e fardamento de verão.</p>
 
-      <!-- COR -->
-      <div style="margin-top: 34px;">
-        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 13px;">
-          <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;">1. Cor da peça</span>
-          <span style="font-size: 13.5px; color: #8b8f96;">{{ sel.colorName }}</span>
+      <div style="margin-top: 36px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px;">
+          <span class="kick">1 · Cor da peça</span>
+          <span style="font-size: 14px; font-weight: 800;">{{ sel.colorName }}</span>
         </div>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <div style="display: flex; gap: 4px; flex-wrap: wrap;">
           <sc-for list="{{ colors }}" as="c" hint-placeholder-count="6">
             <span class="opt" onClick="{{ c.pick }}" title="{{ c.name }}" style="{{ c.style }}"></span>
           </sc-for>
         </div>
       </div>
 
-      <!-- TECNICA -->
-      <div style="margin-top: 30px;">
-        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 13px;">2. Técnica de personalização</div>
-        <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px;">
+      <div style="margin-top: 32px;">
+        <div class="kick" style="margin-bottom: 14px;">2 · Técnica de personalização</div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 4px;">
           <sc-for list="{{ techniques }}" as="t" hint-placeholder-count="4">
             <span class="opt" onClick="{{ t.pick }}" style="{{ t.style }}">
-              <span style="font-size: 15px; font-weight: 600; display: block;">{{ t.name }}</span>
-              <span style="font-size: 13px; color: #8b8f96; display: block; margin-top: 3px; line-height: 1.45;">{{ t.note }}</span>
+              <span style="font-family: Unbounded, sans-serif; font-size: 19px; font-weight: 800; letter-spacing: -0.04em; display: block;">{{ t.name }}</span>
+              <span style="font-size: 13px; font-weight: 500; display: block; margin-top: 6px; line-height: 1.4; opacity: .78;">{{ t.note }}</span>
             </span>
           </sc-for>
         </div>
       </div>
 
-      <!-- ZONA -->
-      <div style="margin-top: 30px;">
-        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 13px;">3. Zona de impressão</div>
-        <div style="display: flex; gap: 9px; flex-wrap: wrap;">
+      <div style="margin-top: 32px;">
+        <div class="kick" style="margin-bottom: 14px;">3 · Zona de impressão</div>
+        <div style="display: flex; gap: 4px; flex-wrap: wrap;">
           <sc-for list="{{ areas }}" as="a" hint-placeholder-count="4">
             <span class="opt" onClick="{{ a.pick }}" style="{{ a.style }}">{{ a.name }}</span>
           </sc-for>
         </div>
       </div>
 
-      <!-- QUANTIDADE -->
-      <div style="margin-top: 30px;">
-        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 13px;">4. Quantidade</div>
-        <div style="display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 8px;">
+      <div style="margin-top: 32px;">
+        <div class="kick" style="margin-bottom: 14px;">4 · Quantidade</div>
+        <div style="display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 4px;">
           <sc-for list="{{ tiers }}" as="q" hint-placeholder-count="6">
             <span class="opt" onClick="{{ q.pick }}" style="{{ q.style }}">
-              <span style="display: block; font-size: 15px; font-weight: 700;">{{ q.qty }}</span>
-              <span style="display: block; font-size: 12px; color: #8b8f96; margin-top: 2px;">{{ q.unit }} €</span>
+              <span style="display: block; font-family: Unbounded, sans-serif; font-size: 20px; font-weight: 900; letter-spacing: -0.04em;">{{ q.qty }}</span>
+              <span style="display: block; font-size: 12px; font-weight: 600; margin-top: 4px; opacity: .72;">{{ q.unit }} €</span>
             </span>
           </sc-for>
         </div>
-        <p style="margin: 11px 0 0; font-size: 13px; color: #8b8f96;">Quantidade mínima 10 unidades. Precisa de mais de 500? Peça o escalão à medida.</p>
+        <p style="margin: 12px 0 0; font-size: 13.5px; font-weight: 500; color: #86827a;">Mínimo 10 unidades. Mais de 500? Pedimos escalão à medida ao fornecedor.</p>
       </div>
 
-      <!-- RESUMO -->
-      <div style="margin-top: 34px; background: #fff; border: 1px solid #e2dfd8; border-radius: 20px; padding: 26px;">
-        <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 1px solid #f0ede6;">
+      <div style="margin-top: 34px; background: #0b0b0c; color: #f4efe6; padding: 32px;">
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; padding-bottom: 22px; border-bottom: 2px solid #2a2a2c;">
           <div>
-            <div style="font-size: 13px; color: #8b8f96;">Estimativa para {{ sel.qty }} unidades</div>
-            <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 40px; font-weight: 800; letter-spacing: -0.04em; margin-top: 4px;">{{ sel.total }} €</div>
+            <div class="kick" style="color: #ccff33;">Estimativa · {{ sel.qty }} unidades</div>
+            <div style="font-family: Unbounded, sans-serif; font-size: 62px; font-weight: 900; letter-spacing: -0.06em; line-height: 0.9; margin-top: 10px;">{{ sel.total }}€</div>
           </div>
           <div style="text-align: right;">
-            <div style="font-size: 13px; color: #8b8f96;">por unidade</div>
-            <div style="font-size: 22px; font-weight: 700; margin-top: 4px;">{{ sel.unit }} €</div>
+            <div style="font-size: 12px; font-weight: 700; color: #86827a;">por unidade</div>
+            <div style="font-family: Unbounded, sans-serif; font-size: 26px; font-weight: 900; letter-spacing: -0.05em; margin-top: 6px;">{{ sel.unit }}€</div>
           </div>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 9px; padding: 16px 0; font-size: 14px; color: #5a6068;">
-          <div style="display: flex; justify-content: space-between;"><span>Personalização</span><span style="color:#14161a; font-weight: 600;">{{ sel.technique }} &middot; {{ sel.area }}</span></div>
-          <div style="display: flex; justify-content: space-between;"><span>Prazo estimado</span><span style="color:#14161a; font-weight: 600;">5 a 8 dias úteis</span></div>
-          <div style="display: flex; justify-content: space-between;"><span>Prova digital</span><span style="color:#2f9e5f; font-weight: 600;">Gratuita</span></div>
+        <div style="display: flex; flex-direction: column; gap: 11px; padding: 20px 0; font-size: 14.5px; font-weight: 600; color: #b5b0a6;">
+          <div style="display: flex; justify-content: space-between;"><span>Personalização</span><span style="color:#f4efe6;">{{ sel.technique }} · {{ sel.area }}</span></div>
+          <div style="display: flex; justify-content: space-between;"><span>Prazo estimado</span><span style="color:#f4efe6;">5 a 8 dias úteis</span></div>
+          <div style="display: flex; justify-content: space-between;"><span>Prova digital</span><span style="color:#ccff33;">Gratuita</span></div>
         </div>
-        <div style="background: #f8f7f4; border-radius: 12px; padding: 13px 15px; font-size: 13px; line-height: 1.55; color: #5a6068;">
-          Valor indicativo, sem IVA e sem portes. O orçamento final confirma-se em 48 horas úteis, depois de vermos o seu ficheiro.
-        </div>
-        <div style="display: flex; gap: 10px; margin-top: 18px;">
-          <span style="flex: 1.4; text-align: center; font-size: 16px; font-weight: 700; padding: 17px; background: #ec008c; color: #fff; border-radius: 999px;">Juntar ao pedido</span>
-          <span style="flex: 1; text-align: center; font-size: 16px; font-weight: 600; padding: 17px; border: 1px solid #d5d1c8; border-radius: 999px;">Guardar</span>
+        <div style="border-left: 4px solid #ff3b2f; padding: 4px 0 4px 16px; font-size: 13.5px; line-height: 1.55; font-weight: 500; color: #b5b0a6;">Valor indicativo, sem IVA e sem portes. O orçamento final confirma-se em 48 horas úteis, depois de vermos o seu ficheiro.</div>
+        <div style="display: flex; gap: 4px; margin-top: 24px;">
+          <span style="flex: 1.5; text-align: center; height: 66px; display: inline-flex; align-items: center; justify-content: center; background: #ccff33; color: #0b0b0c; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">JUNTAR AO PEDIDO</span>
+          <span style="flex: 1; text-align: center; height: 66px; display: inline-flex; align-items: center; justify-content: center; border: 2.5px solid #3a3a3d; color: #f4efe6; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">GUARDAR</span>
         </div>
       </div>
 
-      <!-- FICHA -->
-      <div style="margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: #e2dfd8; border: 1px solid #e2dfd8; border-radius: 16px; overflow: hidden;">
-        <div style="background: #f8f7f4; padding: 18px 20px;"><div style="font-size: 12.5px; color: #8b8f96;">Composição</div><div style="font-size: 14.5px; font-weight: 600; margin-top: 3px;">100% algodão penteado</div></div>
-        <div style="background: #f8f7f4; padding: 18px 20px;"><div style="font-size: 12.5px; color: #8b8f96;">Gramagem</div><div style="font-size: 14.5px; font-weight: 600; margin-top: 3px;">180 g/m²</div></div>
-        <div style="background: #f8f7f4; padding: 18px 20px;"><div style="font-size: 12.5px; color: #8b8f96;">Tamanhos</div><div style="font-size: 14.5px; font-weight: 600; margin-top: 3px;">XS a 3XL &middot; corte feminino</div></div>
-        <div style="background: #f8f7f4; padding: 18px 20px;"><div style="font-size: 12.5px; color: #8b8f96;">Ficheiro ideal</div><div style="font-size: 14.5px; font-weight: 600; margin-top: 3px;">Vetorial (AI, EPS, PDF, SVG)</div></div>
+      <div style="margin-top: 4px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 4px;">
+        <div style="border: 2px solid #0b0b0c; padding: 20px 22px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #86827a;">COMPOSIÇÃO</div><div style="font-size: 16px; font-weight: 800; margin-top: 6px;">100% algodão penteado</div></div>
+        <div style="border: 2px solid #0b0b0c; padding: 20px 22px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #86827a;">GRAMAGEM</div><div style="font-size: 16px; font-weight: 800; margin-top: 6px;">180 g/m²</div></div>
+        <div style="border: 2px solid #0b0b0c; padding: 20px 22px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #86827a;">TAMANHOS</div><div style="font-size: 16px; font-weight: 800; margin-top: 6px;">XS a 3XL · corte feminino</div></div>
+        <div style="border: 2px solid #0b0b0c; padding: 20px 22px;"><div style="font-size: 12px; font-weight: 800; letter-spacing: 0.1em; color: #86827a;">FICHEIRO IDEAL</div><div style="font-size: 16px; font-weight: 800; margin-top: 6px;">Vetorial: AI, EPS, PDF, SVG</div></div>
       </div>
     </div>
   </div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1620}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { color: 2, tech: 0, area: 0, tier: 2, uploaded: false };
+    this.state = { color: 1, tech: 0, area: 0, tier: 2, uploaded: false };
   }
 
   renderVals() {
     const COLORS = [
-      { name: 'Branco', hex: '#f4f5f7' },
-      { name: 'Preto', hex: '#12161d' },
-      { name: 'Azul-marinho', hex: '#1f3a68' },
-      { name: 'Vermelho', hex: '#c2263c' },
-      { name: 'Verde', hex: '#2f7d55' },
-      { name: 'Cinza mesclado', hex: '#8e97a3' },
+      { name: 'Osso', hex: '#f4efe6', stage: '#0b0b0c' },
+      { name: 'Preto tinta', hex: '#0b0b0c', stage: '#ccff33' },
+      { name: 'Azul elétrico', hex: '#1b2cf0', stage: '#ccff33' },
+      { name: 'Vermelho', hex: '#ff3b2f', stage: '#0b0b0c' },
+      { name: 'Lima', hex: '#ccff33', stage: '#0b0b0c' },
+      { name: 'Violeta', hex: '#6b2cf5', stage: '#ccff33' },
+      { name: 'Laranja', hex: '#ff7a00', stage: '#0b0b0c' },
     ];
     const TECHS = [
-      { name: 'Serigrafia', note: 'Melhor preço a partir de 50 un.', mult: 1 },
-      { name: 'DTF', note: 'Cores ilimitadas, ideal em pequenas séries.', mult: 1.18 },
-      { name: 'Bordado', note: 'Acabamento mais nobre e duradouro.', mult: 1.55 },
-      { name: 'Vinil térmico', note: 'Para nomes e números individuais.', mult: 1.3 },
+      { name: 'SERIGRAFIA', note: 'Melhor preço a partir de 50 unidades.', mult: 1 },
+      { name: 'DTF', note: 'Cores ilimitadas, ideal em séries pequenas.', mult: 1.18 },
+      { name: 'BORDADO', note: 'Acabamento mais nobre e duradouro.', mult: 1.55 },
+      { name: 'VINIL', note: 'Para nomes e números individuais.', mult: 1.3 },
     ];
     const AREAS = [
-      { name: 'Peito esquerdo', x: 118, y: 78, w: 28, h: 24, lx: 120, ly: 80, ls: 0.62 },
-      { name: 'Frente centrada', x: 78, y: 80, w: 44, h: 40, lx: 84, ly: 86, ls: 0.9 },
-      { name: 'Costas', x: 76, y: 84, w: 48, h: 44, lx: 82, ly: 90, ls: 1 },
-      { name: 'Manga', x: 50, y: 70, w: 20, h: 18, lx: 52, ly: 72, ls: 0.42 },
+      { name: 'PEITO ESQUERDO', x: 116, y: 78, w: 30, h: 26, lx: 118, ly: 80, ls: 0.37 },
+      { name: 'FRENTE CENTRADA', x: 78, y: 80, w: 44, h: 40, lx: 82, ly: 84, ls: 0.55 },
+      { name: 'COSTAS', x: 76, y: 84, w: 48, h: 44, lx: 80, ly: 88, ls: 0.6 },
+      { name: 'MANGA', x: 50, y: 70, w: 20, h: 18, lx: 52, ly: 72, ls: 0.25 },
     ];
     const TIERS = [
       { qty: 10, unit: 4.9 }, { qty: 25, unit: 4.4 }, { qty: 50, unit: 3.95 },
@@ -211,31 +194,34 @@ class Component extends DCLogic {
     const a = AREAS[this.state.area];
     const q = TIERS[this.state.tier];
 
-    const light = ['#f4f5f7', '#8e97a3'].indexOf(c.hex) !== -1;
-    const line = light ? 'rgba(13,17,23,0.28)' : 'rgba(255,255,255,0.34)';
-    const logoInk = light ? '#14161a' : '#f8f7f4';
+    const LIGHT = ['#f4efe6', '#ccff33', '#ff7a00'];
+    const light = LIGHT.indexOf(c.hex) !== -1;
+    const line = light ? 'rgba(11,11,12,0.42)' : 'rgba(244,239,230,0.4)';
+    const logoInk = light ? '#0b0b0c' : '#f4efe6';
+
+    // O palco muda de cor com a peça, para a t-shirt nunca desaparecer no fundo.
+    const stageBg = c.stage;
+    const stageDark = stageBg === '#0b0b0c';
 
     const unit = q.unit * t.mult;
     const fmt = (n) => n.toFixed(2).replace('.', ',');
 
     const swatch = (hex, on) =>
-      'width:38px;height:38px;border-radius:999px;display:inline-block;background:' + hex +
-      ';box-shadow:' + (on
-        ? '0 0 0 2px #f8f7f4, 0 0 0 4px #ec008c'
-        : '0 0 0 1px #d5d1c8') + ';';
+      'width:48px;height:48px;display:inline-block;background:' + hex +
+      ';outline:' + (on ? '4px solid #0b0b0c;outline-offset:3px' : '2px solid rgba(11,11,12,.25);outline-offset:-2px') + ';';
 
     const card = (on) =>
-      'display:block;padding:15px 16px;border-radius:14px;background:#fff;border:1.5px solid ' +
-      (on ? '#ec008c' : '#e2dfd8') + ';box-shadow:' + (on ? '0 0 0 3px rgba(236,0,140,.12)' : 'none') + ';';
+      'display:block;padding:20px;color:' + (on ? '#f4efe6' : '#0b0b0c') +
+      ';background:' + (on ? '#0b0b0c' : 'transparent') +
+      ';border:3px solid #0b0b0c;';
 
     const chip = (on) =>
-      'display:inline-block;font-size:14px;font-weight:600;padding:10px 16px;border-radius:999px;' +
-      (on ? 'background:#14161a;color:#fff;border:1px solid #14161a;'
-          : 'background:#fff;color:#5a6068;border:1px solid #e2dfd8;');
+      'display:inline-block;font-size:13px;font-weight:800;letter-spacing:0.08em;padding:13px 18px;' +
+      (on ? 'background:#ff3b2f;color:#0b0b0c;' : 'border:2px solid #0b0b0c;color:#0b0b0c;');
 
     const tierBox = (on) =>
-      'display:block;text-align:center;padding:12px 4px;border-radius:12px;background:#fff;border:1.5px solid ' +
-      (on ? '#ec008c' : '#e2dfd8') + ';';
+      'display:block;text-align:center;padding:14px 4px;' +
+      (on ? 'background:#1b2cf0;color:#f4efe6;' : 'border:2px solid #0b0b0c;color:#0b0b0c;');
 
     return {
       colors: COLORS.map((x, i) => ({
@@ -265,7 +251,11 @@ class Component extends DCLogic {
         logoX: a.lx, logoY: a.ly, logoS: a.ls,
         technique: t.name, area: a.name,
         qty: q.qty, unit: fmt(unit), total: fmt(unit * q.qty),
-        uploadLabel: this.state.uploaded ? 'logotipo-cliente.svg' : 'Carregar o meu logótipo',
+        uploadLabel: this.state.uploaded ? 'LOGOTIPO-CLIENTE.SVG' : 'CARREGAR O MEU LOGÓTIPO',
+        stage: 'background:' + stageBg + ';padding:26px;',
+        stageFg: stageDark ? '#f4efe6' : '#0b0b0c',
+        stageMuted: stageDark ? 'rgba(244,239,230,.6)' : 'rgba(11,11,12,.6)',
+        chipBg: stageDark ? 'rgba(244,239,230,.16)' : 'rgba(11,11,12,.12)',
       },
     };
   }

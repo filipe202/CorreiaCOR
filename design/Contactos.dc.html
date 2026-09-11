@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;800&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
+    h1,h2,h3 { font-family: Unbounded, Manrope, sans-serif; margin: 0; letter-spacing: -0.06em; line-height: 0.86; }
+    p { text-wrap: pretty; }
+    a { color: #1b2cf0; text-decoration: none; }
+    .kick { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; }
+    .opt { cursor: pointer; user-select: none; }
+  </style>
+</helmet>
+<div style="background: #f4efe6; color: #0b0b0c; overflow: hidden;">
+  <div style="background: #0b0b0c; display: flex; align-items: center; justify-content: space-between; padding: 0 26px 0 30px; height: 74px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+        <defs><linearGradient id="ctg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1b2cf0"/><stop offset="52%" stop-color="#6b2cf5"/><stop offset="100%" stop-color="#ff3b2f"/></linearGradient></defs>
+        <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="url(#ctg)"/>
+        <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="#ccff33"/>
+      </svg>
+      <span style="font-family: Unbounded, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.06em; color: #f4efe6;">correiacor</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 26px; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; color: #b5b0a6;">
+      <span>BRINDES</span><span>SERVIÇOS</span><span>PORTFOLIO</span><span>SOBRE</span><span style="color: #ccff33;">CONTACTOS</span>
+    </div>
+    <span style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; background: #ccff33; color: #0b0b0c; font-size: 12px; font-weight: 800; letter-spacing: 0.1em;">PEDIR ORÇAMENTO</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr;">
+    <div style="background: #ff7a00; color: #0b0b0c; padding: 70px 44px 70px 30px;">
+      <div class="kick">Contactos</div>
+      <h1 style="font-size: 116px; font-weight: 900; margin-top: 18px;">DIGA-NOS<br>O QUE<br>PRECISA.</h1>
+      <p style="margin: 28px 0 0; font-size: 18px; line-height: 1.55; font-weight: 600; max-width: 460px; color: #3d1d00;">Um ficheiro, um esboço no guardanapo, ou só uma data. Respondemos em 48 horas úteis com preço, prazo e uma prova digital.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 44px;">
+        <div style="background: #0b0b0c; color: #f4efe6; padding: 26px 28px;">
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; color: #ccff33;">TELEFONE</div>
+          <div style="font-family: Unbounded, sans-serif; font-size: 30px; font-weight: 900; letter-spacing: -0.05em; margin-top: 10px;">[A CONFIRMAR]</div>
+          <div style="font-size: 14px; font-weight: 500; color: #b5b0a6; margin-top: 8px;">Segunda a sexta, 09:00 – 18:00</div>
+        </div>
+        <div style="background: #0b0b0c; color: #f4efe6; padding: 26px 28px;">
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; color: #ccff33;">EMAIL</div>
+          <div style="font-family: Unbounded, sans-serif; font-size: 30px; font-weight: 900; letter-spacing: -0.05em; margin-top: 10px;">[A CONFIRMAR]</div>
+          <div style="font-size: 14px; font-weight: 500; color: #b5b0a6; margin-top: 8px;">Resposta em 48 horas úteis</div>
+        </div>
+        <div style="background: #0b0b0c; color: #f4efe6; padding: 26px 28px;">
+          <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.18em; color: #ccff33;">OFICINA</div>
+          <div style="font-family: Unbounded, sans-serif; font-size: 30px; font-weight: 900; letter-spacing: -0.05em; margin-top: 10px;">[MORADA A CONFIRMAR]</div>
+          <div style="font-size: 14px; font-weight: 500; color: #b5b0a6; margin-top: 8px;">Visitas com marcação prévia</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 4px; margin-top: 4px;">
+        <span style="flex: 1; display: inline-flex; align-items: center; justify-content: center; height: 62px; border: 3px solid #0b0b0c; font-size: 13px; font-weight: 800; letter-spacing: 0.08em;">INSTAGRAM</span>
+        <span style="flex: 1; display: inline-flex; align-items: center; justify-content: center; height: 62px; border: 3px solid #0b0b0c; font-size: 13px; font-weight: 800; letter-spacing: 0.08em;">FACEBOOK</span>
+        <span style="flex: 1; display: inline-flex; align-items: center; justify-content: center; height: 62px; border: 3px solid #0b0b0c; font-size: 13px; font-weight: 800; letter-spacing: 0.08em;">LINKEDIN</span>
+      </div>
+    </div>
+
+    <div style="background: #f4efe6; padding: 70px 30px 70px 44px;">
+      <h2 style="font-size: 46px; font-weight: 900;">PEDIR ORÇAMENTO</h2>
+      <p style="margin: 14px 0 30px; font-size: 15.5px; line-height: 1.55; font-weight: 500; color: #46433d;">Quanto mais nos disser, mais certeiro é o orçamento. Se tiver o ficheiro, junte-o já.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
+        <div style="border: 2px solid #0b0b0c; padding: 17px 18px; font-size: 15px; color: #a8a396;">Nome*</div>
+        <div style="border: 2px solid #0b0b0c; padding: 17px 18px; font-size: 15px; color: #a8a396;">Empresa</div>
+        <div style="border: 2px solid #0b0b0c; padding: 17px 18px; font-size: 15px; color: #a8a396;">Email*</div>
+        <div style="border: 2px solid #0b0b0c; padding: 17px 18px; font-size: 15px; color: #a8a396;">Telefone*</div>
+      </div>
+      <div class="kick" style="margin: 26px 0 12px;">O que precisa?</div>
+      <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+        <sc-for list="{{ needs }}" as="n" hint-placeholder-count="7">
+          <span style="{{ n.style }}">{{ n.name }}</span>
+        </sc-for>
+      </div>
+      <div style="border: 2px solid #0b0b0c; padding: 17px 18px; font-size: 15px; color: #a8a396; margin-top: 22px; padding-bottom: 96px;">Conte-nos o projeto — quantidades, prazo, cores, o que já tentou…</div>
+      <div style="border: 3px dashed #0b0b0c; padding: 26px; margin-top: 4px; display: flex; align-items: center; gap: 16px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0b0b0c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 9 5-5 5 5"/><path d="M12 4v12"/></svg>
+        <div>
+          <div style="font-size: 15px; font-weight: 800;">Junte o logótipo ou a arte final</div>
+          <div style="font-size: 13.5px; font-weight: 500; color: #86827a; margin-top: 3px;">AI, EPS, PDF, SVG, PNG ou JPG · até 25 MB</div>
+        </div>
+      </div>
+      <div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 22px; font-size: 13.5px; line-height: 1.55; font-weight: 500; color: #46433d;">
+        <span style="width: 20px; height: 20px; border: 2px solid #0b0b0c; flex: 0 0 20px; margin-top: 1px;"></span>
+        Autorizo o tratamento dos meus dados para resposta a este pedido, nos termos da <span style="color:#1b2cf0; font-weight: 700;">política de privacidade</span>.
+      </div>
+      <span style="display: flex; align-items: center; justify-content: center; height: 70px; margin-top: 24px; background: #ff3b2f; color: #0b0b0c; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">ENVIAR PEDIDO</span>
+    </div>
+  </div>
+
+  <div style="background: #0b0b0c; color: #f4efe6; padding: 0;">
+    <div style="height: 380px; background: #1b2cf0; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+      <div style="position: absolute; inset: 0; background-image: linear-gradient(to right, rgba(244,239,230,.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(244,239,230,.12) 1px, transparent 1px); background-size: 56px 56px;"></div>
+      <div style="position: relative; text-align: center;">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#ccff33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div style="font-family: Unbounded, sans-serif; font-size: 34px; font-weight: 900; letter-spacing: -0.05em; margin-top: 18px; color: #f4efe6;">[MAPA DA OFICINA]</div>
+        <p style="margin: 12px auto 0; font-size: 15px; font-weight: 500; max-width: 420px; color: rgba(244,239,230,.75);">Entra aqui o mapa com a morada real, assim que a tivermos.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const N = ['BRINDES','TÊXTIL','IMPRESSÃO','SINALÉTICA','VIATURAS','DESIGN','AINDA NÃO SEI'];
+    return {
+      needs: N.map((n, i) => ({
+        name: n,
+        style: 'font-size:12.5px;font-weight:800;letter-spacing:0.08em;padding:' +
+          (i === 0 ? '13px 17px;background:#1b2cf0;color:#f4efe6;' : '11px 17px;border:2px solid #0b0b0c;color:#0b0b0c;'),
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

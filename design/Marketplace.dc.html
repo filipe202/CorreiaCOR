@@ -7,140 +7,123 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Archivo:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;800&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Archivo, "Helvetica Neue", Arial, sans-serif; }
-    h1,h2,h3 { font-family: "Bricolage Grotesque", Archivo, sans-serif; margin: 0; letter-spacing: -0.035em; }
-    a { color: #ec008c; text-decoration: none; } a:hover { color: #c80076; }
+    body { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
+    h1,h2,h3 { font-family: Unbounded, Manrope, sans-serif; margin: 0; letter-spacing: -0.06em; line-height: 0.86; }
+    p { text-wrap: pretty; }
+    a { color: #1b2cf0; text-decoration: none; }
+    .kick { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; }
+    .opt { cursor: pointer; user-select: none; }
   </style>
 </helmet>
-
-<div style="background: #f8f7f4; color: #14161a; min-height: 1700px;">
-  <div style="height: 5px; background: linear-gradient(90deg,#00aeef 0 25%,#ec008c 25% 50%,#ffd200 50% 75%,#14161a 75% 100%);"></div>
-
-  <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 72px; border-bottom: 1px solid #e2dfd8;">
-    <div style="display: flex; align-items: center; gap: 11px;">
-      <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-        <defs>
-          <clipPath id="m-tile"><rect x="0" y="0" width="64" height="64" rx="16"/></clipPath>
-          <mask id="m-letter"><rect x="0" y="0" width="64" height="64" fill="#fff"/><path d="M44.5 21.6a14.8 14.8 0 1 0 0 20.8" fill="none" stroke="#000" stroke-width="9.5" stroke-linecap="round"/></mask>
-        </defs>
-        <g clip-path="url(#m-tile)" mask="url(#m-letter)">
-          <rect x="0" y="0" width="16" height="64" fill="#00aeef"/><rect x="16" y="0" width="16" height="64" fill="#ec008c"/>
-          <rect x="32" y="0" width="16" height="64" fill="#ffd200"/><rect x="48" y="0" width="16" height="64" fill="#14161a"/>
-        </g>
-      </svg>
-      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.035em;">correia<span style="background: linear-gradient(92deg,#00aeef,#ec008c 55%,#ffd200); -webkit-background-clip: text; background-clip: text; color: transparent;">COR</span></span>
-    </div>
-    <div style="display: flex; align-items: center; gap: 30px; font-size: 14.5px; font-weight: 500;">
-      <span style="color: #14161a; border-bottom: 2px solid #ec008c; padding-bottom: 2px;">Brindes</span><span style="color: #5a6068;">Serviços</span><span style="color: #5a6068;">Portfolio</span><span style="color: #5a6068;">Quem somos</span><span style="color: #5a6068;">Contactos</span>
-    </div>
-    <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; padding: 10px 16px; border: 1px solid #d5d1c8; border-radius: 999px;">
-      Pedido <span style="background:#ec008c; color:#fff; border-radius:999px; min-width:19px; height:19px; display:inline-flex; align-items:center; justify-content:center; font-size:11px;">3</span>
-    </span>
+<div style="background: #f4efe6; color: #0b0b0c; overflow: hidden;">
+<div style="background: #0b0b0c; display: flex; align-items: center; justify-content: space-between; padding: 0 26px 0 30px; height: 74px;">
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
+      <defs><linearGradient id="mkg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1b2cf0"/><stop offset="52%" stop-color="#6b2cf5"/><stop offset="100%" stop-color="#ff3b2f"/></linearGradient></defs>
+      <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="url(#mkg)"/>
+      <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="#ccff33"/>
+    </svg>
+    <span style="font-family: Unbounded, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.06em; color: #f4efe6;">correiacor</span>
   </div>
-
-  <!-- CABECALHO DA LISTAGEM -->
-  <div style="padding: 48px 72px 34px;">
-    <h1 style="font-size: 54px; font-weight: 800; line-height: 1.02;">Brindes personalizados</h1>
-    <p style="margin: 16px 0 0; font-size: 17px; line-height: 1.6; color: #5a6068; max-width: 640px;">Mais de mil referências prontas a personalizar. Configure o que quer, junte ao pedido e receba o orçamento em 48 horas úteis &mdash; sem telefonemas nem catálogos em PDF.</p>
-    <div style="display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; align-items: center;">
-      <span style="display: inline-flex; align-items: center; gap: 10px; flex: 1; min-width: 320px; max-width: 430px; background: #fff; border: 1px solid #e2dfd8; border-radius: 999px; padding: 14px 20px; color: #8b8f96; font-size: 15px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b8f96" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        Procurar por produto, material ou técnica…
+  <div style="display: flex; align-items: center; gap: 26px; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; color: #b5b0a6;">
+    <span style="color: #ccff33;">BRINDES</span><span>SERVIÇOS</span><span>PORTFOLIO</span><span>SOBRE</span><span>CONTACTOS</span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <span style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; border: 1.5px solid #3a3a3d; color: #f4efe6; font-size: 12px; font-weight: 800; letter-spacing: 0.1em;">PEDIDO <span style="background:#ff3b2f; color:#fff; width:20px; height:20px; display:inline-flex; align-items:center; justify-content:center; font-size:11px;">3</span></span>
+    <span style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; background: #ccff33; color: #0b0b0c; font-size: 12px; font-weight: 800; letter-spacing: 0.1em;">PEDIR ORÇAMENTO</span>
+  </div>
+</div>
+  <div style="background: #ccff33; padding: 66px 30px 56px; border-bottom: 4px solid #0b0b0c;">
+    <div class="kick" style="color: #0b0b0c;">Marketplace · encomenda direta</div>
+    <h1 style="font-size: 150px; font-weight: 900; margin-top: 18px;">MIL E TAL<br>MANEIRAS DE<br>SE LEMBRAREM<br>DE SI.</h1>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-top: 34px; flex-wrap: wrap;">
+      <p style="margin: 0; font-size: 19px; line-height: 1.5; font-weight: 600; max-width: 620px; color: #3d4a0a;">Configure cor, quantidade e técnica, carregue o logótipo e junte ao pedido. Sem pagamento e sem compromisso &mdash; respondemos com o preço fechado em 48 horas úteis.</p>
+      <span style="display: inline-flex; align-items: center; gap: 12px; height: 64px; padding: 0 26px; background: #0b0b0c; color: #f4efe6; font-size: 15px; font-weight: 700; min-width: 420px;">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#86827a" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span style="color: #86827a;">Procurar por produto, material ou técnica…</span>
       </span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 13px 20px; background: #14161a; color: #fff; border-radius: 999px;">Todos</span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 13px 20px; background: #fff; border: 1px solid #e2dfd8; color: #5a6068; border-radius: 999px;">Têxtil</span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 13px 20px; background: #fff; border: 1px solid #e2dfd8; color: #5a6068; border-radius: 999px;">Garrafas &amp; canecas</span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 13px 20px; background: #fff; border: 1px solid #e2dfd8; color: #5a6068; border-radius: 999px;">Sacos</span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 13px 20px; background: #fff; border: 1px solid #e2dfd8; color: #5a6068; border-radius: 999px;">Escrita</span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 13px 20px; background: #fff; border: 1px solid #e2dfd8; color: #5a6068; border-radius: 999px;">Tecnologia</span>
-      <span style="font-size: 14.5px; font-weight: 600; padding: 13px 20px; background: #fff; border: 1px solid #e2dfd8; color: #5a6068; border-radius: 999px;">Eventos</span>
     </div>
   </div>
 
-  <div style="display: grid; grid-template-columns: 248px 1fr; gap: 40px; padding: 0 72px 80px; align-items: start;">
+  <div style="display: flex; gap: 4px; padding: 30px; flex-wrap: wrap;">
+    <sc-for list="{{ cats }}" as="c" hint-placeholder-count="7">
+      <span style="{{ c.style }}">{{ c.name }}</span>
+    </sc-for>
+  </div>
 
-    <!-- FILTROS -->
-    <div style="background: #fff; border: 1px solid #e2dfd8; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 26px;">
+  <div style="display: grid; grid-template-columns: 260px 1fr; gap: 30px; padding: 0 30px 70px; align-items: start;">
+    <div style="border: 3px solid #0b0b0c; padding: 26px; display: flex; flex-direction: column; gap: 28px;">
       <div>
-        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px;">Técnica</div>
-        <div style="display: flex; flex-direction: column; gap: 11px; font-size: 14.5px; color: #5a6068;">
-          <span style="display: flex; align-items: center; gap: 10px;"><span style="width:17px;height:17px;border-radius:5px;background:#ec008c;display:inline-flex;align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span style="color:#14161a;font-weight:600;">Serigrafia</span></span>
-          <span style="display: flex; align-items: center; gap: 10px;"><span style="width:17px;height:17px;border-radius:5px;border:1.5px solid #d5d1c8;"></span>Bordado</span>
-          <span style="display: flex; align-items: center; gap: 10px;"><span style="width:17px;height:17px;border-radius:5px;border:1.5px solid #d5d1c8;"></span>Gravação laser</span>
-          <span style="display: flex; align-items: center; gap: 10px;"><span style="width:17px;height:17px;border-radius:5px;border:1.5px solid #d5d1c8;"></span>Sublimação</span>
-          <span style="display: flex; align-items: center; gap: 10px;"><span style="width:17px;height:17px;border-radius:5px;border:1.5px solid #d5d1c8;"></span>Tampografia</span>
+        <div class="kick" style="margin-bottom: 16px;">Técnica</div>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; font-weight: 600;">
+          <span style="display:flex;align-items:center;gap:11px;"><span style="width:18px;height:18px;background:#ff3b2f;display:inline-flex;align-items:center;justify-content:center;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Serigrafia</span>
+          <span style="display:flex;align-items:center;gap:11px;color:#46433d;"><span style="width:18px;height:18px;border:2px solid #0b0b0c;"></span>Bordado</span>
+          <span style="display:flex;align-items:center;gap:11px;color:#46433d;"><span style="width:18px;height:18px;border:2px solid #0b0b0c;"></span>Gravação laser</span>
+          <span style="display:flex;align-items:center;gap:11px;color:#46433d;"><span style="width:18px;height:18px;border:2px solid #0b0b0c;"></span>Sublimação</span>
+          <span style="display:flex;align-items:center;gap:11px;color:#46433d;"><span style="width:18px;height:18px;border:2px solid #0b0b0c;"></span>Tampografia</span>
         </div>
       </div>
-      <div style="border-top: 1px solid #f0ede6; padding-top: 24px;">
-        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px;">Preço por unidade</div>
-        <div style="height: 5px; border-radius: 999px; background: #f0ede6; position: relative;">
-          <span style="position: absolute; left: 0; right: 34%; top: 0; bottom: 0; border-radius: 999px; background: #14161a;"></span>
-          <span style="position: absolute; left: 66%; top: -6px; width: 17px; height: 17px; border-radius: 999px; background: #fff; border: 2px solid #14161a;"></span>
+      <div style="border-top: 3px solid #0b0b0c; padding-top: 24px;">
+        <div class="kick" style="margin-bottom: 16px;">Preço por unidade</div>
+        <div style="height: 8px; background: #dfd9cd; position: relative;">
+          <span style="position: absolute; left: 0; right: 34%; top: 0; bottom: 0; background: #1b2cf0;"></span>
+          <span style="position: absolute; left: 66%; top: -6px; width: 20px; height: 20px; background: #0b0b0c;"></span>
         </div>
-        <div style="display: flex; justify-content: space-between; margin-top: 11px; font-size: 13px; color: #8b8f96;"><span>0,29 €</span><span>12,00 €</span></div>
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 14px; font-weight: 800;"><span>0,29 €</span><span>12,00 €</span></div>
       </div>
-      <div style="border-top: 1px solid #f0ede6; padding-top: 24px;">
-        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px;">Quantidade mínima</div>
-        <div style="display: flex; gap: 7px; flex-wrap: wrap;">
-          <span style="font-size: 13px; font-weight: 600; padding: 7px 13px; border-radius: 999px; background: #14161a; color: #fff;">10</span>
-          <span style="font-size: 13px; font-weight: 600; padding: 7px 13px; border-radius: 999px; border: 1px solid #e2dfd8; color: #5a6068;">25</span>
-          <span style="font-size: 13px; font-weight: 600; padding: 7px 13px; border-radius: 999px; border: 1px solid #e2dfd8; color: #5a6068;">50</span>
-          <span style="font-size: 13px; font-weight: 600; padding: 7px 13px; border-radius: 999px; border: 1px solid #e2dfd8; color: #5a6068;">100+</span>
-        </div>
-      </div>
-      <div style="border-top: 1px solid #f0ede6; padding-top: 24px;">
-        <div style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; margin-bottom: 14px;">Prazo</div>
-        <div style="display: flex; flex-direction: column; gap: 11px; font-size: 14.5px; color: #5a6068;">
-          <span style="display: flex; align-items: center; gap: 10px;"><span style="width:17px;height:17px;border-radius:5px;border:1.5px solid #d5d1c8;"></span>Até 8 dias úteis</span>
-          <span style="display: flex; align-items: center; gap: 10px;"><span style="width:17px;height:17px;border-radius:5px;border:1.5px solid #d5d1c8;"></span>Até 15 dias úteis</span>
+      <div style="border-top: 3px solid #0b0b0c; padding-top: 24px;">
+        <div class="kick" style="margin-bottom: 16px;">Quantidade mínima</div>
+        <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+          <span style="font-size: 14px; font-weight: 800; padding: 9px 15px; background: #0b0b0c; color: #f4efe6;">10</span>
+          <span style="font-size: 14px; font-weight: 800; padding: 9px 15px; border: 2px solid #0b0b0c;">25</span>
+          <span style="font-size: 14px; font-weight: 800; padding: 9px 15px; border: 2px solid #0b0b0c;">50</span>
+          <span style="font-size: 14px; font-weight: 800; padding: 9px 15px; border: 2px solid #0b0b0c;">100+</span>
         </div>
       </div>
-      <div style="border-top: 1px solid #f0ede6; padding-top: 24px;">
-        <span style="display: flex; align-items: center; gap: 10px; font-size: 14.5px; color: #5a6068;"><span style="width:17px;height:17px;border-radius:5px;border:1.5px solid #d5d1c8;"></span>Apenas produtos eco</span>
+      <div style="border-top: 3px solid #0b0b0c; padding-top: 24px;">
+        <span style="display:flex;align-items:center;gap:11px;font-size:15px;font-weight:600;color:#46433d;"><span style="width:18px;height:18px;border:2px solid #0b0b0c;"></span>Apenas produtos eco</span>
       </div>
     </div>
 
-    <!-- GRELHA -->
     <div>
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
-        <span style="font-size: 14.5px; color: #5a6068;"><strong style="color:#14161a;">24 produtos</strong> em destaque &middot; 1 000+ no catálogo completo</span>
-        <span style="font-size: 14.5px; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;">Ordenar: Mais pedidos
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#14161a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
-        </span>
+        <span style="font-size: 15px; font-weight: 700;"><strong style="font-family: Unbounded, sans-serif; font-size: 20px;">24</strong> produtos em destaque · 1 000+ no catálogo</span>
+        <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em;">ORDENAR: MAIS PEDIDOS ▾</span>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;">
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 4px;">
         <sc-for list="{{ items }}" as="p" hint-placeholder-count="9">
-          <div style="background: #fff; border: 1px solid #e2dfd8; border-radius: 18px; overflow: hidden;">
-            <div style="background: #f1efe9; padding: 18px; position: relative; height: 190px; display: flex; align-items: center; justify-content: center;">
-              <span style="{{ p.badgeStyle }}">{{ p.badge }}</span>
-              <svg viewBox="0 0 200 200" width="100%" height="158" aria-hidden="true" style="display:block;">
-                <path d="{{ p.d }}" fill="{{ p.hex }}" stroke="{{ p.line }}" stroke-width="2.5" stroke-linejoin="round"/>
-              </svg>
+          <div style="{{ p.card }}">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span style="{{ p.tagStyle }}">{{ p.tag }}</span>
+              <span style="font-family: Unbounded, sans-serif; font-size: 12px; font-weight: 800; color: {{ p.fg }};">{{ p.min }}</span>
             </div>
-            <div style="padding: 18px;">
-              <div style="font-size: 16px; font-weight: 700;">{{ p.name }}</div>
-              <div style="font-size: 13px; color: #8b8f96; margin-top: 4px;">{{ p.meta }}</div>
-              <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 16px;">
-                <span style="font-size: 17px; font-weight: 700;">{{ p.price }} €</span>
-                <span style="font-size: 13px; font-weight: 600; color: #ec008c;">Configurar &rarr;</span>
+            <svg viewBox="0 0 200 200" width="100%" height="184" aria-hidden="true" style="display:block; margin: 12px 0;">
+              <path d="{{ p.d }}" fill="{{ p.hex }}" stroke="{{ p.line }}" stroke-width="3" stroke-linejoin="round"/>
+            </svg>
+            <div>
+              <h3 style="font-size: 21px; font-weight: 900; color: {{ p.fg }};">{{ p.name }}</h3>
+              <div style="font-size: 13px; font-weight: 600; margin-top: 8px; color: {{ p.muted }};">{{ p.meta }}</div>
+              <div style="display: flex; align-items: baseline; justify-content: space-between; margin-top: 14px; padding-top: 14px; border-top: 2px solid {{ p.rule }};">
+                <span style="font-family: Unbounded, sans-serif; font-size: 25px; font-weight: 900; letter-spacing: -0.05em; color: {{ p.fg }};">{{ p.price }}€</span>
+                <span style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.1em; color: {{ p.fg }};">CONFIGURAR →</span>
               </div>
             </div>
           </div>
         </sc-for>
       </div>
-      <div style="display: flex; justify-content: center; margin-top: 36px;">
-        <span style="font-size: 15px; font-weight: 600; padding: 15px 32px; border: 1px solid #14161a; border-radius: 999px;">Ver mais produtos</span>
+      <div style="display: flex; justify-content: center; margin-top: 34px;">
+        <span style="display: inline-flex; align-items: center; height: 64px; padding: 0 38px; border: 3px solid #0b0b0c; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">VER MAIS PRODUTOS</span>
       </div>
     </div>
   </div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":1440,"height":1700}}'>
-const SHAPES = {
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":2150}}'>
+const SH = {
   tshirt: 'M70 40 58 48 42 60l12 20 14-8v68a4 4 0 0 0 4 4h56a4 4 0 0 0 4-4V72l14 8 12-20-16-12-12-8h-18a12 12 0 0 1-24 0H70Z',
   hoodie: 'M70 44 46 58 34 80l14 12 10-10v70a4 4 0 0 0 4 4h76a4 4 0 0 0 4-4V82l10 10 14-12-12-22-24-14H70Z',
   mug: 'M56 62h58a4 4 0 0 1 4 4v72a10 10 0 0 1-10 10H62a10 10 0 0 1-10-10V66a4 4 0 0 1 4-4Z',
@@ -154,36 +137,37 @@ const SHAPES = {
 
 class Component extends DCLogic {
   renderVals() {
+    const CATS = ['TODOS','TÊXTIL','GARRAFAS & CANECAS','SACOS','ESCRITA','TECNOLOGIA','EVENTOS'];
     const RAW = [
-      ['T-shirt algodão 180 g', 'tshirt', '#1f3a68', 'Mín. 10 un. · Serigrafia, DTF, bordado', '4,90', 'Mais vendido', 'ink'],
-      ['Caneca cerâmica 330 ml', 'mug', '#f4f5f7', 'Mín. 25 un. · Sublimação, tampografia', '3,40', 'Mais vendido', 'ink'],
-      ['Saco de algodão cru', 'tote', '#e4dcc9', 'Mín. 50 un. · Serigrafia, DTF', '1,90', 'Eco', 'green'],
-      ['Garrafa inox 500 ml', 'bottle', '#123f33', 'Mín. 25 un. · Gravação laser', '14,90', 'Eco', 'green'],
-      ['Caneta esferográfica', 'pen', '#2b58c4', 'Mín. 100 un. · Tampografia, UV', '0,29', 'Stock nacional', 'cyan'],
-      ['Sweatshirt com capuz', 'hoodie', '#12161d', 'Mín. 10 un. · Bordado, serigrafia', '19,90', '', ''],
-      ['Caderno A5 capa dura', 'notebook', '#6d1f2c', 'Mín. 50 un. · Gravação laser, UV', '4,60', '', ''],
-      ['Boné 6 painéis', 'cap', '#c2263c', 'Mín. 25 un. · Bordado frontal', '5,80', '', ''],
-      ['Powerbank 10 000 mAh', 'powerbank', '#8e97a3', 'Mín. 25 un. · Gravação laser', '16,90', '', ''],
+      ['T-SHIRT 180 G', SH.tshirt, '#f4efe6', '#1b2cf0', 'MAIS VENDIDO', 'MÍN. 10', 'Serigrafia · DTF · Bordado', '4,90'],
+      ['CANECA 330 ML', SH.mug, '#f4efe6', '#0b0b0c', 'CLÁSSICO', 'MÍN. 25', 'Sublimação · Tampografia', '3,40'],
+      ['SACO DE ALGODÃO', SH.tote, '#0b0b0c', '#ccff33', 'ECO', 'MÍN. 50', 'Serigrafia · DTF', '1,90'],
+      ['GARRAFA INOX', SH.bottle, '#ccff33', '#0b0b0c', 'ECO', 'MÍN. 25', 'Gravação laser', '14,90'],
+      ['CANETA CLÁSSICA', SH.pen, '#0b0b0c', '#ff7a00', 'STOCK NACIONAL', 'MÍN. 100', 'Tampografia · UV', '0,29'],
+      ['SWEAT COM CAPUZ', SH.hoodie, '#f4efe6', '#6b2cf5', '', 'MÍN. 10', 'Bordado · Serigrafia', '19,90'],
+      ['CADERNO A5', SH.notebook, '#ccff33', '#ff3b2f', '', 'MÍN. 50', 'Gravação laser · UV', '4,60'],
+      ['BONÉ 6 PAINÉIS', SH.cap, '#0b0b0c', '#f4efe6', '', 'MÍN. 25', 'Bordado frontal', '5,80'],
+      ['POWERBANK 10 000', SH.powerbank, '#f4efe6', '#1b2cf0', '', 'MÍN. 25', 'Gravação laser', '16,90'],
     ];
-
-    const badgeColors = {
-      ink: '#14161a', green: '#2f9e5f', cyan: '#0a86b8',
-    };
-
+    const LIGHT = ['#ccff33', '#f4efe6'];
     return {
+      cats: CATS.map((c, i) => ({
+        name: c,
+        style: 'font-size:13px;font-weight:800;letter-spacing:0.1em;padding:14px 20px;' +
+          (i === 0 ? 'background:#0b0b0c;color:#f4efe6;' : 'border:2px solid #0b0b0c;color:#0b0b0c;'),
+      })),
       items: RAW.map((r) => {
-        const hex = r[2];
-        const light = ['#f4f5f7', '#e4dcc9', '#8e97a3'].indexOf(hex) !== -1;
+        const bg = r[3];
+        const dark = LIGHT.indexOf(bg) === -1;
+        const fg = dark ? '#f4efe6' : '#0b0b0c';
         return {
-          name: r[0],
-          d: SHAPES[r[1]],
-          hex: hex,
-          line: light ? 'rgba(13,17,23,0.28)' : 'rgba(255,255,255,0.32)',
-          meta: r[3],
-          price: r[4],
-          badge: r[5],
-          badgeStyle: r[5]
-            ? 'position:absolute;left:14px;top:14px;font-size:11px;font-weight:700;color:#fff;border-radius:999px;padding:4px 10px;background:' + badgeColors[r[6]] + ';'
+          name: r[0], d: r[1], hex: r[2], meta: r[6], price: r[7], tag: r[4], min: r[5], fg: fg,
+          line: r[2] === '#0b0b0c' ? 'rgba(244,239,230,.35)' : 'rgba(11,11,12,.4)',
+          muted: dark ? 'rgba(244,239,230,.72)' : 'rgba(11,11,12,.66)',
+          rule: dark ? 'rgba(244,239,230,.3)' : 'rgba(11,11,12,.25)',
+          card: 'background:' + bg + ';padding:22px;display:flex;flex-direction:column;justify-content:space-between;min-height:400px;',
+          tagStyle: r[4]
+            ? 'font-size:10px;font-weight:800;letter-spacing:0.12em;padding:5px 9px;color:' + fg + ';background:' + (dark ? 'rgba(244,239,230,.18)' : 'rgba(11,11,12,.12)') + ';'
             : 'display:none;',
         };
       }),
