@@ -1,0 +1,66 @@
+{
+  "pages": [
+    { "id": "page-1", "name": "Site" },
+    { "id": "page-2", "name": "Identidade e logo" }
+  ],
+  "artboards": [
+    { "file": "Main.dc.html", "page": "page-1", "title": "Homepage", "x": 0, "y": 0, "w": 1440, "h": 4300 },
+    { "file": "Marketplace.dc.html", "page": "page-1", "title": "Marketplace de brindes", "x": 1560, "y": 0, "w": 1440, "h": 1620 },
+    { "file": "Produto.dc.html", "page": "page-1", "title": "Produto + configurador", "x": 3120, "y": 0, "w": 1440, "h": 1520, "is_interactive": true },
+    { "file": "Pedido.dc.html", "page": "page-1", "title": "Pedido de orçamento", "x": 4680, "y": 0, "w": 1440, "h": 1400 },
+    { "file": "Portfolio.dc.html", "page": "page-1", "title": "Portfolio", "x": 6240, "y": 0, "w": 1440, "h": 2050 },
+    { "file": "Mobile.dc.html", "page": "page-1", "title": "Homepage no telemóvel", "x": 7800, "y": 0, "w": 390, "h": 2150 },
+    { "file": "Identidade.dc.html", "page": "page-2", "title": "Três direções de marca", "x": 0, "y": 0, "w": 1440, "h": 1360 }
+  ],
+  "annotations": [
+    {
+      "id": "nota-logo",
+      "page": "page-1",
+      "x": 0,
+      "y": -230,
+      "w": 620,
+      "text": "Está aplicada a direção A do logo (as barras da quadricromia com o C em negativo).\nAs três opções estão na página «Identidade e logo» — escolhe uma e eu troco em todo o lado."
+    },
+    {
+      "id": "nota-placeholders",
+      "page": "page-1",
+      "x": 660,
+      "y": -230,
+      "w": 560,
+      "text": "Tudo o que está entre [PARÊNTESES RETOS] é informação real que ainda não tenho.\nO site antigo tinha os contactos de exemplo do template (contato@exemplo.pt, +351 123 456 789), por isso preciso dos verdadeiros do teu pai."
+    },
+    {
+      "id": "nota-configurador",
+      "page": "page-1",
+      "x": 3120,
+      "y": -230,
+      "w": 620,
+      "text": "Este está a funcionar a sério: clica nas cores, nas técnicas, nas zonas de impressão e nos escalões de quantidade — a t-shirt muda de cor e o preço recalcula."
+    },
+    {
+      "id": "nota-precos",
+      "page": "page-1",
+      "x": 4680,
+      "y": -230,
+      "w": 620,
+      "text": "Os preços e os produtos são valores de mercado plausíveis que inventei para o mock funcionar.\nSubstituímos pelos reais quando tiveres a tabela do teu pai."
+    },
+    {
+      "id": "nota-portfolio",
+      "page": "page-1",
+      "x": 6240,
+      "y": -230,
+      "w": 620,
+      "text": "Os seis casos são de demonstração, escritos a partir do tipo de trabalho que o site antigo descrevia.\nTrocar por projetos reais (e pedir autorização aos clientes para usar o nome)."
+    },
+    {
+      "id": "nota-identidade",
+      "page": "page-2",
+      "x": 0,
+      "y": -190,
+      "w": 640,
+      "text": "Três direções, todas a partir do «COR» do nome.\nCada uma tem o contra escrito por baixo — não é uma votação viciada. Diz-me qual e aplico-a ao site inteiro."
+    }
+  ],
+  "launch": { "view": "canvas", "page": "page-1" }
+}

@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   CorreiaCOR — sistema de design
+   A identidade joga com o "COR" do nome: base neutra e muito respirada,
+   com acentos nas quatro cores da quadricromia (CMYK) usadas na impressão.
+   ========================================================================== */
+
+@theme {
+  /* Tinta e papel */
+  --color-ink-950: #08090c;
+  --color-ink-900: #0d1117;
+  --color-ink-800: #161b23;
+  --color-ink-700: #232a35;
+  --color-ink-600: #3d4653;
+  --color-ink-500: #5c6675;
+  --color-ink-400: #8a93a1;
+  --color-ink-300: #b7bec9;
+  --color-ink-200: #dbe0e7;
+  --color-ink-100: #eef1f5;
+  --color-ink-50: #f7f9fb;
+
+  /* Quadricromia */
+  --color-cyan-brand: #00aeef;
+  --color-magenta-brand: #ec008c;
+  --color-yellow-brand: #ffd200;
+  --color-key-brand: #0d1117;
+
+  /* Magenta é a cor de ação — distingue-nos do azul genérico do sector */
+  --color-brand-50: #fff0f8;
+  --color-brand-100: #ffe0f1;
+  --color-brand-200: #ffc1e3;
+  --color-brand-300: #ff8ecb;
+  --color-brand-400: #fb4fac;
+  --color-brand-500: #ec008c;
+  --color-brand-600: #c80076;
+  --color-brand-700: #a30061;
+  --color-brand-800: #7a0049;
+  --color-brand-900: #520031;
+
+  --font-sans: "Outfit", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.75rem;
+}
+
+/* Tokens semânticos — mudam com o tema claro/escuro */
+:root {
+  --surface: #ffffff;
+  --surface-muted: #f7f9fb;
+  --surface-raised: #ffffff;
+  --border-subtle: #dbe0e7;
+  --text-strong: #0d1117;
+  --text-body: #3d4653;
+  --text-muted: #5c6675;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #0d1117;
+    --surface-muted: #08090c;
+    --surface-raised: #161b23;
+    --border-subtle: #232a35;
+    --text-strong: #f7f9fb;
+    --text-body: #b7bec9;
+    --text-muted: #8a93a1;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --surface: #0d1117;
+  --surface-muted: #08090c;
+  --surface-raised: #161b23;
+  --border-subtle: #232a35;
+  --text-strong: #f7f9fb;
+  --text-body: #b7bec9;
+  --text-muted: #8a93a1;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-raised: var(--surface-raised);
+  --color-line: var(--border-subtle);
+  --color-strong: var(--text-strong);
+  --color-body: var(--text-body);
+  --color-muted: var(--text-muted);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--surface);
+    color: var(--text-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--text-strong);
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-500);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Faixa CMYK usada como assinatura gráfica da marca */
+  .cmyk-rule {
+    background: linear-gradient(
+      90deg,
+      var(--color-cyan-brand) 0 25%,
+      var(--color-magenta-brand) 25% 50%,
+      var(--color-yellow-brand) 50% 75%,
+      var(--color-key-brand) 75% 100%
+    );
+  }
+
+  .text-gradient-cor {
+    background: linear-gradient(
+      92deg,
+      var(--color-cyan-brand) 0%,
+      var(--color-magenta-brand) 48%,
+      var(--color-yellow-brand) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .grid-paper {
+    background-image: linear-gradient(
+        to right,
+        color-mix(in oklab, var(--border-subtle) 60%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--border-subtle) 60%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 56px 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+.env*.local
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+
+# Canvas de design gerado a partir dos .dc.html (2,5 MB de runtime embebido).
+# As fontes são os ficheiros design/*.dc.html + design/canvas.json.
+design/correiacor-novo-site.html
