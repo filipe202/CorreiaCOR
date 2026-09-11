@@ -1,5 +1,9 @@
 # Site da CorreiaCOR
 
+A pasta chama-se `docs/` porque é a única, além da raiz, que o GitHub Pages
+aceita servir. Assim o site publica-se sem mover nada: em Settings → Pages,
+escolher "Deploy from a branch", este ramo, e a pasta `/docs`.
+
 `index.html` é o site inteiro num ficheiro: navegação, catálogo de brindes,
 configurador, pedido de orçamento e formulários. Não precisa de servidor nem de
 build — abre-se no browser e aloja-se em qualquer lado, bastando copiar o

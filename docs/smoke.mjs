@@ -1,6 +1,6 @@
 import { chromium } from 'playwright';
 
-const file = 'file:///home/user/CorreiaCOR/site/index.html';
+const file = 'file:///home/user/CorreiaCOR/docs/index.html';
 const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
 const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 page.setDefaultTimeout(6000);

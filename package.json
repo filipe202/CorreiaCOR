@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "test:site": "node site/smoke.mjs"
+    "test:site": "node docs/smoke.mjs"
   },
   "dependencies": {
     "next": "^16.3.4",
