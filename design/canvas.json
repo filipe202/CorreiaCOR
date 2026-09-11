@@ -1,19 +1,106 @@
 {
   "pages": [
-    { "id": "page-1", "name": "Site" },
-    { "id": "page-2", "name": "Logo e identidade" }
+    {
+      "id": "page-1",
+      "name": "Site"
+    },
+    {
+      "id": "page-2",
+      "name": "Logo e identidade"
+    }
   ],
   "artboards": [
-    { "file": "Main.dc.html", "page": "page-1", "title": "Início", "x": 0, "y": 0, "w": 1440, "h": 4500 },
-    { "file": "Sobre.dc.html", "page": "page-1", "title": "Quem somos", "x": 1560, "y": 0, "w": 1440, "h": 3350 },
-    { "file": "Servicos.dc.html", "page": "page-1", "title": "Serviços", "x": 3120, "y": 0, "w": 1440, "h": 4700 },
-    { "file": "Marketplace.dc.html", "page": "page-1", "title": "Brindes", "x": 4680, "y": 0, "w": 1440, "h": 2400 },
-    { "file": "Produto.dc.html", "page": "page-1", "title": "Produto + configurador", "x": 6240, "y": 0, "w": 1440, "h": 2100, "is_interactive": true },
-    { "file": "Pedido.dc.html", "page": "page-1", "title": "Pedido de orçamento", "x": 7800, "y": 0, "w": 1440, "h": 2000 },
-    { "file": "Portfolio.dc.html", "page": "page-1", "title": "Portfolio", "x": 9360, "y": 0, "w": 1440, "h": 2450 },
-    { "file": "Contactos.dc.html", "page": "page-1", "title": "Contacto", "x": 10920, "y": 0, "w": 1440, "h": 1880 },
-    { "file": "Mobile.dc.html", "page": "page-1", "title": "Telemóvel", "x": 12480, "y": 0, "w": 390, "h": 2500 },
-    { "file": "Logotipos.dc.html", "page": "page-2", "title": "A marca", "x": 0, "y": 0, "w": 1440, "h": 1860 }
+    {
+      "file": "Main.dc.html",
+      "page": "page-1",
+      "title": "Início",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 4500
+    },
+    {
+      "file": "Sobre.dc.html",
+      "page": "page-1",
+      "title": "Quem somos",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 3350
+    },
+    {
+      "file": "Servicos.dc.html",
+      "page": "page-1",
+      "title": "Serviços",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 4700
+    },
+    {
+      "file": "Marketplace.dc.html",
+      "page": "page-1",
+      "title": "Brindes",
+      "x": 4680,
+      "y": 0,
+      "w": 1440,
+      "h": 2400
+    },
+    {
+      "file": "Produto.dc.html",
+      "page": "page-1",
+      "title": "Produto + configurador",
+      "x": 6240,
+      "y": 0,
+      "w": 1440,
+      "h": 2100,
+      "is_interactive": true
+    },
+    {
+      "file": "Pedido.dc.html",
+      "page": "page-1",
+      "title": "Pedido de orçamento",
+      "x": 7800,
+      "y": 0,
+      "w": 1440,
+      "h": 2000
+    },
+    {
+      "file": "Portfolio.dc.html",
+      "page": "page-1",
+      "title": "Portfolio",
+      "x": 9360,
+      "y": 0,
+      "w": 1440,
+      "h": 2450
+    },
+    {
+      "file": "Contactos.dc.html",
+      "page": "page-1",
+      "title": "Contacto",
+      "x": 10920,
+      "y": 0,
+      "w": 1440,
+      "h": 1880
+    },
+    {
+      "file": "Mobile.dc.html",
+      "page": "page-1",
+      "title": "Telemóvel",
+      "x": 12480,
+      "y": 0,
+      "w": 390,
+      "h": 2500
+    },
+    {
+      "file": "Logotipos.dc.html",
+      "page": "page-2",
+      "title": "A marca",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1860
+    }
   ],
   "annotations": [
     {
@@ -22,7 +109,7 @@
       "x": 0,
       "y": -280,
       "w": 720,
-      "text": "Textos e contactos agora vêm todos de correiacor.pt — nada é inventado.\nAs páginas «Quem Somos» e «Os nossos serviços» estavam escondidas em /a-banda/ e /discografia/, sobras do template antigo. É por isso que não as tinha encontrado à primeira.\nMorada, telefone, email e horário são os reais da loja em Lisboa."
+      "text": "Proposta para o novo site da CorreiaCOR.\nTodos os textos e contactos foram retirados do site atual, correiacor.pt — não há nada inventado.\nArraste para o lado para ver as outras páginas, e use o menu de páginas em cima para ver a marca."
     },
     {
       "id": "nota-quemsomos",
@@ -30,7 +117,7 @@
       "x": 1560,
       "y": -280,
       "w": 640,
-      "text": "Tudo aqui é texto do site atual: os 30 anos de experiência do Amilcar, os 20 à frente da CorreiaCOR, e os parágrafos sobre a trajetória.\nDeitei fora a cronologia, a equipa e a lista de máquinas que eu tinha inventado."
+      "text": "Página \"Quem somos\", com o texto que já existe no site: os trinta anos de experiência no setor gráfico, os vinte à frente da CorreiaCOR, e os parágrafos sobre a trajetória da casa.\nNo fim da página fica a lista do que daria mais força a esta secção."
     },
     {
       "id": "nota-servicos",
@@ -38,7 +125,7 @@
       "x": 3120,
       "y": -280,
       "w": 640,
-      "text": "Os oito serviços são exatamente os que estão listados no site, com as descrições originais: cartazes, mupis e outdoors, lonas e telas, expositores, brochuras e catálogos, estacionário, etiquetas e rótulos, brindes e têxtil."
+      "text": "Os oito produtos e serviços são exatamente os que estão listados no site atual, com as descrições originais: cartazes, mupis e outdoors, lonas e telas, expositores, brochuras e catálogos, estacionário, etiquetas e rótulos, brindes e têxtil."
     },
     {
       "id": "nota-brindes",
@@ -46,7 +133,7 @@
       "x": 4680,
       "y": -280,
       "w": 640,
-      "text": "O marketplace é a parte nova, que ainda não existe em lado nenhum.\nOs produtos e preços estão marcados a amarelo como exemplos. Para o montar a sério preciso da lista de referências e da tabela de preços do fornecedor."
+      "text": "O catálogo de brindes com encomenda direta é a novidade desta proposta — não existe no site atual.\nOs produtos e preços que aqui aparecem são exemplos, marcados a amarelo. Para o montar a sério é preciso a lista de referências do fornecedor e a tabela de preços por quantidade.\nNa página ao lado, o configurador funciona: experimente carregar nas cores e nas quantidades."
     },
     {
       "id": "nota-portfolio",
@@ -54,7 +141,7 @@
       "x": 9360,
       "y": -280,
       "w": 640,
-      "text": "O portfolio está montado mas vazio, de propósito — o site atual não tem nenhum, e não vou inventar clientes.\nA página explica o que preciso por trabalho: uma ou duas fotografias, o nome do cliente com autorização, o ano e duas frases."
+      "text": "O portfolio está desenhado mas vazio, de propósito: o site atual não publica trabalhos, e não faz sentido inventar clientes.\nA própria página explica o que é preciso por cada trabalho — uma ou duas fotografias, o nome do cliente com autorização, o ano, e duas frases sobre o que foi feito."
     },
     {
       "id": "nota-marca",
@@ -62,8 +149,11 @@
       "x": 0,
       "y": -230,
       "w": 700,
-      "text": "A construção da opção B com as doze cores do logótipo atual.\nAs cores são a minha leitura da imagem que me mandaste — se tiveres o ficheiro vetorial (AI ou EPS), tiro os valores exatos e substituo."
+      "text": "Proposta de marca: o anel de registo, a mira que se usa para alinhar as chapas na impressão, com o C ao centro — pintado com as doze cores do logótipo atual.\nAs cores foram lidas a partir da imagem do logótipo. Com o ficheiro vetorial original (AI ou EPS) ficam exatas."
     }
   ],
-  "launch": { "view": "canvas", "page": "page-1" }
+  "launch": {
+    "view": "canvas",
+    "page": "page-1"
+  }
 }
