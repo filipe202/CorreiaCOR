@@ -7,129 +7,186 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
-    h1,h2,h3 { font-family: Unbounded, Manrope, sans-serif; margin: 0; letter-spacing: -0.06em; line-height: 0.86; }
+    body {
+      margin: 0;
+      font-family: Karla, "Helvetica Neue", Arial, sans-serif;
+      color: #5a4a3e;
+      background-color: #fbf7ef;
+    }
+    h1, h2, h3, h4 {
+      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      margin: 0;
+      color: #221a14;
+      letter-spacing: -0.015em;
+      line-height: 1.02;
+      text-wrap: balance;
+    }
     p { text-wrap: pretty; }
-    a { color: #1b2cf0; text-decoration: none; }
-    .kick { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; }
+    em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
+    a { color: #c4573a; text-decoration: none; }
+    a:hover { color: #9d422b; }
+    .cap {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #8b7b6c;
+    }
+    /* Grão de papel: dá profundidade sem pesar nada. */
+    .grain::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    }
+    .arch { border-radius: 280px 280px 14px 14px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 54px;
+      padding: 0 28px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
     .opt { cursor: pointer; user-select: none; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .floaty { animation: floaty 9s ease-in-out infinite; }
+    .floaty-slow { animation: floaty 12s ease-in-out infinite; }
   </style>
 </helmet>
-<div style="background: #f4efe6; color: #0b0b0c; overflow: hidden;">
-<div style="background: #0b0b0c; display: flex; align-items: center; justify-content: space-between; padding: 0 26px 0 30px; height: 74px;">
+<div style="background: #fbf7ef;">
+<div style="background: #35513f; color: #f3ebdd; display: flex; align-items: center; justify-content: center; gap: 28px; height: 40px; font-size: 12.5px; letter-spacing: 0.04em;">
+  <span>Orçamento em 48 horas úteis</span>
+  <span style="color: rgba(243,235,221,.4);">&bull;</span>
+  <span>Prova digital sempre gratuita</span>
+  <span style="color: rgba(243,235,221,.4);">&bull;</span>
+  <span>Entregas em todo o país</span>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 18px 56px; background: #fbf7ef; border-bottom: 1px solid #e3d8c6;">
   <div style="display: flex; align-items: center; gap: 12px;">
-    <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-      <defs><linearGradient id="pog" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1b2cf0"/><stop offset="52%" stop-color="#6b2cf5"/><stop offset="100%" stop-color="#ff3b2f"/></linearGradient></defs>
-      <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="url(#pog)"/>
-      <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="#ccff33"/>
+    <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+      <circle cx="60" cy="60" r="55" fill="none" stroke="#1d3f6e" stroke-width="3.2"/>
+      <circle cx="60" cy="60" r="40" fill="#1d3f6e"/>
+      <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="54" fill="#fbf7ef">C</text>
     </svg>
-    <span style="font-family: Unbounded, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.06em; color: #f4efe6;">correiacor</span>
+    <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 29px; color: #221a14; letter-spacing: -0.01em;">Correia<span style="color:#c4573a;">Cor</span></span>
   </div>
-  <div style="display: flex; align-items: center; gap: 26px; font-size: 12px; font-weight: 800; letter-spacing: 0.14em; color: #b5b0a6;">
-    <span style="">BRINDES</span><span>SERVIÇOS</span><span style="color: #ccff33;">PORTFOLIO</span><span>SOBRE</span><span>CONTACTOS</span>
+  <div style="display: flex; align-items: center; gap: 30px; font-size: 15px; font-weight: 500; color: #5a4a3e;">
+    <span >Brindes</span>
+    <span>Serviços</span><span style="color: #221a14; border-bottom: 1.5px solid #c4573a; padding-bottom: 3px;">Portfolio</span><span>Sobre nós</span><span>Contactos</span>
   </div>
-  <div style="display: flex; align-items: center; gap: 10px;">
-    <span style="display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; border: 1.5px solid #3a3a3d; color: #f4efe6; font-size: 12px; font-weight: 800; letter-spacing: 0.1em;">PEDIDO <span style="background:#ff3b2f; color:#fff; width:20px; height:20px; display:inline-flex; align-items:center; justify-content:center; font-size:11px;">3</span></span>
-    <span style="display: inline-flex; align-items: center; height: 46px; padding: 0 22px; background: #ccff33; color: #0b0b0c; font-size: 12px; font-weight: 800; letter-spacing: 0.1em;">PEDIR ORÇAMENTO</span>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <span style="display: inline-flex; align-items: center; gap: 9px; font-size: 14px; font-weight: 500; color: #5a4a3e;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5a4a3e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      Pedido <span style="background:#c4573a; color:#fffdf9; border-radius:999px; min-width:19px; height:19px; display:inline-flex; align-items:center; justify-content:center; font-size:11px; font-weight:600;">3</span>
+    </span>
+    <span class="btn" style="background: #221a14; color: #fbf7ef; height: 48px; font-size: 14.5px;">Pedir orçamento</span>
   </div>
 </div>
-  <div style="background: #6b2cf5; color: #f4efe6; padding: 70px 30px 60px;">
-    <div class="kick" style="color: #ccff33;">Portfolio</div>
-    <h1 style="font-size: 152px; font-weight: 900; margin-top: 18px; color: #f4efe6;">O QUE JÁ<br>SAIU DAQUI.</h1>
-    <p style="margin: 30px 0 0; font-size: 19px; line-height: 1.5; font-weight: 600; max-width: 620px; color: rgba(244,239,230,.9);">Seis trabalhos do princípio ao fim &mdash; do rótulo à frota, do crachá à montra. [Casos de demonstração: substituir por projetos reais, com autorização dos clientes.]</p>
-  </div>
 
-  <div style="display: flex; gap: 4px; padding: 30px; flex-wrap: wrap;">
-    <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; padding: 14px 20px; background: #0b0b0c; color: #f4efe6;">TODOS</span>
-    <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; padding: 14px 20px; border: 2px solid #0b0b0c;">IMPRESSÃO</span>
-    <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; padding: 14px 20px; border: 2px solid #0b0b0c;">TÊXTIL</span>
-    <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; padding: 14px 20px; border: 2px solid #0b0b0c;">SINALÉTICA</span>
-    <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.1em; padding: 14px 20px; border: 2px solid #0b0b0c;">VIATURAS</span>
+  <div class="grain" style="position: relative; padding: 76px 56px 52px; text-align: center;">
+    <span class="cap" style="color: #c4573a;">Portfolio</span>
+    <h1 style="font-size: 92px; margin-top: 20px;">O que já <em style="color:#c4573a;">saiu daqui</em></h1>
+    <p style="margin: 24px auto 0; font-size: 18px; line-height: 1.75; max-width: 620px;">Seis trabalhos do princípio ao fim &mdash; do rótulo à frota, do crachá à montra. [Casos de demonstração: substituir por projetos reais, com autorização dos clientes.]</p>
+    <div style="display: flex; justify-content: center; gap: 10px; margin-top: 30px; flex-wrap: wrap;">
+      <span style="font-size: 14.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; background: #221a14; color: #fbf7ef;">Todos</span>
+      <span style="font-size: 14.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; background: #fffdf9; border: 1px solid #e3d8c6; color: #5a4a3e;">Impressão</span>
+      <span style="font-size: 14.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; background: #fffdf9; border: 1px solid #e3d8c6; color: #5a4a3e;">Têxtil</span>
+      <span style="font-size: 14.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; background: #fffdf9; border: 1px solid #e3d8c6; color: #5a4a3e;">Sinalética</span>
+      <span style="font-size: 14.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; background: #fffdf9; border: 1px solid #e3d8c6; color: #5a4a3e;">Viaturas</span>
+    </div>
   </div>
 
   <!-- DESTAQUE -->
-  <div style="padding: 0 30px 4px;">
-    <div style="display: grid; grid-template-columns: 1.2fr 0.8fr;">
-      <div style="height: 500px; background: #1b2cf0; position: relative; overflow: hidden;">
-        <div style="position: absolute; inset: 0; background: repeating-linear-gradient(118deg, transparent 0 42px, rgba(255,122,0,.62) 42px 62px);"></div>
-        <div style="position: absolute; left: 64px; top: 88px; width: 176px; height: 230px; background: #ff7a00;"></div>
-        <div style="position: absolute; left: 226px; top: 160px; width: 150px; height: 200px; background: #f4efe6;"></div>
-        <div style="position: absolute; left: 356px; top: 110px; width: 138px; height: 182px; background: #0b0b0c;"></div>
-        <div style="position: absolute; left: 64px; bottom: 50px; display: inline-flex; align-items: center; background: #ccff33; color: #0b0b0c; padding: 12px 20px; font-size: 13px; font-weight: 800; letter-spacing: 0.08em;">540 PEÇAS · 9 DELEGAÇÕES</div>
-      </div>
-      <div style="background: #0b0b0c; color: #f4efe6; padding: 52px 44px; display: flex; flex-direction: column; justify-content: center;">
-        <div class="kick" style="color: #ccff33;">Em destaque · Grupo Atlântico · 2025</div>
-        <h2 style="font-size: 54px; font-weight: 900; margin-top: 18px; color: #f4efe6;">FARDAMENTO PARA 180 PESSOAS EM 9 DELEGAÇÕES</h2>
-        <p style="margin: 22px 0 0; font-size: 16.5px; line-height: 1.6; font-weight: 500; color: #b5b0a6;">Nove delegações, três funções, tamanhos individuais &mdash; tudo a chegar pronto a vestir no mesmo dia. Recolhemos os tamanhos num formulário, produzimos com bordado no peito e refletor nas costas, e enviámos caixas por delegação com sacos nominais.</p>
-        <div style="display: flex; gap: 4px; flex-wrap: wrap; margin-top: 26px;">
-          <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em; padding: 9px 14px; border: 1.5px solid #3a3a3d;">TÊXTIL</span>
-          <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em; padding: 9px 14px; border: 1.5px solid #3a3a3d;">BORDADO</span>
-          <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.08em; padding: 9px 14px; border: 1.5px solid #3a3a3d;">EN ISO 20471</span>
+  <div style="padding: 0 56px 34px;">
+    <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 28px; padding: 30px; box-shadow: 0 24px 50px -38px rgba(34,26,20,.5);">
+      <div class="arch" style="height: 470px; background: #1d3f6e; position: relative; overflow: hidden;">
+        <div style="position: absolute; left: 50%; top: 46%; transform: translate(-50%,-50%); display: flex; gap: 16px; align-items: flex-end;">
+          <div style="width: 104px; height: 150px; border-radius: 6px; background: #c4573a;"></div>
+          <div style="width: 116px; height: 190px; border-radius: 6px; background: #f3ebdd;"></div>
+          <div style="width: 104px; height: 150px; border-radius: 6px; background: #d9a441;"></div>
         </div>
-        <span style="align-self: flex-start; margin-top: 30px; display: inline-flex; align-items: center; height: 62px; padding: 0 28px; background: #ccff33; color: #0b0b0c; font-size: 14px; font-weight: 800; letter-spacing: 0.06em;">VER O CASO COMPLETO</span>
+        <div style="position: absolute; left: 0; right: 0; bottom: 28px; text-align: center;">
+          <span style="display: inline-block; background: rgba(251,247,239,.94); color: #221a14; border-radius: 999px; padding: 9px 18px; font-size: 13px; font-weight: 600;">540 peças &middot; 9 delegações</span>
+        </div>
+      </div>
+      <div style="padding-right: 16px;">
+        <span class="cap" style="color: #c4573a;">Em destaque &middot; Grupo Atlântico &middot; 2025</span>
+        <h2 style="font-size: 46px; margin-top: 16px;">Fardamento para 180 pessoas em <em>nove delegações</em></h2>
+        <p style="margin: 20px 0 0; font-size: 16.5px; line-height: 1.8;">Nove delegações, três funções e tamanhos individuais &mdash; tudo a ter de chegar pronto a vestir no mesmo dia. Recolhemos os tamanhos num formulário, produzimos com bordado no peito e refletor nas costas, e enviámos caixas rotuladas por delegação com sacos individuais nominais.</p>
+        <div style="display: flex; gap: 28px; margin-top: 28px; padding-top: 22px; border-top: 1px solid #ede4d3;">
+          <div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: #221a14;">1</div><div class="cap" style="margin-top: 3px;">entrega única</div></div>
+          <div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: #221a14;">0</div><div class="cap" style="margin-top: 3px;">trocas na 1.ª semana</div></div>
+          <div><div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: #221a14;">540</div><div class="cap" style="margin-top: 3px;">peças</div></div>
+        </div>
+        <span class="btn" style="background: #221a14; color: #fbf7ef; margin-top: 26px;">Ver o caso completo</span>
       </div>
     </div>
   </div>
 
-  <div style="padding: 0 30px 70px;">
-    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 4px;">
+  <div style="padding: 24px 56px 80px;">
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 26px;">
       <sc-for list="{{ cases }}" as="c" hint-placeholder-count="6">
         <div>
-          <div style="{{ c.cover }}">
-            <div style="{{ c.blobA }}"></div>
-            <div style="{{ c.blobB }}"></div>
-            <div style="{{ c.sheet }}"></div>
+          <div class="arch" style="{{ c.cover }}">
+            <div style="{{ c.shapeA }}"></div>
+            <div style="{{ c.shapeB }}"></div>
           </div>
-          <div style="{{ c.body }}">
-            <div style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.12em; color: {{ c.kick }};">{{ c.client }} · {{ c.year }}</div>
-            <h3 style="font-size: 27px; font-weight: 900; margin-top: 10px; color: {{ c.fg }};">{{ c.title }}</h3>
-            <p style="margin: 12px 0 0; font-size: 14.5px; line-height: 1.55; font-weight: 500; color: {{ c.muted }};">{{ c.summary }}</p>
+          <div style="padding: 22px 4px 0;">
+            <div class="cap">{{ c.client }} &middot; {{ c.year }}</div>
+            <h3 style="font-size: 27px; margin-top: 10px;">{{ c.title }}</h3>
+            <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.75;">{{ c.summary }}</p>
+            <div style="margin-top: 14px; font-size: 14px; font-weight: 600; color: #c4573a;">Ver caso &rarr;</div>
           </div>
         </div>
       </sc-for>
     </div>
   </div>
 
-  <div style="background: #ff3b2f; color: #0b0b0c; padding: 84px 30px;">
-    <h2 style="font-size: 110px; font-weight: 900;">O PRÓXIMO<br>PODE SER<br>O SEU.</h2>
-    <div style="display: flex; gap: 12px; margin-top: 40px; flex-wrap: wrap;">
-      <span style="display: inline-flex; align-items: center; height: 68px; padding: 0 34px; background: #0b0b0c; color: #f4efe6; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">COMEÇAR UM PROJETO</span>
-      <span style="display: inline-flex; align-items: center; height: 68px; padding: 0 34px; border: 2.5px solid #0b0b0c; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">[TELEFONE A CONFIRMAR]</span>
+  <div style="padding: 0 56px 84px;">
+    <div class="grain" style="position: relative; background: #6b3552; border-radius: 28px; padding: 68px; text-align: center; overflow: hidden;">
+      <div style="position: relative;">
+        <h2 style="font-size: 58px; color: #fffdf9;">O próximo caso <em style="color:#f7d9a0;">pode ser o seu</em></h2>
+        <p style="margin: 20px auto 0; font-size: 18px; line-height: 1.75; max-width: 560px; color: rgba(255,253,249,.9);">Conte-nos o que tem em mãos. Respondemos em 48 horas úteis com preço, prazo e uma prova digital.</p>
+        <div style="display: flex; gap: 12px; justify-content: center; margin-top: 32px; flex-wrap: wrap;">
+          <span class="btn" style="background: #d9a441; color: #221a14;">Começar um projeto</span>
+          <span class="btn" style="border: 1px solid rgba(255,253,249,.6); color: #fffdf9;">[Telefone a confirmar]</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":1440,"height":2250}}'>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":2700}}'>
 class Component extends DCLogic {
   renderVals() {
     const RAW = [
-      ['ADEGA VALE FUNDO', 2025, 'UMA GAMA DE VINHOS DO RÓTULO À CAIXA', 'Seis referências impressas na mesma folha, com relevo a seco e dourado a quente nas reservas.', '#ff7a00', '#6b2cf5', '#0b0b0c', '#0b0b0c'],
-      ['TECHSUMMIT', 2024, '1 200 CRACHÁS ÚNICOS EM ONZE DIAS', 'Dados variáveis com nome, empresa e QR por participante, mais toda a sinalética do recinto.', '#0b0b0c', '#1b2cf0', '#ccff33', '#f4efe6'],
-      ['PADARIA FORNO VELHO', 2024, 'REBRANDING DE UMA PADARIA COM 60 ANOS', 'A letra da tabuleta original redesenhada para digital, montra, sacos e caixas.', '#ccff33', '#ff3b2f', '#0b0b0c', '#0b0b0c'],
-      ['CLÍNICA NORTE', 2024, 'SINALÉTICA DE UMA CLÍNICA EM QUATRO PISOS', 'Código de cor por piso e placas de gabinete que a clínica troca sozinha em minutos.', '#1b2cf0', '#ccff33', '#f4efe6', '#f4efe6'],
-      ['LOGITRANS', 2023, 'DECORAÇÃO DE UMA FROTA DE 24 VIATURAS', 'Wrapping parcial em dois modelos, duas viaturas por dia, sem parar a operação.', '#6b2cf5', '#ff7a00', '#f4efe6', '#f4efe6'],
-      ['MERCADO DA RIBEIRA', 2023, 'TRINTA BANCAS COM A MESMA LINGUAGEM', 'Sistema de tabuletas e preçários que cada comerciante preenche à mão sem estragar o conjunto.', '#ff3b2f', '#0b0b0c', '#ccff33', '#0b0b0c'],
+      ['Adega Vale Fundo', 2025, 'Uma gama de vinhos do rótulo à caixa', 'Seis referências impressas na mesma folha, com relevo a seco e dourado a quente nas reservas.', '#6b3552', '#d9a441', '#f3ebdd'],
+      ['TechSummit', 2024, '1 200 crachás únicos em onze dias', 'Dados variáveis com nome, empresa e código QR por participante, mais a sinalética do recinto.', '#1d3f6e', '#c4573a', '#f3ebdd'],
+      ['Padaria Forno Velho', 2024, 'Rebranding de uma padaria com 60 anos', 'A letra da tabuleta original redesenhada para digital, e daí saíram montra, sacos e caixas.', '#c4573a', '#d9a441', '#fffdf9'],
+      ['Clínica Norte', 2024, 'Sinalética de uma clínica em quatro pisos', 'Código de cor por piso e placas de gabinete que a clínica troca sozinha em minutos.', '#35513f', '#d9a441', '#fffdf9'],
+      ['LogiTrans', 2023, 'Decoração de uma frota de 24 viaturas', 'Wrapping parcial em dois modelos, duas viaturas por dia, sem parar a operação.', '#1d3f6e', '#35513f', '#f3ebdd'],
+      ['Mercado da Ribeira', 2023, 'Trinta bancas com a mesma linguagem', 'Tabuletas e preçários que cada comerciante preenche à mão sem estragar o conjunto.', '#d9a441', '#c4573a', '#fffdf9'],
     ];
     return {
-      cases: RAW.map((r) => {
-        const bodyBg = r[6];
-        const dark = bodyBg === '#0b0b0c' || bodyBg === '#1b2cf0' || bodyBg === '#6b2cf5';
-        return {
-          client: r[0], year: r[1], title: r[2], summary: r[3],
-          cover: 'height:260px;position:relative;overflow:hidden;background:' + r[4] + ';',
-          blobA: 'position:absolute;right:-54px;top:-54px;width:200px;height:200px;border-radius:999px;background:' + r[5] + ';',
-          blobB: 'position:absolute;left:-46px;bottom:-64px;width:160px;height:160px;border-radius:999px;background:' + r[7] + ';opacity:.85;',
-          sheet: 'position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-6deg);width:92px;height:124px;background:#f4efe6;',
-          body: 'background:' + bodyBg + ';padding:28px 24px;min-height:230px;',
-          fg: dark ? '#f4efe6' : '#0b0b0c',
-          muted: dark ? 'rgba(244,239,230,.78)' : 'rgba(11,11,12,.7)',
-          kick: dark ? '#ccff33' : 'rgba(11,11,12,.55)',
-        };
-      }),
+      cases: RAW.map((r) => ({
+        client: r[0], year: r[1], title: r[2], summary: r[3],
+        cover: 'position:relative;height:330px;overflow:hidden;background:' + r[4] + ';',
+        shapeA: 'position:absolute;left:50%;top:46%;transform:translate(-50%,-50%) rotate(-4deg);width:112px;height:154px;border-radius:6px;background:' + r[6] + ';box-shadow:0 20px 40px -18px rgba(0,0,0,.45);',
+        shapeB: 'position:absolute;right:-40px;bottom:-40px;width:150px;height:150px;border-radius:999px;background:' + r[5] + ';opacity:.9;',
+      })),
     };
   }
 }

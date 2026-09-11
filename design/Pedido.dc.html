@@ -7,121 +7,172 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
-    h1,h2,h3 { font-family: Unbounded, Manrope, sans-serif; margin: 0; letter-spacing: -0.06em; line-height: 0.86; }
+    body {
+      margin: 0;
+      font-family: Karla, "Helvetica Neue", Arial, sans-serif;
+      color: #5a4a3e;
+      background-color: #fbf7ef;
+    }
+    h1, h2, h3, h4 {
+      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      margin: 0;
+      color: #221a14;
+      letter-spacing: -0.015em;
+      line-height: 1.02;
+      text-wrap: balance;
+    }
     p { text-wrap: pretty; }
-    a { color: #1b2cf0; text-decoration: none; }
-    .kick { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; }
+    em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
+    a { color: #c4573a; text-decoration: none; }
+    a:hover { color: #9d422b; }
+    .cap {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #8b7b6c;
+    }
+    /* Grão de papel: dá profundidade sem pesar nada. */
+    .grain::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    }
+    .arch { border-radius: 280px 280px 14px 14px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 54px;
+      padding: 0 28px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
     .opt { cursor: pointer; user-select: none; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .floaty { animation: floaty 9s ease-in-out infinite; }
+    .floaty-slow { animation: floaty 12s ease-in-out infinite; }
   </style>
 </helmet>
-<div style="background: #f4efe6; color: #0b0b0c; overflow: hidden;">
-  <div style="background: #0b0b0c; display: flex; align-items: center; justify-content: space-between; padding: 0 26px 0 30px; height: 74px;">
+<div style="background: #fbf7ef;">
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 18px 56px; border-bottom: 1px solid #e3d8c6;">
     <div style="display: flex; align-items: center; gap: 12px;">
-      <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-        <defs><linearGradient id="pdg2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1b2cf0"/><stop offset="52%" stop-color="#6b2cf5"/><stop offset="100%" stop-color="#ff3b2f"/></linearGradient></defs>
-        <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="url(#pdg2)"/>
-        <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="#ccff33"/>
+      <svg viewBox="0 0 120 120" width="42" height="42" aria-hidden="true">
+        <circle cx="60" cy="60" r="55" fill="none" stroke="#1d3f6e" stroke-width="3.2"/>
+        <circle cx="60" cy="60" r="40" fill="#1d3f6e"/>
+        <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="54" fill="#fbf7ef">C</text>
       </svg>
-      <span style="font-family: Unbounded, sans-serif; font-size: 21px; font-weight: 800; letter-spacing: -0.06em; color: #f4efe6;">correiacor</span>
+      <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 29px; color: #221a14;">Correia<span style="color:#c4573a;">Cor</span></span>
     </div>
-    <span style="font-size: 13px; font-weight: 600; color: #b5b0a6;">Precisa de ajuda? <strong style="color:#ccff33;">[TELEFONE A CONFIRMAR]</strong></span>
+    <span style="font-size: 14.5px;">Precisa de ajuda? <strong style="color:#221a14;">[Telefone a confirmar]</strong></span>
   </div>
 
-  <div style="padding: 56px 30px 34px;">
-    <h1 style="font-size: 118px; font-weight: 900;">O SEU<br>PEDIDO.</h1>
-    <p style="margin: 24px 0 0; font-size: 19px; line-height: 1.5; font-weight: 600; max-width: 640px; color: #46433d;">Nada é cobrado aqui. Enviamos o orçamento fechado e a prova digital em 48 horas úteis, e só produzimos depois de aprovar.</p>
-    <div style="display: flex; align-items: center; gap: 4px; margin-top: 34px;">
-      <span style="display:inline-flex;align-items:center;gap:11px;font-size:13px;font-weight:800;letter-spacing:0.08em;background:#ff3b2f;color:#0b0b0c;padding:14px 20px;">1 · PRODUTOS</span>
-      <span style="display:inline-flex;align-items:center;gap:11px;font-size:13px;font-weight:800;letter-spacing:0.08em;border:2px solid #0b0b0c;padding:12px 20px;color:#86827a;">2 · OS SEUS DADOS</span>
-      <span style="display:inline-flex;align-items:center;gap:11px;font-size:13px;font-weight:800;letter-spacing:0.08em;border:2px solid #0b0b0c;padding:12px 20px;color:#86827a;">3 · CONFIRMAÇÃO</span>
+  <div class="grain" style="position: relative; padding: 60px 56px 34px; text-align: center;">
+    <h1 style="font-size: 74px;">O seu pedido <em style="color:#c4573a;">de orçamento</em></h1>
+    <p style="margin: 20px auto 0; font-size: 17.5px; line-height: 1.75; max-width: 620px;">Nada é cobrado aqui. Enviamos o orçamento fechado e a prova digital em 48 horas úteis, e só produzimos depois de aprovar.</p>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 18px; margin-top: 34px;">
+      <span style="display:inline-flex;align-items:center;gap:11px;font-size:14.5px;font-weight:600;color:#221a14;"><span style="width:32px;height:32px;border-radius:999px;background:#c4573a;color:#fffdf9;display:inline-flex;align-items:center;justify-content:center;font-family:'Instrument Serif', Georgia, serif;font-size:16px;">1</span> Produtos</span>
+      <span style="width: 44px; height: 1px; background: #ddd0b9;"></span>
+      <span style="display:inline-flex;align-items:center;gap:11px;font-size:14.5px;color:#8b7b6c;"><span style="width:32px;height:32px;border-radius:999px;border:1px solid #d3c6b0;display:inline-flex;align-items:center;justify-content:center;font-family:'Instrument Serif', Georgia, serif;font-size:16px;">2</span> Os seus dados</span>
+      <span style="width: 44px; height: 1px; background: #ddd0b9;"></span>
+      <span style="display:inline-flex;align-items:center;gap:11px;font-size:14.5px;color:#8b7b6c;"><span style="width:32px;height:32px;border-radius:999px;border:1px solid #d3c6b0;display:inline-flex;align-items:center;justify-content:center;font-family:'Instrument Serif', Georgia, serif;font-size:16px;">3</span> Confirmação</span>
     </div>
   </div>
 
-  <div style="display: grid; grid-template-columns: 1fr 420px; gap: 30px; padding: 0 30px 70px; align-items: start;">
-    <div style="display: flex; flex-direction: column; gap: 4px;">
+  <div style="display: grid; grid-template-columns: 1fr 410px; gap: 32px; padding: 20px 56px 80px; align-items: start;">
+    <div style="display: flex; flex-direction: column; gap: 16px;">
       <sc-for list="{{ lines }}" as="l" hint-placeholder-count="3">
-        <div style="border: 3px solid #0b0b0c; padding: 22px; display: grid; grid-template-columns: 120px 1fr auto; gap: 24px; align-items: center;">
+        <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 22px; display: grid; grid-template-columns: 112px 1fr auto; gap: 24px; align-items: center; box-shadow: 0 16px 36px -34px rgba(34,26,20,.5);">
           <div style="{{ l.thumb }}">
-            <svg viewBox="0 0 200 200" width="90" height="90" aria-hidden="true">
-              <path d="{{ l.d }}" fill="{{ l.hex }}" stroke="{{ l.line }}" stroke-width="3.4" stroke-linejoin="round"/>
+            <svg viewBox="0 0 200 200" width="86" height="86" aria-hidden="true">
+              <path d="{{ l.d }}" fill="{{ l.hex }}" stroke="{{ l.line }}" stroke-width="2.6" stroke-linejoin="round"/>
             </svg>
           </div>
           <div>
-            <h3 style="font-size: 26px; font-weight: 900;">{{ l.name }}</h3>
-            <div style="display: flex; gap: 4px; flex-wrap: wrap; margin-top: 12px;">
-              <span style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.08em; padding: 7px 11px; background: #0b0b0c; color: #f4efe6;">{{ l.color }}</span>
-              <span style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.08em; padding: 5px 11px; border: 2px solid #0b0b0c;">{{ l.tech }}</span>
-              <span style="font-size: 11.5px; font-weight: 800; letter-spacing: 0.08em; padding: 5px 11px; border: 2px solid #0b0b0c;">{{ l.area }}</span>
+            <h3 style="font-size: 26px;">{{ l.name }}</h3>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px;">
+              <span style="font-size: 12.5px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: #f3ebdd; color: #5a4a3e;">{{ l.color }}</span>
+              <span style="font-size: 12.5px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: #f3ebdd; color: #5a4a3e;">{{ l.tech }}</span>
+              <span style="font-size: 12.5px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: #f3ebdd; color: #5a4a3e;">{{ l.area }}</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 8px; margin-top: 13px; font-size: 13px; font-weight: 800; color: #1b2cf0;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1b2cf0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <div style="display: flex; align-items: center; gap: 8px; margin-top: 13px; font-size: 13.5px; font-weight: 600; color: #35513f;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#35513f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
               {{ l.file }}
             </div>
           </div>
           <div style="text-align: right;">
-            <div style="display: inline-flex; align-items: center; gap: 16px; border: 2px solid #0b0b0c; padding: 10px 16px;">
-              <span style="font-size: 19px; font-weight: 800;">&minus;</span>
-              <span style="font-family: Unbounded, sans-serif; font-size: 18px; font-weight: 900; min-width: 40px;">{{ l.qty }}</span>
-              <span style="font-size: 19px; font-weight: 800;">+</span>
+            <div style="display: inline-flex; align-items: center; gap: 14px; border: 1px solid #e3d8c6; border-radius: 999px; padding: 9px 16px;">
+              <span style="font-size: 17px; color: #8b7b6c;">&minus;</span>
+              <span style="font-size: 16px; font-weight: 600; color: #221a14; min-width: 36px;">{{ l.qty }}</span>
+              <span style="font-size: 17px; color: #8b7b6c;">+</span>
             </div>
-            <div style="font-family: Unbounded, sans-serif; font-size: 28px; font-weight: 900; letter-spacing: -0.05em; margin-top: 14px;">{{ l.total }}€</div>
-            <div style="font-size: 12.5px; font-weight: 600; color: #86827a; margin-top: 3px;">{{ l.unit }} € / un.</div>
+            <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14; margin-top: 12px;">{{ l.total }} €</div>
+            <div style="font-size: 12.5px; color: #8b7b6c; margin-top: 2px;">{{ l.unit }} € / un.</div>
           </div>
         </div>
       </sc-for>
 
-      <div style="border: 3px dashed #0b0b0c; padding: 28px; margin-top: 0;">
-        <h3 style="font-size: 28px; font-weight: 900;">NÃO ESTÁ NO CATÁLOGO?</h3>
-        <p style="margin: 12px 0 0; font-size: 15.5px; line-height: 1.55; font-weight: 500; color: #46433d;">Descreva o que procura. Temos acesso a mais de mil referências e fazemos fabrico à medida quando nenhuma serve.</p>
-        <div style="margin-top: 18px; border: 2px solid #dfd9cd; background: #fff; padding: 16px 18px; font-size: 15px; color: #a8a396;">Ex.: 200 sacos de papel kraft com asa torcida, impressos a 2 cores…</div>
+      <div style="background: #f3ebdd; border-radius: 22px; padding: 28px;">
+        <h3 style="font-size: 27px;">Não está no catálogo?</h3>
+        <p style="margin: 10px 0 0; font-size: 15.5px; line-height: 1.75;">Descreva o que procura. Temos acesso a mais de mil referências e fazemos fabrico à medida quando nenhuma serve.</p>
+        <div style="margin-top: 18px; background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 14px; padding: 15px 18px; font-size: 15px; color: #a3958a;">Ex.: 200 sacos de papel kraft com asa torcida, impressos a duas cores…</div>
       </div>
 
-      <div style="background: #0b0b0c; color: #f4efe6; padding: 32px;">
-        <h3 style="font-size: 28px; font-weight: 900; color: #f4efe6; margin-bottom: 22px;">OS SEUS DADOS</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-          <div style="border: 2px solid #3a3a3d; padding: 16px 18px; font-size: 15px; color: #86827a;">Nome*</div>
-          <div style="border: 2px solid #3a3a3d; padding: 16px 18px; font-size: 15px; color: #86827a;">Empresa</div>
-          <div style="border: 2px solid #3a3a3d; padding: 16px 18px; font-size: 15px; color: #86827a;">Email*</div>
-          <div style="border: 2px solid #3a3a3d; padding: 16px 18px; font-size: 15px; color: #86827a;">Telefone*</div>
-          <div style="border: 2px solid #3a3a3d; padding: 16px 18px; font-size: 15px; color: #86827a;">NIF</div>
-          <div style="border: 2px solid #3a3a3d; padding: 16px 18px; font-size: 15px; color: #86827a;">Data em que precisa</div>
+      <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 30px;">
+        <h3 style="font-size: 27px; margin-bottom: 20px;">Os seus dados</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Nome*</div>
+          <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Empresa</div>
+          <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Email*</div>
+          <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Telefone*</div>
+          <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">NIF, para faturação</div>
+          <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a;">Data em que precisa</div>
         </div>
-        <div style="border: 2px solid #3a3a3d; padding: 16px 18px; font-size: 15px; color: #86827a; margin-top: 4px; padding-bottom: 58px;">Observações — morada de entrega, separação por lojas, Pantones…</div>
-        <div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; font-size: 13.5px; line-height: 1.55; font-weight: 500; color: #b5b0a6;">
-          <span style="width: 20px; height: 20px; border: 2px solid #3a3a3d; flex: 0 0 20px; margin-top: 1px;"></span>
-          Autorizo o tratamento dos meus dados para resposta a este pedido, nos termos da <span style="color:#ccff33;">política de privacidade</span>.
+        <div style="border: 1px solid #e3d8c6; border-radius: 12px; padding: 15px 17px; font-size: 15px; color: #a3958a; margin-top: 12px; padding-bottom: 56px;">Observações — morada de entrega, separação por lojas, cores Pantone…</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; font-size: 14px; line-height: 1.6;">
+          <span style="width: 19px; height: 19px; border-radius: 5px; border: 1.5px solid #d3c6b0; flex: 0 0 19px; margin-top: 1px;"></span>
+          Autorizo o tratamento dos meus dados para resposta a este pedido, nos termos da <a href="#">política de privacidade</a>.
         </div>
       </div>
     </div>
 
-    <div style="position: sticky; top: 20px; background: #ccff33; color: #0b0b0c; padding: 30px;">
-      <div class="kick" style="margin-bottom: 22px;">Resumo</div>
-      <div style="display: flex; flex-direction: column; gap: 13px; font-size: 15px; font-weight: 600; padding-bottom: 20px; border-bottom: 3px solid #0b0b0c;">
-        <div style="display: flex; justify-content: space-between;"><span>3 produtos · 235 un.</span><span style="font-weight: 800;">1 002,50 €</span></div>
-        <div style="display: flex; justify-content: space-between;"><span>Personalização</span><span style="font-weight: 800;">incluída</span></div>
-        <div style="display: flex; justify-content: space-between;"><span>Prova digital</span><span style="font-weight: 800;">gratuita</span></div>
-        <div style="display: flex; justify-content: space-between;"><span>Portes</span><span style="font-weight: 800;">a confirmar</span></div>
+    <div style="position: sticky; top: 22px; background: #1d3f6e; color: #f3ebdd; border-radius: 24px; padding: 32px;">
+      <div class="cap" style="color: #d9a441; margin-bottom: 22px;">Resumo</div>
+      <div style="display: flex; flex-direction: column; gap: 13px; font-size: 15px; padding-bottom: 20px; border-bottom: 1px solid rgba(217,164,65,.35);">
+        <div style="display: flex; justify-content: space-between;"><span style="color: rgba(243,235,221,.82);">3 produtos &middot; 235 unidades</span><span style="color: #fbf7ef; font-weight: 600;">1 002,50 €</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: rgba(243,235,221,.82);">Personalização</span><span style="color: #fbf7ef; font-weight: 600;">incluída</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: rgba(243,235,221,.82);">Prova digital</span><span style="color: #d9a441; font-weight: 600;">gratuita</span></div>
+        <div style="display: flex; justify-content: space-between;"><span style="color: rgba(243,235,221,.82);">Portes</span><span style="color: rgba(243,235,221,.7);">a confirmar</span></div>
       </div>
       <div style="padding: 22px 0;">
-        <div style="font-size: 12.5px; font-weight: 800; letter-spacing: 0.1em; color: #3d4a0a;">ESTIMATIVA, SEM IVA</div>
-        <div style="font-family: Unbounded, sans-serif; font-size: 52px; font-weight: 900; letter-spacing: -0.06em; line-height: 0.9; margin-top: 8px;">1 002,50€</div>
+        <div style="font-size: 13px; color: rgba(243,235,221,.7);">Estimativa, sem IVA</div>
+        <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 50px; color: #fbf7ef; margin-top: 6px; line-height: 1;">1 002,50 €</div>
       </div>
-      <div style="border-left: 4px solid #0b0b0c; padding: 4px 0 4px 16px; font-size: 13.5px; line-height: 1.55; font-weight: 500; color: #3d4a0a;">Uma estimativa a partir dos escalões do catálogo, não uma fatura. O preço final pode descer com o volume total.</div>
-      <span style="display: flex; align-items: center; justify-content: center; height: 68px; margin-top: 22px; background: #0b0b0c; color: #f4efe6; font-size: 15px; font-weight: 800; letter-spacing: 0.06em;">ENVIAR PEDIDO</span>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 16px; font-size: 13px; font-weight: 700; color: #3d4a0a;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3d4a0a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-        SEM PAGAMENTO NEM COMPROMISSO
+      <div style="background: rgba(251,247,239,.09); border-radius: 14px; padding: 15px 18px; font-size: 13.5px; line-height: 1.65; color: rgba(243,235,221,.85);">
+        Uma estimativa a partir dos escalões do catálogo, não uma fatura. O preço final pode descer com o volume total.
+      </div>
+      <span class="btn" style="display: flex; background: #d9a441; color: #221a14; margin-top: 22px; height: 60px; font-size: 15.5px;">Enviar pedido de orçamento</span>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 9px; margin-top: 16px; font-size: 13px; color: rgba(243,235,221,.72);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(243,235,221,.72)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        Sem pagamento nem compromisso
       </div>
     </div>
   </div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":1440,"height":1560}}'>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1720}}'>
 class Component extends DCLogic {
   renderVals() {
     const S = {
@@ -130,16 +181,16 @@ class Component extends DCLogic {
       tote: 'M58 64h84a4 4 0 0 1 4 4l6 84a6 6 0 0 1-6 6H54a6 6 0 0 1-6-6l6-84a4 4 0 0 1 4-4Z',
     };
     const RAW = [
-      ['T-SHIRT 180 G', S.tshirt, '#1b2cf0', '#f4efe6', 'AZUL ELÉTRICO', 'SERIGRAFIA', 'PEITO ESQUERDO', 'logo-vetorial.ai', 100, 3.5],
-      ['CANECA 330 ML', S.mug, '#f4efe6', '#0b0b0c', 'OSSO', 'SUBLIMAÇÃO', 'VOLTA COMPLETA', 'logo-vetorial.ai', 50, 3.1],
-      ['SACO DE ALGODÃO', S.tote, '#0b0b0c', '#ccff33', 'PRETO TINTA', 'SERIGRAFIA', 'FRENTE', 'logo-vetorial.ai', 85, 1.9],
+      ['T-shirt algodão 180 g', S.tshirt, '#1d3f6e', '#f0e7d6', 'Azul de tinta', 'Serigrafia', 'Peito esquerdo', 'logo-vetorial.ai', 100, 3.5],
+      ['Caneca cerâmica 330 ml', S.mug, '#fffdf9', '#e8dfd0', 'Branco cru', 'Sublimação', 'Volta completa', 'logo-vetorial.ai', 50, 3.1],
+      ['Saco de algodão cru', S.tote, '#e0d4bd', '#e6ecdf', 'Cru', 'Serigrafia', 'Frente', 'logo-vetorial.ai', 85, 1.9],
     ];
     const fmt = (n) => n.toFixed(2).replace('.', ',');
     return {
       lines: RAW.map((r) => ({
         name: r[0], d: r[1], hex: r[2],
-        line: r[2] === '#0b0b0c' ? 'rgba(244,239,230,.4)' : 'rgba(11,11,12,.42)',
-        thumb: 'height:120px;display:flex;align-items:center;justify-content:center;background:' + r[3] + ';',
+        line: r[2] === '#1d3f6e' ? 'rgba(251,247,239,.3)' : 'rgba(34,26,20,.22)',
+        thumb: 'height:112px;border-radius:100px 100px 10px 10px;display:flex;align-items:center;justify-content:center;background:' + r[3] + ';',
         color: r[4], tech: r[5], area: r[6], file: r[7],
         qty: r[8], unit: fmt(r[9]), total: fmt(r[8] * r[9]),
       })),

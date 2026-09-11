@@ -7,137 +7,219 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Manrope, "Helvetica Neue", Arial, sans-serif; }
-    h1,h2,h3 { font-family: Unbounded, Manrope, sans-serif; margin: 0; letter-spacing: -0.05em; line-height: 0.92; }
-    a { color: #1b2cf0; } a:hover { color: #0b0b0c; }
-    .kick { font-family: Manrope, sans-serif; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 800; }
+    body {
+      margin: 0;
+      font-family: Karla, "Helvetica Neue", Arial, sans-serif;
+      color: #5a4a3e;
+      background-color: #fbf7ef;
+    }
+    h1, h2, h3, h4 {
+      font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      margin: 0;
+      color: #221a14;
+      letter-spacing: -0.015em;
+      line-height: 1.02;
+      text-wrap: balance;
+    }
+    p { text-wrap: pretty; }
+    em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; }
+    a { color: #c4573a; text-decoration: none; }
+    a:hover { color: #9d422b; }
+    .cap {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #8b7b6c;
+    }
+    /* Grão de papel: dá profundidade sem pesar nada. */
+    .grain::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    }
+    .arch { border-radius: 280px 280px 14px 14px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      height: 54px;
+      padding: 0 28px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+    .opt { cursor: pointer; user-select: none; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    @keyframes glide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .floaty { animation: floaty 9s ease-in-out infinite; }
+    .floaty-slow { animation: floaty 12s ease-in-out infinite; }
   </style>
 </helmet>
+<div class="grain" style="position: relative; background: #fbf7ef; padding: 66px 72px 76px;">
 
-<div style="background: #f4efe6; color: #0b0b0c; padding: 60px 64px 72px;">
-
-  <div style="border-bottom: 4px solid #0b0b0c; padding-bottom: 26px;">
-    <div class="kick" style="color: #ff3b2f;">Identidade &middot; proposta 2</div>
-    <h1 style="font-size: 84px; font-weight: 900; margin-top: 18px;">Fora a roda<br>de cores.</h1>
-    <p style="max-width: 720px; margin: 22px 0 0; font-size: 17px; line-height: 1.55; font-weight: 500; color: #46433d;">O logótipo atual já dizia "cor" com um hexágono de doze triângulos, e a minha primeira tentativa dizia o mesmo com quatro barras. Nenhum dos dois é seu &mdash; qualquer gráfica os podia usar. Estas três ideias procuram outra coisa: uma que só a CorreiaCOR pode reivindicar.</p>
-  </div>
-
-  <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 28px; margin-top: 40px;">
-
-    <!-- 1. A CORREIA -->
-    <div style="background: #0b0b0c; color: #f4efe6; padding: 34px;">
-      <div style="display: flex; align-items: baseline; justify-content: space-between;">
-        <span class="kick" style="color: #ccff33;">Ideia 01</span>
-        <span style="font-size: 11px; font-weight: 800; background: #ccff33; color: #0b0b0c; padding: 4px 10px; letter-spacing: 0.08em;">A MINHA APOSTA</span>
-      </div>
-      <h2 style="font-size: 40px; font-weight: 900; margin-top: 14px; color: #f4efe6;">A Correia</h2>
-      <div style="height: 190px; display: flex; align-items: center; justify-content: center; margin-top: 20px; background: #141416;">
-        <svg viewBox="0 0 64 64" width="140" height="140" aria-hidden="true">
-          <defs>
-            <linearGradient id="g-band" x1="0" y1="1" x2="1" y2="0">
-              <stop offset="0%" stop-color="#1b2cf0"/><stop offset="52%" stop-color="#6b2cf5"/><stop offset="100%" stop-color="#ff3b2f"/>
-            </linearGradient>
-          </defs>
-          <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="url(#g-band)"/>
-          <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="#ccff33"/>
-        </svg>
-      </div>
-      <div style="margin-top: 22px; display: flex; align-items: center; justify-content: center; padding: 18px 0; background: #141416;">
-        <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-          <defs><linearGradient id="g-band2" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#1b2cf0"/><stop offset="52%" stop-color="#6b2cf5"/><stop offset="100%" stop-color="#ff3b2f"/></linearGradient></defs>
-          <path d="M47.49 54.12 A27 27 0 1 1 47.49 9.88 L40.60 19.71 A15 15 0 1 0 40.60 44.29 Z" fill="url(#g-band2)"/>
-          <path d="M47.49 9.88 L57.5 15.2 L50.6 25.0 L40.60 19.71 Z" fill="#ccff33"/>
-        </svg>
-        <span style="font-family: Unbounded, sans-serif; font-size: 23px; font-weight: 800; letter-spacing: -0.06em; margin-left: 12px; color: #f4efe6;">correiacor</span>
-      </div>
-      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.6; color: #b5b0a6;">Correia é o apelido do seu pai <strong style="color:#f4efe6;">e</strong> a peça que faz a máquina de impressão andar. O símbolo é uma correia de transmissão vista de lado, com a ponta a torcer: um ciclo sem fim que também se lê como um C. A cor viaja ao longo da fita, em vez de ser um catálogo de cores.</p>
-      <p style="margin: 16px 0 0; padding-top: 14px; border-top: 1px solid #2a2a2c; font-size: 13px; line-height: 1.55; color: #86827a;"><strong style="color:#b5b0a6;">Contra:</strong> exige explicação da primeira vez. Ganha-se uma história, perde-se a leitura imediata.</p>
-    </div>
-
-    <!-- 2. A CAMADA -->
-    <div style="background: #ffffff; padding: 34px; border: 4px solid #0b0b0c;">
-      <span class="kick" style="color: #1b2cf0;">Ideia 02</span>
-      <h2 style="font-size: 40px; font-weight: 900; margin-top: 14px;">A Camada</h2>
-      <div style="height: 190px; display: flex; align-items: center; justify-content: center; margin-top: 20px; background: #f4efe6;">
-        <svg viewBox="0 0 64 64" width="140" height="140" aria-hidden="true">
-          <rect x="6" y="20" width="42" height="42" rx="3" fill="#1b2cf0"/>
-          <rect x="13" y="13" width="42" height="42" rx="3" fill="#ff3b2f"/>
-          <rect x="20" y="6" width="42" height="42" rx="3" fill="#ccff33"/>
-          <rect x="20" y="6" width="42" height="42" rx="3" fill="none" stroke="#0b0b0c" stroke-width="2.4"/>
-        </svg>
-      </div>
-      <div style="margin-top: 22px; display: flex; align-items: center; justify-content: center; padding: 18px 0; background: #f4efe6;">
-        <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-          <rect x="6" y="20" width="42" height="42" rx="3" fill="#1b2cf0"/>
-          <rect x="13" y="13" width="42" height="42" rx="3" fill="#ff3b2f"/>
-          <rect x="20" y="6" width="42" height="42" rx="3" fill="#ccff33"/>
-          <rect x="20" y="6" width="42" height="42" rx="3" fill="none" stroke="#0b0b0c" stroke-width="2.4"/>
-        </svg>
-        <span style="font-family: Unbounded, sans-serif; font-size: 23px; font-weight: 800; letter-spacing: -0.06em; margin-left: 12px;">correiacor</span>
-      </div>
-      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.6; color: #46433d;">Três folhas empilhadas e desalinhadas de propósito &mdash; o momento exato antes de o registo fechar. Diz "nós fazemos isto por camadas" sem desenhar uma impressora, e o desalinhamento dá-lhe movimento mesmo parado.</p>
-      <p style="margin: 16px 0 0; padding-top: 14px; border-top: 1px solid #dfd9cd; font-size: 13px; line-height: 1.55; color: #86827a;"><strong style="color:#46433d;">Contra:</strong> quadrados empilhados aparecem muito em software. Precisa das cores certas para não parecer um ícone de aplicação.</p>
-    </div>
-
-    <!-- 3. O TRACO -->
-    <div style="background: #ff3b2f; color: #0b0b0c; padding: 34px;">
-      <span class="kick" style="color: #0b0b0c;">Ideia 03</span>
-      <h2 style="font-size: 40px; font-weight: 900; margin-top: 14px;">O Traço</h2>
-      <div style="height: 190px; display: flex; align-items: center; justify-content: center; margin-top: 20px; background: #f4efe6;">
-        <svg viewBox="0 0 64 64" width="140" height="140" aria-hidden="true">
-          <path d="M50 16c-5-5-11-7-17-6-9 2-15 10-15 21s7 19 16 20c6 1 12-2 16-7"
-                fill="none" stroke="#0b0b0c" stroke-width="13" stroke-linecap="butt"/>
-          <path d="M50 16c-5-5-11-7-17-6" fill="none" stroke="#6b2cf5" stroke-width="13" stroke-linecap="butt"/>
-          <circle cx="50.5" cy="44" r="6.2" fill="#1b2cf0"/>
-        </svg>
-      </div>
-      <div style="margin-top: 22px; display: flex; align-items: center; justify-content: center; padding: 18px 0; background: #f4efe6;">
-        <svg viewBox="0 0 64 64" width="34" height="34" aria-hidden="true">
-          <path d="M50 16c-5-5-11-7-17-6-9 2-15 10-15 21s7 19 16 20c6 1 12-2 16-7" fill="none" stroke="#0b0b0c" stroke-width="13" stroke-linecap="butt"/>
-          <path d="M50 16c-5-5-11-7-17-6" fill="none" stroke="#6b2cf5" stroke-width="13" stroke-linecap="butt"/>
-          <circle cx="50.5" cy="44" r="6.2" fill="#1b2cf0"/>
-        </svg>
-        <span style="font-family: Unbounded, sans-serif; font-size: 23px; font-weight: 800; letter-spacing: -0.06em; margin-left: 12px;">correiacor</span>
-      </div>
-      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.6; color: #2a0f0c;">Uma passagem única de rodo, como na serigrafia: começa carregada de tinta e acaba a levantar. O ponto solto é a gota que fica. É o mais humano dos três e o único que se percebe que foi feito por alguém, não gerado.</p>
-      <p style="margin: 16px 0 0; padding-top: 14px; border-top: 1px solid rgba(11,11,12,.25); font-size: 13px; line-height: 1.55; color: #5a1a15;"><strong style="color:#2a0f0c;">Contra:</strong> o traço grosso perde definição a 16&nbsp;px e complica o bordado a fio.</p>
+  <div style="text-align: center; padding-bottom: 34px; border-bottom: 1px solid #e3d8c6;">
+    <div class="cap">CorreiaCOR &middot; Identidade &middot; terceira proposta</div>
+    <h1 style="font-size: 74px; margin-top: 18px;">Uma marca com <em style="color:#c4573a;">boas maneiras</em></h1>
+    <p style="max-width: 640px; margin: 20px auto 0; font-size: 17px; line-height: 1.7;">Das duas vezes anteriores errei por excesso: primeiro sem carácter nenhum, depois aos gritos. Estas três ideias procuram outra coisa &mdash; elegância, calor e o cuidado de uma casa que gosta do que faz.</p>
+    <div style="display: flex; justify-content: center; margin-top: 26px;">
+      <svg width="112" height="14" viewBox="0 0 112 14" fill="none" aria-hidden="true">
+        <path d="M2 7h36M74 7h36" stroke="#d9a441" stroke-width="1"/>
+        <path d="M56 1.5 60.5 7 56 12.5 51.5 7Z" fill="#c4573a"/>
+        <circle cx="44" cy="7" r="2" fill="#d9a441"/><circle cx="68" cy="7" r="2" fill="#d9a441"/>
+      </svg>
     </div>
   </div>
 
-  <!-- PALETA + TIPO -->
-  <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; margin-top: 28px;">
-    <div style="background: #0b0b0c; color: #f4efe6; padding: 36px;">
-      <span class="kick" style="color: #ccff33;">Paleta</span>
-      <h3 style="font-size: 34px; font-weight: 900; margin-top: 12px; color: #f4efe6;">Cor a sério, não como decoração</h3>
-      <p style="margin: 14px 0 26px; font-size: 15px; line-height: 1.6; color: #b5b0a6; max-width: 560px;">Sete cores saturadas em vez das quatro da tipografia. Cada secção do site ocupa uma delas por inteiro &mdash; o fundo é a cor, não um detalhe no botão.</p>
-      <div style="display: grid; grid-template-columns: repeat(7, minmax(0,1fr)); gap: 0;">
-        <div><div style="height: 110px; background: #1b2cf0;"></div><div style="font-size: 11px; font-weight: 800; margin-top: 10px;">AZUL</div><div style="font-size: 10.5px; color: #86827a;">#1B2CF0</div></div>
-        <div><div style="height: 110px; background: #6b2cf5;"></div><div style="font-size: 11px; font-weight: 800; margin-top: 10px;">VIOLETA</div><div style="font-size: 10.5px; color: #86827a;">#6B2CF5</div></div>
-        <div><div style="height: 110px; background: #ff3b2f;"></div><div style="font-size: 11px; font-weight: 800; margin-top: 10px;">VERMELHO</div><div style="font-size: 10.5px; color: #86827a;">#FF3B2F</div></div>
-        <div><div style="height: 110px; background: #ff7a00;"></div><div style="font-size: 11px; font-weight: 800; margin-top: 10px;">LARANJA</div><div style="font-size: 10.5px; color: #86827a;">#FF7A00</div></div>
-        <div><div style="height: 110px; background: #ccff33;"></div><div style="font-size: 11px; font-weight: 800; margin-top: 10px;">LIMA</div><div style="font-size: 10.5px; color: #86827a;">#CCFF33</div></div>
-        <div><div style="height: 110px; background: #f4efe6;"></div><div style="font-size: 11px; font-weight: 800; margin-top: 10px;">OSSO</div><div style="font-size: 10.5px; color: #86827a;">#F4EFE6</div></div>
-        <div><div style="height: 110px; background: #0b0b0c; outline: 1px solid #2a2a2c; outline-offset: -1px;"></div><div style="font-size: 11px; font-weight: 800; margin-top: 10px;">TINTA</div><div style="font-size: 10.5px; color: #86827a;">#0B0B0C</div></div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 26px; margin-top: 44px;">
+
+    <!-- 1 · O SELO DO IMPRESSOR -->
+    <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 34px; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <span class="cap" style="color: #c4573a;">Ideia 01</span>
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #fffdf9; background: #35513f; border-radius: 999px; padding: 5px 12px;">A minha aposta</span>
+      </div>
+      <h2 style="font-size: 38px; margin-top: 14px;">O selo do impressor</h2>
+
+      <div style="height: 216px; display: flex; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
+        <svg viewBox="0 0 120 120" width="168" height="168" aria-hidden="true">
+          <defs><path id="ring-path" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+          <circle cx="60" cy="60" r="55" fill="none" stroke="#1d3f6e" stroke-width="1.6"/>
+          <circle cx="60" cy="60" r="50.5" fill="none" stroke="#1d3f6e" stroke-width="0.7"/>
+          <text font-family="Karla, sans-serif" font-size="7.6" font-weight="600" letter-spacing="2.9" fill="#1d3f6e">
+            <textPath href="#ring-path" startOffset="2%">IMPRESSORES · DESDE 2004 · PORTUGAL · </textPath>
+          </text>
+          <circle cx="60" cy="60" r="34" fill="#1d3f6e"/>
+          <text x="60" y="60" text-anchor="middle" dominant-baseline="central"
+                font-family="'Instrument Serif', Georgia, serif" font-size="46" fill="#fbf7ef">C</text>
+          <circle cx="60" cy="98" r="2.6" fill="#d9a441"/>
+        </svg>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
+        <svg viewBox="0 0 120 120" width="38" height="38" aria-hidden="true">
+          <circle cx="60" cy="60" r="55" fill="none" stroke="#1d3f6e" stroke-width="3.4"/>
+          <circle cx="60" cy="60" r="40" fill="#1d3f6e"/>
+          <text x="60" y="61" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="54" fill="#fbf7ef">C</text>
+        </svg>
+        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14; letter-spacing: -0.01em;">Correia<span style="color:#c4573a;">Cor</span></span>
+      </div>
+
+      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">Durante séculos, cada impressor assinava os seus livros com um selo próprio &mdash; o <em>colofão</em>. É a herança mais bonita desta profissão e ninguém no sector a usa hoje. Dá-lhe autoridade tranquila: uma casa antiga que sabe o que faz, sem precisar de o dizer alto.</p>
+      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> o texto à volta desaparece abaixo dos 32&nbsp;px, por isso precisa de uma versão reduzida só com o C.</p>
+    </div>
+
+    <!-- 2 · A ARCADA -->
+    <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 34px; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
+      <span class="cap" style="color: #c4573a;">Ideia 02</span>
+      <h2 style="font-size: 38px; margin-top: 14px;">A arcada</h2>
+
+      <div style="height: 216px; display: flex; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
+        <svg viewBox="0 0 120 120" width="156" height="156" aria-hidden="true">
+          <path d="M18 112V54a42 42 0 0 1 84 0v58a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4Z" fill="#c4573a"/>
+          <path d="M30 108V55a30 30 0 0 1 60 0v53Z" fill="#f3ebdd"/>
+          <text x="60" y="80" text-anchor="middle" dominant-baseline="central"
+                font-family="'Instrument Serif', Georgia, serif" font-size="62" fill="#221a14">C</text>
+          <circle cx="60" cy="40" r="4.4" fill="#d9a441"/>
+        </svg>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
+        <svg viewBox="0 0 120 120" width="34" height="38" aria-hidden="true">
+          <path d="M18 112V54a42 42 0 0 1 84 0v58a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4Z" fill="#c4573a"/>
+          <path d="M32 110V55a28 28 0 0 1 56 0v55Z" fill="#f3ebdd"/>
+          <text x="60" y="82" text-anchor="middle" dominant-baseline="central" font-family="'Instrument Serif', Georgia, serif" font-size="58" fill="#221a14">C</text>
+        </svg>
+        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">Correia<span style="color:#c4573a;">Cor</span></span>
+      </div>
+
+      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">Uma porta aberta, com o C emoldurado como quem vê a montra de uma loja bonita. O arco é a forma mais acolhedora que existe &mdash; usam-na desde as portadas dos livros às fachadas das lojas antigas &mdash; e diz "entre" sem uma única palavra.</p>
+      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> o arco anda muito na moda em restauração e hotelaria. Daqui a cinco anos pode datar.</p>
+    </div>
+
+    <!-- 3 · A LETRA -->
+    <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 34px; box-shadow: 0 18px 40px -28px rgba(34,26,20,.4);">
+      <span class="cap" style="color: #c4573a;">Ideia 03</span>
+      <h2 style="font-size: 38px; margin-top: 14px;">A letra e a flor</h2>
+
+      <div style="height: 216px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 22px; background: #f3ebdd; border-radius: 16px;">
+        <div style="display: flex; align-items: baseline; font-family: 'Instrument Serif', Georgia, serif; font-size: 52px; color: #221a14; letter-spacing: -0.015em;">
+          <span>Correia&nbsp;C</span>
+          <svg width="40" height="40" viewBox="0 0 40 40" style="margin: 0 1px -4px;" aria-hidden="true">
+            <circle cx="20" cy="21" r="15" fill="none" stroke="#c4573a" stroke-width="4.6"/>
+            <circle cx="20" cy="21" r="7.6" fill="none" stroke="#d9a441" stroke-width="3"/>
+            <circle cx="20" cy="21" r="2.4" fill="#35513f"/>
+          </svg>
+          <span>r</span>
+        </div>
+        <div class="cap" style="margin-top: 20px; color: #8b7b6c;">Comunicação visual desde 2004</div>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: center; margin-top: 18px; padding: 18px 0; background: #f3ebdd; border-radius: 16px;">
+        <div style="display: flex; align-items: baseline; font-family: 'Instrument Serif', Georgia, serif; font-size: 30px; color: #221a14;">
+          <span>Correia&nbsp;C</span>
+          <svg width="23" height="23" viewBox="0 0 40 40" style="margin: 0 1px -2px;" aria-hidden="true">
+            <circle cx="20" cy="21" r="15" fill="none" stroke="#c4573a" stroke-width="5.4"/>
+            <circle cx="20" cy="21" r="7" fill="none" stroke="#d9a441" stroke-width="3.4"/>
+            <circle cx="20" cy="21" r="2.2" fill="#35513f"/>
+          </svg>
+          <span>r</span>
+        </div>
+      </div>
+
+      <p style="margin: 22px 0 0; font-size: 14.5px; line-height: 1.7;">Sem símbolo à parte: o "o" de Cor abre-se em anéis de tinta, como as camadas de uma impressão vistas de cima. A cor entra no nome em vez de ficar ao lado dele, e o conjunto lê-se de uma só vez.</p>
+      <p style="margin: 14px 0 0; padding-top: 14px; border-top: 1px dashed #e3d8c6; font-size: 13px; line-height: 1.6; color: #8b7b6c;"><strong style="color:#5a4a3e;">Contra:</strong> sem símbolo separado, fica pior em quadrado &mdash; no perfil do Instagram ou no favicon precisa de um "C" isolado a acompanhar.</p>
+    </div>
+  </div>
+
+  <!-- PALETA E TIPOGRAFIA -->
+  <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 26px; margin-top: 26px;">
+
+    <div style="background: #fffdf9; border: 1px solid #e3d8c6; border-radius: 22px; padding: 36px;">
+      <span class="cap" style="color: #c4573a;">Paleta</span>
+      <h3 style="font-size: 34px; margin-top: 12px;">Tintas antigas, não néon</h3>
+      <p style="margin: 12px 0 28px; font-size: 15px; line-height: 1.7; max-width: 560px;">Cores com a profundidade dos tinteiros de gráfica &mdash; azul de tinta, terracota, verde de garrafa, ocre. Dizem "cor" com a mesma clareza, mas convidam em vez de empurrar.</p>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px;">
+        <div><div style="height: 96px; border-radius: 14px; background: #1d3f6e;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Azul de tinta</div><div style="font-size: 12px; color: #8b7b6c;">#1D3F6E</div></div>
+        <div><div style="height: 96px; border-radius: 14px; background: #c4573a;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Terracota</div><div style="font-size: 12px; color: #8b7b6c;">#C4573A</div></div>
+        <div><div style="height: 96px; border-radius: 14px; background: #35513f;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Verde de garrafa</div><div style="font-size: 12px; color: #8b7b6c;">#35513F</div></div>
+        <div><div style="height: 96px; border-radius: 14px; background: #d9a441;"></div><div style="font-size: 13px; font-weight: 600; margin-top: 10px; color: #221a14;">Ocre</div><div style="font-size: 12px; color: #8b7b6c;">#D9A441</div></div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; margin-top: 18px;">
+        <div><div style="height: 52px; border-radius: 14px; background: #6b3552;"></div><div style="font-size: 12px; color: #8b7b6c; margin-top: 9px;">Ameixa #6B3552</div></div>
+        <div><div style="height: 52px; border-radius: 14px; background: #fbf7ef; border: 1px solid #e3d8c6;"></div><div style="font-size: 12px; color: #8b7b6c; margin-top: 9px;">Papel #FBF7EF</div></div>
+        <div><div style="height: 52px; border-radius: 14px; background: #f3ebdd;"></div><div style="font-size: 12px; color: #8b7b6c; margin-top: 9px;">Creme #F3EBDD</div></div>
+        <div><div style="height: 52px; border-radius: 14px; background: #221a14;"></div><div style="font-size: 12px; color: #8b7b6c; margin-top: 9px;">Tinta #221A14</div></div>
       </div>
     </div>
 
-    <div style="background: #ccff33; color: #0b0b0c; padding: 36px;">
-      <span class="kick">Tipografia</span>
-      <div style="font-family: Unbounded, sans-serif; font-size: 62px; font-weight: 900; letter-spacing: -0.06em; line-height: 0.86; margin-top: 16px;">Aa<br>Bb</div>
-      <div style="font-size: 13px; font-weight: 800; margin-top: 14px; letter-spacing: 0.06em;">UNBOUNDED 900 &middot; TÍTULOS</div>
-      <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.55; color: #3d4a0a;">Geométrica, larga e com personalidade. Aguenta 160&nbsp;px sem se desfazer.</p>
-      <div style="height: 3px; background: #0b0b0c; margin: 24px 0;"></div>
-      <div style="font-size: 13px; font-weight: 800; letter-spacing: 0.06em;">MANROPE 500/800 &middot; TEXTO</div>
-      <p style="margin: 8px 0 0; font-size: 15.5px; line-height: 1.6;">Impressão, têxtil, brindes e comunicação visual. Há mais de vinte anos a pôr marcas portuguesas em papel, em tecido e na rua.</p>
+    <div style="background: #1d3f6e; color: #f3ebdd; border-radius: 22px; padding: 36px;">
+      <span class="cap" style="color: #d9a441;">Tipografia</span>
+      <div style="font-family: 'Instrument Serif', Georgia, serif; font-size: 78px; line-height: 0.94; margin-top: 14px; color: #fbf7ef;">Aa <em>Bb</em></div>
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; margin-top: 16px; color: #d9a441;">INSTRUMENT SERIF &middot; TÍTULOS</div>
+      <p style="margin: 8px 0 0; font-size: 14.5px; line-height: 1.65; color: rgba(251,247,239,.78);">Alto contraste, terminações finas e um itálico com muito charme para destacar uma palavra aqui e ali.</p>
+      <div style="height: 1px; background: rgba(217,164,65,.4); margin: 26px 0;"></div>
+      <div style="font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: #d9a441;">KARLA &middot; TEXTO</div>
+      <p style="margin: 10px 0 0; font-size: 16px; line-height: 1.7; color: #fbf7ef;">Impressão, têxtil, brindes e comunicação visual. Há mais de vinte anos a pôr marcas portuguesas em papel, em tecido e na rua.</p>
+      <div style="display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap;">
+        <span class="btn" style="background: #d9a441; color: #221a14; height: 46px; font-size: 14px;">Pedir orçamento</span>
+        <span class="btn" style="border: 1px solid rgba(251,247,239,.45); color: #fbf7ef; height: 46px; font-size: 14px;">Ver catálogo</span>
+      </div>
     </div>
   </div>
 </div>
 </x-dc>
 
-<script data-dc-script data-props='{"$preview":{"width":1440,"height":1560}}'>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":1620}}'>
 class Component extends DCLogic {}
 </script>
 </body>

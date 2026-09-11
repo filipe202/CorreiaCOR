@@ -4,49 +4,49 @@
     { "id": "page-2", "name": "Logo e identidade" }
   ],
   "artboards": [
-    { "file": "Main.dc.html", "page": "page-1", "title": "Homepage", "x": 0, "y": 0, "w": 1440, "h": 4700 },
-    { "file": "Sobre.dc.html", "page": "page-1", "title": "Sobre nós", "x": 1560, "y": 0, "w": 1440, "h": 3450 },
-    { "file": "Servicos.dc.html", "page": "page-1", "title": "Serviços", "x": 3120, "y": 0, "w": 1440, "h": 3700 },
-    { "file": "Marketplace.dc.html", "page": "page-1", "title": "Marketplace", "x": 4680, "y": 0, "w": 1440, "h": 2400 },
-    { "file": "Produto.dc.html", "page": "page-1", "title": "Produto + configurador", "x": 6240, "y": 0, "w": 1440, "h": 1620, "is_interactive": true },
-    { "file": "Pedido.dc.html", "page": "page-1", "title": "Pedido de orçamento", "x": 7800, "y": 0, "w": 1440, "h": 1850 },
-    { "file": "Portfolio.dc.html", "page": "page-1", "title": "Portfolio", "x": 9360, "y": 0, "w": 1440, "h": 2850 },
-    { "file": "Contactos.dc.html", "page": "page-1", "title": "Contactos", "x": 10920, "y": 0, "w": 1440, "h": 1600 },
-    { "file": "Mobile.dc.html", "page": "page-1", "title": "Telemóvel", "x": 12480, "y": 0, "w": 390, "h": 2200 },
-    { "file": "Logotipos.dc.html", "page": "page-2", "title": "Três ideias novas de logo", "x": 0, "y": 0, "w": 1440, "h": 1560 }
+    { "file": "Main.dc.html", "page": "page-1", "title": "Homepage", "x": 0, "y": 0, "w": 1440, "h": 4600 },
+    { "file": "Sobre.dc.html", "page": "page-1", "title": "Sobre nós", "x": 1560, "y": 0, "w": 1440, "h": 4150 },
+    { "file": "Servicos.dc.html", "page": "page-1", "title": "Serviços", "x": 3120, "y": 0, "w": 1440, "h": 4400 },
+    { "file": "Marketplace.dc.html", "page": "page-1", "title": "Marketplace", "x": 4680, "y": 0, "w": 1440, "h": 2320 },
+    { "file": "Produto.dc.html", "page": "page-1", "title": "Produto + configurador", "x": 6240, "y": 0, "w": 1440, "h": 1700, "is_interactive": true },
+    { "file": "Pedido.dc.html", "page": "page-1", "title": "Pedido de orçamento", "x": 7800, "y": 0, "w": 1440, "h": 1720 },
+    { "file": "Portfolio.dc.html", "page": "page-1", "title": "Portfolio", "x": 9360, "y": 0, "w": 1440, "h": 2700 },
+    { "file": "Contactos.dc.html", "page": "page-1", "title": "Contactos", "x": 10920, "y": 0, "w": 1440, "h": 1720 },
+    { "file": "Mobile.dc.html", "page": "page-1", "title": "Telemóvel", "x": 12480, "y": 0, "w": 390, "h": 2300 },
+    { "file": "Logotipos.dc.html", "page": "page-2", "title": "Três ideias de logo", "x": 0, "y": 0, "w": 1440, "h": 1620 }
   ],
   "annotations": [
     {
       "id": "nota-direcao",
       "page": "page-1",
       "x": 0,
-      "y": -260,
+      "y": -250,
       "w": 700,
-      "text": "Segunda tentativa, agora sem medo.\nTipografia a 188 px, cada secção com uma cor a ocupar o ecrã todo, arestas vivas e coisas a mexer (a faixa de técnicas, o selo a rodar, as bolas a flutuar).\nAs três ideias novas de logo estão na página «Logo e identidade», no menu de páginas em cima."
+      "text": "Terceira tentativa: charme em vez de volume.\nSerifa de alto contraste com itálicos, tons de tinta antiga (azul, terracota, verde de garrafa, ocre), arcos, filetes finos e pormenores de acabamento. O que se mexe fá-lo devagar.\nAs três ideias de logo estão na página «Logo e identidade», no menu de páginas em cima."
     },
     {
       "id": "nota-sobre",
       "page": "page-1",
       "x": 1560,
-      "y": -260,
-      "w": 660,
-      "text": "A página Sobre que faltava: história, cronologia, no que acreditamos, quem atende e as máquinas da oficina.\nO texto da história está escrito como exemplo do tom — os factos reais têm de vir do teu pai (ano, primeira máquina, primeiro cliente)."
+      "y": -250,
+      "w": 640,
+      "text": "A página Sobre: história, cronologia, princípios, quem atende e as máquinas.\nO texto da história está escrito como exemplo do tom. Os factos verdadeiros valem mais — pergunta ao teu pai o ano, a primeira máquina e o primeiro cliente."
     },
     {
       "id": "nota-config",
       "page": "page-1",
       "x": 6240,
-      "y": -260,
-      "w": 660,
-      "text": "Funciona a sério: clica nas cores, técnicas, zonas e quantidades.\nRepara que o fundo do palco muda com a peça — uma t-shirt cor de osso nunca desaparece num fundo claro."
+      "y": -250,
+      "w": 640,
+      "text": "Funciona a sério: clica nas cores, técnicas, zonas e quantidades.\nRepara que o fundo muda com a peça — uma t-shirt branca ganha fundo azul, uma ocre ganha fundo escuro, para nenhuma desaparecer."
     },
     {
       "id": "nota-dados",
       "page": "page-1",
       "x": 9360,
-      "y": -260,
-      "w": 660,
-      "text": "Tudo entre [PARÊNTESES RETOS] é informação real que ainda não tenho: contactos, morada, nomes da equipa, datas da cronologia.\nOs preços e os casos de portfolio são inventados para o mock funcionar."
+      "y": -250,
+      "w": 640,
+      "text": "Tudo entre [parênteses retos] é informação real que ainda me falta: contactos, morada, nomes da equipa, datas.\nOs preços, os casos de portfolio e o testemunho na homepage são inventados para o mock funcionar."
     },
     {
       "id": "nota-logos",
@@ -54,7 +54,7 @@
       "x": 0,
       "y": -220,
       "w": 700,
-      "text": "Fugi das duas coisas que já tinhas: a roseta de cores do logo atual e as barras CMYK da minha primeira tentativa.\nCada ideia tem o contra escrito por baixo. Diz-me qual e aplico-a ao site inteiro — e se nenhuma servir, diz porquê e trago outras três."
+      "text": "Três ideias com boas maneiras, longe da roseta de cores e das barras CMYK.\nA primeira é a que eu escolhia: o colofão, o selo com que os impressores assinavam os livros há séculos. Ninguém no sector o usa hoje.\nCada uma tem o contra escrito por baixo."
     }
   ],
   "launch": { "view": "canvas", "page": "page-1" }
